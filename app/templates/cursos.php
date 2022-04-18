@@ -1,11 +1,11 @@
 <?php ob_start(); ?>
 
 <!--
-    · Contenido de la página de Iniciar Sesión. 
+    · Contenido de la página de Cursos. 
     · Lo guardamos en el buffer y se carga en la variable $contenido para mostrarla en /templates/layout
 -->
 <div class="comming-soon">
-    <h1>Página de Login</h1>
+    <h1>Página de Cursos</h1>
     <p>Próximamente</p>
 </div>
 

@@ -1,0 +1,25 @@
+@font-face {
+    font-family: "montserrat-medium";
+    src: url(../fonts/Montserrat-Medium.ttf);
+  }
+  
+  @font-face {
+    font-family: "montserrat-black";
+    src: url(../fonts/Montserrat-Black.ttf);
+  }
+  
+  @font-face {
+    font-family: "montserrat-light";
+    src: url(../fonts/Montserrat-Light.ttf);
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-family: var(--font-2);
+    font-style: italic;
+  }
+
+  p {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+  }

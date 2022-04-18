@@ -1,0 +1,39 @@
+footer {
+    background-color: var(--color5);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 50px 0 30px;
+}
+
+footer img {
+    width: 100px;
+}
+
+footer ul {
+    padding-left: 0;
+}
+
+footer ul li {
+    padding-top:15px;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+footer ul li a:hover {
+    color:#fff;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 2px;
+}
+
+footer ul li ion-icon {
+    padding-right: 10px;
+}
+
+footer ul.legal li {
+    display: inline;
+    padding-left: 10px;
+}

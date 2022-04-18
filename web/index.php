@@ -5,7 +5,6 @@
     require_once __DIR__ . '/../app/libs/config.php';
     require_once __DIR__ . '/../app/libs/utils.php';
     require_once __DIR__ . '/../app/modelo/classModelo.php';
-    require_once __DIR__ . '/../app/modelo/classAlumnos.php';
     require_once __DIR__ . '/../app/modelo/classUsuarios.php';
     require_once __DIR__ . '/../app/controlador/Controller.php';
 
@@ -17,18 +16,15 @@
 
     // Array de mapeo donde se contemplan todas las posibles acciones
     $map = array(
-        'inicio' => array('controller' =>'Controller', 'action' =>'inicio'),
-        'listar' => array('controller' =>'Controller', 'action' =>'listar'),
-        'insertarAlumno' => array('controller' =>'Controller', 'action' =>'insertarAlumno'),
-        'buscarAlumno' => array('controller' =>'Controller', 'action' =>'buscarAlumno'),
-        'listarLogin' => array('controller' =>'Controller', 'action' =>'listarLogin'),
-        'ver' => array('controller' =>'Controller', 'action' =>'ver'),
-        'error' => array('controller' =>'Controller', 'action' =>'error'),
-        'iniciarSesion' => array('controller' =>'Controller', 'action' =>'iniciarSesion'),
-        'cerrarSesion' => array('controller' =>'Controller', 'action' =>'cerrarSesion'),
-        'registro' => array('controller' =>'Controller', 'action' =>'registrarse'),
-        'registroCorrecto' => array('controller' =>'Controller', 'action' =>'registroCorrecto'),
-        'errorPermisos' => array('controller' =>'Controller', 'action' =>'errorPermisos'),
+        'inicio' => array('controller' =>'Controller', 'action' =>'cInicio'),
+        'academia' => array('controller' =>'Controller', 'action' =>'cAcademia'),
+        'cursos' => array('controller' =>'Controller', 'action' =>'cCursos'),
+        'contacto' => array('controller' =>'Controller', 'action' =>'cContacto'),
+        'iniciarSesion' => array('controller' =>'Controller', 'action' =>'cIniciarSesion'),
+        'registro' => array('controller' =>'Controller', 'action' =>'cRegistro'),
+        'politicaPrivacidad' => array('controller' =>'Controller', 'action' =>'cPoliticaPrivacidad'),
+        'politicaCookies' => array('controller' =>'Controller', 'action' =>'cPoliticaCookies'),
+        'avisosLegales' => array('controller' =>'Controller', 'action' =>'cAvisosLegales'),
     );
 
     /*

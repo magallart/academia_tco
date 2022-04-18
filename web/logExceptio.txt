@@ -1,2 +1,1 @@
-SQLSTATE[42S02]: Base table or view not found: 1146 Table 'academia_tco.alumnos' doesn't exist0.91859500 1649270180
-SQLSTATE[42S02]: Base table or view not found: 1146 Table 'academia_tco.alumnos' doesn't exist0.52995700 1649270182
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'academia_tco.alumnos' doesn't exist0.65263700 1649841563

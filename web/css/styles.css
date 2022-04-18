@@ -1,0 +1,105 @@
+@import url("fonts.css");
+@import url("menu.css");
+@import url("botones.css");
+@import url("inicio.css");
+@import url("footer.css");
+
+:root {
+  --color1: #fe4a55;
+  --color2: #f6f1ed;
+  --color3: #f9f9f9;
+  --color4: #fff;
+  --color5: #0f0f0f;
+  --font-1: "montserrat-medium";
+  --font-2: "montserrat-black";
+  --font-3: "montserrat-light";
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-1);
+  font-size: 14px;
+  line-height: 1;
+  list-style: none;
+}
+
+html {
+  background-color: #fff;
+}
+
+body {
+  width: 100%;
+  margin: 0 auto;
+  background-color: white;
+  position: relative;
+  min-height: 50vh;
+}
+
+ol,
+ul {
+  margin: 0;
+}
+
+header {
+  background-color: var(--color3);
+  height: 650px;
+}
+
+
+
+ion-icon {
+  font-size: 1.3rem;
+  position: relative;
+  top: 4px;
+}
+
+.left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.top {
+  display: flex;
+  align-items: flex-start;
+}
+
+.middle {
+  display: flex;
+  align-items: center;
+}
+
+.bottom {
+  display: flex;
+  align-items: flex-end;
+}
+
+.titulo-superior {
+  color: var(--color1);
+  font-size: 1rem;
+  font-style: italic;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+}
+
+/************************************/
+
+.comming-soon {
+  padding-top: 25vh;
+  min-height: 75vh;
+  text-align: center;
+}
+
+.comming-soon * {
+  color: var(--color5);
+}

@@ -1,0 +1,22 @@
+nav {
+  background-color: #fff;
+  height: 80px;
+}
+
+nav img {
+  width: 90px;
+}
+
+nav .collapse {
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul li {
+  padding-left: 20px;
+}
+
+/*  Responsive */
+nav .navbar-toggler {
+  border: none;
+}
