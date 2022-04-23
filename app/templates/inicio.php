@@ -20,7 +20,7 @@
                     <a class="boton" href="#">Ver cursos ahora <ion-icon name="arrow-forward-circle-outline"></ion-icon></a>
                 </div>
             </div>
-            <div class="col-10 col-sm-8 col-lg-6">
+            <div class="col-10 col-sm-8 col-lg-6">   <!--  TODO Controlar la imagen en responsive -->
                 <img src="../img/inicio-header.png" class="d-block mx-lg-auto img-fluid" alt="Chica sonriendo con un laptop en la mano" width="700" height="500" loading="lazy" />
             </div>
         </div>
@@ -33,7 +33,7 @@
         <div class="row">
             <div class="col">
                 <span class="titulo-superior center">Aprende cuando y donde quieras</span>
-                <h2 class="center">Formación online a medida en ATCO</h2>
+                <h2 class="center">Formación online a medida en ATCO</h2>  <!-- TODO cambiar texto -->
                 <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor, nulla sed vulputate
                     dignissim, mauris quam congue leo, nec pretium velit risus eget est. Nullam id volutpat lorem, et facilisis
                     urna. Cras pharetra, velit vitae rhoncus lacinia, velit tortor gravida justo, ut gravida leo lacus a enim.
@@ -263,7 +263,7 @@
                 <div class="col-sm-12">
                     <div class="single">
                         <div class="input-group">
-                            <input type="email" class="form-control" placeholder="Escribe tu email">
+                            <input type="email" class="form-control" placeholder="Escribe tu email"> <!--  TODO Implementar newsletter-->
                             <span class="input-group-btn">
                                 <button class="btn btn-theme" type="submit">Suscríbete ahora</button>
                             </span>

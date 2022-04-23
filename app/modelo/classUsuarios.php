@@ -11,7 +11,7 @@ class Usuarios extends Modelo {
     */
     function loginUsuario($usuario, $password) {
         
-        $consulta = "select * from usuarios where user=:usuario and pass=:clave"; 
+        $consulta = "select * from usuarios where nombre=:usuario and password=:clave"; 
 
 
         $result = $this->conexion->prepare($consulta);

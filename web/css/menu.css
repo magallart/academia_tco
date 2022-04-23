@@ -13,10 +13,23 @@ nav .collapse {
 }
 
 nav ul li {
-  padding-left: 20px;
+  padding-left: 40px;
+}
+
+nav ul li .fPerfil {
+  width: 40px;
+  border-radius: 30px;
+  position: relative;
+  top: -5px;
 }
 
 /*  Responsive */
 nav .navbar-toggler {
   border: none;
+}
+
+/* Menu Login */
+
+nav ul.dropdown-menu li {
+  padding-left: 20px;
 }

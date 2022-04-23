@@ -1,0 +1,44 @@
+.login {
+  border: 1px solid #000;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.login-left, .login-right {
+    padding: 50px;
+}
+
+.login-left {
+  background-color: var(--color1);
+  color: #fff;
+}
+
+.login-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+a.lost-password {
+  color: var(--color5);
+  padding-bottom: 2px;  
+}
+
+a.lost-password:hover, a.lost-password:focus  {
+  color: var(--color1);
+}
+
+.login form input {
+  display: block;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.login form input[type="submit"] {
+    color: #fff;
+}
+
+.login form input[type="submit"]:hover, .login form input[type="submit"]:focus {
+    color: var(--color1);
+}

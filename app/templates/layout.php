@@ -27,6 +27,15 @@
 			include $menu;
 		?>
 
+		<?php // TODO Eliminar el print_r $_SESSION
+
+			echo "<div class='pruebaSesion'>";
+			echo "<pre>";
+			print_r($_SESSION);
+			echo "</pre>";
+			echo "</div>";
+		?>
+		
 
 		<div id="contenido">
 			<?php echo $contenido; ?>

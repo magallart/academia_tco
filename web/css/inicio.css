@@ -174,91 +174,89 @@ section.testimonials {
 }
 
 @media (max-width: 991px) {
-    .testimonials .slider {
-        height: 400px;
-    }
+  .testimonials .slider {
+    height: 400px;
+  }
 }
-
 
 /**************** Numbers *****************/
 
 section.data .col {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 section.data .circle-card {
-    border: 2px solid var(--color1);
-    height:200px;
-    width: 200px;
-    border-radius: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;    
+  border: 2px solid var(--color1);
+  height: 200px;
+  width: 200px;
+  border-radius: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 section.data .circle-card span {
-    display: block;
+  display: block;
 }
 
 section.data .circle-card span.numbers {
-    color: var(--color1);
-    font-weight: 600;
-    font-size: 3rem;
-    padding-bottom: 10px;
+  color: var(--color1);
+  font-weight: 600;
+  font-size: 3rem;
+  padding-bottom: 10px;
 }
 
 section.data .circle-card span.words {
-    font-size: 1.5rem;
-    width: 150px;
-    text-align: center;
+  font-size: 1.5rem;
+  width: 150px;
+  text-align: center;
 }
 
 /**************** Information ***************/
 
 section.information {
-    background-color: var(--color1);
+  background-color: var(--color1);
 }
 
-section.information .container{
-    height: 600px;
+section.information .container {
+  height: 600px;
 }
 
 section.information .bg-image {
-    height: 600px;
-    background-image: url("../../img/inicio-chica-estudiando-01.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  height: 600px;
+  background-image: url("../../img/inicio-chica-estudiando-01.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 section.information .text-information {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
 }
 
 /********************* Cursos **************/
 
 .courses .course {
-    background-color: var(--color1);
-    text-align: center;
-    padding: 20px 20px 30px 20px;
-    border-radius: 15px;
+  background-color: var(--color1);
+  text-align: center;
+  padding: 20px 20px 30px 20px;
+  border-radius: 15px;
 }
 
 .courses .course p {
-    font-weight: 400;
-    padding-bottom: 20px;
+  font-weight: 400;
+  padding-bottom: 20px;
 }
 
 .courses .course img {
-    width: 100%;
-    padding-bottom: 20px;
+  width: 100%;
+  padding-bottom: 20px;
 }
-
 
 /************** Newsletter ******************/
 

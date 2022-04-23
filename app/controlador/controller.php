@@ -1,103 +1,182 @@
 <?php
 
-    /* 
+/* 
         · Aquí se encuentras todas las acciones posibles.
         · En todas las acciones antes del require final se elige el tipo de menú a mostrar dependiendo del nivel de usuario conectado.
     */
 
-    class Controller {
+class Controller
+{
 
-        // Muestra el contenido de /templates/inicio.php
-        public function cInicio() {            
-            if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
-                $menu = 'menuLogin.php';
-            } else {
-                $menu = 'menu.php';
-            } 
-            require __DIR__.'/../templates/inicio.php';
+    // Muestra el contenido de /templates/inicio.php
+    public function cInicio()
+    {
+        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
+            $menu = 'menuLogin.php';
+        } else {
+            $menu = 'menu.php';
         }
-
-        // Muestra el contenido de /templates/academia.php
-        public function cAcademia() {            
-            if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
-                $menu = 'menuLogin.php';
-            } else {
-                $menu = 'menu.php';
-            } 
-            require __DIR__.'/../templates/academia.php';
-        }
-
-        // Muestra el contenido de /templates/cursos.php
-        public function cCursos() {            
-            if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
-                $menu = 'menuLogin.php';
-            } else {
-                $menu = 'menu.php';
-            } 
-            require __DIR__.'/../templates/cursos.php';
-        }
-
-        // Muestra el contenido de /templates/contacto.php
-        public function cContacto() {            
-            if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
-                $menu = 'menuLogin.php';
-            } else {
-                $menu = 'menu.php';
-            } 
-            require __DIR__.'/../templates/contacto.php';
-        }
-
-        // Muestra el contenido de /templates/iniciarSesion.php
-        public function cIniciarSesion() {            
-            if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
-                $menu = 'menuLogin.php';
-            } else {
-                $menu = 'menu.php';
-            } 
-            require __DIR__.'/../templates/iniciarSesion.php';
-        }
-
-        // Muestra el contenido de /templates/registro.php
-        public function cRegistro() {            
-            if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
-                $menu = 'menuLogin.php';
-            } else {
-                $menu = 'menu.php';
-            } 
-            require __DIR__.'/../templates/registro.php';
-        }
-
-         // Muestra el contenido de /templates/politicaPrivacidad.php
-         public function cPoliticaPrivacidad() {            
-            if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
-                $menu = 'menuLogin.php';
-            } else {
-                $menu = 'menu.php';
-            } 
-            require __DIR__.'/../templates/politicaPrivacidad.php';
-        }
-
-         // Muestra el contenido de /templates/politicaCookies.php
-         public function cPoliticaCookies() {            
-            if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
-                $menu = 'menuLogin.php';
-            } else {
-                $menu = 'menu.php';
-            } 
-            require __DIR__.'/../templates/politicaCookies.php';
-        }
-
-         // Muestra el contenido de /templates/avisosLegales.php
-         public function cAvisosLegales() {            
-            if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
-                $menu = 'menuLogin.php';
-            } else {
-                $menu = 'menu.php';
-            } 
-            require __DIR__.'/../templates/avisosLegales.php';
-        }
-
-        
+        require __DIR__ . '/../templates/inicio.php';
     }
 
-?>
+    // Muestra el contenido de /templates/academia.php
+    public function cAcademia()
+    {
+        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
+            $menu = 'menuLogin.php';
+        } else {
+            $menu = 'menu.php';
+        }
+        require __DIR__ . '/../templates/academia.php';
+    }
+
+    // Muestra el contenido de /templates/cursos.php
+    public function cCursos()
+    {
+        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
+            $menu = 'menuLogin.php';
+        } else {
+            $menu = 'menu.php';
+        }
+        require __DIR__ . '/../templates/cursos.php';
+    }
+
+    // Muestra el contenido de /templates/misCursos.php
+    public function cMisCursos()
+    {
+        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
+            $menu = 'menuLogin.php';
+        } else {
+            $menu = 'menu.php';
+        }
+        require __DIR__ . '/../templates/misCursos.php';
+    }
+
+    // Muestra el contenido de /templates/contacto.php
+    public function cContacto()
+    {
+        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
+            $menu = 'menuLogin.php';
+        } else {
+            $menu = 'menu.php';
+        }
+        require __DIR__ . '/../templates/contacto.php';
+    }
+
+    // Muestra el contenido de /templates/iniciarSesion.php
+    public function cIniciarSesion()
+    {
+        try {
+            $params = array(
+                'resultado' => array()
+            );
+
+            $u = new Usuarios();
+            if (isset($_POST['iniciarSesion'])) {
+
+                $nombre = recoge('usuario');
+                $password = recoge('password');
+                $params['resultado'] = $u->loginUsuario($nombre, $password);
+
+                if ($params['resultado']) {
+                    $_SESSION['nombreUsuario'] = $params['resultado']['nombre'];
+                    $_SESSION['nivel'] = $params['resultado']['nivel'];
+                    $_SESSION['fPerfil'] = $params['resultado']['fPerfil'];
+                    //header('Location: index.php?ctl=inicio');               
+                } else {
+                    $_SESSION['errores']['login'] = "No se ha podido conectar.";
+                }
+            }
+        } catch (Exception $e) {
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
+            header('Location: index.php?ctl=error');
+        } catch (Error $e) {
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
+            header('Location: index.php?ctl=error');
+        }
+
+        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
+            $menu = 'menuLogin.php';
+        } else {
+            $menu = 'menu.php';
+        }
+        require __DIR__ . '/../templates/iniciarSesion.php';
+    }
+
+    // Muestra el contenido de /templates/registro.php
+    public function cRegistro()
+    {
+        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
+            $menu = 'menuLogin.php';
+        } else {
+            $menu = 'menu.php';
+        }
+        require __DIR__ . '/../templates/registro.php';
+    }
+
+    // Muestra el contenido de /templates/recuperarPassword.php
+    public function cRecuperarPassword()
+    {
+        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
+            $menu = 'menuLogin.php';
+        } else {
+            $menu = 'menu.php';
+        }
+        require __DIR__ . '/../templates/recuperarPassword.php';
+    }
+
+    // Muestra el contenido de /templates/cerrarSesion.php
+    public function cCerrarSesion()
+    {
+        session_unset();
+        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
+            $menu = 'menuLogin.php';
+        } else {
+            $menu = 'menu.php';
+        }
+        require __DIR__ . '/../templates/cerrarSesion.php';
+    }
+    
+    public function cPerfil()
+    {
+        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
+            $menu = 'menuLogin.php';
+        } else {
+            $menu = 'menu.php';
+        }
+        require __DIR__ . '/../templates/perfil.php';
+    }
+
+    // Muestra el contenido de /templates/politicaPrivacidad.php
+    public function cPoliticaPrivacidad()
+    {
+        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
+            $menu = 'menuLogin.php';
+        } else {
+            $menu = 'menu.php';
+        }
+        require __DIR__ . '/../templates/politicaPrivacidad.php';
+    }
+
+    // Muestra el contenido de /templates/politicaCookies.php
+    public function cPoliticaCookies()
+    {
+        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
+            $menu = 'menuLogin.php';
+        } else {
+            $menu = 'menu.php';
+        }
+        require __DIR__ . '/../templates/politicaCookies.php';
+    }
+
+    // Muestra el contenido de /templates/avisosLegales.php
+    public function cAvisosLegales()
+    {
+        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
+            $menu = 'menuLogin.php';
+        } else {
+            $menu = 'menu.php';
+        }
+        require __DIR__ . '/../templates/avisosLegales.php';
+    }
+}

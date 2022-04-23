@@ -2,6 +2,7 @@
 @import url("menu.css");
 @import url("botones.css");
 @import url("inicio.css");
+@import url("iniciarSesion.css");
 @import url("footer.css");
 
 :root {
@@ -46,7 +47,15 @@ header {
   height: 650px;
 }
 
+header.interior {
+  background-color: var(--color3);
+  height: 400px;
+}
 
+header.interior img {
+  max-height: 300px;
+  width: auto;
+}
 
 ion-icon {
   font-size: 1.3rem;
@@ -92,6 +101,10 @@ ion-icon {
   padding-bottom: 10px;
 }
 
+.container.interior {
+  min-height: 40vh;
+}
+
 /************************************/
 
 .comming-soon {
@@ -102,4 +115,12 @@ ion-icon {
 
 .comming-soon * {
   color: var(--color5);
+}
+
+.pruebaSesion {
+  /* TODO Eliminar esta regla para  */
+  min-height: 100px;
+  margin-top: 100px;
+  padding-left: 100px;
+  font-size: 1.2rem;
 }

@@ -1,7 +1,7 @@
 <!--
     · Menú para usuarios de nivel 0, es decir, usuarios que no han iniciado sesión.
 -->
-
+<!-- TODO Arreglar menu responsive -->
 
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
