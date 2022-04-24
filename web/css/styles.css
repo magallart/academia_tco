@@ -2,6 +2,7 @@
 @import url("menu.css");
 @import url("botones.css");
 @import url("inicio.css");
+@import url("perfil.css");
 @import url("iniciarSesion.css");
 @import url("footer.css");
 
@@ -123,4 +124,6 @@ ion-icon {
   margin-top: 100px;
   padding-left: 100px;
   font-size: 1.2rem;
+  border-top:1px solid #000;
+  border-bottom:1px solid #000;
 }

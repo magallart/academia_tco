@@ -81,9 +81,9 @@ CREATE TABLE `tokens` (
 --
 
 CREATE TABLE `mensajes` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_curso` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,  
   `id_usuario` int(11) NOT NULL,
+  `id_curso` int(11) NOT NULL,
   `mensaje` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -92,9 +92,9 @@ CREATE TABLE `mensajes` (
 -- Volcado de datos para la tabla `mensajes`
 --
 
-INSERT INTO `mensajes` (`id`, `id_curso`, `id_usuario`, `mensaje`) VALUES
-(0, 0 ,2, 'He aprendido mucho con este curso. Gracias a la plataforma y a los profesores.'),
-(1, 0, 4, 'Gracias a este curso pienso que podré encontrar trabajo en un futuro. El curso es muy completo y lo recomiendo.');
+INSERT INTO `mensajes` (`id`, `id_usuario`, `id_curso`, `mensaje`) VALUES
+(0, 0, 0, 'He aprendido mucho con este curso. Gracias a la plataforma y a los profesores.'),
+(1, 0, 1, 'Gracias a este curso pienso que podré encontrar trabajo en un futuro. El curso es muy completo y lo recomiendo.');
 
 
 -- --------------------------------------------------------
@@ -106,9 +106,9 @@ INSERT INTO `mensajes` (`id`, `id_curso`, `id_usuario`, `mensaje`) VALUES
 CREATE TABLE `cursos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(255) NOT NULL,
-  `categoria` varchar(255) NOT NULL,
   `temas` int(11) NOT NULL,
   `profesor` int(11) NOT NULL,
+  `fCurso` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -116,9 +116,9 @@ CREATE TABLE `cursos` (
 -- Volcado de datos para la tabla `cursos`
 --
 
-INSERT INTO `cursos` (`id`, `nombre`, `temas`, `profesor`) VALUES
-(0, 'JavaScript', 10, 6),
-(1, 'Angular', 35, 6);
+INSERT INTO `cursos` (`id`, `nombre`, `temas`, `profesor`, `fCurso`) VALUES
+(0, 'JavaScript', 10, 6, 'logo-js.jpg'),
+(1, 'Angular', 35, 6, 'logo-angular.jpg');
 
 
 -- --------------------------------------------------------
@@ -128,11 +128,11 @@ INSERT INTO `cursos` (`id`, `nombre`, `temas`, `profesor`) VALUES
 --
 
 CREATE TABLE `curso_usuario` (
-  `id_curso` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
+  `id_curso` int(11) NOT NULL,  
   `temas_finalizados` int(11) NOT NULL,
   `valoracion` float NOT NULL,
-  `nota` float NOT NULL,
+  `aprobado` float NOT NULL,
   PRIMARY KEY (`id_curso`, `id_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -140,9 +140,9 @@ CREATE TABLE `curso_usuario` (
 -- Volcado de datos para la tabla `curso_usuario`
 --
 
-INSERT INTO `curso_usuario` (`id_curso`, `id_usuario`, `temas_finalizados`, `valoracion`, `nota`) VALUES
-(0, 0, 2, 9, 7.5),
-(1, 0, 14, 10, 7.5);
+INSERT INTO `curso_usuario` (`id_usuario`, `id_curso`, `temas_finalizados`, `valoracion`, `aprobado`) VALUES
+(0, 0, 2, 9, 0),
+(0, 1, 14, 10, 0);
 
 
 --

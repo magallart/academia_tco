@@ -69,7 +69,8 @@ class Controller
         try {
             $infoUsuario = array(
                 'resultado' => array(),
-                'cursos' => array()
+                'cursos' => array(),
+                'mensajes' => array()
             );
 
             $u = new Usuarios();
@@ -77,18 +78,25 @@ class Controller
 
                 $nombre = recoge('usuario');
                 $password = recoge('password');
-                $infoUsuario['resultado'] = $u->loginUsuario($nombre, $password);
-                
+                $infoUsuario['resultado'] = $u->loginUsuario($nombre, $password);                
 
                 if ($infoUsuario['resultado']) {
-                    $_SESSION['nombreUsuario'] = $infoUsuario['resultado']['nombre'];
-                    $_SESSION['idUsuario'] = $infoUsuario['resultado']['id'];
                     $_SESSION['nivel'] = $infoUsuario['resultado']['nivel'];
+                    $_SESSION['idUsuario'] = $infoUsuario['resultado']['id'];
+                    $_SESSION['nombreUsuario'] = $infoUsuario['resultado']['nombre'];
+                    $_SESSION['apellidosUsuario'] = $infoUsuario['resultado']['apellidos'];
+                    $_SESSION['emailUsuario'] = $infoUsuario['resultado']['email'];                    
+                    $_SESSION['direccionUsuario'] = $infoUsuario['resultado']['direccion'];
+                    $_SESSION['cpostalUsuario'] = $infoUsuario['resultado']['cPostal'];
+                    $_SESSION['localidadUsuario'] = $infoUsuario['resultado']['localidad'];
+                    $_SESSION['fnacimientoUsuario'] = $infoUsuario['resultado']['fNacimiento'];
                     $_SESSION['fPerfil'] = $infoUsuario['resultado']['fPerfil'];
                     $idUsuario = $_SESSION['idUsuario'];
                     $infoUsuario['cursos'] = $u->getInformacionUsuario($idUsuario);
-                    //$_SESSION['cursos'] = $params['cursos']['nombre'];
-                    //header('Location: index.php?ctl=inicio');               
+                    $_SESSION['cursos'] = $infoUsuario['cursos'];
+                    $infoUsuario['mensajes'] = $u->getMensajesUsuario($idUsuario);
+                    $_SESSION['mensajes'] = $infoUsuario['mensajes'];
+                    header('Location: index.php?ctl=perfil');               
                 } else {
                     $_SESSION['errores']['login'] = "No se ha podido conectar.";
                 }

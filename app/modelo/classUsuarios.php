@@ -36,12 +36,28 @@ class Usuarios extends Modelo
     {
         // SELECT cursos.nombre, curso_usuario.temas_finalizados FROM `cursos` INNER JOIN `curso_usuario` ON cursos.id = curso_usuario.id_curso WHERE `id_usuario` = 1;
         // TODO Borrar este ejemplo
-        $consulta2 = "select cursos.nombre, curso_usuario.temas_finalizados from cursos inner join curso_usuario on cursos.id = curso_usuario.id_curso where id_usuario =:idUsuario";
+        $consulta = "select cursos.nombre, curso_usuario.temas_finalizados from cursos inner join curso_usuario on cursos.id = curso_usuario.id_curso where id_usuario =:idUsuario";
 
-        $result2 = $this->conexion->prepare($consulta2);
-        $result2->bindParam(':idUsuario', $id);
-        $result2->execute();
-        return $result2->fetchAll(PDO::FETCH_ASSOC);
+        $result = $this->conexion->prepare($consulta);
+        $result->bindParam(':idUsuario', $id);
+        $result->execute();
+        return $result->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    /*
+        · Este método nos sirve para guardar todos los mensajes del usuario.
+        · Devolverá los nombres de los cursos y los temas completados.
+    */
+    function getMensajesUsuario($id)
+    {
+        // SELECT mensaje FROM `mensajes` WHERE `id_usuario` = 0;
+        // TODO Borrar este ejemplo
+        $consulta = "select id_curso, mensaje from mensajes where id_usuario =:idUsuario";
+
+        $result = $this->conexion->prepare($consulta);
+        $result->bindParam(':idUsuario', $id);
+        $result->execute();
+        return $result->fetchAll(PDO::FETCH_ASSOC);
     }
 
 
