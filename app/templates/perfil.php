@@ -83,8 +83,8 @@
                     </div>
                 </div>
 
-                <input type="submit" value="Actualizar Perfil" name="actualizar" class="boton" />
-                <input type="submit" value="Borrar Perfil" name="borrar" class="boton" />
+                <input type="submit" value="Actualizar Perfil" name="actualizar" class="boton" /> <!-- TODO realizar funcionalidad de actualizar perfil  -->
+                <input type="submit" value="Borrar Perfil" name="borrar" class="boton" /> <!-- TODO realizar funcionalidad de borrar perfil  -->
             </form>
 
         </div>
@@ -92,20 +92,7 @@
             <div class="mensajes">
                 <h2>Últimos mensajes</h2>
                 <?php
-                /*
                 foreach ($_SESSION['mensajes'] as $mensajes) {
-                    foreach ($mensajes as $key => $mensaje) {
-                        if ($key === "mensaje") {
-                            echo "<div class='mensajeUsuario'>";
-                            echo $mensaje;
-                            echo "</div>";
-                        }
-                    }
-                }
-                */
-
-                foreach ($_SESSION['mensajes'] as $mensajes) {
-
                     echo "<div class='mensajeUsuario'>";
                     switch ($mensajes["id_curso"]) {
                         case 0:
@@ -121,11 +108,9 @@
                             echo "</span>";
                             break;
                     }
-
                     echo $mensajes["mensaje"];
                     echo "</div>";
                 }
-
                 ?>
             </div>
         </div>
