@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `instituto`
+-- Base de datos: `academia_tco`
 --
 CREATE DATABASE IF NOT EXISTS `academia_tco` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `academia_tco`;
@@ -54,10 +54,10 @@ INSERT INTO `usuarios` (`id`, `nombre`, `apellidos`, `email`, `password`, `direc
 (1, 'José', 'Álvarez Pelayo', 'jose@gmail.com', 'jose' , 'Príncipe Velasco 28-3', 46120, 'Valencia', '1993-03-14', '/usuarios/jose_alvarez_pelayo.jpg', 1, 1),
 (2, 'Alfonso', 'Ruiz Mendez', 'alfonso@gmail.com', 'alfonso', 'Bolivia 12-1', 46018, 'Valencia', '1991-03-12', '/usuarios/alfonso_ruiz_mendez.jpg', 1, 1),
 (3, 'Marta', 'Fonseca Yuste', 'marta@gmail.com', 'marta', 'Picapedreros 89-19', 46019, 'Valencia', '1999-05-14', '/usuarios/marta_fonseca_yuste.jpg', 1, 1),
-(4, 'Liliana', ' Vergara Alarcon', 'liliana@gmail.com', 'liliana', 'Misionero Vicente Caña 1-25', 46950, 'Valencia', '2008-08-29', '/usuarios/liliana_vergara_alarcon.jpg', 1, 1),
-(5, 'Adam', ' Montoro Torre', 'adam@gmail.com', 'adam', 'Mestre Palau 90-3', 46930, 'Valencia', '2003-12-02', '/usuarios/adam_montoro_torre.jpg', 1, 1),
-(6, 'Eulalia', ' Vilchez Saenz', 'eulalia@gmail.com', 'eulalia', 'Mayor 11-3', 46920, 'Valencia', '2000-04-17', '/usuarios/eulalia_vilchez_saenz.jpg', 2, 1),
-(7, 'Fernando', ' Benavides Carrera', 'fernando', 'fernando@gmail.com', 'Doctor Enrique López 7-8', 46018, 'Valencia', '1985-01-25', '/usuarios/fernando_benavides_carrera.jpg', 1, 1);
+(4, 'Liliana', 'Vergara Alarcon', 'liliana@gmail.com', 'liliana', 'Misionero Vicente Caña 1-25', 46950, 'Valencia', '2008-08-29', '/usuarios/liliana_vergara_alarcon.jpg', 1, 1),
+(5, 'Adam', 'Montoro Torre', 'adam@gmail.com', 'adam', 'Mestre Palau 90-3', 46930, 'Valencia', '2003-12-02', '/usuarios/adam_montoro_torre.jpg', 1, 1),
+(6, 'Eulalia', 'Vilchez Saenz', 'eulalia@gmail.com', 'eulalia', 'Mayor 11-3', 46920, 'Valencia', '2000-04-17', '/usuarios/eulalia_vilchez_saenz.jpg', 2, 1),
+(7, 'Fernando', 'Benavides Carrera', 'fernando@gmail.com', 'fernando', 'Doctor Enrique López 7-8', 46018, 'Valencia', '1985-01-25', '/usuarios/fernando_benavides_carrera.jpg', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -117,7 +117,8 @@ CREATE TABLE `cursos` (
 --
 
 INSERT INTO `cursos` (`id`, `nombre`, `temas`, `profesor`) VALUES
-(0, 'JavaScript I', 10, 6);
+(0, 'JavaScript', 10, 6),
+(1, 'Angular', 35, 6);
 
 
 -- --------------------------------------------------------
@@ -140,7 +141,8 @@ CREATE TABLE `curso_usuario` (
 --
 
 INSERT INTO `curso_usuario` (`id_curso`, `id_usuario`, `temas_finalizados`, `valoracion`, `nota`) VALUES
-(0, 1, 2, 9, 7.5);
+(0, 0, 2, 9, 7.5),
+(1, 0, 14, 10, 7.5);
 
 
 --

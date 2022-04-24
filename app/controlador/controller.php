@@ -67,8 +67,9 @@ class Controller
     public function cIniciarSesion()
     {
         try {
-            $params = array(
-                'resultado' => array()
+            $infoUsuario = array(
+                'resultado' => array(),
+                'cursos' => array()
             );
 
             $u = new Usuarios();
@@ -76,12 +77,17 @@ class Controller
 
                 $nombre = recoge('usuario');
                 $password = recoge('password');
-                $params['resultado'] = $u->loginUsuario($nombre, $password);
+                $infoUsuario['resultado'] = $u->loginUsuario($nombre, $password);
+                
 
-                if ($params['resultado']) {
-                    $_SESSION['nombreUsuario'] = $params['resultado']['nombre'];
-                    $_SESSION['nivel'] = $params['resultado']['nivel'];
-                    $_SESSION['fPerfil'] = $params['resultado']['fPerfil'];
+                if ($infoUsuario['resultado']) {
+                    $_SESSION['nombreUsuario'] = $infoUsuario['resultado']['nombre'];
+                    $_SESSION['idUsuario'] = $infoUsuario['resultado']['id'];
+                    $_SESSION['nivel'] = $infoUsuario['resultado']['nivel'];
+                    $_SESSION['fPerfil'] = $infoUsuario['resultado']['fPerfil'];
+                    $idUsuario = $_SESSION['idUsuario'];
+                    $infoUsuario['cursos'] = $u->getInformacionUsuario($idUsuario);
+                    //$_SESSION['cursos'] = $params['cursos']['nombre'];
                     //header('Location: index.php?ctl=inicio');               
                 } else {
                     $_SESSION['errores']['login'] = "No se ha podido conectar.";
