@@ -28,12 +28,7 @@
     <div class="container curso-tabs">
         <div class="row">
             <div class="col-lg-9">
-                <div class="valoracion">
-                    <h2>Valoración de los alumnos</h2>
-                </div>
-
-                <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-                <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+                    <h2>Información del curso</h2>
 
                 <ul class="nav">
                     <li class="nav-item">
@@ -48,11 +43,18 @@
                     <li class="nav-item">
                         <a class="nav-link link-secondary" id="requisitos-tab" data-bs-toggle="tab" data-bs-target="#requisitos" href="#">Requisitos</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link link-secondary" id="salidas-tab" data-bs-toggle="tab" data-bs-target="#salidas" href="#">Salidas profesionales</a>
+                    </li>
                 </ul>
 
                 <div class="tab-content" id="tabContent">
                     <div class="tab-pane fade show active" id="descripcion" role="tabpanel" aria-labelledby="descripcion-tab">
-                        <p>Contenido Descripción</p>
+                        <p>En este curso el alumno aprenderá a dominar JavaScript, convirtiéndose en un experto desarrollador front-end gracias al conocimiento adquirido sobre uno de los lenguajes más demandados del mercado.</p>
+
+                        <p>JavaScript es el lenguaje de programación de la web por excelencia en la parte cliente. Es el único que puede ejecutarse en todos los navegadores sin necesidad de cargar plugins adicionales. Nos permite crear páginas dinámicas, dotando a nuestro sitio web de efectos y funcionalidades que extienden las posibilidades que nos ofrece HTML5.</p>
+
+                        <p>Cualquier diseñador web, tenga o no experiencia previa en programación, puede aprender a utilizarlo sin dificultad. Las posibilidades que ofrece con los nuevos estándares HTML5/CSS3 o las aplicaciones web interactivas basadas en AJAX son enormes.</p>
                     </div>
                     <div class="tab-pane fade" id="docente" role="tabpanel" aria-labelledby="docente-tab">
                         <p>Contenido Docente</p>
@@ -61,7 +63,20 @@
                         <p>Contenido Objetivos</p>
                     </div>
                     <div class="tab-pane fade" id="requisitos" role="tabpanel" aria-labelledby="requisitos-tab">
-                        <p>Contenido Requisitos</p>
+                        <p>El curso parte desde cero pero son necesarios conocimientos básicos de programación, da igual el lenguaje que sepas.</p>
+
+                        <p>Es necesario dominar los lenguajes de HTML5 y CSS3 para un adecuado aprovechamiento del curso.</p>
+
+                        <p>Para realizar el curso te aconsejamos utilizar el programa Visual Studio Code que es totalmente gratuito.</p>
+                    </div>
+                    <div class="tab-pane fade" id="salidas" role="tabpanel" aria-labelledby="salidas-tab">
+                        <p>Realiza esta formación y te prepararemos para trabajar, tanto por cuenta  ajena como propia, como profesional en las siguientes áreas:</p>
+                        <ul>
+                            <li>Desarrollador front-end.</li>
+                            <li>Desarrollador Web.</li>
+                            <li>Programador de aplicaciones web Javascript.</li>
+                            <li>Visual designer.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -131,8 +146,8 @@
                         </h2>
                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                            <p>El hoisting JavaScript es uno de los conceptos principales que debes entender. También llamado alzado JavaScript, eleva la declaración de variables y las funciones declaradas al inicio del programa.</p>
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/sv4-Lq495Qc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <p>El hoisting JavaScript es uno de los conceptos principales que debes entender. También llamado alzado JavaScript, eleva la declaración de variables y las funciones declaradas al inicio del programa.</p>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/sv4-Lq495Qc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>
@@ -144,8 +159,8 @@
                         </h2>
                         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                            <p>Aprende las principales diferencias entre var vs let a la hora de declarar variables JavaScript. Por ejemplo, las variables declaradas con var tienen ámbito de función mientras que las variables let JavaScript tienen ámbito de bloque. También se comportan diferente a la hora de ser alzadas.</p>
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/iIkeGM1I-cM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <p>Aprende las principales diferencias entre var vs let a la hora de declarar variables JavaScript. Por ejemplo, las variables declaradas con var tienen ámbito de función mientras que las variables let JavaScript tienen ámbito de bloque. También se comportan diferente a la hora de ser alzadas.</p>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/iIkeGM1I-cM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>

@@ -5,15 +5,36 @@
   padding-bottom: 5px;
 }
 
+.curso-tabs ul.nav {
+    margin-top: 20px;
+  }
+
 .curso-tabs a {
-  padding: 15px 50px;
+  padding: 15px 20px;
+  margin: 0 15px;
+  font-size: 1.2rem;
 }
 
 .curso-tabs .tab-pane {
-  height: 500px;
+  height: 310px;
   background-color: var(--color3);
   padding: 30px;
   margin-top: 20px;
+}
+
+.curso-tabs .tab-pane ul li {
+  padding-bottom: 10px;
+}
+
+.curso-tabs .tab-pane ul li::before {
+  display: inline-block;
+  content: " ";
+  background-image: url("../../img/caret-forward-outline.svg");
+  background-size: 12px 12px;
+  height: 12px;
+  width: 12px;
+  position: relative;
+  left: -8px;
 }
 
 .curso-tabs .actualizacion {
@@ -102,31 +123,31 @@
 }
 
 .mensajes-curso h2 {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .mensajes-curso .mensajeCurso {
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: var(--color3);
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: var(--color3);
 }
 
 .mensajes-curso .mensajeCurso p.datosUsuario {
-    display: inline;
-    font-weight: 600;
+  display: inline;
+  font-weight: 600;
 }
 
 .mensajes-curso .mensajeCurso p.mensaje {
-    display: block;
-    margin-top: 10px;
+  display: block;
+  margin-top: 10px;
 }
 
 .mensajes-curso .infoUsuario {
-    display: inline;
+  display: inline;
 }
 
 .mensajes-curso .infoUsuario img {
-    width: 40px;
-    border-radius: 30px;
-    margin-right: 20px;
+  width: 40px;
+  border-radius: 30px;
+  margin-right: 20px;
 }
