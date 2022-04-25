@@ -41,6 +41,36 @@ class Controller
         require __DIR__ . '/../templates/cursos.php';
     }
 
+    // Muestra el contenido de /templates/cursoJavascript.php
+    public function cCursoJavascript()
+    {
+        try {
+            $infoCurso = array(
+                'mensajesCursoJavascript' => array()
+            );
+
+            $c = new Cursos();
+            $idCurso = 0;
+            $infoCurso['mensajesCursoJavascript'] = $c->getMensajesCurso($idCurso);
+            $_SESSION['mensajesCursoJavascript'] = $infoCurso['mensajesCursoJavascript']; 
+                       
+
+        } catch (Exception $e) {
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
+            header('Location: index.php?ctl=error');
+        } catch (Error $e) {
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
+            header('Location: index.php?ctl=error');
+        } {
+            if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
+                $menu = 'menuLogin.php';
+            } else {
+                $menu = 'menu.php';
+            }
+            require __DIR__ . '/../templates/cursoJavascript.php';
+        }
+    }
+
     // Muestra el contenido de /templates/misCursos.php
     public function cMisCursos()
     {
@@ -78,14 +108,14 @@ class Controller
 
                 $nombre = recoge('usuario');
                 $password = recoge('password');
-                $infoUsuario['resultado'] = $u->loginUsuario($nombre, $password);                
+                $infoUsuario['resultado'] = $u->loginUsuario($nombre, $password);
 
                 if ($infoUsuario['resultado']) {
                     $_SESSION['nivel'] = $infoUsuario['resultado']['nivel'];
                     $_SESSION['idUsuario'] = $infoUsuario['resultado']['id'];
                     $_SESSION['nombreUsuario'] = $infoUsuario['resultado']['nombre'];
                     $_SESSION['apellidosUsuario'] = $infoUsuario['resultado']['apellidos'];
-                    $_SESSION['emailUsuario'] = $infoUsuario['resultado']['email'];                    
+                    $_SESSION['emailUsuario'] = $infoUsuario['resultado']['email'];
                     $_SESSION['direccionUsuario'] = $infoUsuario['resultado']['direccion'];
                     $_SESSION['cpostalUsuario'] = $infoUsuario['resultado']['cPostal'];
                     $_SESSION['localidadUsuario'] = $infoUsuario['resultado']['localidad'];
@@ -96,7 +126,7 @@ class Controller
                     $_SESSION['cursos'] = $infoUsuario['cursos'];
                     $infoUsuario['mensajes'] = $u->getMensajesUsuario($idUsuario);
                     $_SESSION['mensajes'] = $infoUsuario['mensajes'];
-                    header('Location: index.php?ctl=perfil');               
+                    header('Location: index.php?ctl=perfil');
                 } else {
                     $_SESSION['errores']['login'] = "No se ha podido conectar.";
                 }
@@ -150,7 +180,7 @@ class Controller
         }
         require __DIR__ . '/../templates/cerrarSesion.php';
     }
-    
+
     public function cPerfil()
     {
         if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {

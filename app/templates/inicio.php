@@ -20,7 +20,8 @@
                     <a class="boton" href="#">Ver cursos ahora <ion-icon name="arrow-forward-circle-outline"></ion-icon></a>
                 </div>
             </div>
-            <div class="col-10 col-sm-8 col-lg-6">   <!--  TODO Controlar la imagen en responsive -->
+            <div class="col-10 col-sm-8 col-lg-6">
+                <!--  TODO Controlar la imagen en responsive -->
                 <img src="../img/inicio-header.png" class="d-block mx-lg-auto img-fluid" alt="Chica sonriendo con un laptop en la mano" width="700" height="500" loading="lazy" />
             </div>
         </div>
@@ -33,14 +34,14 @@
         <div class="row">
             <div class="col">
                 <span class="titulo-superior center">Aprende cuando y donde quieras</span>
-                <h2 class="center">Formación online a medida en ATCO</h2>  <!-- TODO cambiar texto -->
+                <h2 class="center">Formación online a medida en ATCO</h2> <!-- TODO cambiar texto -->
                 <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor, nulla sed vulputate
                     dignissim, mauris quam congue leo, nec pretium velit risus eget est. Nullam id volutpat lorem, et facilisis
                     urna. Cras pharetra, velit vitae rhoncus lacinia, velit tortor gravida justo, ut gravida leo lacus a enim.
                     Duis dictum metus ut posuere porttitor. Sed dolor sem, lobortis non lacinia id, placerat vitae lectus.
                     Phasellus consectetur gravida sapien id tempus. </p>
                 <div class="center">
-                    <a class="boton" href="#">Ver cursos ahora <ion-icon name="arrow-forward-circle-outline"></ion-icon></a>
+                    <a class="boton" href="index.php?ctl=cursos" alt="Enlace a páginas de cursos">Ver cursos ahora <ion-icon name="arrow-forward-circle-outline"></ion-icon></a>
                 </div>
             </div>
         </div>
@@ -173,7 +174,7 @@
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda esse perspiciatis cum sapiente debitis
                     ratione iste aspernatur ducimus mollitia quo. Repellat labore voluptatem beatae cum totam eos nihil veniam
                     tempora?</p>
-                <a class="boton-blanco" href="#">Ver cursos ahora <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+                <a class="boton-blanco" href="index.php?ctl=cursos" alt="Enlace a página de cursos">Ver cursos ahora <ion-icon name="arrow-forward-circle-outline"></ion-icon>
                 </a>
             </div>
         </div>
@@ -201,28 +202,28 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum asperiores necessitatibus fugit ut adipisci,
                         molestiae officiis minus doloribus pariatur natus voluptatem vitae eaque tempore quia qui itaque at
                         repudiandae id.</p>
-                    <a class="boton-blanco" href="#">Ir al curso <ion-icon name="arrow-forward-circle-outline"></ion-icon></a>
+                    <a class="boton-blanco" href="index.php?ctl=cursoJavascript" alt="Enlace a curso de JavaScript">Ir al curso <ion-icon name="arrow-forward-circle-outline"></ion-icon></a>
                 </div>
             </div>
             <div class="col col-lg-3 col-md-6 col-sm-12 pb-md-5">
                 <div class="course text-white">
-                    <img src="../img/logo-angular.jpg" alt="Logo JavaScript">
+                    <img src="../img/logo-angular.jpg" alt="Logo Angular">
                     <h3>Angular</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum asperiores necessitatibus fugit ut adipisci,
                         molestiae officiis minus doloribus pariatur natus voluptatem vitae eaque tempore quia qui itaque at
                         repudiandae id.</p>
-                    <a class="boton-blanco" href="#">Ir al curso <ion-icon name="arrow-forward-circle-outline"></ion-icon></a>
+                    <a class="boton-blanco" href="index.php?ctl=cursoAngular" alt="Enlace a curso de Angular">Ir al curso <ion-icon name="arrow-forward-circle-outline"></ion-icon></a>
                 </div>
 
             </div>
             <div class="col col-lg-3 col-md-6 col-sm-12">
                 <div class="course text-white">
-                    <img src="../img/logo-react.jpg" alt="Logo JavaScript">
+                    <img src="../img/logo-react.jpg" alt="Logo React">
                     <h3>React</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum asperiores necessitatibus fugit ut adipisci,
                         molestiae officiis minus doloribus pariatur natus voluptatem vitae eaque tempore quia qui itaque at
                         repudiandae id.</p>
-                    <a class="boton-blanco" href="#">Ir al curso <ion-icon name="arrow-forward-circle-outline"></ion-icon></a>
+                    <a class="boton-blanco" href="index.php?ctl=cursoReact">Ir al curso <ion-icon name="arrow-forward-circle-outline" alt="Enlace a curso de React"></ion-icon></a>
                 </div>
 
             </div>
@@ -233,14 +234,14 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum asperiores necessitatibus fugit ut adipisci,
                         molestiae officiis minus doloribus pariatur natus voluptatem vitae eaque tempore quia qui itaque at
                         repudiandae id.</p>
-                    <a class="boton-blanco" href="#">Ir al curso <ion-icon name="arrow-forward-circle-outline"></ion-icon></a>
+                    <a class="boton-blanco" href="index.php?ctl=cursoGit" alt="Enlace a curso de Git">Ir al curso <ion-icon name="arrow-forward-circle-outline" alt="Enlace a curso de Git"></ion-icon></a>
                 </div>
 
             </div>
         </div>
     </div>
     <div class="row py-5">
-        <div class="col center"><a class="boton" href="#">Ver todos los cursos ahora <ion-icon name="arrow-forward-circle-outline">
+        <div class="col center"><a class="boton" href="index.php?ctl=cursos" alt="Enlace a página de cursos">Ver todos los cursos ahora <ion-icon name="arrow-forward-circle-outline">
                 </ion-icon></a></div>
     </div>
 </section>

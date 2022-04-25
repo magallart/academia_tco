@@ -6,6 +6,7 @@
     require_once __DIR__ . '/../app/libs/utils.php';
     require_once __DIR__ . '/../app/modelo/classModelo.php';
     require_once __DIR__ . '/../app/modelo/classUsuarios.php';
+    require_once __DIR__ . '/../app/modelo/classCursos.php';
     require_once __DIR__ . '/../app/controlador/Controller.php';
 
     /*
@@ -19,6 +20,7 @@
         'inicio' => array('controller' =>'Controller', 'action' =>'cInicio'),
         'academia' => array('controller' =>'Controller', 'action' =>'cAcademia'),
         'cursos' => array('controller' =>'Controller', 'action' =>'cCursos'),
+        'cursoJavascript' => array('controller' =>'Controller', 'action' =>'cCursoJavascript'),
         'misCursos' => array('controller' =>'Controller', 'action' =>'cMisCursos'),
         'contacto' => array('controller' =>'Controller', 'action' =>'cContacto'),
         'iniciarSesion' => array('controller' =>'Controller', 'action' =>'cIniciarSesion'),

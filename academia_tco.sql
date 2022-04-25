@@ -94,7 +94,9 @@ CREATE TABLE `mensajes` (
 
 INSERT INTO `mensajes` (`id`, `id_usuario`, `id_curso`, `mensaje`) VALUES
 (0, 0, 0, 'He aprendido mucho con este curso. Gracias a la plataforma y a los profesores.'),
-(1, 0, 1, 'Gracias a este curso pienso que podré encontrar trabajo en un futuro. El curso es muy completo y lo recomiendo.');
+(1, 0, 1, 'Gracias a este curso pienso que podré encontrar trabajo en un futuro. El curso es muy completo y lo recomiendo.'),
+(2, 1, 1, 'Maravilloso curso. Ahora me siento mejor programador y seguiré haciendo más cursos.'),
+(3, 2, 1, 'Después de completar este curso se mucho más sobre JavaScript y me veo capaz de buscar trabajo como programador. Totalmente recomendado.');
 
 
 -- --------------------------------------------------------
