@@ -28,7 +28,7 @@
     <div class="container curso-tabs">
         <div class="row">
             <div class="col-lg-9">
-                    <h2>Información del curso</h2>
+                <h2>Información del curso</h2>
 
                 <ul class="nav">
                     <li class="nav-item">
@@ -70,7 +70,7 @@
                         <p>Para realizar el curso te aconsejamos utilizar el programa Visual Studio Code que es totalmente gratuito.</p>
                     </div>
                     <div class="tab-pane fade" id="salidas" role="tabpanel" aria-labelledby="salidas-tab">
-                        <p>Realiza esta formación y te prepararemos para trabajar, tanto por cuenta  ajena como propia, como profesional en las siguientes áreas:</p>
+                        <p>Realiza esta formación y te prepararemos para trabajar, tanto por cuenta ajena como propia, como profesional en las siguientes áreas:</p>
                         <ul>
                             <li>Desarrollador front-end.</li>
                             <li>Desarrollador Web.</li>
@@ -170,7 +170,7 @@
     </div>
 </section>
 
-<section>
+<section class="enviar-mensaje">
     <div class="container mensajes-curso">
         <div class="row my-5">
             <div class="col">
@@ -187,6 +187,14 @@
                     echo "</hr>";
                 }
                 ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                 <form name="formEnviarMensaje" action="" method="POST" enctype="multipart/form-data">  <!-- TODO añadir funcionalidad enviar mensaje -->
+                    <textarea rows="5" placeholder="Escribe tu mensaje (máximo 255 caracteres)..." name="nuevoMensaje"></textarea>
+                    <input type="submit" value="Enviar mensaje" name="enviarMensaje" class="boton" />
+                </form>
             </div>
         </div>
     </div>

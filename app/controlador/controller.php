@@ -53,6 +53,10 @@ class Controller
             $idCurso = 0;
             $infoCurso['mensajesCursoJavascript'] = $c->getMensajesCurso($idCurso);
             $_SESSION['mensajesCursoJavascript'] = $infoCurso['mensajesCursoJavascript']; 
+
+            if (isset($_POST['enviarMensaje'])) {
+                $_SESSION["mensajeUsuario"] = recoge('nuevoMensaje');  // TODO Añadir función en classCursos.php para añadir el mensaje y el usuario a la base de datos
+            }
                        
 
         } catch (Exception $e) {

@@ -4,7 +4,7 @@
 
 <!-- TODO Arreglar menu responsive -->
 
-<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top menuLogin">
     <div class="container">
         <a href="inicio.html"><img src="../img/logo2-atco.png" alt="Logo ATCO"></img></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">

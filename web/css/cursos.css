@@ -151,3 +151,28 @@
   border-radius: 30px;
   margin-right: 20px;
 }
+
+.enviar-mensaje {
+  margin-bottom: 50px;;
+}
+
+form.formEnviarMensaje {
+  width: 100%;
+}
+
+form[name="formEnviarMensaje"] textarea {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  resize: none;
+} 
+
+form[name="formEnviarMensaje"] input[type="submit"] {
+  width: 20%;
+  color: #fff;
+} 
+
+form[name="formEnviarMensaje"] input[type="submit"]:hover {
+  color: var(--color1);
+} 

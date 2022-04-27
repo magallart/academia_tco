@@ -28,6 +28,24 @@ nav .navbar-toggler {
   border: none;
 }
 
+
+/* Menu */
+nav.menu ul li.dropdown{
+  padding-left: 20px;
+}
+
+nav.menu ul li.dropdown ul.dropdown-menu {
+  padding: 0;
+}
+
+nav.menu ul li.dropdown ul.dropdown-menu li {
+  padding-left: 0;
+}
+
+nav.menu ul li.dropdown ul.dropdown-menu li a{
+  padding: 10px 20px;
+}
+
 /* Menu Login */
 
 nav ul.dropdown-menu li {
