@@ -6,8 +6,8 @@
 }
 
 .curso-tabs ul.nav {
-    margin-top: 20px;
-  }
+  margin-top: 20px;
+}
 
 .curso-tabs a {
   padding: 15px 20px;
@@ -122,6 +122,23 @@
   height: 630px; /* TODO Revisar el tamaño del vídeo en responsive */
 }
 
+section.sin-acceso {
+  margin: 50px 0 80px;
+  padding: 20px 0px 0px;
+  background-color: var(--color1);
+}
+
+section.sin-acceso img {
+  width: 70%;
+}
+
+section.sin-acceso .texto-sin-acceso {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .mensajes-curso h2 {
   margin-bottom: 30px;
 }
@@ -153,7 +170,7 @@
 }
 
 .enviar-mensaje {
-  margin-bottom: 50px;;
+  margin-bottom: 50px;
 }
 
 form.formEnviarMensaje {
@@ -166,13 +183,13 @@ form[name="formEnviarMensaje"] textarea {
   padding: 10px 20px;
   margin-bottom: 20px;
   resize: none;
-} 
+}
 
 form[name="formEnviarMensaje"] input[type="submit"] {
   width: 20%;
   color: #fff;
-} 
+}
 
 form[name="formEnviarMensaje"] input[type="submit"]:hover {
   color: var(--color1);
-} 
+}

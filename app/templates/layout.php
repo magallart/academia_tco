@@ -4,13 +4,13 @@
 		· En las diferentes vistas hemos cargado en la variable $contenido todo lo que queríamos mostrar. Aquí se devuelve y muestra al usuario.
     -->
 
-	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+	<!DOCTYPE html>
 	<html>
 
 	<head>
 		<title>Academia ACTO</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="icon" type="image/jpg" href="img/favicon.ico" />
+		<link rel="icon" type="image/jpg" href="../../img/favicon.ico" />
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 		<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
 		</script>
@@ -29,12 +29,11 @@
 
 
 		<?php // TODO Eliminar el print_r $_SESSION
-
-		/*	echo "<div class='pruebaSesion'>";
+			echo "<div class='pruebaSesion'>";
 			echo "<pre>";
 			print_r($_SESSION);
 			echo "</pre>";
-			echo "</div>";*/
+			echo "</div>";
 		?>
 	
 

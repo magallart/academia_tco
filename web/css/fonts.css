@@ -20,8 +20,16 @@
     font-style: italic;
   }
 
+  h2 {
+    font-size: 2rem;
+    font-family: var(--font-1);
+    padding-bottom: 20px;
+  }
+
   p, li {
     font-size: 1.2rem;
     line-height: 1.8rem;
     font-family: var(--font-3);
   }
+
+  

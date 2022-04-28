@@ -68,10 +68,12 @@ class Controller
         } {
             if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
                 $menu = 'menuLogin.php';
+                require __DIR__ . '/../templates/cursoJavascriptR.php';
             } else {
                 $menu = 'menu.php';
+                require __DIR__ . '/../templates/cursoJavascriptU.php';
             }
-            require __DIR__ . '/../templates/cursoJavascript.php';
+            
         }
     }
 

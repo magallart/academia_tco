@@ -11,6 +11,10 @@ nav img.fPerfil {
   border-radius: 100%;
 }
 
+nav a {
+  font-size: 1.2rem;
+}
+
 @media (max-width: 991px) {
   nav .container {
     min-width: 100vw !important;
@@ -60,7 +64,7 @@ nav img.fPerfil {
   }
 
   nav ul li a{
-    width: 150px;
+    width: 160px;
     padding-left: 40px;
   }
 
