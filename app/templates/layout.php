@@ -51,7 +51,7 @@
 							accusantium dolores vitae eum incidunt consequatur exercitationem sequi, nisi quibusdam beatae aliquid?
 							Aliquam aperiam illo voluptates?</p>
 					</div>
-					<div class="col col-lg-3 col-md-6 px-5 mt-md-5">
+					<div class="col col-lg-3 col-md-6 px-5 ">
 						<h4>Explora</h4>
 						<ul>
 							<li><a href="index.php?ctl=inicio">Inicio</a></li>
@@ -60,7 +60,7 @@
 							<li><a href="index.php?ctl=contacto">Contacto</a></li>
 						</ul>
 					</div>
-					<div class="col col-lg-3 col-md-6 px-5 mt-md-5">
+					<div class="col col-lg-3 col-md-6">
 						<h4>Contacto</h4>
 						<ul>
 							<li>
