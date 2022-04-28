@@ -113,6 +113,10 @@
                 }
                 ?>
             </div>
+
+            <div class="cursosApuntados">
+                <h2>Cursos empezados...</h2>
+            </div>
         </div>
     </div>
 </div>
