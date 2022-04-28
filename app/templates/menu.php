@@ -15,9 +15,11 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="index.php?ctl=inicio">Inicio</a>
                 </li>
+                
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?ctl=academia">Academia ATCO</a>
                 </li>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                         Cursos
@@ -26,9 +28,11 @@
                         <li><a class="dropdown-item" href="index.php?ctl=cursoJavascript">JavaScript</a></li>
                     </ul>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?ctl=contacto">Contacto</a>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?ctl=iniciarSesion">Login</a>
                 </li>

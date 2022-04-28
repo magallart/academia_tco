@@ -6,6 +6,11 @@ nav img {
   width: 90px;
 }
 
+nav img.fPerfil {
+  width: 40px;
+  border-radius: 100%;
+}
+
 @media (max-width: 991px) {
   nav .container {
     min-width: 100vw !important;
