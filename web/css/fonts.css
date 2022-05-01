@@ -13,17 +13,19 @@
     src: url(../fonts/Montserrat-Light.ttf);
   }
 
-  */
   h1 {
     font-size: 2.5rem;
     font-family: var(--font-2);
     font-style: italic;
+    padding-bottom: 20px;
+    margin-bottom: 0;
   }
 
   h2 {
     font-size: 2rem;
     font-family: var(--font-1);
     padding-bottom: 20px;
+    margin-bottom: 0;
   }
 
   p, li {

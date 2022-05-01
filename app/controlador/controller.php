@@ -52,13 +52,11 @@ class Controller
             $c = new Cursos();
             $idCurso = 0;
             $infoCurso['mensajesCursoJavascript'] = $c->getMensajesCurso($idCurso);
-            $_SESSION['mensajesCursoJavascript'] = $infoCurso['mensajesCursoJavascript']; 
+            $_SESSION['mensajesCursoJavascript'] = $infoCurso['mensajesCursoJavascript'];
 
             if (isset($_POST['enviarMensaje'])) {
                 $_SESSION["mensajeUsuario"] = recoge('nuevoMensaje');  // TODO Añadir función en classCursos.php para añadir el mensaje y el usuario a la base de datos
             }
-                       
-
         } catch (Exception $e) {
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
             header('Location: index.php?ctl=error');
@@ -73,7 +71,72 @@ class Controller
                 $menu = 'menu.php';
                 require __DIR__ . '/../templates/cursoJavascriptU.php';
             }
-            
+        }
+    }
+
+    // Muestra el contenido de /templates/cursoJavascript.php
+    public function cCursoAngular()
+    {
+        try {
+            $infoCurso = array(
+                'mensajesCursoAngular' => array()
+            );
+
+            $c = new Cursos();
+            $idCurso = 1;
+            $infoCurso['mensajesCursoAngular'] = $c->getMensajesCurso($idCurso);
+            $_SESSION['mensajesCursoAngular'] = $infoCurso['mensajesCursoAngular'];
+
+            if (isset($_POST['enviarMensaje'])) {
+                $_SESSION["mensajeUsuario"] = recoge('nuevoMensaje');  // TODO Añadir función en classCursos.php para añadir el mensaje y el usuario a la base de datos
+            }
+        } catch (Exception $e) {
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
+            header('Location: index.php?ctl=error');
+        } catch (Error $e) {
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
+            header('Location: index.php?ctl=error');
+        } {
+            if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
+                $menu = 'menuLogin.php';
+                require __DIR__ . '/../templates/cursoAngularR.php';
+            } else {
+                $menu = 'menu.php';
+                require __DIR__ . '/../templates/cursoAngularU.php';
+            }
+        }
+    }
+
+    // Muestra el contenido de /templates/cursoJavascript.php
+    public function cCursoGit()
+    {
+        try {
+            $infoCurso = array(
+                'mensajesCursoGit' => array()
+            );
+
+            $c = new Cursos();
+            $idCurso = 2;
+            $infoCurso['mensajesCursoGit'] = $c->getMensajesCurso($idCurso);
+            $_SESSION['mensajesCursoGit'] = $infoCurso['mensajesCursoGit'];
+
+            if (isset($_POST['enviarMensaje'])) {
+                $_SESSION["mensajeUsuario"] = recoge('nuevoMensaje');  // TODO Añadir función en classCursos.php para añadir el mensaje y el usuario a la base de datos
+            }
+        } catch (Exception $e) {
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
+            header('Location: index.php?ctl=error');
+        } catch (Error $e) {
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
+            header('Location: index.php?ctl=error');
+        } {
+            if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
+                $menu = 'menuLogin.php';
+                require __DIR__ . '/../templates/cursoGitR.php';
+            } else {
+                $menu = 'menu.php';
+                require __DIR__ . '/../templates/cursoGitU.php';
+            }
         }
     }
 

@@ -7,8 +7,10 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
         <a href="inicio.html"><img src="../img/logo2-atco.png" alt="Logo ATCO"></img></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around" type="button" data-bs-toggle="collapse" data-bs-target="#MenuNavegacion" aria-controls="MenuNavegacion" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="toggler-icon top-bar"></span>
+            <span class="toggler-icon middle-bar"></span>
+            <span class="toggler-icon bottom-bar"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
             <ul class="navbar-nav">
@@ -25,6 +27,8 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="index.php?ctl=cursoJavascript">JavaScript</a></li>
+                        <li><a class="dropdown-item" href="index.php?ctl=cursoAngular">Angular</a></li>
+                        <li><a class="dropdown-item" href="index.php?ctl=cursoGit">Git</a></li>
                     </ul>
                 </li>
 

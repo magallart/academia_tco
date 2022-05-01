@@ -21,6 +21,8 @@
         'academia' => array('controller' =>'Controller', 'action' =>'cAcademia'),
         'cursos' => array('controller' =>'Controller', 'action' =>'cCursos'),
         'cursoJavascript' => array('controller' =>'Controller', 'action' =>'cCursoJavascript'),
+        'cursoAngular' => array('controller' =>'Controller', 'action' =>'cCursoAngular'),
+        'cursoGit' => array('controller' =>'Controller', 'action' =>'cCursoGit'),
         'misCursos' => array('controller' =>'Controller', 'action' =>'cMisCursos'),
         'contacto' => array('controller' =>'Controller', 'action' =>'cContacto'),
         'iniciarSesion' => array('controller' =>'Controller', 'action' =>'cIniciarSesion'),

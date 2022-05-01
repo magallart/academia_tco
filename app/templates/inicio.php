@@ -35,13 +35,9 @@
             <div class="col">
                 <span class="titulo-superior center">Aprende cuando y donde quieras</span>
                 <h2 class="center">Formación online a medida en ATCO</h2> <!-- TODO cambiar texto -->
-                <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor, nulla sed vulputate
-                    dignissim, mauris quam congue leo, nec pretium velit risus eget est. Nullam id volutpat lorem, et facilisis
-                    urna. Cras pharetra, velit vitae rhoncus lacinia, velit tortor gravida justo, ut gravida leo lacus a enim.
-                    Duis dictum metus ut posuere porttitor. Sed dolor sem, lobortis non lacinia id, placerat vitae lectus.
-                    Phasellus consectetur gravida sapien id tempus. </p>
+                <p class="text-center">El proyecto de la Academia Tus Cursos Online (ATCO) empezó hace 10 años y desde entonces más de 450 alumnos han hecho cursos en nuestra plataforma online con un altísimo grado de satisfacción. Gracias a la formación gratuita que puedes encontrar en nuestra web, puedes aprender las tecnologías más demandadas en la actualidad que te servirán para dar un impulso a tu carrera como desarrollador web. La formación ATCO tiene como finalidad enseñar todos los conceptos básicos con un toque característico que sin duda hará más fácil el aprendizaje. ¿Te animas a comprobarlo por ti mismo?  </p>
                 <div class="center">
-                    <a class="boton" href="index.php?ctl=cursos" alt="Enlace a páginas de cursos">Ver cursos ahora <ion-icon name="arrow-forward-circle-outline"></ion-icon></a>
+                    <a class="boton" href="index.php?ctl=cursos" alt="Enlace a páginas de cursos">Ver todos los cursos ahora <ion-icon name="arrow-forward-circle-outline"></ion-icon></a>
                 </div>
             </div>
         </div>
@@ -55,19 +51,14 @@
                 <div class="card-color">
                     <ion-icon name="desktop-outline"></ion-icon>
                     <h3>Temarios actualizados</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus ad, ratione nulla aut molestias aliquam
-                        laudantium nihil accusantium ipsa, hic officia fugiat illo in optio, labore dolorem odit excepturi
-                        explicabo!</p>
-
+                    <p>Desde ATCO te ofrecemos cursos actuales con tecnologías que se usan en el mercado laboral. Nuestros docentes se encargan de actualizar sus cursos periódicamente aportando contenido de calidad actualizado.</p>
                 </div>
             </div>
             <div class="col col-lg-6 col-md-12 text-center">
                 <div class="card-white">
                     <ion-icon name="timer-outline"></ion-icon>
                     <h3>Marcas tu ritmo</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus ad, ratione nulla aut molestias aliquam
-                        laudantium nihil accusantium ipsa, hic officia fugiat illo in optio, labore dolorem odit excepturi
-                        explicabo!</p>
+                    <p>Sin exámenes. Sin plazos. Sin presiones. Nosotros te facilitamos el material didáctico y tú eliges cómo y cuando aprender. En ATCO no recibirás presiones de los docentes o plazos para completar el curso.</p>
                 </div>
             </div>
         </div>
@@ -77,9 +68,7 @@
                 <div class="card-white">
                     <ion-icon name="checkmark-done-outline"></ion-icon>
                     <h3>Método que funciona</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus ad, ratione nulla aut molestias aliquam
-                        laudantium nihil accusantium ipsa, hic officia fugiat illo in optio, labore dolorem odit excepturi
-                        explicabo!</p>
+                    <p>Seguro que has leído esto en muchos sitios, aunque en ATCO te lo dicen nuestros alumnos satisfechos con nuestros cursos que han podido impulsar o iniciar su carrera en una de las profesiones más demandadas en el mercado laboral.</p>
 
                 </div>
             </div>
@@ -88,20 +77,18 @@
 
                     <ion-icon name="chatbubbles-outline"></ion-icon>
                     <h3>Atención personalizada</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus ad, ratione nulla aut molestias aliquam
-                        laudantium nihil accusantium ipsa, hic officia fugiat illo in optio, labore dolorem odit excepturi
-                        explicabo!</p>
+                    <p>Una de las ventajas que tienen los alumnos registrados en ATCO más importantes y de la que nos sentimos más orgullosos es poder tener contacto directo con los docentes del curso y otros alumnos. No estarás solo en el camino, ¡estaremos contigo!</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="testimonials py-5">
+<section class="testimonials">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-12">
-                <div class="slider">
+                <div class="slider pb-3">
                     <input type="radio" name="slider" title="slide1" checked="checked" class="slider__nav" />
                     <input type="radio" name="slider" title="slide2" class="slider__nav" />
                     <input type="radio" name="slider" title="slide3" class="slider__nav" />
@@ -109,23 +96,19 @@
                     <div class="slider__inner">
                         <div class="slider__contents "><img src="../img/testimonial-1.png" alt="">
                             <h3 class="slider__caption">Marta Solís</h3>
-                            <p class="slider__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis
-                                possimus illo quos, corporis minima!</p>
+                            <p class="slider__txt">Quería cambiar de profesión y no sabía por donde empezar. Encontré ATCO en internet y me sirvió de mucha ayuda para empezar como desarrolladora.</p>
                         </div>
                         <div class="slider__contents"><img src="../img/testimonial-2.png" alt="">
                             <h3 class="slider__caption">Roberto Guardado</h3>
-                            <p class="slider__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis
-                                possimus illo quos, corporis minima!</p>
+                            <p class="slider__txt">Llevaba muchos años como programador de backend y tenía curiosidad por el front. Gracias a los cursos de la plataforma pude empezar con el frontend de una manera sencilla.</p>
                         </div>
                         <div class="slider__contents"><img src="../img/testimonial-3.png" alt="">
                             <h3 class="slider__caption">Carmen Lorenzo</h3>
-                            <p class="slider__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis
-                                possimus illo quos, corporis minima!</p>
+                            <p class="slider__txt">Los cursos ofrecidos están actualizados con las últimas novedades y esto me ha resultado muy útil ya que en otras plataformas reciclan cursos durante años.</p>
                         </div>
                         <div class="slider__contents"><img src="../img/testimonial-4.png" alt="">
                             <h3 class="slider__caption">Alberto Ruíz</h3>
-                            <p class="slider__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis
-                                possimus illo quos, corporis minima!</p>
+                            <p class="slider__txt">No sabía nada de programación y después de haber realizado todos los cursos de la academia me veo capacitado para buscar mi primer trabajo como desarrollador.</p>
                         </div>
                     </div>
                 </div>
@@ -170,18 +153,18 @@
         <div class="row">
             <div class="col col-lg-6 col-md-12 bg-image"></div>
             <div class="col col-lg-6 col-md-12 p-5 text-white text-information">
-                <h3>Más de 10 años de experiencia en formación online</h3>
+                <h2>Más de 10 años formando a desarrolladores web</h2>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda esse perspiciatis cum sapiente debitis
                     ratione iste aspernatur ducimus mollitia quo. Repellat labore voluptatem beatae cum totam eos nihil veniam
                     tempora?</p>
-                <a class="boton-blanco" href="index.php?ctl=cursos" alt="Enlace a página de cursos">Ver cursos ahora <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+                <a class="boton boton-blanco" href="index.php?ctl=cursos" alt="Enlace a página de cursos">Ver cursos ahora <ion-icon name="arrow-forward-circle-outline"></ion-icon>
                 </a>
             </div>
         </div>
     </div>
 </section>
 
-<section class=" courses py-5">
+<section class="courses">
     <div class="container">
         <div class="row">
             <div class="col">

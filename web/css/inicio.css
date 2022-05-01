@@ -241,6 +241,10 @@ section.information .text-information {
 
 /********************* Cursos **************/
 
+section.courses {
+  margin-top: 100px;
+}
+
 .courses .course {
   background-color: var(--color1);
   text-align: center;
