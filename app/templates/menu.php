@@ -14,7 +14,7 @@
         </button>
 
         <div id="MenuNavegacion" class="collapse navbar-collapse justify-content-end">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav menu-principal">
                 <li class="nav-item">
                     <a class="nav-link active" href="index.php?ctl=inicio">Inicio</a>
                 </li>

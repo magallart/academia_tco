@@ -16,6 +16,80 @@ nav ul li a {
 }
 
 @media (max-width: 991px) {
+  button.navbar-toggler {
+    width: 30px;
+    height: 20px;
+    position: relative;
+    transition: 0.5s ease-in-out;
+  }
+
+  button.navbar-toggler,
+  button.navbar-toggler:focus,
+  button.navbar-toggler:active,
+  button.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+    border: 0;
+    position: relative;
+  }
+
+  button.navbar-toggler span {
+    margin: 0;
+    padding: 0;
+  }
+
+  button span.toggler-icon {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: var(--color1);
+    border-radius: 1px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+  }
+
+  button span.middle-bar {
+    margin-top: 0px;
+  }
+
+  button.navbar-toggler.collapsed span.top-bar {
+    position: absolute;
+    top: 0px;
+    transform: rotate(0deg);
+  }
+
+  button.navbar-toggler.collapsed span.middle-bar {
+    opacity: 1;
+    position: absolute;
+    top: 10px;
+    filter: alpha(opacity=100);
+  }
+
+  button.navbar-toggler.collapsed span.bottom-bar {
+    position: absolute;
+    top: 20px;
+    transform: rotate(0deg);
+  }
+
+  button.navbar-toggler span.top-bar {
+    top: inherit;
+    transform: rotate(135deg);
+  }
+
+  button.navbar-toggler span.middle-bar {
+    opacity: 0;
+    top: inherit;
+    filter: alpha(opacity=0);
+  }
+
+  button.navbar-toggler span.bottom-bar {
+    top: inherit;
+    transform: rotate(-135deg);
+  }
+
   nav .container {
     min-width: 100vw !important;
     max-width: 100vw !important;
@@ -26,21 +100,58 @@ nav ul li a {
     background-color: #fff;
   }
 
+  nav ul.navbar-nav li a,
+  nav ul.navbar-nav a.dropdown-toggle {
+    padding: 20px 0;
+    height: 50px;
+    color: #000 !important;
+  }
+
+  nav ul.navbar-nav li a:hover {
+    color: var(--color1) !important;
+  }
+
   nav ul li {
     text-align: center;
-    padding: 10px 0;
   }
 
   nav ul li a.dropdown-toggle {
     height: 30px;
+    padding: 10px 0;
   }
 
   nav ul li ul.dropdown-menu {
-    background-color: #ccc;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+  }
+
+  nav ul li ul.dropdown-menu li {
+    padding: 0;
+  }
+
+  nav ul li ul.dropdown-menu li a {
+    background-color: rgba(235, 235, 235, 0.45);
+    border: none;
+    padding: 20px 0;
+  }
+
+  nav ul li ul.dropdown-menu li a:hover {
+    background-color: var(--color1);
+    color: #fff !important;
   }
 
   nav ul li ul li a {
     border: none;
+  }
+
+  nav ul.menu-perfil {
+    padding-bottom: 20px;
+  }
+
+  nav ul.menu-perfil .dropdown-menu {
+    margin-top: 15px;
   }
 }
 
@@ -50,12 +161,18 @@ nav ul li a {
     width: 100%;
   }
 
-  nav ul.navbar-nav {
+  nav ul.navbar-nav.menu-principal {
     width: 70%;
     justify-content: space-between;
   }
 
-  nav ul.navbar-nav > li {
+  nav ul.navbar-nav.menu-principal-login {
+    width: 50%;
+    justify-content: space-between;
+  }
+
+  nav ul.navbar-nav.menu-principal > li,
+  nav ul.navbar-nav.menu-principal-login > li {
     background-image: linear-gradient(
       transparent 0%,
       transparent 90%,
@@ -68,7 +185,8 @@ nav ul li a {
     transition: background-size 300ms;
   }
 
-  nav ul.navbar-nav > li:hover {
+  nav ul.navbar-nav.menu-principal > li:hover,
+  nav ul.navbar-nav.menu-principal-login > li:hover {
     background-size: 100% 100%;
     background-position-x: left;
   }
@@ -91,6 +209,37 @@ nav ul li a {
     padding-left: 40px;
   }
 
+  nav ul.dropdown-menu {
+    border: 0;
+  }
+
+  nav ul.dropdown-menu li a {
+    padding: 15px 0;
+    background-color: var(--color1) !important;
+    color: #fff;
+  }
+
+  nav ul.dropdown-menu li a:hover {
+    background-color: var(--color3) !important;
+    color: var(--color1);
+  }
+
+  nav ul.menu-perfil {
+    margin-left: 10px;
+  }
+
+  nav ul.menu-perfil .dropdown-menu a {
+    padding: 15px 0;
+    background-color: var(--color1) !important;
+    color: #fff !important;
+    width: 100%;
+  }
+
+  nav ul.menu-perfil .dropdown-menu a:hover {
+    background-color: var(--color3) !important;
+    color: var(--color1) !important;
+  }
+
   .dropdown:hover .dropdown-menu {
     display: block;
     margin-top: 0;
@@ -103,84 +252,3 @@ nav ul li a {
     border-top: 0;
   }
 }
-/*************************************************************/
-
-.navbar-toggler {
-  width: 30px;
-  height: 20px;
-  position: relative;
-  transition: .5s ease-in-out;
-}
-
-.navbar-toggler,
-.navbar-toggler:focus,
-.navbar-toggler:active,
-.navbar-toggler-icon:focus {
-  outline: none;
-  box-shadow: none;
-  border: 0;
-  position: relative;
-}
-
-.navbar-toggler span {
-  margin: 0;
-  padding: 0;
-}
-
-.toggler-icon {
-  display: block;
-  position: absolute;
-  height: 3px;
-  width: 100%;
-  background: var(--color1);
-  border-radius: 1px;
-  opacity: 1;
-  left: 0;
-  transform: rotate(0deg);
-  transition: .25s ease-in-out;
-}
-
-.middle-bar {
-  margin-top: 0px;
-}
-
-
-/* State when the navbar is collapsed */
-
-.navbar-toggler.collapsed .top-bar {
-  position: absolute;
-  top: 0px;
-  transform: rotate(0deg);
-}
-
-.navbar-toggler.collapsed .middle-bar {
-  opacity: 1;
-  position: absolute;
-  top: 10px;
-  filter: alpha(opacity=100);
-}
-
-.navbar-toggler.collapsed .bottom-bar {
-  position: absolute;
-  top: 20px;
-  transform: rotate(0deg);
-}
-
-/* when navigation is clicked */
-
-.navbar-toggler .top-bar {
-  top: inherit;
-  transform: rotate(135deg);
-}
-
-.navbar-toggler .middle-bar {
-  opacity: 0;
-  top: inherit;
-  filter: alpha(opacity=0);
-}
-
-.navbar-toggler .bottom-bar {
-  top: inherit;
-  transform: rotate(-135deg);
-}
-
