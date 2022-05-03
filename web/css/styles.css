@@ -49,7 +49,18 @@ ul {
 
 header {
   background-color: var(--color3);
-  height: 650px;
+}
+
+@media (min-width: 1900px) {
+  header {
+    height: 650px;
+  }
+}
+
+@media (max-width: 1899px) {
+  header {
+    height: calc(100% - 150px);
+  }
 }
 
 header.interior {

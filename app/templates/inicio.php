@@ -8,7 +8,7 @@
 <header>
     <div class="container col-xxl-8 py-5">
         <div class="row middle g-5 py-5">
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-md-6 col-sm-12 text-md-start text-sm-center">
                 <h1 class="title-header">
                     Prepárate para el futuro
                 </h1>
@@ -16,12 +16,11 @@
                     Adquiere las habilidades y conocimientos necesarios para ser un desarrollador web, una de las profesiones
                     más demandadas en el mercado laboral hoy en día.
                 </p>
-                <div class="left">
+                <div class="text-md-start text-sm-center">
                     <a class="boton" href="#">Ver cursos ahora <ion-icon name="arrow-forward-circle-outline"></ion-icon></a>
                 </div>
             </div>
-            <div class="col-10 col-sm-8 col-lg-6">
-                <!--  TODO Controlar la imagen en responsive -->
+            <div class="col-lg-6 col-md-6 col-sm-12">
                 <img src="../img/inicio-header.png" class="d-block mx-lg-auto img-fluid" alt="Chica sonriendo con un laptop en la mano" width="700" height="500" loading="lazy" />
             </div>
         </div>

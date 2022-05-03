@@ -136,16 +136,42 @@ section.courses {
   text-align: center;
   padding: 20px 20px 30px 20px;
   border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .courses .course p {
   font-weight: 400;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 
 .courses .course img {
   width: 100%;
   padding-bottom: 20px;
+}
+
+@media (min-width: 1400px) {
+  .courses .course {
+    height: 650px;
+    position: relative;
+  }
+
+  .courses .course a {
+    position: absolute;
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .courses .course {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .courses .course img {
+    width: 60%;
+  }
 }
 
 /************** Newsletter ******************/

@@ -47,13 +47,13 @@
 		<footer>
 			<div class="container text-white">
 				<div class="row">
-					<div class="col col-lg-5 col-md-12 me-2">
+					<div class="col col-lg-5 col-md-12 col-sm-12 me-2 text-lg-start text-md-center text-sm-center pb-md-5 pb-sm-5">
 						<img src="../img/logo2-atco-blanco.png" alt="Logo blanco ATCO">
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, recusandae cupiditate itaque veniam, vero
+						<p class="pt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, recusandae cupiditate itaque veniam, vero
 							accusantium dolores vitae eum incidunt consequatur exercitationem sequi, nisi quibusdam beatae aliquid?
 							Aliquam aperiam illo voluptates?</p>
 					</div>
-					<div class="col col-lg-3 col-md-6 px-5 ">
+					<div class="col col-lg-3 col-md-6 col-sm-6 px-lg-5 ">
 						<h4>Explora</h4>
 						<ul>
 							<li><a href="index.php?ctl=inicio">Inicio</a></li>
@@ -62,7 +62,7 @@
 							<li><a href="index.php?ctl=contacto">Contacto</a></li>
 						</ul>
 					</div>
-					<div class="col col-lg-3 col-md-6">
+					<div class="col col-lg-3 col-md-6 col-sm-6">
 						<h4>Contacto</h4>
 						<ul>
 							<li>
@@ -78,9 +78,8 @@
 					</div>
 				</div>
 				<div class="row pt-5">
-					<div class="col col-lg-6 col-md-12 text-lg-start text-md-center pt-md-3">2022 - Derechos reservados. Academia
-						ATCO.</div>
-					<div class="col col-lg-6 col-md-12 text-lg-end text-md-center pt-md-3">
+					<div class="col-lg-6 col-md-12 col-sm-12 text-lg-start text-md-center text-sm-center pt-md-3 mt-sm-2"><p>2022 - Derechos reservados. Academia ATCO.</p> </div>
+					<div class="col-lg-6 col-md-12 col-sm-12 text-lg-end text-md-center text-sm-center pt-md-3 mt-sm-2">
 						<ul class="legal">
 							<li><a href="index.php?ctl=politicaPrivacidad">Política de privacidad</a></li>
 							<li><a href="index.php?ctl=politicaCookies">Política de Cookies</a></li>
