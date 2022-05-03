@@ -44,17 +44,17 @@
     </div>
 </section>
 
-<section class="py-5">
+<section class="cards py-5">
     <div class="container">
         <div class="row">
-            <div class="col col-lg-6 col-md-12 text-center pb-md-5">
+            <div class="col col-lg-6 col-md-12 col-sm-12 text-center pb-md-5">
                 <div class="card-color">
                     <ion-icon name="desktop-outline"></ion-icon>
                     <h3>Temarios actualizados</h3>
                     <p>Desde ATCO te ofrecemos cursos actuales con tecnologías que se usan en el mercado laboral. Nuestros docentes se encargan de actualizar sus cursos periódicamente aportando contenido de calidad actualizado.</p>
                 </div>
             </div>
-            <div class="col col-lg-6 col-md-12 text-center">
+            <div class="col col-lg-6 col-md-12 col-sm-12 text-center">
                 <div class="card-white">
                     <ion-icon name="timer-outline"></ion-icon>
                     <h3>Marcas tu ritmo</h3>
@@ -64,7 +64,7 @@
         </div>
 
         <div class="row pt-lg-1 pt-md-5">
-            <div class="col col-lg-6 col-md-12 text-center order-lg-1 order-md-2">
+            <div class="col col-lg-6 col-md-12 col-sm-12 text-center order-lg-1 order-md-2">
                 <div class="card-white">
                     <ion-icon name="checkmark-done-outline"></ion-icon>
                     <h3>Método que funciona</h3>
@@ -72,7 +72,7 @@
 
                 </div>
             </div>
-            <div class="col col-lg-6 col-md-12 text-center pb-md-5 order-lg-2 order-md-1">
+            <div class="col col-lg-6 col-md-12 col-sm-12 text-center pb-md-5 order-lg-2 order-md-1">
                 <div class="card-color">
 
                     <ion-icon name="chatbubbles-outline"></ion-icon>
@@ -154,10 +154,10 @@
             <div class="col col-lg-6 col-md-12 bg-image"></div>
             <div class="col col-lg-6 col-md-12 p-5 text-white text-information">
                 <h2>Más de 10 años formando a desarrolladores web</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda esse perspiciatis cum sapiente debitis
-                    ratione iste aspernatur ducimus mollitia quo. Repellat labore voluptatem beatae cum totam eos nihil veniam
-                    tempora?</p>
-                <a class="boton boton-blanco" href="index.php?ctl=cursos" alt="Enlace a página de cursos">Ver cursos ahora <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+                <p>Hace más de 10 años, un grupo de docentes cansados emprendieron la mayor locura de sus vidas: crearon ATCO. Tras largas trayectorias profesionales en la enseñanza presencial estaban cansados de las metodologías tradicionales viendo como un alto porcentaje de sus alumnos no conseguían sus objetivos.</p>
+                <p>La educación presencial tiene muchas limitaciones, por ejemplo, limita a los alumnos por horarios o distancia. Sin embargo, la enseñanza online es cómoda, personalizable, directa y tiene un índice de satisfacción mucho más elevado.</p>
+                <p>¿Quieres saber por qué nuestros alumnos están encantados con nuestros cursos?</p>
+                <a class="boton boton-blanco" href="index.php?ctl=academia" alt="Enlace a página de academia">Descubre los motivos<ion-icon name="arrow-forward-circle-outline"></ion-icon>
                 </a>
             </div>
         </div>
@@ -170,11 +170,7 @@
             <div class="col">
                 <span class="titulo-superior center">Fórmate para el futuro</span>
                 <h2 class="center">Los mejores cursos de Desarrollo Web</h2>
-                <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor, nulla sed vulputate
-                    dignissim, mauris quam congue leo, nec pretium velit risus eget est. Nullam id volutpat lorem, et facilisis
-                    urna. Cras pharetra, velit vitae rhoncus lacinia, velit tortor gravida justo, ut gravida leo lacus a enim.
-                    Duis dictum metus ut posuere porttitor. Sed dolor sem, lobortis non lacinia id, placerat vitae lectus.
-                    Phasellus consectetur gravida sapien id tempus. </p>
+                <p class="text-center">En Academia Tus Cursos Online te ofrecemos un amplio repertorio de cursos enfocados al desarrollo web más actual. Nos esforzamos en actualizar constantemente todos nuestros cursos para ofrecerte la mejor calidad. Con nosotros aprenderás lo necesario para trabajar en poco tiempo como desarrollador, ¿empezamos?</p>
             </div>
         </div>
         <div class="row py-3">
@@ -182,9 +178,7 @@
                 <div class="course text-white">
                     <img src="../img/logo-js.jpg" alt="Logo JavaScript">
                     <h3>JavaScript</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum asperiores necessitatibus fugit ut adipisci,
-                        molestiae officiis minus doloribus pariatur natus voluptatem vitae eaque tempore quia qui itaque at
-                        repudiandae id.</p>
+                    <p>JavaScript se ha convertido en uno de los lenguajes más populares para el desarrollo web hoy en día. Gracias a constantes mejores se ha convertido en un lenguaje robusto y muy solvente tanto para frontend como backend.</p>
                     <a class="boton-blanco" href="index.php?ctl=cursoJavascript" alt="Enlace a curso de JavaScript">Ir al curso <ion-icon name="arrow-forward-circle-outline"></ion-icon></a>
                 </div>
             </div>
@@ -192,9 +186,7 @@
                 <div class="course text-white">
                     <img src="../img/logo-angular.jpg" alt="Logo Angular">
                     <h3>Angular</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum asperiores necessitatibus fugit ut adipisci,
-                        molestiae officiis minus doloribus pariatur natus voluptatem vitae eaque tempore quia qui itaque at
-                        repudiandae id.</p>
+                    <p>Angular es un framework basado en JavaScript con una amplia demanda en el sector y es un framework que ha venido para quedarse gracias al respaldo de Google. Te recomendamos hacer el curso de JavaScript primero.</p>
                     <a class="boton-blanco" href="index.php?ctl=cursoAngular" alt="Enlace a curso de Angular">Ir al curso <ion-icon name="arrow-forward-circle-outline"></ion-icon></a>
                 </div>
 
@@ -203,9 +195,7 @@
                 <div class="course text-white">
                     <img src="../img/logo-react.jpg" alt="Logo React">
                     <h3>React</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum asperiores necessitatibus fugit ut adipisci,
-                        molestiae officiis minus doloribus pariatur natus voluptatem vitae eaque tempore quia qui itaque at
-                        repudiandae id.</p>
+                    <p>React es otro framework cuyo origen es JavaScript. Se basa en TypeScript que no es otra cosa que JavaScript vitaminado por lo que te recomendamos hacer el curso de JavaScript. Cuenta con una inmensa y muy activa comunidad en la red.</p>
                     <a class="boton-blanco" href="index.php?ctl=cursoReact">Ir al curso <ion-icon name="arrow-forward-circle-outline" alt="Enlace a curso de React"></ion-icon></a>
                 </div>
 
@@ -214,16 +204,14 @@
                 <div class="course text-white">
                     <img src="../img/logo-git.jpg" alt="Logo JavaScript">
                     <h3>Git</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum asperiores necessitatibus fugit ut adipisci,
-                        molestiae officiis minus doloribus pariatur natus voluptatem vitae eaque tempore quia qui itaque at
-                        repudiandae id.</p>
+                    <p>Git es un control de versiones que ayuda a crear copias de seguridad del código escrito entre otras muchas funcionalidades sin las cuales los programadores de hoy en día no sabrían vivir. Es esencial manejar Git como desarrollador.</p>
                     <a class="boton-blanco" href="index.php?ctl=cursoGit" alt="Enlace a curso de Git">Ir al curso <ion-icon name="arrow-forward-circle-outline" alt="Enlace a curso de Git"></ion-icon></a>
                 </div>
 
             </div>
         </div>
     </div>
-    <div class="row py-5">
+    <div class="row mb-5">
         <div class="col center"><a class="boton" href="index.php?ctl=cursos" alt="Enlace a página de cursos">Ver todos los cursos ahora <ion-icon name="arrow-forward-circle-outline">
                 </ion-icon></a></div>
     </div>
@@ -235,11 +223,7 @@
             <div class="col">
                 <span class="titulo-superior center">Síguenos en las redes</span>
                 <h2 class="center">¡Novedades, promociones y mucho más!</h2>
-                <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor, nulla sed vulputate
-                    dignissim, mauris quam congue leo, nec pretium velit risus eget est. Nullam id volutpat lorem, et facilisis
-                    urna. Cras pharetra, velit vitae rhoncus lacinia, velit tortor gravida justo, ut gravida leo lacus a enim.
-                    Duis dictum metus ut posuere porttitor. Sed dolor sem, lobortis non lacinia id, placerat vitae lectus.
-                    Phasellus consectetur gravida sapien id tempus. </p>
+                <p class="text-center">¿Quieres ser el primero en enterarte de cuando publicamos un nuevo curso? ¿Te interesa saber qué cursos tenemos planificados para publicar próximamente? Además de todo lo anterior, si te suscribes a nuestra newsletter podrás recibir píldoras informativas que sólo enviamos a nuestros suscriptores. Es totalmente gratuito, como todo en nuestra academia.</p>
             </div>
         </div>
         <div class="container">

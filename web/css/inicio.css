@@ -1,3 +1,7 @@
+section.cards {
+  margin-top: 0;
+}
+
 .card-color,
 .card-white {
   padding: 20px 50px;
@@ -221,12 +225,12 @@ section.information {
 }
 
 section.information .container {
-  height: 600px;
+  /* height: 600px; */
 }
 
 section.information .bg-image {
   height: 600px;
-  background-image: url("../../img/inicio-chica-estudiando-01.jpg");
+  background-image: url("../../img/inicio-chico-estudiando-01.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -269,6 +273,7 @@ section.newsletter {
   height: 500px;
   display: flex;
   align-items: center;
+  margin-bottom: 0;
 }
 
 section.newsletter .single {
