@@ -5,22 +5,19 @@
     · Lo guardamos en el buffer y se carga en la variable $contenido para mostrarla en /templates/layout
 -->
 
-<!-- TODO Cambiar por Angular -->
-
 <header>
     <div class="container col-xxl-8 py-5">
         <div class="row middle g-5 py-5">
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-md-6 col-sm-12 text-md-start text-sm-center">
                 <h1 class="title-header">
-                    Curso de JavaScript desde 0
+                    Curso Angular
                 </h1>
                 <p>
-                    Este curso completo de JavaScript empieza desde un nivel básico pasando por las principales características y funcionalidades de uno de los lenguajes más demandados hoy en día como es JavaScript. Al finalizar este curso tendrás los conocimientos necesarios para utilizar JavaScript a nivel profesional. ¿Empezamos?
+                    Gracias al curso de Angular aprenderás los conceptos básicos de este framework así como todo lo necesario para crear tu primer proyecto totalmente funcional. Te recomendamos hacer el curso de JavaScript primero.
                 </p>
             </div>
-            <div class="col-10 col-sm-8 col-lg-6">
-                <!--  TODO Controlar la imagen en responsive -->
-                <img src="../img/inicio-header.png" class="d-block mx-lg-auto img-fluid" alt="Chica sonriendo con un laptop en la mano" width="700" height="500" loading="lazy" />
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <img src="../img/curso-angular.png" class="d-block mx-lg-auto img-fluid" alt="Chica sonriendo con un laptop en la mano" width="700" height="500" loading="lazy" />
             </div>
         </div>
     </div>
@@ -122,7 +119,8 @@
 </section>
 
 <section>
-    <div class="container acordeon">  <!-- TODO Cambiar por Angular -->
+    <div class="container acordeon">
+        <!-- TODO Cambiar por Angular -->
         <div class="row my-5">
             <div class="col">
                 <div class="accordion" id="accordionExample">
@@ -192,7 +190,8 @@
         </div>
         <div class="row">
             <div class="col">
-                 <form name="formEnviarMensaje" action="" method="POST" enctype="multipart/form-data">  <!-- TODO añadir funcionalidad enviar mensaje -->
+                <form name="formEnviarMensaje" action="" method="POST" enctype="multipart/form-data">
+                    <!-- TODO añadir funcionalidad enviar mensaje -->
                     <textarea rows="5" placeholder="Escribe tu mensaje (máximo 255 caracteres)..." name="nuevoMensaje"></textarea>
                     <input type="submit" value="Enviar mensaje" name="enviarMensaje" class="boton" />
                 </form>

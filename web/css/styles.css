@@ -63,16 +63,6 @@ header {
   }
 }
 
-header.interior {
-  background-color: var(--color3);
-  height: 400px;
-}
-
-header.interior img {
-  max-height: 300px;
-  width: auto;
-}
-
 ion-icon {
   font-size: 1.3rem;
   position: relative;

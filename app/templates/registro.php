@@ -4,10 +4,10 @@
     · Contenido de la página de Registro. 
     · Lo guardamos en el buffer y se carga en la variable $contenido para mostrarla en /templates/layout
 -->
-<header class="interior">
+<header>
     <div class="container col-xxl-8 py-5">
         <div class="row middle g-5 py-5">
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-md-6 col-sm-12 text-md-start text-sm-center">
                 <h1 class="title-header">
                     ¡Regístrate gratis!
                 </h1>
@@ -15,9 +15,8 @@
                     ¿Todavía no tienes una cuenta en ATCO? Regístrate ahora totalmente gratis y disfruta de todos los cursos de la plataforma que tenemos para ti. Tan sólo tienes que rellenar el formulario y confirmar el email que te mandaremos. En menos de 3 minutos podrás empezar los cursos, ¿a qué esperas?
                 </p>
             </div>
-            <div class="col-lg-6 col-sm-8 text-center">
-                <!--  TODO Controlar la imagen en responsive / Cambiar imagen -->
-                <img src="../img/inicio-header.png" class="d-block mx-lg-auto img-fluid" alt="Chica sonriendo con un laptop en la mano" width="700" height="500" loading="lazy" />
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <img src="../img/registro-header.png" class="d-block mx-lg-auto img-fluid" alt="Chica sonriendo con un laptop en la mano" width="700" height="500" loading="lazy" />
             </div>
         </div>
     </div>
@@ -83,10 +82,11 @@
                 </div>
 
                 <div class="row">
-                    <div class="col"> <!-- TODO Revisar diseño botón file  -->
+                    <div class="col">
+                        <!-- TODO Revisar diseño botón file  -->
                         <div class="form-outline">
                             <label for="fPerfil">Seleccione una foto de perfil</label>
-                            <input type="file"  name="fPerfil" placeholder="" class="fileInput" />
+                            <input type="file" name="fPerfil" placeholder="" class="fileInput" />
                         </div>
                     </div>
                 </div>

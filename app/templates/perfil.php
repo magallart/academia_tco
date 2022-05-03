@@ -5,10 +5,10 @@
     · Lo guardamos en el buffer y se carga en la variable $contenido para mostrarla en /templates/layout
 -->
 
-<header class="interior">
+<header>
     <div class="container col-xxl-8 py-5">
         <div class="row middle g-5 py-5">
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-md-6 col-sm-12 text-md-start text-sm-center">
                 <h1 class="title-header">
                     Bievenvenid@, <?php printf($_SESSION['nombreUsuario']) ?>
                 </h1>
@@ -16,9 +16,8 @@
                     Esta es tu página de perfil donde podrás con sultar tus datos personales así como ver los cursos que estás cursando en estos momentos.
                 </p>
             </div>
-            <div class="col-lg-6 col-sm-8 text-center">
-                <!--  TODO Controlar la imagen en responsive / Cambiar imagen -->
-                <img src="../img/<?php echo $_SESSION['fPerfil']  ?>" alt="Foto de Perfil del usuario" loading="lazy" class="fotoPerfilUsuario" />
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <img src="../img/inicio-header.png" class="d-block mx-lg-auto img-fluid" alt="Chica sonriendo con un laptop en la mano" width="700" height="500" loading="lazy" />
             </div>
         </div>
     </div>

@@ -7,25 +7,25 @@
     · Se enviarán los valores para que se validen y se ejecute la query en la BBDD.
     · Si el usuario no existe, se le mostrará un mensaje de error debajo del formulario.
 -->
-<header class="interior">
+
+<header>
     <div class="container col-xxl-8 py-5">
         <div class="row middle g-5 py-5">
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-md-6 col-sm-12 text-md-start text-sm-center">
                 <h1 class="title-header">
                     Inicia sesión
                 </h1>
                 <p>
-                    <!--  TODO Cambiar texto -->
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime, similique sunt? Perferendis voluptatum, accusamus sed corrupti architecto ducimus nisi delectus pariatur maxime quis illo reprehenderit aperiam soluta, distinctio recusandae labore.
+                    Accede a tu cuenta de usuario registrado para poder disfrutar de todo el contenido de la academia.
                 </p>
             </div>
-            <div class="col-10 col-sm-8 col-lg-6">
-                <!--  TODO Controlar la imagen en responsive / Cambiar imagen -->
-                <img src="../img/inicio-header.png" class="d-block mx-lg-auto img-fluid" alt="Chica sonriendo con un laptop en la mano" width="700" height="500" loading="lazy" />
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <img src="../img/login-header.png" class="d-block mx-lg-auto img-fluid" alt="Chica sonriendo con un laptop en la mano" width="700" height="500" loading="lazy" />
             </div>
         </div>
     </div>
 </header>
+
 
 <div class="container interior my-5">
     <div class="row login">

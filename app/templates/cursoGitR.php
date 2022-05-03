@@ -5,21 +5,19 @@
     · Lo guardamos en el buffer y se carga en la variable $contenido para mostrarla en /templates/layout
 -->
 
-
 <header>
     <div class="container col-xxl-8 py-5">
         <div class="row middle g-5 py-5">
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-md-6 col-sm-12 text-md-start text-sm-center">
                 <h1 class="title-header">
-                    Curso de Git desde 0
-                </h1> <!-- TODO Cambiar por Git -->
+                    Curso Git
+                </h1>
                 <p>
-                    Este curso completo de JavaScript empieza desde un nivel básico pasando por las principales características y funcionalidades de uno de los lenguajes más demandados hoy en día como es JavaScript. Al finalizar este curso tendrás los conocimientos necesarios para utilizar JavaScript a nivel profesional. ¿Empezamos?
+                    El control de versiones Git es una herramienta indispensable para todo desarrollador en la actualidad. Una vez aprendas los conceptos básicos de Git podrás manejar Github, Bitbucket o Gitlab perfectamente.
                 </p>
             </div>
-            <div class="col-10 col-sm-8 col-lg-6">
-                <!--  TODO Controlar la imagen en responsive -->
-                <img src="../img/inicio-header.png" class="d-block mx-lg-auto img-fluid" alt="Chica sonriendo con un laptop en la mano" width="700" height="500" loading="lazy" />
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <img src="../img/curso-git.png" class="d-block mx-lg-auto img-fluid" alt="Chica sonriendo con un laptop en la mano" width="700" height="500" loading="lazy" />
             </div>
         </div>
     </div>
