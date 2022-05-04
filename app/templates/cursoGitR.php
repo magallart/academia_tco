@@ -119,7 +119,7 @@
 </section>
 
 <section>
-    <div class="container acordeon">  <!-- TODO Cambiar por Git -->
+    <div class="container acordeon">
         <div class="row my-5">
             <div class="col">
                 <div class="accordion" id="accordionExample">
@@ -132,7 +132,9 @@
                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <p>Comenzamos el Curso JavaScript 2022 aprendiendo a utilizar la etiqueta script JavaScript (y a diferir su carga con el atributo defer) en tus proyectos frontend. No te pierdas este vídeo donde aprenderemos como enlazar un archivo JavaScript</p>
-                                <iframe width="1120" height="630" src="https://www.youtube.com/embed/VwEChGsBD78" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/VwEChGsBD78" title="YouTube video player" class="youtube-iframe"></iframe>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -145,7 +147,9 @@
                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <p>El hoisting JavaScript es uno de los conceptos principales que debes entender. También llamado alzado JavaScript, eleva la declaración de variables y las funciones declaradas al inicio del programa.</p>
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/sv4-Lq495Qc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/sv4-Lq495Qc" title="YouTube video player" class="youtube-iframe"></iframe>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -158,7 +162,9 @@
                         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <p>Aprende las principales diferencias entre var vs let a la hora de declarar variables JavaScript. Por ejemplo, las variables declaradas con var tienen ámbito de función mientras que las variables let JavaScript tienen ámbito de bloque. También se comportan diferente a la hora de ser alzadas.</p>
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/iIkeGM1I-cM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/iIkeGM1I-cM" title="YouTube video player" class="youtube-iframe"></iframe>
+                                </div>
                             </div>
                         </div>
                     </div>
