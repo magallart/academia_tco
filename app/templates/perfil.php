@@ -8,16 +8,16 @@
 <header>
     <div class="container col-xxl-8 py-5">
         <div class="row middle g-5 py-5">
-            <div class="col-lg-6 col-md-6 col-sm-12 text-md-start text-sm-center">
+            <div class="col-lg-6 col-md-6 col-sm-12 text-md-start text-sm-center order-md-1 order-sm-2">
                 <h1 class="title-header">
-                    Bievenvenid@, <?php printf($_SESSION['nombreUsuario']) ?>
+                Bievenvenid@, <?php printf($_SESSION['nombreUsuario']) ?>
                 </h1>
                 <p>
-                    Esta es tu página de perfil donde podrás con sultar tus datos personales así como ver los cursos que estás cursando en estos momentos.
+                Esta es tu página de perfil donde podrás consultar tus datos personales así como ver los cursos que estás cursando en estos momentos.
                 </p>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-12">
-                <img src="../img/inicio-header.png" class="d-block mx-lg-auto img-fluid" alt="Chica sonriendo con un laptop en la mano" width="700" height="500" loading="lazy" />
+            <div class="col-lg-6 col-md-6 col-sm-12 text-sm-center order-md-2 order-sm-1">
+                <img src="../img/<?php echo $_SESSION['fPerfil'] ?>" class="d-block mx-lg-auto mx-sm-auto img-fluid fotoPerfilUsuario" alt="Chica sonriendo con un laptop en la mano" loading="lazy" />
             </div>
         </div>
     </div>
@@ -52,7 +52,7 @@
                     </div>
                     <div class="col-lg-5">
                         <div class="form-outline">
-                            <label for="fNacimiento">Fecha de nacimiento</label>
+                            <label for="fNacimiento">Fecha nacimiento</label>
                             <input type="text" name="fNacimiento" placeholder="<?php echo $_SESSION['fnacimientoUsuario'] ?>" />
                         </div>
                     </div>
@@ -113,7 +113,7 @@
                 ?>
             </div>
 
-            <div class="cursosApuntados">
+            <div class="cursosApuntados mt-5">
                 <h2>Cursos empezados...</h2>
             </div>
         </div>
