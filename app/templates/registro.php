@@ -5,8 +5,8 @@
     · Lo guardamos en el buffer y se carga en la variable $contenido para mostrarla en /templates/layout
 -->
 <header>
-    <div class="container col-xxl-8 py-5">
-        <div class="row middle g-5 py-5">
+    <div class="container col-xxl-8">
+        <div class="row middle g-5">
             <div class="col-lg-6 col-md-6 col-sm-12 text-md-start text-sm-center">
                 <h1 class="title-header">
                     ¡Regístrate gratis!
@@ -83,24 +83,22 @@
 
                 <div class="row">
                     <div class="col">
-                        <!-- TODO Revisar diseño botón file  -->
                         <div class="form-outline">
                             <label for="fPerfil">Seleccione una foto de perfil</label>
-                            <input type="file" name="fPerfil" placeholder="" class="fileInput" />
+                            <input type="file" name="fPerfil" class="fileInput" id="fPerfilInput" />
                         </div>
                     </div>
-                </div>
 
-                <div class="col-12">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
-                            He leído y acepto las <a href="index.php?ctl=politicaPrivacidad" alt="Enlace a página de Políticas de Privacidad" target="blank" class="link">Políticas de privacidad</a>.
-                        </label>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">
+                                He leído y acepto las <a href="index.php?ctl=politicaPrivacidad" alt="Enlace a página de Políticas de Privacidad" target="blank" class="link">Políticas de privacidad</a>.
+                            </label>
+                        </div>
                     </div>
-                </div>
 
-                <input type="submit" value="Registrar Ahora" name="registrarCuenta" class="boton" /> <!-- TODO realizar funcionalidad de registrar cuenta  -->
+                    <input type="submit" value="Registrar Ahora" name="registrarCuenta" class="boton" /> <!-- TODO realizar funcionalidad de registrar cuenta  -->
             </form>
             <p class="formulario-rgpd mt-5">
                 <span class="negrita">Responsable</span>: Miguel Ángel Gallart Aleixandre. <span class="negrita">Fin del tratamiento</span>: Añadir sus datos personales a nuestra base de datos como usuario registrado en ATCO. <span class="negrita">Legitimación</span>: Consentimiento del interesado. <span class="negrita">Destinatarios</span>: Entidades necesarias para la prestación del servicio exclusivamente. <span class="negrita">Derechos</span>: Acceso, rectificación o supresión, limitación del tratamiento, oposición al tratamiento y portabilidad. <span class="negrita">Información adicional</span>: Puede consultar información adicional y detallada sobre Protección de Datos en nuestra Política de privacidad.

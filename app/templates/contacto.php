@@ -5,10 +5,6 @@
     · Lo guardamos en el buffer y se carga en la variable $contenido para mostrarla en /templates/layout
 -->
 
-<!--
-    · Contenido de la página de Registro. 
-    · Lo guardamos en el buffer y se carga en la variable $contenido para mostrarla en /templates/layout
--->
 <header>
     <div class="container col-xxl-8 py-5">
         <div class="row middle g-5 py-5">

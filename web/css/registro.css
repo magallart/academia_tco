@@ -14,6 +14,13 @@ header img.fotoPerfilUsuario {
   padding-bottom: 30px;
 }
 
+.registro label {
+  font-size: 1.2rem;
+  font-weight: 600 !important;
+  line-height: 1.2rem;
+  font-family: var(--font-3);
+}
+
 form[name="formRegistro"] input[type="text"] {
   display: block;
   padding: 10px;
@@ -44,35 +51,10 @@ form[name="formRegistro"] label {
 
 /*******************************************************************************/
 
-form[name="formRegistro"] input[type="file"] {
-  width: 100%;
-}
-
-form[name="formRegistro"] .fileInput::-webkit-file-upload-button {
-  visibility: hidden;
-}
-
-form[name="formRegistro"] .fileInput::before {
-  content: "Seleccionar archivos";
-  width: 200px;
-  display: inline-block;
-  background: linear-gradient(top, #f9f9f9, #e3e3e3);
-  border: 1px solid #999;
-  border-radius: 3px;
-  padding: 8px 15px;
-  cursor: pointer;
-  text-shadow: 1px 1px #fff;
-  font-weight: 600;
-  font-size: 1rem;
-  text-align: center;
-}
-
-form[name="formRegistro"] .fileInput:hover::before {
-  border-color: black;
-}
-
-form[name="formRegistro"] .fileInput:active::before {
-  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+form[name="formRegistro"] input[type="file"]::file-selector-button {
+  background-color: #ccc;
+  padding: 8px 10px;
+  width: 50%;
 }
 
 /*******************************************************************************/
