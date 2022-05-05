@@ -1,0 +1,38 @@
+.legales {
+    margin-bottom: 80px;
+}
+
+.legales h1 {
+    font-size: 3rem;
+}
+
+.legales h2 {
+    margin-top: 40px;
+}
+
+.legales ion-icon {
+    position: relative;
+    top: -1px;
+    color: var(--color1);
+}
+
+.legales ul li, .legales ol li {
+    list-style: square;
+    padding-bottom: 15px;
+}
+
+.legales ul li span {
+    font-weight: 600;
+    font-size: 1.2rem;
+    font-family: var(--font-1);
+}
+
+.legales a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 2px solid var(--color1);
+}
+
+.legales a:hover {
+    color: var(--color1);
+}
