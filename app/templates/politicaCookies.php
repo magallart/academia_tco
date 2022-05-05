@@ -67,11 +67,11 @@
             <p>Acontinuación tienes los enlaces donde puedes consultar las diferentes configuraciones de los navegadores más populares:</p>
 
             <ul>
-                <li><a href="https://support.google.com/chrome/answer/95647?hl=es-419" target="blank">Google Chrome</a>.</li>
-                <li><a href="https://support.mozilla.org/es/kb/proteccion-antirrastreo-mejorada-en-firefox-para-e?redirectslug=proteccion-de-rastreo-mejorada-en-firefox-para-esc&redirectlocale=es" target="blank">Mozilla Firefox</a></li>
-                <li><a href="https://support.apple.com/es-es/HT201265" target="blank">Safari</a>.</li>
-                <li><a href="https://support.microsoft.com/es-es/microsoft-edge/eliminar-las-cookies-en-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="blank">Microsoft Edge</a>.</li>
-                <li><a href="https://support.microsoft.com/es-es/microsoft-edge/eliminar-las-cookies-en-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="blank">Internet Explorer</a>.</li>
+                <li><a href="https://support.google.com/chrome/answer/95647?hl=es-419" target="blank" class="link">Google Chrome</a>.</li>
+                <li><a href="https://support.mozilla.org/es/kb/proteccion-antirrastreo-mejorada-en-firefox-para-e?redirectslug=proteccion-de-rastreo-mejorada-en-firefox-para-esc&redirectlocale=es" target="blank" class="link">Mozilla Firefox</a></li>
+                <li><a href="https://support.apple.com/es-es/HT201265" target="blank" class="link">Safari</a>.</li>
+                <li><a href="https://support.microsoft.com/es-es/microsoft-edge/eliminar-las-cookies-en-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="blank" class="link">Microsoft Edge</a>.</li>
+                <li><a href="https://support.microsoft.com/es-es/microsoft-edge/eliminar-las-cookies-en-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="blank" class="link">Internet Explorer</a>.</li>
             </ul>
 
         </div>
