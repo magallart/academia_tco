@@ -27,13 +27,12 @@
     </div>
 </header>
 
-<!-- Page Content -->
 <section class="py-5">
     <div class="container">
         <div class="row">
             <div class="col">
                 <span class="titulo-superior center">Aprende cuando y donde quieras</span>
-                <h2 class="text-center">Formación online a medida en ATCO</h2> <!-- TODO cambiar texto -->
+                <h2 class="text-center">Formación online a medida en ATCO</h2>
                 <p class="text-center">El proyecto de la Academia Tus Cursos Online (ATCO) empezó hace 10 años y desde entonces más de 450 alumnos han hecho cursos en nuestra plataforma online con un altísimo grado de satisfacción. Gracias a la formación gratuita que puedes encontrar en nuestra web, puedes aprender las tecnologías más demandadas en la actualidad que te servirán para dar un impulso a tu carrera como desarrollador web. La formación ATCO tiene como finalidad enseñar todos los conceptos básicos con un toque característico que sin duda hará más fácil el aprendizaje. ¿Te animas a comprobarlo por ti mismo? </p>
                 <div class="center">
                     <a class="boton" href="index.php?ctl=cursos" alt="Enlace a páginas de cursos">Ver todos los cursos ahora <ion-icon name="arrow-forward-circle-outline"></ion-icon></a>

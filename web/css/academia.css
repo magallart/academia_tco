@@ -36,3 +36,46 @@ section.academia .text-information {
   justify-content: center;
   flex-direction: column;
 }
+
+section.equipo-cards {
+
+}
+
+section.equipo-cards .cardEquipo .card {
+  background-color: var(--color1) !important;
+  padding: 10px;
+  color: white;
+  max-width: 540px;
+}
+
+section.equipo-cards .cardEquipo h3 {
+
+}
+
+section.equipo-cards .cardEquipo h4 {
+  font-size: 1rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.76);
+}
+
+section.equipo-cards .cardEquipo .separador {
+  width: 70%;
+  border: 1px solid #fff;
+  margin: 5px 0;
+}
+
+section.equipo-cards .cardEquipo .social img {
+  width: 30px;
+  margin-right: 10px;
+}
+
+@media (max-width: 767px) {
+  section.equipo-cards .cardEquipo .separador {
+    width: 50%;
+    margin: 10px auto;
+  }
+
+  section.equipo-cards .cardEquipo p {
+    padding: 0 40px;
+  }
+}
