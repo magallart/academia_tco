@@ -6,8 +6,8 @@
 -->
 
 <header>
-    <div class="container col-xxl-8 py-5">
-        <div class="row middle g-5 py-5">
+    <div class="container col-xxl-8">
+        <div class="row middle g-5">
             <div class="col-lg-6 col-md-6 col-sm-12 text-md-start text-sm-center">
                 <h1 class="title-header">
                     Contacta ahora

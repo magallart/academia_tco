@@ -33,6 +33,7 @@
         'politicaPrivacidad' => array('controller' =>'Controller', 'action' =>'cPoliticaPrivacidad'),
         'politicaCookies' => array('controller' =>'Controller', 'action' =>'cPoliticaCookies'),
         'avisosLegales' => array('controller' =>'Controller', 'action' =>'cAvisosLegales'),
+        '404' => array('controller' =>'Controller', 'action' =>'c404'),
     );
 
     /*
@@ -42,10 +43,7 @@
         if (isset($map[$_GET['ctl']])) {
             $ruta = $_GET['ctl'];
         } else {
-            header('Status: 404 Not Found');
-            echo '<html><body><h1>Error 404: No existe la ruta <i>' .
-            $_GET['ctl'] .'</p></body></html>';
-            exit;
+            $ruta = '404';
         }
     } else {
         $ruta = 'inicio';
@@ -53,10 +51,8 @@
     $controlador = $map[$ruta];
     
     /* 
-        Comprobamos si el metodo correspondiente a la acción relacionada con el valor de ctl existe, si es así ejecutamos el método correspondiente.
-        
-        En aso de no existir cabecera de error.
-    
+        Comprobamos si el metodo correspondiente a la acción relacionada con el valor de ctl existe, si es así ejecutamos el método correspondiente.        
+        En aso de no existir cabecera de error.    
         En caso de estar utilizando sesiones y permisos en las diferentes acciones comprobariaos tambien si el usuario tiene permiso suficiente para ejecutar esa acción
     */
 

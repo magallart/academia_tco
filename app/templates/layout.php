@@ -47,7 +47,7 @@
 		<footer>
 			<div class="container text-white">
 				<div class="row">
-					<div class="col col-lg-5 col-md-12 col-sm-12 me-2 text-lg-start text-md-center text-sm-center pb-md-5 pb-sm-5">
+					<div class="col col-lg-5 col-md-12 col-sm-12 me-2 text-lg-start text-md-center text-sm-center pb-lg-0 pb-md-5 pb-sm-5">
 						<img src="../img/logo2-atco-blanco.png" alt="Logo blanco ATCO">
 						<p class="pt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, recusandae cupiditate itaque veniam, vero
 							accusantium dolores vitae eum incidunt consequatur exercitationem sequi, nisi quibusdam beatae aliquid?

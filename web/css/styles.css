@@ -116,6 +116,11 @@ section {
   min-height: 40vh;
 }
 
+
+.error404 {
+  min-height: 50vh;
+}
+
 /************************************/
 
 .comming-soon {
