@@ -58,7 +58,13 @@ class Controller
                 $u = new Usuarios();
                 $mensajeUsuario = recoge('nuevoMensaje');  //TODO Falta validar el mensaje
                 if (isset($_POST['aceptacionPoliticas'])) {
-                    $u->insertarMensajeUsuario($_SESSION['idUsuario'], 0, $mensajeUsuario);
+                    //Un usuario sólo puede enviar un mensaje por curso. Si no encuentra el email en el array de mensajes es porque el usuario no ha enviado un mensaje
+                    if (array_search($_SESSION['emailUsuario'], array_column($_SESSION['mensajesCursoJavascript'], 'email')) == true) {    
+                        $_SESSION['errores'] = "Ya has enviado un mensaje para este curso.";
+                    } else {                        
+                        $u->insertarMensajeUsuario($_SESSION['idUsuario'], 0, $mensajeUsuario);
+                        header("Refresh:0");
+                    }
                 } else {
                     $_SESSION['errores'] = "Checkbox";
                 }

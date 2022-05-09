@@ -29,7 +29,7 @@ class Cursos extends Modelo
     {
         // SELECT usuarios.nombre, usuarios.apellidos, usuarios.fPerfil, mensajes.mensaje FROM `usuarios` INNER JOIN `mensajes` ON usuarios.id = mensajes.id_usuario WHERE mensajes.id_curso=0;
         // TODO Borrar este ejemplo
-        $consulta = "select usuarios.nombre, usuarios.apellidos, usuarios.fPerfil, mensajes.mensaje from `usuarios` inner join `mensajes` on usuarios.id = mensajes.id_usuario where mensajes.id_curso=:idCurso";
+        $consulta = "select usuarios.nombre, usuarios.apellidos, usuarios.email, usuarios.fPerfil, mensajes.mensaje from `usuarios` inner join `mensajes` on usuarios.id = mensajes.id_usuario where mensajes.id_curso=:idCurso";
 
         $result = $this->conexion->prepare($consulta);
         $result->bindParam(':idCurso', $idCurso);

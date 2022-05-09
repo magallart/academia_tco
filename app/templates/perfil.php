@@ -10,10 +10,10 @@
         <div class="row middle g-5">
             <div class="col-lg-6 col-md-6 col-sm-12 text-md-start text-sm-center order-md-1 order-sm-2">
                 <h1 class="title-header">
-                Bievenvenid@, <?php printf($_SESSION['nombreUsuario']) ?>
+                    Bievenvenid@, <?php printf($_SESSION['nombreUsuario']) ?>
                 </h1>
                 <p>
-                Esta es tu página de perfil donde podrás consultar tus datos personales así como ver los cursos que estás cursando en estos momentos.
+                    Esta es tu página de perfil donde podrás consultar tus datos personales así como ver los cursos que estás cursando en estos momentos.
                 </p>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 text-sm-center order-md-2 order-sm-1">
@@ -88,9 +88,11 @@
 
         </div>
         <div class="col-lg-6 col-md-12 p-5">
+            <h2>Últimos mensajes</h2>
             <div class="mensajes">
-                <h2>Últimos mensajes</h2>
                 <?php
+                $u = new Usuarios();
+                $_SESSION['mensajes'] = $u->getMensajesUsuario($_SESSION['idUsuario']);
                 foreach ($_SESSION['mensajes'] as $mensajes) {
                     echo "<div class='mensajeUsuario'>";
                     switch ($mensajes["id_curso"]) {
@@ -113,7 +115,7 @@
                 ?>
             </div>
 
-            <div class="cursosApuntados mt-5">
+            <div class="cursosApuntados mt-2">
                 <h2>Cursos empezados...</h2>
             </div>
         </div>
