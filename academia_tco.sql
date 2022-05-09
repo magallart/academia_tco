@@ -95,8 +95,17 @@ CREATE TABLE `mensajes` (
 INSERT INTO `mensajes` (`id`, `id_usuario`, `id_curso`, `mensaje`) VALUES
 (0, 0, 0, 'He aprendido mucho con este curso. Gracias a la plataforma y a los profesores.'),
 (1, 0, 1, 'Gracias a este curso pienso que podré encontrar trabajo en un futuro. El curso es muy completo y lo recomiendo.'),
-(2, 1, 1, 'Maravilloso curso. Ahora me siento mejor programador y seguiré haciendo más cursos.'),
-(3, 2, 1, 'Después de completar este curso se mucho más sobre JavaScript y me veo capaz de buscar trabajo como programador. Totalmente recomendado.');
+(2, 1, 0, 'Maravilloso curso. Ahora me siento mejor programador y seguiré haciendo más cursos.'),
+(3, 2, 0, 'Enhorabuena al docente por crear un curso tan bueno de JavaScript.'),
+(4, 3, 0, 'Uno de los mejores cursos de JavaScript que he visto por internet. Me ha ayudado mucho.'),
+(5, 4, 0, 'Recomiendo muchísimo hacer este curso de JavaScript si se quiere ser un buen desarrollador frontend..'),
+(6, 5, 0, 'Curso práctico, directo y útil.'),
+(7, 7, 0, 'He aprendido muchísimo JavaScript gracias a este curso. Uno de mis favoritos de la plataforma.'),
+(8, 2, 1, 'Angular me ha resultado fácil de aprender con este curso.'),
+(9, 3, 1, 'Tenía dudas sobre qué framework de JavaScript centrar mi carrera, pero después de hacer este curso lo tengo claro. Elijo Angular. Gracias ATCO.'),
+(10, 4, 1, 'Es un framework muy poderoso y que cuenta con el respaldo de Google, así que he decidido empezar este curso gratis.'),
+(11, 5, 1, 'Quiero seguir profundizando en Angular, espero que pongáis un curso avanzado sobre este framework.'),
+(12, 7, 1, 'Conozco React y tenía ganas de investigar Angular para poder ampliar mi currículum. Quedo muy satisfecho con este curso.');
 
 
 -- --------------------------------------------------------
