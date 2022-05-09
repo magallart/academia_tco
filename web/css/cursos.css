@@ -103,7 +103,7 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */  
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
 }
 
 .acordeon .video-container iframe.youtube-iframe {
@@ -163,7 +163,6 @@ section.sin-acceso a {
   }
 }
 
-
 section.sin-acceso .texto-sin-acceso {
   color: #fff;
   display: flex;
@@ -201,6 +200,12 @@ section.sin-acceso .texto-sin-acceso {
   margin-right: 20px;
 }
 
+.mensajes-curso .mensajes-usuarios {
+  max-height: 435px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
 .enviar-mensaje {
   margin-bottom: 50px;
 }
@@ -217,9 +222,22 @@ form[name="formEnviarMensaje"] textarea {
   resize: none;
 }
 
+form[name="formEnviarMensaje"] input[type="checkbox"] {
+  margin-right: 5px;
+  height: 15px;
+  width: 15px;
+}
+
+form[name="formEnviarMensaje"] label {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  font-family: var(--font-3);
+}
+
 form[name="formEnviarMensaje"] input[type="submit"] {
   width: 20%;
   color: #fff;
+  display: block;
 }
 
 form[name="formEnviarMensaje"] input[type="submit"]:hover {

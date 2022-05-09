@@ -140,18 +140,20 @@
         <div class="row my-5">
             <div class="col">
                 <h2>Mensajes de los alumnos</h2>
-                <?php
-                foreach ($_SESSION['mensajesCursoJavascript'] as $mensajes) {
-                    echo "<div class='mensajeCurso'>";
-                    echo "<span class='infoUsuario'>";
-                    echo "<img src='../img" . $mensajes["fPerfil"] . "' />";
-                    echo "<p class='datosUsuario'>" . $mensajes["nombre"] . "</p>";
-                    echo "<span>";
-                    echo "<p class='mensaje'>" . $mensajes["mensaje"] . "</p>";
-                    echo "</div>";
-                    echo "</hr>";
-                }
-                ?>
+                <div class="mensajes-usuarios">
+                    <?php
+                    foreach ($_SESSION['mensajesCursoJavascript'] as $mensajes) {
+                        echo "<div class='mensajeCurso'>";
+                        echo "<span class='infoUsuario'>";
+                        echo "<img src='../img" . $mensajes["fPerfil"] . "' />";
+                        echo "<p class='datosUsuario'>" . $mensajes["nombre"] . " " . $mensajes["apellidos"] . "</p>";
+                        echo "<span>";
+                        echo "<p class='mensaje'>" . $mensajes["mensaje"] . "</p>";
+                        echo "</div>";
+                        echo "</hr>";
+                    }
+                    ?>
+                </div>                
             </div>
         </div>
     </div>

@@ -55,7 +55,13 @@ class Controller
             $_SESSION['mensajesCursoJavascript'] = $infoCurso['mensajesCursoJavascript'];
 
             if (isset($_POST['enviarMensaje'])) {
-                $_SESSION["mensajeUsuario"] = recoge('nuevoMensaje');  // TODO Añadir función en classCursos.php para añadir el mensaje y el usuario a la base de datos
+                $u = new Usuarios();
+                $mensajeUsuario = recoge('nuevoMensaje');  //TODO Falta validar el mensaje
+                if (isset($_POST['aceptacionPoliticas'])) {
+                    $u->insertarMensajeUsuario($_SESSION['idUsuario'], 0, $mensajeUsuario);
+                } else {
+                    $_SESSION['errores'] = "Checkbox";
+                }
             }
         } catch (Exception $e) {
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
@@ -293,14 +299,14 @@ class Controller
         require __DIR__ . '/../templates/avisosLegales.php';
     }
 
-     // Muestra el contenido de /templates/404.php
-     public function c404()
-     {
-         if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
-             $menu = 'menuLogin.php';
-         } else {
-             $menu = 'menu.php';
-         }
-         require __DIR__ . '/../templates/404.php';
-     }
+    // Muestra el contenido de /templates/404.php
+    public function c404()
+    {
+        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
+            $menu = 'menuLogin.php';
+        } else {
+            $menu = 'menu.php';
+        }
+        require __DIR__ . '/../templates/404.php';
+    }
 }

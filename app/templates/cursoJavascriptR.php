@@ -176,31 +176,40 @@
         <div class="row my-5">
             <div class="col">
                 <h2>Mensajes de los alumnos</h2>
-                <?php
-                foreach ($_SESSION['mensajesCursoJavascript'] as $mensajes) {
-                    echo "<div class='mensajeCurso'>";
-                    echo "<span class='infoUsuario'>";
-                    echo "<img src='../img" . $mensajes["fPerfil"] . "' />";
-                    echo "<p class='datosUsuario'>" . $mensajes["nombre"] . " " . $mensajes["apellidos"] . "</p>";
-                    echo "<span>";
-                    echo "<p class='mensaje'>" . $mensajes["mensaje"] . "</p>";
-                    echo "</div>";
-                    echo "</hr>";
-                }
-                ?>
+                <div class="mensajes-usuarios">
+                    <?php
+                    foreach ($_SESSION['mensajesCursoJavascript'] as $mensajes) {
+                        echo "<div class='mensajeCurso'>";
+                        echo "<span class='infoUsuario'>";
+                        echo "<img src='../img" . $mensajes["fPerfil"] . "' />";
+                        echo "<p class='datosUsuario'>" . $mensajes["nombre"] . " " . $mensajes["apellidos"] . "</p>";
+                        echo "<span>";
+                        echo "<p class='mensaje'>" . $mensajes["mensaje"] . "</p>";
+                        echo "</div>";
+                        echo "</hr>";
+                    }
+                    ?>
+                </div>
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <form name="formEnviarMensaje" action="" method="POST" enctype="multipart/form-data">
-                    <!-- TODO añadir funcionalidad enviar mensaje -->
                     <textarea rows="5" placeholder="Escribe tu mensaje (máximo 255 caracteres)..." name="nuevoMensaje"></textarea>
+                    <input type="checkbox" name="aceptacionPoliticas" id="checkPoliticas">
+                    <label>He leído y acepto las <a href="index.php?ctl=politicaPrivacidad" target="_blank">Políticas de Privacidad</a>.</label>
                     <input type="submit" value="Enviar mensaje" name="enviarMensaje" class="boton" />
                 </form>
             </div>
         </div>
     </div>
 </section>
+
+<?php
+if (isset($_SESSION['errores'])) {  //TODO Borrar después de tests
+    print_r($_SESSION['errores']);
+}
+?>
 
 <?php $contenido = ob_get_clean() ?>
 <?php include 'layout.php' ?>

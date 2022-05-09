@@ -30,12 +30,9 @@ class Usuarios extends Modelo
 
     /*
         · Este método nos sirve para averiguar qué cursos está realizando el usuario.
-        · Devolverá los nombres de los cursos y los temas completados.
     */
     function getInformacionUsuario($id)
     {
-        // SELECT cursos.nombre, curso_usuario.temas_finalizados FROM `cursos` INNER JOIN `curso_usuario` ON cursos.id = curso_usuario.id_curso WHERE `id_usuario` = 1;
-        // TODO Borrar este ejemplo
         $consulta = "select cursos.nombre, curso_usuario.temas_finalizados from cursos inner join curso_usuario on cursos.id = curso_usuario.id_curso where id_usuario =:idUsuario";
 
         $result = $this->conexion->prepare($consulta);
@@ -46,18 +43,35 @@ class Usuarios extends Modelo
 
     /*
         · Este método nos sirve para guardar todos los mensajes del usuario.
-        · Devolverá los nombres de los cursos y los temas completados.
     */
     function getMensajesUsuario($id)
     {
-        // SELECT mensaje FROM `mensajes` WHERE `id_usuario` = 0;
-        // TODO Borrar este ejemplo
         $consulta = "select id_curso, mensaje from mensajes where id_usuario =:idUsuario";
 
         $result = $this->conexion->prepare($consulta);
         $result->bindParam(':idUsuario', $id);
         $result->execute();
         return $result->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    /*
+        · Este método nos sirve para insertar un nuevo mensaje del usuario a un curso.
+    */
+    function insertarMensajeUsuario($idUsuario, $idCurso, $mensaje)
+    {
+
+        //INSERT INTO `mensajes` (`id`, `id_usuario`, `id_curso`, `mensaje`) VALUES
+        // (0, 0, 0, 'He aprendido mucho con este curso. Gracias a la plataforma y a los profesores.'),
+
+        $consulta = "insert into mensajes (id_usuario, id_curso, mensaje) values (?, ?, ?)";
+
+        $result = $this->conexion->prepare($consulta);
+        $result->bindParam(1, $idUsuario);
+        $result->bindParam(2, $idCurso);
+        $result->bindParam(3, $mensaje);
+        $result->execute();
+
+        return $result;
     }
 
 
