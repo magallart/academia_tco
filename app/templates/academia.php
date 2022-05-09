@@ -32,7 +32,9 @@
             <div class="col-lg-6 col-md-12 col-sm-12 bg-image order-lg-1 order-md-1 order-sm-1"></div>
             <div class="col-lg-6 col-md-12 col-sm-12 p-5 text-information order-lg-2 order-md-2 order-sm-2 text-lg-start text-md-center text-sm-center">
                 <h2 class="ms-lg-0 mx-md-auto mx-sm-auto">Especialistas en formación online sobre desarrollo web</h2>
-                <p>El proyecto de la Academia Tus Cursos Online (ATCO) empezó hace 10 años y desde entonces más de 450 alumnos han hecho cursos en nuestra plataforma online con un grado de satisfacción. Un grupo de docentes pensaban que había la enseñanza necesitaba una vuelta de tuerca y decidimos dar ese paso y a comenzar la aventura de nuestras vidas. Con nuestra formación gratuita podrás aprender las tecnologías más demandadas en la actualidad que te servirán para dar un impulso a tu carrera como desarrollador web.</p>
+                <p>El proyecto de la Academia Tus Cursos Online (ATCO) empezó hace 10 años y desde entonces más de 450 alumnos han hecho cursos en nuestra plataforma online con un alto grado de satisfacción.</p>
+                <p>Pensábamos que la enseñanza necesitaba una vuelta de tuerca y decidimos arriesgarnos a dárselo nosotros mismos en lugar de esperar a que lo hicieran otros. No sabíamos que aquella locura se convertiría en la aventura de nuestras vidas.</p>
+                <p>Nuestro objetivo es ofrecerte la mejor formación posible sobre el mundo del desarrollo web y para ello preparamos concienzudamente todos los cursos antes de publicarlos. Los docentes se esfuerzan en mantener los cursos actualizados, de esta manera, cualquier persona que decida realizar un curso obtendrá los conocimientos más actuales.</p>
             </div>
         </div>
     </div>
@@ -43,8 +45,9 @@
         <div class="row">
             <div class="col-lg-6 col-md-12 col-sm-12 p-5 text-information order-lg-1 order-md-2 order-sm-2 text-lg-end text-md-center text-sm-center">
                 <h2 class="me-lg-0 mx-md-auto mx-sm-auto">Nuestro método</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur pariatur delectus accusamus necessitatibus similique? Debitis quaerat doloremque molestiae distinctio at odit vel accusamus minus earum, excepturi tenetur ratione quis dolores.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur pariatur delectus accusamus necessitatibus similique? Debitis quaerat doloremque molestiae distinctio at odit vel accusamus minus earum, excepturi tenetur ratione quis dolores.</p>
+                <p>Emprender una academia online sobre desarrollo web (o cualquier otro tipo de enseñanza) no es una tarea fácil. Hoy en día hay muchas webs que ofrecen un contenido similar de pago y/o gratis, entonces ¿por qué emprender un negocio con tanta competencia? ¿Se puede competir contra el conocimiento gratuito en internet? La respuesta es sí. Déjanos contarte los motivos y juzga por ti mismo.</p>
+                <p>Como hemos comentado anteriormente, en internet se pueden encontrar cursos gratis sin mucha dificultad, parece una locura abrir una academia que ofrezca lo mismo, ¿verdad? En parte tienes razón, pero hay una cosa que falla en la mayor parte de la competencia y en eso es justamente donde ATCO se diferencia: la cercanía con nuestros alumnos.</p>
+                <p>Tener la oportunidad de contar con una persona que pueda resolver cualquier duda que te surja no es algo que puedas encontrar buscando por internet fácilmente. Nuestros cursos son increíbles, aunque la esencia de la academia reside en nuestra cercanía con nuestros alumnos, nuestra cercanía contigo.</p>
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12 bg-image order-lg-2 order-md-1 order-sm-1"></div>
         </div>
@@ -57,8 +60,9 @@
             <div class="col-lg-6 col-md-12 col-sm-12 bg-image order-lg-1 order-md-1 order-sm-1"></div>
             <div class="col-lg-6 col-md-12 col-sm-12 p-5 text-information order-lg-2 text-lg-start text-md-center text-sm-center order-md-2 order-sm-2">
                 <h2 class="ms-lg-0 mx-md-auto mx-sm-auto">Formarás parte de nuestra gran familia</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur pariatur delectus accusamus necessitatibus similique? Debitis quaerat doloremque molestiae distinctio at odit vel accusamus minus earum, excepturi tenetur ratione quis dolores.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur pariatur delectus accusamus necessitatibus similique? Debitis quaerat doloremque molestiae distinctio at odit vel accusamus minus earum, excepturi tenetur ratione quis dolores.</p>
+                <p>En la sección anterior te hablamos acerca de nuestra cercanía, ¿recuerdas? Pues bien, los alumnos que deciden confiar en nuestro método para realizar nuestros cursos forman parte de nuestra gran familia. Estaremos a tu lado a lo largo de todo el camino para que no te sientas solo, para darte ánimos, ayudarte cuando tropieces y felicitarte cuando lo consigas.</p>
+                <p>Queremos que formes parte de ATCO porque creemos en el trabajo que hacemos día a día. Pensamos que ofrecemos algo diferenciador en un mercado saturado y más de 450 alumnos forman parte de nuestra gran familia.</p>
+                <p>Sabemos lo que estás pensando ahora mismo: decir todo esto es fácil y cualquiera puede escribir estos textos, pero ¿será verdad? Nosotros te respondemos: ¿por qué no lo compruebas tu mismo y sales de dudas?</p>
             </div>
         </div>
     </div>
@@ -83,10 +87,10 @@
             <div class="col-lg-6 col-md-12 col-sm-12 cardEquipo">
                 <div class="card mb-3 mx-md-auto text-md-start text-sm-center">
                     <div class="row g-0">
-                        <div class="col-md-4">
+                        <div class="col-md-4 col-sm-4 col-4">
                             <img src="../../img/marisa-lopez.jpg" class="img-fluid rounded-start" alt="...">
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-md-8 col-sm-8 col-8">
                             <div class="card-body">
                                 <h3>Marissa López</h3>
                                 <h4>Ceo y fundadora</h4>
@@ -106,10 +110,10 @@
             <div class="col-lg-6 col-md-12 col-sm-12 cardEquipo">
                 <div class="card mb-3 mx-md-auto text-md-start text-sm-center">
                     <div class="row g-0">
-                        <div class="col-md-4">
+                        <div class="col-md-4 col-sm-4 col-4">
                             <img src="../../img/susana-fonseca.jpg" class="img-fluid rounded-start" alt="...">
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-md-8 col-sm-8 col-8">
                             <div class="card-body">
                                 <h3>Susana Fonseca</h3>
                                 <h4>Coordinadora General</h4>
@@ -131,15 +135,15 @@
             <div class="col-lg-6 col-md-12 col-sm-12 cardEquipo">
                 <div class="card mb-3 mx-md-auto text-md-start text-sm-center">
                     <div class="row g-0">
-                        <div class="col-md-4">
+                        <div class="col-md-4 col-sm-4 col-4">
                             <img src="../../img/pedro-helenos.jpg" class="img-fluid rounded-start" alt="...">
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-md-8 col-sm-8 col-8">
                             <div class="card-body">
                                 <h3>Pedro Helenos</h3>
                                 <h4>Manager y Marketing Digital</h4>
                                 <div class="separador"></div>
-                                <p>¿Nos has conocido por internet? Aquí tienes el culpable. Encargado de darnos a conocer por las redes y </p>
+                                <p>Si conociste ATCO a través de internet debes de saber que Pedro es el culpable. Se encarga de todo el marketing digital de la academia.</p>
                                 <div class="social">
                                     <a href="https://es.linkedin.com/" target="_blank" alt="Foto de Marisa López"><img src="../../img/linkedin-icono.png" alt=""></a>
                                     <a href="https://twitter.com/?lang=es" target="_blank" alt="Foto de Marisa López"><img src="../../img/twitter-icono.png" alt=""></a>
@@ -154,15 +158,15 @@
             <div class="col-lg-6 col-md-12 col-sm-12 cardEquipo">
                 <div class="card mb-3 mx-md-auto text-md-start text-sm-center">
                     <div class="row g-0">
-                        <div class="col-md-4">
+                        <div class="col-md-4 col-sm-4 col-4">
                             <img src="../../img/marcos-alfonso.jpg" class="img-fluid rounded-start" alt="...">
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-md-8 col-sm-8 col-8">
                             <div class="card-body">
                                 <h3>Marcos Alfonso</h3>
                                 <h4>Profesor</h4>
                                 <div class="separador"></div>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel mollitia asperiores quas nihil delectus labore sint deserunt dolor, quos magnam voluptates.</p>
+                                <p>Especialista en JavaScript y todos sus frameworks. Cuenta con más de 15 años de experiencia como docente y desarrollador web.</p>
                                 <div class="social">
                                     <a href="https://es.linkedin.com/" target="_blank" alt="Foto de Marisa López"><img src="../../img/linkedin-icono.png" alt=""></a>
                                     <a href="https://twitter.com/?lang=es" target="_blank" alt="Foto de Marisa López"><img src="../../img/twitter-icono.png" alt=""></a>
@@ -179,15 +183,15 @@
             <div class="col-lg-6 col-md-12 col-sm-12 cardEquipo">
                 <div class="card mb-3 mx-md-auto text-md-start text-sm-center">
                     <div class="row g-0">
-                        <div class="col-md-4">
+                        <div class="col-md-4 col-sm-4 col-4">
                             <img src="../../img/luis-benavent.jpg" class="img-fluid rounded-start" alt="...">
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-md-8 col-sm-8 col-8">
                             <div class="card-body">
                                 <h3>Luis Benavent</h3>
                                 <h4>Profesor</h4>
                                 <div class="separador"></div>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel mollitia asperiores quas nihil delectus labore sint deserunt dolor, quos magnam voluptates.</p>
+                                <p>Desarrollador fullstack (MEAN y MERN) con una amplia experiencia en el sector. Le llegó la vocación de la docencia cuando descubrió ATCO.</p>
                                 <div class="social">
                                     <a href="https://es.linkedin.com/" target="_blank" alt="Foto de Marisa López"><img src="../../img/linkedin-icono.png" alt=""></a>
                                     <a href="https://twitter.com/?lang=es" target="_blank" alt="Foto de Marisa López"><img src="../../img/twitter-icono.png" alt=""></a>
@@ -202,15 +206,15 @@
             <div class="col-lg-6 col-md-12 col-sm-12 cardEquipo">
                 <div class="card mb-3 mx-md-auto text-md-start text-sm-center">
                     <div class="row g-0">
-                        <div class="col-md-4">
+                        <div class="col-md-4 col-sm-4 col-4">
                             <img src="../../img/marta-buenafuente.jpg" class="img-fluid rounded-start" alt="...">
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-md-8 col-sm-8 col-8">
                             <div class="card-body">
                                 <h3>Marta Buenafuente</h3>
                                 <h4>Profesora</h4>
                                 <div class="separador"></div>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel mollitia asperiores quas nihil delectus labore sint deserunt dolor, quos magnam voluptates.</p>
+                                <p>Experta en React y sistemas de control de versiones (GIT). Es el fichaje más reciente de la academia. Ha dado un soplo de aire fresco a ATCO.</p>
                                 <div class="social">
                                     <a href="https://es.linkedin.com/" target="_blank" alt="Foto de Marisa López"><img src="../../img/linkedin-icono.png" alt=""></a>
                                     <a href="https://twitter.com/?lang=es" target="_blank" alt="Foto de Marisa López"><img src="../../img/twitter-icono.png" alt=""></a>

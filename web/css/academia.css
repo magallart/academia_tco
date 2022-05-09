@@ -76,6 +76,7 @@ section.equipo-cards .cardEquipo .social img {
   }
 
   section.equipo-cards .cardEquipo p {
-    padding: 0 40px;
+    padding: 0 10px;
+    text-align: left;
   }
 }
