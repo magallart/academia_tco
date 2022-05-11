@@ -119,6 +119,39 @@ class Controller
         }
     }
 
+    // Muestra el contenido de /templates/cursoReact.php
+    public function cCursoReact()
+    {
+        try {
+            $infoCurso = array(
+                'mensajesCursoReact' => array()
+            );
+
+            $c = new Cursos();
+            $idCurso = 1;
+            $infoCurso['mensajesCursoReact'] = $c->getMensajesCurso($idCurso);
+            $_SESSION['mensajesCursoReact'] = $infoCurso['mensajesCursoReact'];
+
+            if (isset($_POST['enviarMensaje'])) {
+                $_SESSION["mensajeUsuario"] = recoge('nuevoMensaje');  // TODO Añadir función en classCursos.php para añadir el mensaje y el usuario a la base de datos
+            }
+        } catch (Exception $e) {
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
+            header('Location: index.php?ctl=error');
+        } catch (Error $e) {
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
+            header('Location: index.php?ctl=error');
+        } {
+            if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
+                $menu = 'menuLogin.php';
+                require __DIR__ . '/../templates/cursoReactR.php';
+            } else {
+                $menu = 'menu.php';
+                require __DIR__ . '/../templates/cursoReactU.php';
+            }
+        }
+    }
+
     // Muestra el contenido de /templates/cursoJavascript.php
     public function cCursoGit()
     {

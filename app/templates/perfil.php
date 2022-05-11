@@ -90,6 +90,33 @@
         <div class="col-lg-6 col-md-12 p-5">
             <div class="cursosApuntados mt-2">
                 <h2>Mis cursos</h2>
+                <?php
+                $cursos = array();  //TODO Realizar funcionalidad
+                foreach ($_SESSION['cursos'] as $cursosUsuario) {
+                    switch ($cursosUsuario["id"]) {
+                        case 0:
+                            echo "<div class='linkCurso'>";
+                            echo "<a href='index.php?ctl=cursoJavascript' alt='Enlace a curso de Javascript'><img src='../../img/logo-js.jpg' alt='Logo JavaScript'></a>";
+                            echo "</div>";
+                            break;
+                        case 1:
+                            echo "<div class='linkCurso'>";
+                            echo "<a href='index.php?ctl=cursoAngular' alt='Enlace a curso de Angular'><img src='../../img/logo-angular.jpg' alt='Logo Angular'></a>";
+                            echo "</div>";
+                            break;
+                        case 2:
+                            echo "<div class='linkCurso'>";
+                            echo "<a href='index.php?ctl=cursoReact' alt='Enlace a curso de React'><img src='../../img/logo-react.jpg' alt='Logo React'></a>";
+                            echo "</div>";
+                            break;
+                        case 3:
+                            echo "<div class='linkCurso'>";
+                            echo "<a href='index.php?ctl=cursoGit' alt='Enlace a curso de Git'><img src='../../img/logo-js.jpg' alt='Logo Git'></a>";
+                            echo "</div>";
+                            break;
+                    }
+                }
+                ?>
             </div>
 
             <h2>Últimos mensajes</h2>

@@ -37,6 +37,20 @@ form[name="formPerfil"] label {
   font-weight: 600;
 }
 
+.cursosApuntados {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.cursosApuntados .linkCurso {
+  display: inline;
+  padding-right: 20px;
+}
+
+.cursosApuntados .linkCurso img {
+  width: 50px;
+}
+
 .mensajes {  
   width: 100%;
   max-height: 340px;

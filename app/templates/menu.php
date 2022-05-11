@@ -30,6 +30,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="index.php?ctl=cursoJavascript">JavaScript</a></li>
                         <li><a class="dropdown-item" href="index.php?ctl=cursoAngular">Angular</a></li>
+                        <li><a class="dropdown-item" href="index.php?ctl=cursoReact">React</a></li>
                         <li><a class="dropdown-item" href="index.php?ctl=cursoGit">Git</a></li>
                     </ul>
                 </li>
