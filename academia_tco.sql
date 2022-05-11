@@ -57,7 +57,10 @@ INSERT INTO `usuarios` (`id`, `nombre`, `apellidos`, `email`, `password`, `direc
 (4, 'Liliana', 'Vergara Alarcon', 'liliana@gmail.com', 'liliana', 'Misionero Vicente Caña 1-25', 46950, 'Valencia', '2008-08-29', '/usuarios/liliana_vergara_alarcon.jpg', 1, 1),
 (5, 'Adam', 'Montoro Torre', 'adam@gmail.com', 'adam', 'Mestre Palau 90-3', 46930, 'Valencia', '2003-12-02', '/usuarios/adam_montoro_torre.jpg', 1, 1),
 (6, 'Eulalia', 'Vilchez Saenz', 'eulalia@gmail.com', 'eulalia', 'Mayor 11-3', 46920, 'Valencia', '2000-04-17', '/usuarios/eulalia_vilchez_saenz.jpg', 2, 1),
-(7, 'Fernando', 'Benavides Carrera', 'fernando@gmail.com', 'fernando', 'Doctor Enrique López 7-8', 46018, 'Valencia', '1985-01-25', '/usuarios/fernando_benavides_carrera.jpg', 1, 1);
+(7, 'Fernando', 'Benavides Carrera', 'fernando@gmail.com', 'fernando', 'Doctor Enrique López 7-8', 46018, 'Valencia', '1985-01-25', '/usuarios/fernando_benavides_carrera.jpg', 1, 1),
+(8, 'Marcos', 'Alfonso Márquez', 'marcos@gmail.com', 'marcos', 'Forata 12-18', 46017, 'Valencia', '1983-02-22', 'marcos-alfonso.jpg', 2, 1),
+(9, 'Luis', 'Benavent Solís', 'luis@gmail.com', 'luis', 'Antonio Sacramento 2-14', 46013, 'Valencia', '1991-12-08', 'luis-benavent.jpg', 2, 1),
+(10, 'Marta', 'Buenafuente Sal', 'marta@gmail.com', 'marta', 'Maderas 45-2', 46922, 'Valencia', '1996-09-01', 'marta-buenafuente.jpg', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -105,7 +108,16 @@ INSERT INTO `mensajes` (`id`, `id_usuario`, `id_curso`, `mensaje`) VALUES
 (9, 3, 1, 'Tenía dudas sobre qué framework de JavaScript centrar mi carrera, pero después de hacer este curso lo tengo claro. Elijo Angular. Gracias ATCO.'),
 (10, 4, 1, 'Es un framework muy poderoso y que cuenta con el respaldo de Google, así que he decidido empezar este curso gratis.'),
 (11, 5, 1, 'Quiero seguir profundizando en Angular, espero que pongáis un curso avanzado sobre este framework.'),
-(12, 7, 1, 'Conozco React y tenía ganas de investigar Angular para poder ampliar mi currículum. Quedo muy satisfecho con este curso.');
+(12, 7, 1, 'Conozco React y tenía ganas de investigar Angular para poder ampliar mi currículum. Quedo muy satisfecho con este curso.'),
+(13, 1, 2, 'Me animé a realizar el curso de React después de haber hecho los de Angular y JavaScript. He aprendido mucho y ahora no sé cual de todos me gusta más.'),
+(14, 2, 2, 'React tiene mucha demanda hoy en día y quería estar preparado, así que decidí realizar el curso y he terminado muy contento.'),
+(15, 4, 2, 'Magnífico curso de React donde se empieza desde el principio hasta llegar a nivel avanzado.'),
+(16, 7, 2, 'Un curso muy correcto por parte del docente. Explica todo de manera sencilla y directa. Justo lo que buscaba.'),
+(17, 2, 3, 'En mi trabajo me exigían tener conocimientos de Git y confié en ATCO para aprender lo que necesitaba.'),
+(18, 3, 3, 'Un acierto total este curso. Ahora sé mucho más de Git que antes de empezar.'),
+(19, 4, 3, 'La profesora que hizo el temario sabía lo que hacía. Explica lo necesario para trabajar con Git en el día a día.'),
+(20, 5, 3, 'Git es vital hoy en día, sin Git no puedes desarrollar nada de forma profesional por lo que es totalmente necesario tener buenos conocimientos de Git.'),
+(21, 7, 3, 'He realizado el curso en 1 semana. Notaba como mi progresión y conocimientos avanzaban con cada tema. Genial.');
 
 
 -- --------------------------------------------------------
@@ -128,8 +140,10 @@ CREATE TABLE `cursos` (
 --
 
 INSERT INTO `cursos` (`id`, `nombre`, `temas`, `profesor`, `fCurso`) VALUES
-(0, 'JavaScript', 10, 6, 'logo-js.jpg'),
-(1, 'Angular', 35, 6, 'logo-angular.jpg');
+(0, 'JavaScript', 10, 8, 'logo-js.jpg'),
+(1, 'Angular', 35, 9, 'logo-angular.jpg'),
+(2, 'React', 35, 9, 'logo-react.jpg'),
+(3, 'Git', 35, 10, 'logo-git.jpg');
 
 
 -- --------------------------------------------------------
@@ -141,9 +155,8 @@ INSERT INTO `cursos` (`id`, `nombre`, `temas`, `profesor`, `fCurso`) VALUES
 CREATE TABLE `curso_usuario` (
   `id_usuario` int(11) NOT NULL,
   `id_curso` int(11) NOT NULL,  
-  `temas_finalizados` int(11) NOT NULL,
+  `finalizados` int(1) NOT NULL,
   `valoracion` float NOT NULL,
-  `aprobado` float NOT NULL,
   PRIMARY KEY (`id_curso`, `id_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -151,9 +164,29 @@ CREATE TABLE `curso_usuario` (
 -- Volcado de datos para la tabla `curso_usuario`
 --
 
-INSERT INTO `curso_usuario` (`id_usuario`, `id_curso`, `temas_finalizados`, `valoracion`, `aprobado`) VALUES
-(0, 0, 2, 9, 0),
-(0, 1, 14, 10, 0);
+INSERT INTO `curso_usuario` (`id_usuario`, `id_curso`, `finalizado`, `valoracion`) VALUES
+(0, 0, 1, 9),
+(0, 1, 1, 10),
+(1, 0, 1, 9),
+(1, 2, 1, 10),
+(2, 0, 1, 9),
+(2, 1, 1, 8),
+(2, 2, 1, 9),
+(2, 3, 1, 7),
+(3, 0, 1, 9),
+(3, 1, 1, 8),
+(3, 3, 1, 10),
+(4, 0, 1, 9),
+(4, 1, 1, 8),
+(4, 2, 1, 9),
+(4, 3, 1, 7),
+(5, 0, 1, 9),
+(5, 1, 1, 8),
+(5, 3, 1, 10),
+(7, 0, 1, 9),
+(7, 1, 1, 8),
+(7, 2, 1, 9),
+(7, 3, 1, 7);
 
 
 --
@@ -172,7 +205,6 @@ ALTER TABLE `tokens`
 --
 ALTER TABLE `cursos`
   ADD CONSTRAINT fk_cursos_profesor FOREIGN KEY(profesor) REFERENCES usuarios(id);
-
 
 
 --
