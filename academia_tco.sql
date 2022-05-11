@@ -154,8 +154,9 @@ INSERT INTO `cursos` (`id`, `nombre`, `temas`, `profesor`, `fCurso`) VALUES
 
 CREATE TABLE `curso_usuario` (
   `id_usuario` int(11) NOT NULL,
-  `id_curso` int(11) NOT NULL,  
-  `finalizados` int(1) NOT NULL,
+  `id_curso` int(11) NOT NULL, 
+  `temasTerminados` int(1) NOT NULL, 
+  `finalizado` int(1) NOT NULL,
   `valoracion` float NOT NULL,
   PRIMARY KEY (`id_curso`, `id_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -164,29 +165,29 @@ CREATE TABLE `curso_usuario` (
 -- Volcado de datos para la tabla `curso_usuario`
 --
 
-INSERT INTO `curso_usuario` (`id_usuario`, `id_curso`, `finalizado`, `valoracion`) VALUES
-(0, 0, 1, 9),
-(0, 1, 1, 10),
-(1, 0, 1, 9),
-(1, 2, 1, 10),
-(2, 0, 1, 9),
-(2, 1, 1, 8),
-(2, 2, 1, 9),
-(2, 3, 1, 7),
-(3, 0, 1, 9),
-(3, 1, 1, 8),
-(3, 3, 1, 10),
-(4, 0, 1, 9),
-(4, 1, 1, 8),
-(4, 2, 1, 9),
-(4, 3, 1, 7),
-(5, 0, 1, 9),
-(5, 1, 1, 8),
-(5, 3, 1, 10),
-(7, 0, 1, 9),
-(7, 1, 1, 8),
-(7, 2, 1, 9),
-(7, 3, 1, 7);
+INSERT INTO `curso_usuario` (`id_usuario`, `id_curso`, `temasTerminados`, `finalizado`, `valoracion`) VALUES
+(0, 0, 5, 0, 9),
+(0, 1, 4, 0, 10),
+(1, 0, 0, 0, 9),
+(1, 2, 12, 1, 10),
+(2, 0, 10, 0, 9),
+(2, 1, 8, 0, 8),
+(2, 2, 14, 0, 9),
+(2, 3, 9, 0, 7),
+(3, 0, 15, 0, 9),
+(3, 1, 7, 0, 8),
+(3, 3, 15, 0, 10),
+(4, 0, 8, 0, 9),
+(4, 1, 10, 0, 8),
+(4, 2, 8, 0, 9),
+(4, 3, 4, 0, 7),
+(5, 0, 15, 0, 9),
+(5, 1, 12, 0, 8),
+(5, 3, 18, 0, 10),
+(7, 0, 5, 0, 9),
+(7, 1, 8, 0, 8),
+(7, 2, 9, 0, 9),
+(7, 3, 14, 0, 7);
 
 
 --
