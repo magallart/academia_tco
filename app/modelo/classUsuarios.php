@@ -33,7 +33,7 @@ class Usuarios extends Modelo
     */
     function getCursosUsuario($id)
     {
-        $consulta = "select cursos.id, cursos.nombre from cursos inner join curso_usuario on cursos.id = curso_usuario.id_curso where id_usuario =:idUsuario";
+        $consulta = "select cursos.id, cursos.nombre, curso_usuario.temasTerminados, curso_usuario.finalizado from cursos inner join curso_usuario on cursos.id = curso_usuario.id_curso where id_usuario =:idUsuario";
 
         $result = $this->conexion->prepare($consulta);
         $result->bindParam(':idUsuario', $id);

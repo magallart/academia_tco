@@ -17,7 +17,7 @@
                 </p>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12">
-                <img src="../img/curso-git.png" class="d-block mx-lg-auto img-fluid" alt="Chica sonriendo con un laptop en la mano" width="700" height="500" loading="lazy" />
+                <img src="../img/curso-react.png" class="d-block mx-lg-auto img-fluid" alt="Laptop con imagen de react" width="700" height="500" loading="lazy" />
             </div>
         </div>
     </div>
