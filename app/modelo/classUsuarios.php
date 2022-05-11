@@ -31,9 +31,9 @@ class Usuarios extends Modelo
     /*
         · Este método nos sirve para averiguar qué cursos está realizando el usuario.
     */
-    function getInformacionUsuario($id)
+    function getCursosUsuario($id)
     {
-        $consulta = "select cursos.nombre, curso_usuario.temas_finalizados from cursos inner join curso_usuario on cursos.id = curso_usuario.id_curso where id_usuario =:idUsuario";
+        $consulta = "select cursos.id, cursos.nombre from cursos inner join curso_usuario on cursos.id = curso_usuario.id_curso where id_usuario =:idUsuario";
 
         $result = $this->conexion->prepare($consulta);
         $result->bindParam(':idUsuario', $id);

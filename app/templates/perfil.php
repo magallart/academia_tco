@@ -88,6 +88,10 @@
 
         </div>
         <div class="col-lg-6 col-md-12 p-5">
+            <div class="cursosApuntados mt-2">
+                <h2>Mis cursos</h2>
+            </div>
+
             <h2>Últimos mensajes</h2>
             <div class="mensajes">
                 <?php
@@ -108,15 +112,23 @@
                             echo "Curso Angular";
                             echo "</span>";
                             break;
+                        case 2:
+                            echo "<span class='tituloCurso'>";
+                            echo "<img src='../../img/logo-react.jpg' alt='Logo React'>";
+                            echo "Curso React";
+                            echo "</span>";
+                            break;
+                        case 3:
+                            echo "<span class='tituloCurso'>";
+                            echo "<img src='../../img/logo-git.jpg' alt='Logo Git'>";
+                            echo "Curso Git";
+                            echo "</span>";
+                            break;
                     }
                     echo $mensajes["mensaje"];
                     echo "</div>";
                 }
                 ?>
-            </div>
-
-            <div class="cursosApuntados mt-2">
-                <h2>Cursos empezados...</h2>
             </div>
         </div>
     </div>

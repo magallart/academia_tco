@@ -203,7 +203,7 @@ class Controller
                     $_SESSION['fnacimientoUsuario'] = $infoUsuario['resultado']['fNacimiento'];
                     $_SESSION['fPerfil'] = $infoUsuario['resultado']['fPerfil'];
                     $idUsuario = $_SESSION['idUsuario'];
-                    $infoUsuario['cursos'] = $u->getInformacionUsuario($idUsuario);
+                    $infoUsuario['cursos'] = $u->getCursosUsuario($idUsuario);
                     $_SESSION['cursos'] = $infoUsuario['cursos'];
                     $infoUsuario['mensajes'] = $u->getMensajesUsuario($idUsuario);
                     $_SESSION['mensajes'] = $infoUsuario['mensajes'];
