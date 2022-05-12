@@ -60,9 +60,6 @@ class Usuarios extends Modelo
     function insertarMensajeUsuario($idUsuario, $idCurso, $mensaje)
     {
 
-        //INSERT INTO `mensajes` (`id`, `id_usuario`, `id_curso`, `mensaje`) VALUES
-        // (0, 0, 0, 'He aprendido mucho con este curso. Gracias a la plataforma y a los profesores.'),
-
         $consulta = "insert into mensajes (id_usuario, id_curso, mensaje) values (?, ?, ?)";
 
         $result = $this->conexion->prepare($consulta);
@@ -74,6 +71,21 @@ class Usuarios extends Modelo
         return $result;
     }
 
+    /*
+        · Este método comprueba si un curso ha sido finalizado por un usuario.
+    */
+    function estadoCursoUsuario($idUsuario, $idCurso)
+    {
+        $consulta = "select finalizado from curso_usuario where id_usuario = :idUsuario and id_curso = :idCurso";
+
+        $result = $this->conexion->prepare($consulta);
+        $result->bindParam(':idUsuario', $idUsuario);
+        $result->bindParam(':idCurso', $idCurso);
+        $result->execute();
+        return $result->fetchColumn();
+
+        return $result;
+    }
 
 
     /*

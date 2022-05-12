@@ -1,7 +1,7 @@
 <?php ob_start(); ?>
 
 <!--
-    · Contenido de la página del curso Git para los usuarios que no están registrados. 
+    · Contenido de la página del curso React para los usuarios que no están registrados. 
     · Lo guardamos en el buffer y se carga en la variable $contenido para mostrarla en /templates/layout
 -->
 

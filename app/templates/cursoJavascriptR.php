@@ -1,7 +1,7 @@
 <?php ob_start(); ?>
 
 <!--
-    · Contenido de la página de inicio. 
+    · Contenido de la página del curso JavaScript para usuarios registrados. 
     · Lo guardamos en el buffer y se carga en la variable $contenido para mostrarla en /templates/layout
 -->
 
@@ -52,7 +52,8 @@
                         <p>JavaScript es el lenguaje de programación de la web por excelencia en la parte cliente. Es el único que puede ejecutarse en todos los navegadores sin necesidad de cargar plugins adicionales. Nos permite crear páginas dinámicas, dotando a nuestro sitio web de efectos y funcionalidades que extienden las posibilidades que nos ofrece HTML5.</p>
                     </div>
                     <div class="tab-pane fade text-start" id="docente" role="tabpanel" aria-labelledby="docente-tab">
-                        <p>Contenido Docente</p>
+                        <p>El docente que está a cargo del curso de JavaScript en ATCO es Marcos Alfonso. Licenciado en Ingeniería informática por la UCO cuenta con más de 15 años de experiencia como desarrollador web y docente. Su experiencia profesional en el sector privado es muy amplia y ha desarrollado proyectos muy importantes.</p>
+                        <p>Debido a su extensa experiencia como docente y desarrollador, conoce a la perfección el lenguaje y sabe comunicar los conocimientos necesarios para que los alumnos de la academia consigan realizar el curso.</p>
                     </div>
 
                     <div class="tab-pane fade text-start" id="requisitos" role="tabpanel" aria-labelledby="requisitos-tab">
@@ -115,18 +116,28 @@
             <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </section>
 
+<?php
+    $u = new Usuarios();
+    $finalCursoUsuario = $u -> estadoCursoUsuario($_SESSION['idUsuario'], 0);
+    $temasTerminados = $_SESSION['cursos'][0]['temasTerminados'];
+    if (!$finalCursoUsuario && $temasTerminados>0) {
+        echo "Sin acabar.";
+    }
+
+?>
+
 <section>
     <div class="container acordeon">
         <div class="row my-5">
             <div class="col">
-                <div class="accordion" id="accordionExample">
+                <div class="accordion" id="temasCurso">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingOne">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                 Tema 1: Introducción a JavaScript
                             </button>
                         </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#temasCurso">
                             <div class="accordion-body">
                                 <p>Comenzamos el Curso JavaScript 2022 aprendiendo a utilizar la etiqueta script JavaScript (y a diferir su carga con el atributo defer) en tus proyectos frontend. No te pierdas este vídeo donde aprenderemos como enlazar un archivo JavaScript</p>
                                 <div class="video-container">
@@ -141,7 +152,7 @@
                                 Tema 2: ¿Qué es JavaScript?
                             </button>
                         </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#temasCurso">
                             <div class="accordion-body">
                                 <p>El hoisting JavaScript es uno de los conceptos principales que debes entender. También llamado alzado JavaScript, eleva la declaración de variables y las funciones declaradas al inicio del programa.</p>
                                 <div class="video-container">
@@ -156,7 +167,7 @@
                                 Tema 3: Variables
                             </button>
                         </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#temasCurso">
                             <div class="accordion-body">
                                 <p>Aprende las principales diferencias entre var vs let a la hora de declarar variables JavaScript. Por ejemplo, las variables declaradas con var tienen ámbito de función mientras que las variables let JavaScript tienen ámbito de bloque. También se comportan diferente a la hora de ser alzadas.</p>
                                 <div class="video-container">
