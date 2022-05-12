@@ -121,7 +121,7 @@
     $finalCursoUsuario = $u -> estadoCursoUsuario($_SESSION['idUsuario'], 0);
     $temasTerminados = $_SESSION['cursos'][0]['temasTerminados'];
     if (!$finalCursoUsuario && $temasTerminados>0) {
-        echo "Sin acabar.";
+        echo "<a class='boton' href='index.php?ctl=cursoJavascript#tema3'>Seguir con el curso <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
     }
 
 ?>
@@ -132,12 +132,12 @@
             <div class="col">
                 <div class="accordion" id="temasCurso">
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOne">
+                        <h2 class="accordion-header" id="tema1">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                 Tema 1: Introducción a JavaScript
                             </button>
                         </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#temasCurso">
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="tema1" data-bs-parent="#temasCurso">
                             <div class="accordion-body">
                                 <p>Comenzamos el Curso JavaScript 2022 aprendiendo a utilizar la etiqueta script JavaScript (y a diferir su carga con el atributo defer) en tus proyectos frontend. No te pierdas este vídeo donde aprenderemos como enlazar un archivo JavaScript</p>
                                 <div class="video-container">
@@ -147,12 +147,12 @@
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTwo">
+                        <h2 class="accordion-header" id="tema2">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                 Tema 2: ¿Qué es JavaScript?
                             </button>
                         </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#temasCurso">
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="tema2" data-bs-parent="#temasCurso">
                             <div class="accordion-body">
                                 <p>El hoisting JavaScript es uno de los conceptos principales que debes entender. También llamado alzado JavaScript, eleva la declaración de variables y las funciones declaradas al inicio del programa.</p>
                                 <div class="video-container">
@@ -162,12 +162,12 @@
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingThree">
+                        <h2 class="accordion-header" id="tema3">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                 Tema 3: Variables
                             </button>
                         </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#temasCurso">
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="tema3" data-bs-parent="#temasCurso">
                             <div class="accordion-body">
                                 <p>Aprende las principales diferencias entre var vs let a la hora de declarar variables JavaScript. Por ejemplo, las variables declaradas con var tienen ámbito de función mientras que las variables let JavaScript tienen ámbito de bloque. También se comportan diferente a la hora de ser alzadas.</p>
                                 <div class="video-container">
@@ -176,7 +176,219 @@
                             </div>
                         </div>
                     </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="tema4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Tema 4: XXXXXXXXXXXXXXXXX
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="tema4" data-bs-parent="#temasCurso">
+                            <div class="accordion-body">
+                                <p>XXXXXXXXXXXXXXXX</p>
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/iIkeGM1I-cM" title="YouTube video player" class="youtube-iframe"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="tema5">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Tema 5: XXXXXXXXXXXXXXXXX
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="tema5" data-bs-parent="#temasCurso">
+                            <div class="accordion-body">
+                                <p>XXXXXXXXXXXXXXXX</p>
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/iIkeGM1I-cM" title="YouTube video player" class="youtube-iframe"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="tema6">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Tema 6: XXXXXXXXXXXXXXXXX
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="tema6" data-bs-parent="#temasCurso">
+                            <div class="accordion-body">
+                                <p>XXXXXXXXXXXXXXXX</p>
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/iIkeGM1I-cM" title="YouTube video player" class="youtube-iframe"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="tema7">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Tema 7: XXXXXXXXXXXXXXXXX
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="tema7" data-bs-parent="#temasCurso">
+                            <div class="accordion-body">
+                                <p>XXXXXXXXXXXXXXXX</p>
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/iIkeGM1I-cM" title="YouTube video player" class="youtube-iframe"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div class="accordion-item">
+                        <h2 class="accordion-header" id="tema8">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Tema 8: XXXXXXXXXXXXXXXXX
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="tema8" data-bs-parent="#temasCurso">
+                            <div class="accordion-body">
+                                <p>XXXXXXXXXXXXXXXX</p>
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/iIkeGM1I-cM" title="YouTube video player" class="youtube-iframe"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="tema9">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Tema 9: XXXXXXXXXXXXXXXXX
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="tema9" data-bs-parent="#temasCurso">
+                            <div class="accordion-body">
+                                <p>XXXXXXXXXXXXXXXX</p>
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/iIkeGM1I-cM" title="YouTube video player" class="youtube-iframe"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="tema10">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Tema 10: XXXXXXXXXXXXXXXXX
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="tema10" data-bs-parent="#temasCurso">
+                            <div class="accordion-body">
+                                <p>XXXXXXXXXXXXXXXX</p>
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/iIkeGM1I-cM" title="YouTube video player" class="youtube-iframe"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="tema11">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Tema 11: XXXXXXXXXXXXXXXXX
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="tema11" data-bs-parent="#temasCurso">
+                            <div class="accordion-body">
+                                <p>XXXXXXXXXXXXXXXX</p>
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/iIkeGM1I-cM" title="YouTube video player" class="youtube-iframe"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="tema12">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Tema 12: XXXXXXXXXXXXXXXXX
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="tema12" data-bs-parent="#temasCurso">
+                            <div class="accordion-body">
+                                <p>XXXXXXXXXXXXXXXX</p>
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/iIkeGM1I-cM" title="YouTube video player" class="youtube-iframe"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="tema13">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Tema 13: XXXXXXXXXXXXXXXXX
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="tema13" data-bs-parent="#temasCurso">
+                            <div class="accordion-body">
+                                <p>XXXXXXXXXXXXXXXX</p>
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/iIkeGM1I-cM" title="YouTube video player" class="youtube-iframe"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="tema14">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Tema 14: XXXXXXXXXXXXXXXXX
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="tema14" data-bs-parent="#temasCurso">
+                            <div class="accordion-body">
+                                <p>XXXXXXXXXXXXXXXX</p>
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/iIkeGM1I-cM" title="YouTube video player" class="youtube-iframe"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="tema15">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Tema 15: XXXXXXXXXXXXXXXXX
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="tema15" data-bs-parent="#temasCurso">
+                            <div class="accordion-body">
+                                <p>XXXXXXXXXXXXXXXX</p>
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/iIkeGM1I-cM" title="YouTube video player" class="youtube-iframe"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="tema16">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Tema 16: XXXXXXXXXXXXXXXXX
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="tema16" data-bs-parent="#temasCurso">
+                            <div class="accordion-body">
+                                <p>XXXXXXXXXXXXXXXX</p>
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/iIkeGM1I-cM" title="YouTube video player" class="youtube-iframe"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="tema17">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Tema 17: XXXXXXXXXXXXXXXXX
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="tema17" data-bs-parent="#temasCurso">
+                            <div class="accordion-body">
+                                <p>XXXXXXXXXXXXXXXX</p>
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/iIkeGM1I-cM" title="YouTube video player" class="youtube-iframe"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
             </div>
         </div>
     </div>
