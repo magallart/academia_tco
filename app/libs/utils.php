@@ -314,20 +314,23 @@
     }  
     
     
-    /* */
+    /*
+        · Esta función pinta los botones dentro del acordeón de los cursos.
+        · Si el usuario ha finalizado el curso no escribe ningún botón.
+    */
 
-    function botonesAcordeon($tema, $temasTerminados) {
-        if ($temasTerminados >= $tema) {
-            echo '<div class="temaFinalizado">';
-            echo '<p>Tema finalizado.</p>';
-            echo '</div>';
-        }
-
-        if ($tema == $temasTerminados + 1) {
-            echo '<form name="formSumarTema" action="" method="POST" enctype="multipart/form-data">';
-            echo '<input type="submit" value="Pulsar para finalizar curso" name="finalizarCurso" class="boton" />';
-            echo '</form>';
-        }      
+    function botonesAcordeon($tema, $temasTerminados, $cursoFinalizado) {
+        if (!$cursoFinalizado) {
+            if ($temasTerminados >= $tema) {
+                echo '<div class="temaFinalizado">';
+                echo '<p>Tema finalizado</p>';
+                echo '</div>';
+            }
+    
+            if ($tema == $temasTerminados + 1) {
+                echo '<form name="formSumarTema" action="" method="POST" enctype="multipart/form-data">';
+                echo '<input type="submit" value="Pulsar para finalizar tema" name="finalizarCurso" class="boton" />';
+                echo '</form>';
+            }  
+        }                  
     }
-
-?>

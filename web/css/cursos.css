@@ -78,6 +78,12 @@
   font-style: italic;
 }
 
+/* Div estado curso con el botón de seguir o curso terminado */
+.estadoCurso {
+  text-align: center;
+}
+
+
 .acordeon button.accordion-button {
   background-color: var(--color1);
   color: #fff;
@@ -120,6 +126,33 @@
   height: 100%;
   border: none;
   margin-top: 20px;
+}
+
+/* P de Tema finalizado */
+.acordeon .temaFinalizado {
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.acordeon .temaFinalizado p {
+  font-size: 1.3rem;
+  color: var(--color1);
+  font-weight: 600;
+  font-family: var(--font-1);
+}
+
+/* Botón del formulario "Finalizar tema" */
+.acordeon form[name="formSumarTema"] {
+  text-align: center;
+}
+
+.acordeon form[name="formSumarTema"] input[type="submit"] {
+  color: #fff;
+}
+
+.acordeon form[name="formSumarTema"] input[type="submit"]:hover {
+  color: var(--color1);
 }
 
 section.sin-acceso {

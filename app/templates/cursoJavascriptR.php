@@ -23,7 +23,7 @@
     </div>
 </header>
 
-<section class="py-5">
+<section class="pt-5">
     <div class="container curso-tabs">
         <div class="row">
             <div class="col-lg-8 text-md-center text-sm-center">
@@ -121,8 +121,18 @@ $u = new Usuarios();
 $finalCursoUsuario = $u->estadoCursoUsuario($_SESSION['idUsuario'], 0);
 $temasTerminados = $_SESSION['cursos'][0]['temasTerminados'];
 if (!$finalCursoUsuario && $temasTerminados > 0) {
+    echo "<div class='estadoCurso'>";
     echo "<a class='boton' href='index.php?ctl=cursoJavascript#tema" . $temasTerminados . "'>Seguir con el curso <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
+    echo "</div>";
 }
+
+if ($finalCursoUsuario) {
+    echo "<div class='estadoCurso'>";
+    echo "<p>¡Enhorabuena! Has completado todos los temas del curso de JavaScript, ¿quieres hacer otro curso?.</p>";
+    echo "<a class='boton' href='index.php?ctl=cursos'>Ver todos los cursos <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
+    echo "</div>";
+}
+
 ?>
 
 <section>
@@ -143,7 +153,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                     <iframe src="https://www.youtube.com/embed/VwEChGsBD78" title="Curso JavaScript: Tema 1" class="youtube-iframe"></iframe>
                                 </div>
                                 <?php
-                                botonesAcordeon(1, $temasTerminados)
+                                botonesAcordeon(1, $temasTerminados, $finalCursoUsuario);
                                 ?>
                             </div>
                         </div>
@@ -161,7 +171,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                     <iframe src="https://www.youtube.com/embed/sv4-Lq495Qc" title="Curso JavaScript: Tema 2" class="youtube-iframe"></iframe>
                                 </div>
                                 <?php
-                                botonesAcordeon(2, $temasTerminados)
+                                botonesAcordeon(2, $temasTerminados, $finalCursoUsuario);
                                 ?>
                             </div>
                         </div>
@@ -179,7 +189,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                     <iframe src="https://www.youtube.com/embed/iIkeGM1I-cM" title="Curso JavaScript: Tema 3" class="youtube-iframe"></iframe>
                                 </div>
                                 <?php
-                                botonesAcordeon(3, $temasTerminados)
+                                botonesAcordeon(3, $temasTerminados, $finalCursoUsuario);
                                 ?>
                             </div>
                         </div>
@@ -197,7 +207,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                     <iframe src="https://www.youtube.com/embed/ESOAa3SX2yg" title="Curso JavaScript: Tema X" class="youtube-iframe"></iframe>
                                 </div>
                                 <?php
-                                botonesAcordeon(4, $temasTerminados)
+                                botonesAcordeon(4, $temasTerminados, $finalCursoUsuario);
                                 ?>
                             </div>
                         </div>
@@ -215,7 +225,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                     <iframe src="https://www.youtube.com/embed/-O6HUo-P4Mk" title="Curso JavaScript: Tema 5" class="youtube-iframe"></iframe>
                                 </div>
                                 <?php
-                                botonesAcordeon(5, $temasTerminados)
+                                botonesAcordeon(5, $temasTerminados, $finalCursoUsuario);
                                 ?>
                             </div>
                         </div>
@@ -233,7 +243,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                     <iframe src="https://www.youtube.com/embed/0IF1o38RV_I" title="Curso JavaScript: Tema X" class="youtube-iframe"></iframe>
                                 </div>
                                 <?php
-                                botonesAcordeon(6, $temasTerminados)
+                                botonesAcordeon(6, $temasTerminados, $finalCursoUsuario);
                                 ?>
                             </div>
                         </div>
@@ -251,7 +261,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                     <iframe src="https://www.youtube.com/embed/7xARdwFIdEs" title="Curso JavaScript: Tema 7" class="youtube-iframe"></iframe>
                                 </div>
                                 <?php
-                                botonesAcordeon(7, $temasTerminados)
+                                botonesAcordeon(7, $temasTerminados, $finalCursoUsuario);
                                 ?>
                             </div>
                         </div>
@@ -270,7 +280,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                 <iframe src="https://www.youtube.com/embed/uEI0ceOb5nc" title="Curso JavaScript: Tema 8" class="youtube-iframe"></iframe>
                             </div>
                             <?php
-                            botonesAcordeon(8, $temasTerminados)
+                            botonesAcordeon(8, $temasTerminados, $finalCursoUsuario);
                             ?>
                         </div>
                     </div>
@@ -288,7 +298,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                 <iframe src="https://www.youtube.com/embed/8Bn99zamN_w" title="Curso JavaScript: Tema 9" class="youtube-iframe"></iframe>
                             </div>
                             <?php
-                            botonesAcordeon(9, $temasTerminados);
+                            botonesAcordeon(9, $temasTerminados, $finalCursoUsuario);
                             ?>
                         </div>
                     </div>
@@ -306,7 +316,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                 <iframe src="https://www.youtube.com/embed/xOljrHcYWGM" title="Curso JavaScript: Tema 10" class="youtube-iframe"></iframe>
                             </div>
                             <?php
-                            botonesAcordeon(10, $temasTerminados);
+                            botonesAcordeon(10, $temasTerminados, $finalCursoUsuario);
                             ?>
                         </div>
                     </div>
@@ -324,7 +334,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                 <iframe src="https://www.youtube.com/embed/IJNaoJokDco" title="Curso JavaScript: Tema 11" class="youtube-iframe"></iframe>
                             </div>
                             <?php
-                            botonesAcordeon(11, $temasTerminados)
+                            botonesAcordeon(11, $temasTerminados, $finalCursoUsuario);
                             ?>
                         </div>
                     </div>
@@ -342,7 +352,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                 <iframe src="https://www.youtube.com/embed/npnXwBNIbO4" title="Curso JavaScript: Tema 12" class="youtube-iframe"></iframe>
                             </div>
                             <?php
-                            botonesAcordeon(12, $temasTerminados)
+                            botonesAcordeon(12, $temasTerminados, $finalCursoUsuario);
                             ?>
                         </div>
                     </div>
@@ -360,7 +370,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                 <iframe src="https://www.youtube.com/embed/xzzctD0Y4Rw" title="Curso JavaScript: Tema 13" class="youtube-iframe"></iframe>
                             </div>
                             <?php
-                            botonesAcordeon(13, $temasTerminados)
+                            botonesAcordeon(13, $temasTerminados, $finalCursoUsuario);
                             ?>
                         </div>
                     </div>
@@ -378,7 +388,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                 <iframe src="https://www.youtube.com/embed/ywTq6VUpgnE" title="Curso JavaScript: Tema 14" class="youtube-iframe"></iframe>
                             </div>
                             <?php
-                            botonesAcordeon(14, $temasTerminados)
+                            botonesAcordeon(14, $temasTerminados, $finalCursoUsuario);
                             ?>
                         </div>
                     </div>
@@ -396,7 +406,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                 <iframe src="https://www.youtube.com/embed/4hrQtbaHVCQ" title="Curso JavaScript: Tema 15" class="youtube-iframe"></iframe>
                             </div>
                             <?php
-                            botonesAcordeon(15, $temasTerminados)
+                            botonesAcordeon(15, $temasTerminados, $finalCursoUsuario);
                             ?>
                         </div>
                     </div>
@@ -415,7 +425,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                 <iframe src="https://www.youtube.com/embed/nzS6oOWa_8U" title=" Curso JavaScript: Tema 16" class="youtube-iframe"></iframe>
                             </div>
                             <?php
-                            botonesAcordeon(16, $temasTerminados)
+                            botonesAcordeon(16, $temasTerminados, $finalCursoUsuario);
                             ?>
                         </div>
                     </div>
@@ -433,7 +443,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                 <iframe src="https://www.youtube.com/embed/y8LH49Y_9g0" title="Curso JavaScript: Tema 17" class="youtube-iframe"></iframe>
                             </div>
                             <?php
-                            botonesAcordeon(17, $temasTerminados)
+                            botonesAcordeon(17, $temasTerminados, $finalCursoUsuario);
                             ?>
                         </div>
                     </div>
