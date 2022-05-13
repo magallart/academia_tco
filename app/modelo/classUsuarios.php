@@ -12,7 +12,6 @@ class Usuarios extends Modelo
     */
     function loginUsuario($usuario, $password)
     {
-
         $consulta = "select * from usuarios where nombre=:usuario and password=:clave";
 
         $result = $this->conexion->prepare($consulta);
@@ -59,7 +58,6 @@ class Usuarios extends Modelo
     */
     function insertarMensajeUsuario($idUsuario, $idCurso, $mensaje)
     {
-
         $consulta = "insert into mensajes (id_usuario, id_curso, mensaje) values (?, ?, ?)";
 
         $result = $this->conexion->prepare($consulta);
@@ -87,6 +85,20 @@ class Usuarios extends Modelo
         return $result;
     }
 
+    /*
+        · Este método suma un tema a la columna de temas finalizados.
+    */
+    function sumarTema($idUsuario, $idCurso)
+    {
+        //update curso_usuario SET temasTerminados = temasTerminados +1 where id_usuario = 0 AND id_curso = 1
+        $consulta = "update curso_usuario set temasTerminados = temasTerminados +1 where id_usuario = :idUsuario AND id_curso = :idCurso";
+
+        $result = $this->conexion->prepare($consulta);
+        $result->bindParam(':idUsuario', $idUsuario);
+        $result->bindParam(':idCurso', $idCurso);
+        $result->execute();
+    }
+
 
     /*
         · Este método nos sirve para que un usuario se registre en la base de datos.
@@ -95,7 +107,6 @@ class Usuarios extends Modelo
     */
     public function registrarUsuario($user, $pass, $email, $fPerfil)
     {
-
         $fPerfilRuta = $user . "\\" . $fPerfil;
         $nivel = "1";
 

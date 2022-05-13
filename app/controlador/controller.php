@@ -48,7 +48,8 @@ class Controller
             $infoCurso = array(
                 'mensajesCursoJavascript' => array()
             );
-
+            $u = new Usuarios();
+            $_SESSION['cursos'] = $u->getCursosUsuario($_SESSION['idUsuario']);
             $c = new Cursos();
             $idCurso = 0;
             $infoCurso['mensajesCursoJavascript'] = $c->getMensajesCurso($idCurso);
@@ -68,6 +69,12 @@ class Controller
                 } else {
                     $_SESSION['errores'] = "Checkbox";
                 }
+            }
+
+            if (isset($_POST['sumarTema'])) {
+                $temasTerminadosUsuario = $_SESSION['cursos'][0]['temasTerminados'];                
+                $u-> sumarTema($_SESSION['idUsuario'], 0);
+                header('Location: index.php?ctl=cursoJavascript#tema' . $temasTerminadosUsuario + 1 );
             }
         } catch (Exception $e) {
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");

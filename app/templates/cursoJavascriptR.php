@@ -187,6 +187,15 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                 <div class="video-container">
                                     <iframe src="https://www.youtube.com/embed/ESOAa3SX2yg" title="Curso JavaScript: Tema X" class="youtube-iframe"></iframe>
                                 </div>
+
+                                <?php
+                                $tema = 4;
+                                if ($temasTerminados >= $tema) {
+                                    echo "Tema finalizado.";
+                                } else {
+                                    echo "Mostrar botón para sumar tema.";
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -202,6 +211,18 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                 <div class="video-container">
                                     <iframe src="https://www.youtube.com/embed/-O6HUo-P4Mk" title="Curso JavaScript: Tema 5" class="youtube-iframe"></iframe>
                                 </div>
+                                <?php
+                                $tema = 5;
+                                if ($temasTerminados >= $tema) {
+                                    echo '<div class="temaFinalizado">';
+                                    echo '<p>Tema finalizado.</p>';
+                                    echo '</div>';
+                                } else {
+                                    echo '<form name="formSumarTema" action="" method="POST" enctype="multipart/form-data">';
+                                    echo '<input type="submit" value="Pulsar para finalizar tema" name="sumarTema" class="boton" />';
+                                    echo '</form>';
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -217,6 +238,18 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                 <div class="video-container">
                                     <iframe src="https://www.youtube.com/embed/0IF1o38RV_I" title="Curso JavaScript: Tema X" class="youtube-iframe"></iframe>
                                 </div>
+                                <?php
+                                $tema = 6;
+                                if ($temasTerminados >= $tema) {
+                                    echo '<div class="temaFinalizado">';
+                                    echo '<p>Tema finalizado.</p>';
+                                    echo '</div>';
+                                } else {
+                                    echo '<form name="formSumarTema" action="" method="POST" enctype="multipart/form-data">';
+                                    echo '<input type="submit" value="Pulsar para finalizar tema" name="sumarTema" class="boton" />';
+                                    echo '</form>';
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -232,6 +265,18 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                 <div class="video-container">
                                     <iframe src="https://www.youtube.com/embed/7xARdwFIdEs" title="Curso JavaScript: Tema 7" class="youtube-iframe"></iframe>
                                 </div>
+                                <?php
+                                $tema = 7;
+                                if ($temasTerminados >= $tema) {
+                                    echo '<div class="temaFinalizado">';
+                                    echo '<p>Tema finalizado.</p>';
+                                    echo '</div>';
+                                } else {
+                                    echo '<form name="formSumarTema" action="" method="POST" enctype="multipart/form-data">';
+                                    echo '<input type="submit" value="Pulsar para finalizar tema" name="sumarTema" class="boton" />';
+                                    echo '</form>';
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
