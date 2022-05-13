@@ -151,6 +151,13 @@ section.courses {
   padding-bottom: 20px;
 }
 
+.courses .course .cursoProximamente {
+  font-weight: 600;
+  position: relative;
+  top: -15px;
+  font-style: italic;
+}
+
 @media (min-width: 1400px) {
   .courses .course {
     height: 650px;

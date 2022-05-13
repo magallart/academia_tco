@@ -208,8 +208,6 @@
         </div>
 
     </div>
-    </div>
-    </div>
     <div class="row mb-5">
         <div class="col center"><a class="boton" href="index.php?ctl=cursos" alt="Enlace a página de cursos">Ver todos los cursos ahora <ion-icon name="arrow-forward-circle-outline">
                 </ion-icon></a></div>
@@ -229,9 +227,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 text-center">
-                    <form name="newsletterForm" action="index.php?ctl=newsletter" method="POST" enctype="multipart/form-data"> <!-- TODO añadir el controlador newsletter -->
+                    <form name="newsletterForm" action="index.php?ctl=newsletter" method="POST" enctype="multipart/form-data">
+                        <!-- TODO añadir el controlador newsletter -->
                         <input type="email" placeholder="Escribe tu email">
-                        <input type="submit" value="Suscribirme" name="newsletter" >
+                        <input type="submit" value="Suscribirme" name="newsletter">
                     </form>
                 </div>
             </div>
