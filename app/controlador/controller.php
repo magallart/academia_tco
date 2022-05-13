@@ -79,6 +79,7 @@ class Controller
 
             if (isset($_POST['finalizarCurso'])) {
                  $u-> terminarCurso($_SESSION['idUsuario'], 0);  //TODO comprobar que funciona
+                 header('Location: index.php?ctl=perfil');
             }
         } catch (Exception $e) {
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");

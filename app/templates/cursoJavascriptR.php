@@ -143,18 +143,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                     <iframe src="https://www.youtube.com/embed/VwEChGsBD78" title="Curso JavaScript: Tema 1" class="youtube-iframe"></iframe>
                                 </div>
                                 <?php
-                                $tema = 1;
-                                if ($temasTerminados >= $tema) {
-                                    echo '<div class="temaFinalizado">';
-                                    echo '<p>Tema finalizado.</p>';
-                                    echo '</div>';
-                                }
-
-                                if ($tema == $temasTerminados + 1) {
-                                    echo '<form name="formSumarTema" action="" method="POST" enctype="multipart/form-data">';
-                                    echo '<input type="submit" value="Pulsar para finalizar tema" name="sumarTema" class="boton" />';
-                                    echo '</form>';
-                                }
+                                botonesAcordeon(1, $temasTerminados)
                                 ?>
                             </div>
                         </div>
@@ -172,18 +161,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                     <iframe src="https://www.youtube.com/embed/sv4-Lq495Qc" title="Curso JavaScript: Tema 2" class="youtube-iframe"></iframe>
                                 </div>
                                 <?php
-                                $tema = 2;
-                                if ($temasTerminados >= $tema) {
-                                    echo '<div class="temaFinalizado">';
-                                    echo '<p>Tema finalizado.</p>';
-                                    echo '</div>';
-                                }
-
-                                if ($tema == $temasTerminados + 1) {
-                                    echo '<form name="formSumarTema" action="" method="POST" enctype="multipart/form-data">';
-                                    echo '<input type="submit" value="Pulsar para finalizar tema" name="sumarTema" class="boton" />';
-                                    echo '</form>';
-                                }
+                                botonesAcordeon(2, $temasTerminados)
                                 ?>
                             </div>
                         </div>
@@ -201,18 +179,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                     <iframe src="https://www.youtube.com/embed/iIkeGM1I-cM" title="Curso JavaScript: Tema 3" class="youtube-iframe"></iframe>
                                 </div>
                                 <?php
-                                $tema = 3;
-                                if ($temasTerminados >= $tema) {
-                                    echo '<div class="temaFinalizado">';
-                                    echo '<p>Tema finalizado.</p>';
-                                    echo '</div>';
-                                }
-
-                                if ($tema == $temasTerminados + 1) {
-                                    echo '<form name="formSumarTema" action="" method="POST" enctype="multipart/form-data">';
-                                    echo '<input type="submit" value="Pulsar para finalizar tema" name="sumarTema" class="boton" />';
-                                    echo '</form>';
-                                }
+                                botonesAcordeon(3, $temasTerminados)
                                 ?>
                             </div>
                         </div>
@@ -230,18 +197,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                     <iframe src="https://www.youtube.com/embed/ESOAa3SX2yg" title="Curso JavaScript: Tema X" class="youtube-iframe"></iframe>
                                 </div>
                                 <?php
-                                $tema = 4;
-                                if ($temasTerminados >= $tema) {
-                                    echo '<div class="temaFinalizado">';
-                                    echo '<p>Tema finalizado.</p>';
-                                    echo '</div>';
-                                }
-
-                                if ($tema == $temasTerminados + 1) {
-                                    echo '<form name="formSumarTema" action="" method="POST" enctype="multipart/form-data">';
-                                    echo '<input type="submit" value="Pulsar para finalizar tema" name="sumarTema" class="boton" />';
-                                    echo '</form>';
-                                }
+                                botonesAcordeon(4, $temasTerminados)
                                 ?>
                             </div>
                         </div>
@@ -259,18 +215,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                     <iframe src="https://www.youtube.com/embed/-O6HUo-P4Mk" title="Curso JavaScript: Tema 5" class="youtube-iframe"></iframe>
                                 </div>
                                 <?php
-                                $tema = 5;
-                                if ($temasTerminados >= $tema) {
-                                    echo '<div class="temaFinalizado">';
-                                    echo '<p>Tema finalizado.</p>';
-                                    echo '</div>';
-                                }
-
-                                if ($tema == $temasTerminados + 1) {
-                                    echo '<form name="formSumarTema" action="" method="POST" enctype="multipart/form-data">';
-                                    echo '<input type="submit" value="Pulsar para finalizar tema" name="sumarTema" class="boton" />';
-                                    echo '</form>';
-                                }
+                                botonesAcordeon(5, $temasTerminados)
                                 ?>
                             </div>
                         </div>
@@ -288,18 +233,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                     <iframe src="https://www.youtube.com/embed/0IF1o38RV_I" title="Curso JavaScript: Tema X" class="youtube-iframe"></iframe>
                                 </div>
                                 <?php
-                                $tema = 6;
-                                if ($temasTerminados >= $tema) {
-                                    echo '<div class="temaFinalizado">';
-                                    echo '<p>Tema finalizado.</p>';
-                                    echo '</div>';
-                                }
-
-                                if ($tema == $temasTerminados + 1) {
-                                    echo '<form name="formSumarTema" action="" method="POST" enctype="multipart/form-data">';
-                                    echo '<input type="submit" value="Pulsar para finalizar tema" name="sumarTema" class="boton" />';
-                                    echo '</form>';
-                                }
+                                botonesAcordeon(6, $temasTerminados)
                                 ?>
                             </div>
                         </div>
@@ -317,18 +251,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                     <iframe src="https://www.youtube.com/embed/7xARdwFIdEs" title="Curso JavaScript: Tema 7" class="youtube-iframe"></iframe>
                                 </div>
                                 <?php
-                                $tema = 7;
-                                if ($temasTerminados >= $tema) {
-                                    echo '<div class="temaFinalizado">';
-                                    echo '<p>Tema finalizado.</p>';
-                                    echo '</div>';
-                                }
-
-                                if ($tema == $temasTerminados + 1) {
-                                    echo '<form name="formSumarTema" action="" method="POST" enctype="multipart/form-data">';
-                                    echo '<input type="submit" value="Pulsar para finalizar tema" name="sumarTema" class="boton" />';
-                                    echo '</form>';
-                                }
+                                botonesAcordeon(7, $temasTerminados)
                                 ?>
                             </div>
                         </div>
@@ -347,18 +270,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                 <iframe src="https://www.youtube.com/embed/uEI0ceOb5nc" title="Curso JavaScript: Tema 8" class="youtube-iframe"></iframe>
                             </div>
                             <?php
-                            $tema = 8;
-                            if ($temasTerminados >= $tema) {
-                                echo '<div class="temaFinalizado">';
-                                echo '<p>Tema finalizado.</p>';
-                                echo '</div>';
-                            }
-
-                            if ($tema == $temasTerminados + 1) {
-                                echo '<form name="formSumarTema" action="" method="POST" enctype="multipart/form-data">';
-                                echo '<input type="submit" value="Pulsar para finalizar tema" name="sumarTema" class="boton" />';
-                                echo '</form>';
-                            }
+                            botonesAcordeon(8, $temasTerminados)
                             ?>
                         </div>
                     </div>
@@ -376,18 +288,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                 <iframe src="https://www.youtube.com/embed/8Bn99zamN_w" title="Curso JavaScript: Tema 9" class="youtube-iframe"></iframe>
                             </div>
                             <?php
-                            $tema = 9;
-                            if ($temasTerminados >= $tema) {
-                                echo '<div class="temaFinalizado">';
-                                echo '<p>Tema finalizado.</p>';
-                                echo '</div>';
-                            }
-
-                            if ($tema == $temasTerminados + 1) {
-                                echo '<form name="formSumarTema" action="" method="POST" enctype="multipart/form-data">';
-                                echo '<input type="submit" value="Pulsar para finalizar tema" name="sumarTema" class="boton" />';
-                                echo '</form>';
-                            }
+                            botonesAcordeon(9, $temasTerminados);
                             ?>
                         </div>
                     </div>
@@ -405,18 +306,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                 <iframe src="https://www.youtube.com/embed/xOljrHcYWGM" title="Curso JavaScript: Tema 10" class="youtube-iframe"></iframe>
                             </div>
                             <?php
-                            $tema = 10;
-                            if ($temasTerminados >= $tema) {
-                                echo '<div class="temaFinalizado">';
-                                echo '<p>Tema finalizado.</p>';
-                                echo '</div>';
-                            }
-
-                            if ($tema == $temasTerminados + 1) {
-                                echo '<form name="formSumarTema" action="" method="POST" enctype="multipart/form-data">';
-                                echo '<input type="submit" value="Pulsar para finalizar tema" name="sumarTema" class="boton" />';
-                                echo '</form>';
-                            }
+                            botonesAcordeon(10, $temasTerminados);
                             ?>
                         </div>
                     </div>
@@ -434,18 +324,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                 <iframe src="https://www.youtube.com/embed/IJNaoJokDco" title="Curso JavaScript: Tema 11" class="youtube-iframe"></iframe>
                             </div>
                             <?php
-                            $tema = 11;
-                            if ($temasTerminados >= $tema) {
-                                echo '<div class="temaFinalizado">';
-                                echo '<p>Tema finalizado.</p>';
-                                echo '</div>';
-                            }
-
-                            if ($tema == $temasTerminados + 1) {
-                                echo '<form name="formSumarTema" action="" method="POST" enctype="multipart/form-data">';
-                                echo '<input type="submit" value="Pulsar para finalizar tema" name="sumarTema" class="boton" />';
-                                echo '</form>';
-                            }
+                            botonesAcordeon(11, $temasTerminados)
                             ?>
                         </div>
                     </div>
@@ -463,18 +342,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                 <iframe src="https://www.youtube.com/embed/npnXwBNIbO4" title="Curso JavaScript: Tema 12" class="youtube-iframe"></iframe>
                             </div>
                             <?php
-                            $tema = 12;
-                            if ($temasTerminados >= $tema) {
-                                echo '<div class="temaFinalizado">';
-                                echo '<p>Tema finalizado.</p>';
-                                echo '</div>';
-                            }
-
-                            if ($tema == $temasTerminados + 1) {
-                                echo '<form name="formSumarTema" action="" method="POST" enctype="multipart/form-data">';
-                                echo '<input type="submit" value="Pulsar para finalizar tema" name="sumarTema" class="boton" />';
-                                echo '</form>';
-                            }
+                            botonesAcordeon(12, $temasTerminados)
                             ?>
                         </div>
                     </div>
@@ -492,18 +360,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                 <iframe src="https://www.youtube.com/embed/xzzctD0Y4Rw" title="Curso JavaScript: Tema 13" class="youtube-iframe"></iframe>
                             </div>
                             <?php
-                            $tema = 13;
-                            if ($temasTerminados >= $tema) {
-                                echo '<div class="temaFinalizado">';
-                                echo '<p>Tema finalizado.</p>';
-                                echo '</div>';
-                            }
-
-                            if ($tema == $temasTerminados + 1) {
-                                echo '<form name="formSumarTema" action="" method="POST" enctype="multipart/form-data">';
-                                echo '<input type="submit" value="Pulsar para finalizar tema" name="sumarTema" class="boton" />';
-                                echo '</form>';
-                            }
+                            botonesAcordeon(13, $temasTerminados)
                             ?>
                         </div>
                     </div>
@@ -521,18 +378,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                 <iframe src="https://www.youtube.com/embed/ywTq6VUpgnE" title="Curso JavaScript: Tema 14" class="youtube-iframe"></iframe>
                             </div>
                             <?php
-                            $tema = 14;
-                            if ($temasTerminados >= $tema) {
-                                echo '<div class="temaFinalizado">';
-                                echo '<p>Tema finalizado.</p>';
-                                echo '</div>';
-                            }
-
-                            if ($tema == $temasTerminados + 1) {
-                                echo '<form name="formSumarTema" action="" method="POST" enctype="multipart/form-data">';
-                                echo '<input type="submit" value="Pulsar para finalizar tema" name="sumarTema" class="boton" />';
-                                echo '</form>';
-                            }
+                            botonesAcordeon(14, $temasTerminados)
                             ?>
                         </div>
                     </div>
@@ -550,18 +396,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                 <iframe src="https://www.youtube.com/embed/4hrQtbaHVCQ" title="Curso JavaScript: Tema 15" class="youtube-iframe"></iframe>
                             </div>
                             <?php
-                            $tema = 15;
-                            if ($temasTerminados >= $tema) {
-                                echo '<div class="temaFinalizado">';
-                                echo '<p>Tema finalizado.</p>';
-                                echo '</div>';
-                            }
-
-                            if ($tema == $temasTerminados + 1) {
-                                echo '<form name="formSumarTema" action="" method="POST" enctype="multipart/form-data">';
-                                echo '<input type="submit" value="Pulsar para finalizar tema" name="sumarTema" class="boton" />';
-                                echo '</form>';
-                            }
+                            botonesAcordeon(15, $temasTerminados)
                             ?>
                         </div>
                     </div>
@@ -580,18 +415,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                 <iframe src="https://www.youtube.com/embed/nzS6oOWa_8U" title=" Curso JavaScript: Tema 16" class="youtube-iframe"></iframe>
                             </div>
                             <?php
-                            $tema = 16;
-                            if ($temasTerminados >= $tema) {
-                                echo '<div class="temaFinalizado">';
-                                echo '<p>Tema finalizado.</p>';
-                                echo '</div>';
-                            }
-
-                            if ($tema == $temasTerminados + 1) {
-                                echo '<form name="formSumarTema" action="" method="POST" enctype="multipart/form-data">';
-                                echo '<input type="submit" value="Pulsar para finalizar tema" name="sumarTema" class="boton" />';
-                                echo '</form>';
-                            }
+                            botonesAcordeon(16, $temasTerminados)
                             ?>
                         </div>
                     </div>
@@ -609,18 +433,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
                                 <iframe src="https://www.youtube.com/embed/y8LH49Y_9g0" title="Curso JavaScript: Tema 17" class="youtube-iframe"></iframe>
                             </div>
                             <?php
-                            $tema = 17;
-                            if ($temasTerminados >= $tema) {
-                                echo '<div class="temaFinalizado">';
-                                echo '<p>Tema finalizado.</p>';
-                                echo '</div>';
-                            }
-
-                            if ($tema == $temasTerminados + 1) {
-                                echo '<form name="formSumarTema" action="" method="POST" enctype="multipart/form-data">';
-                                echo '<input type="submit" value="Pulsar para finalizar curso" name="finalizarCurso" class="boton" />';
-                                echo '</form>';
-                            }
+                            botonesAcordeon(17, $temasTerminados)
                             ?>
                         </div>
                     </div>

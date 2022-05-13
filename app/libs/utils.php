@@ -312,6 +312,22 @@
             } 
         }
     }  
+    
+    
+    /* */
 
+    function botonesAcordeon($tema, $temasTerminados) {
+        if ($temasTerminados >= $tema) {
+            echo '<div class="temaFinalizado">';
+            echo '<p>Tema finalizado.</p>';
+            echo '</div>';
+        }
+
+        if ($tema == $temasTerminados + 1) {
+            echo '<form name="formSumarTema" action="" method="POST" enctype="multipart/form-data">';
+            echo '<input type="submit" value="Pulsar para finalizar curso" name="finalizarCurso" class="boton" />';
+            echo '</form>';
+        }      
+    }
 
 ?>
