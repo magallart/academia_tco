@@ -76,6 +76,10 @@ class Controller
                 $u-> sumarTema($_SESSION['idUsuario'], 0);
                 header('Location: index.php?ctl=cursoJavascript#tema' . $temasTerminadosUsuario + 1 );
             }
+
+            if (isset($_POST['finalizarCurso'])) {
+                 $u-> terminarCurso($_SESSION['idUsuario'], 0);  //TODO comprobar que funciona
+            }
         } catch (Exception $e) {
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
             header('Location: index.php?ctl=error');

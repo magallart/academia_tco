@@ -90,7 +90,6 @@ class Usuarios extends Modelo
     */
     function sumarTema($idUsuario, $idCurso)
     {
-        //update curso_usuario SET temasTerminados = temasTerminados +1 where id_usuario = 0 AND id_curso = 1
         $consulta = "update curso_usuario set temasTerminados = temasTerminados +1 where id_usuario = :idUsuario AND id_curso = :idCurso";
 
         $result = $this->conexion->prepare($consulta);
@@ -99,6 +98,18 @@ class Usuarios extends Modelo
         $result->execute();
     }
 
+    /*
+        · Este método finaliza un curso.
+    */
+    function terminarCurso($idUsuario, $idCurso)
+    {
+        $consulta = "update curso_usuario set finalizado = 1 where id_usuario = :idUsuario AND id_curso = :idCurso";
+
+        $result = $this->conexion->prepare($consulta);
+        $result->bindParam(':idUsuario', $idUsuario);
+        $result->bindParam(':idCurso', $idCurso);
+        $result->execute();
+    }
 
     /*
         · Este método nos sirve para que un usuario se registre en la base de datos.
