@@ -329,8 +329,22 @@
     
             if ($tema == $temasTerminados + 1) {
                 echo '<form name="formSumarTema" action="" method="POST" enctype="multipart/form-data">';
-                echo '<input type="submit" value="Pulsar para finalizar tema" name="finalizarCurso" class="boton" />';
+                echo '<input type="submit" value="Acabar tema" name="sumarTema" class="boton" />';
                 echo '</form>';
             }  
+        }                  
+    }
+
+    /*
+        · Esta función pinta el botón de finalizar curso cuando ha completado todos los temas anteriores.
+    */
+
+    function finalizarCurso($tema, $temasTerminados, $cursoFinalizado) {
+        if (!$cursoFinalizado) {
+            if ($tema == $temasTerminados + 1) {
+                echo '<form name="finalizarCurso" action="" method="POST" enctype="multipart/form-data">';
+                echo '<input type="submit" value="Finalizar curso" name="finalizarCurso" class="boton" />';
+                echo '</form>';
+            }
         }                  
     }

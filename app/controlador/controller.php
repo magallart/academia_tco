@@ -60,9 +60,9 @@ class Controller
                 $mensajeUsuario = recoge('nuevoMensaje');  //TODO Falta validar el mensaje
                 if (isset($_POST['aceptacionPoliticas'])) {
                     //Un usuario sólo puede enviar un mensaje por curso. Si no encuentra el email en el array de mensajes es porque el usuario no ha enviado un mensaje
-                    if (array_search($_SESSION['emailUsuario'], array_column($_SESSION['mensajesCursoJavascript'], 'email')) == true) {    
+                    if (array_search($_SESSION['emailUsuario'], array_column($_SESSION['mensajesCursoJavascript'], 'email')) == true) {
                         $_SESSION['errores'] = "Ya has enviado un mensaje para este curso.";
-                    } else {                        
+                    } else {
                         $u->insertarMensajeUsuario($_SESSION['idUsuario'], 0, $mensajeUsuario);
                         header("Refresh:0");
                     }
@@ -72,14 +72,15 @@ class Controller
             }
 
             if (isset($_POST['sumarTema'])) {
-                $temasTerminadosUsuario = $_SESSION['cursos'][0]['temasTerminados'];                
-                $u-> sumarTema($_SESSION['idUsuario'], 0);
-                header('Location: index.php?ctl=cursoJavascript#tema' . $temasTerminadosUsuario + 1 );
+                $temasTerminadosUsuario = $_SESSION['cursos'][0]['temasTerminados'];
+                $u->sumarTema($_SESSION['idUsuario'], 0);
+                header('Location: index.php?ctl=cursoJavascript#tema' . $temasTerminadosUsuario + 1);
             }
 
             if (isset($_POST['finalizarCurso'])) {
-                 $u-> terminarCurso($_SESSION['idUsuario'], 0);  //TODO comprobar que funciona
-                 header('Location: index.php?ctl=perfil');
+                $u->sumarTema($_SESSION['idUsuario'], 0);
+                $u->terminarCurso($_SESSION['idUsuario'], 0);
+                header('Location: index.php?ctl=cursoJavascript#cursoTop');
             }
         } catch (Exception $e) {
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
@@ -100,7 +101,7 @@ class Controller
 
     // Muestra el contenido de /templates/cursoJavascript.php
     public function cCursoAngular()
-    {     
+    {
         try {
             $infoCurso = array(
                 'mensajesCursoAngular' => array()
@@ -117,9 +118,9 @@ class Controller
                 $mensajeUsuario = recoge('nuevoMensaje');  //TODO Falta validar el mensaje
                 if (isset($_POST['aceptacionPoliticas'])) {
                     //Un usuario sólo puede enviar un mensaje por curso. Si no encuentra el email en el array de mensajes es porque el usuario no ha enviado un mensaje
-                    if (array_search($_SESSION['emailUsuario'], array_column($_SESSION['mensajesCursoAngular'], 'email')) == true) {    
+                    if (array_search($_SESSION['emailUsuario'], array_column($_SESSION['mensajesCursoAngular'], 'email')) == true) {
                         $_SESSION['errores'] = "Ya has enviado un mensaje para este curso.";
-                    } else {                        
+                    } else {
                         $u->insertarMensajeUsuario($_SESSION['idUsuario'], 0, $mensajeUsuario);
                         header("Refresh:0");
                     }
@@ -129,14 +130,14 @@ class Controller
             }
 
             if (isset($_POST['sumarTema'])) {
-                $temasTerminadosUsuario = $_SESSION['cursos'][0]['temasTerminados'];                
-                $u-> sumarTema($_SESSION['idUsuario'], 0);
-                header('Location: index.php?ctl=cursoAngular#tema' . $temasTerminadosUsuario + 1 );
+                $temasTerminadosUsuario = $_SESSION['cursos'][0]['temasTerminados'];
+                $u->sumarTema($_SESSION['idUsuario'], 0);
+                header('Location: index.php?ctl=cursoAngular#tema' . $temasTerminadosUsuario + 1);
             }
 
             if (isset($_POST['finalizarCurso'])) {
-                 $u-> terminarCurso($_SESSION['idUsuario'], 0);  //TODO comprobar que funciona
-                 header('Location: index.php?ctl=perfil');
+                $u->terminarCurso($_SESSION['idUsuario'], 0);  //TODO comprobar que funciona
+                header('Location: index.php?ctl=perfil');
             }
         } catch (Exception $e) {
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
@@ -153,7 +154,6 @@ class Controller
                 require __DIR__ . '/../templates/cursoAngularU.php';
             }
         }
-
     }
 
     // Muestra el contenido de /templates/cursoReact.php

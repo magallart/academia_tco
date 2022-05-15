@@ -23,7 +23,7 @@
     </div>
 </header>
 
-<section class="pt-5">
+<section class="pt-5" id="cursoTop">
     <div class="container curso-tabs">
         <div class="row">
             <div class="col-lg-8 text-md-center text-sm-center">
@@ -405,7 +405,7 @@ if ($finalCursoUsuario) {
                             <div class="video-container">
                                 <iframe src="https://www.youtube.com/embed/4hrQtbaHVCQ" title="Curso JavaScript: Tema 15" class="youtube-iframe"></iframe>
                             </div>
-                            <?php
+                            <?php                            
                             botonesAcordeon(15, $temasTerminados, $finalCursoUsuario);
                             ?>
                         </div>
@@ -443,7 +443,7 @@ if ($finalCursoUsuario) {
                                 <iframe src="https://www.youtube.com/embed/y8LH49Y_9g0" title="Curso JavaScript: Tema 17" class="youtube-iframe"></iframe>
                             </div>
                             <?php
-                            botonesAcordeon(17, $temasTerminados, $finalCursoUsuario);
+                            finalizarCurso(17, $temasTerminados, $finalCursoUsuario);
                             ?>
                         </div>
                     </div>

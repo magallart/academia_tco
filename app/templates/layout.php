@@ -20,6 +20,7 @@
 
 	<body>
 
+
 		<?php
 		if (!isset($menu))
 			$menu = 'menu.php';
@@ -28,11 +29,11 @@
 
 
 		<?php // TODO Eliminar el print_r $_SESSION
-		echo "<div class='pruebaSesion'>";
-		echo "<pre>";
-		print_r($_SESSION);
-		echo "</pre>";
-		echo "</div>";
+			echo "<div class='pruebaSesion'>";
+			echo "<pre>";
+			print_r($_SESSION);
+			echo "</pre>";
+			echo "</div>";
 		?>
 
 

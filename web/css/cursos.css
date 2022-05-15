@@ -142,16 +142,16 @@
   font-family: var(--font-1);
 }
 
-/* Botón del formulario "Finalizar tema" */
-.acordeon form[name="formSumarTema"] {
+/* Botón del formulario "SumarTema" y "finalizarCurso" */
+.acordeon form[name="formSumarTema"], .acordeon form[name="finalizarCurso"] {
   text-align: center;
 }
 
-.acordeon form[name="formSumarTema"] input[type="submit"] {
+.acordeon form[name="formSumarTema"] input[type="submit"], .acordeon form[name="finalizarCurso"] input[type="submit"]{
   color: #fff;
 }
 
-.acordeon form[name="formSumarTema"] input[type="submit"]:hover {
+.acordeon form[name="formSumarTema"] input[type="submit"]:hover, .acordeon form[name="finalizarCurso"] input[type="submit"]:hover {
   color: var(--color1);
 }
 
