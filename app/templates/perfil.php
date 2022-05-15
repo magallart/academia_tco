@@ -82,8 +82,8 @@
                     </div>
                 </div>
 
-                <input type="submit" value="Actualizar Perfil" name="actualizar" class="boton" /> <!-- TODO realizar funcionalidad de actualizar perfil  -->
-                <input type="submit" value="Borrar Perfil" name="borrar" class="boton" /> <!-- TODO realizar funcionalidad de borrar perfil  -->
+                <input type="submit" value="Actualizar Datos" name="actualizarDatos" class="boton" /> 
+                <input type="submit" value="Borrar Usuario" name="borrarUsuario" class="boton" /> <!-- TODO realizar funcionalidad de borrar perfil  -->
             </form>
 
         </div>

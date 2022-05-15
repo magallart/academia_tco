@@ -31,6 +31,7 @@
         'recuperarPassword' => array('controller' =>'Controller', 'action' =>'cRecuperarPassword'),
         'cerrarSesion' => array('controller' =>'Controller', 'action' =>'cCerrarSesion'),
         'perfil' => array('controller' =>'Controller', 'action' =>'cPerfil'),
+        'datosActualizados' => array('controller' =>'Controller', 'action' =>'cDatosActualizados'),
         'politicaPrivacidad' => array('controller' =>'Controller', 'action' =>'cPoliticaPrivacidad'),
         'politicaCookies' => array('controller' =>'Controller', 'action' =>'cPoliticaCookies'),
         'avisosLegales' => array('controller' =>'Controller', 'action' =>'cAvisosLegales'),

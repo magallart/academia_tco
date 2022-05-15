@@ -54,6 +54,27 @@ class Usuarios extends Modelo
     }
 
     /*
+        · Este método actualiza los datos del usuario (Perfil).
+    */
+    function actualizarDatos($idUsuario, $nombre, $apellidos, $email, $fNacimiento, $direccion, $cPostal, $localidad)
+    {
+        $consulta = "update usuarios set nombre = :nombre, apellidos = :apellidos, email = :email, fNacimiento = :fNacimiento, direccion = :direccion, cPostal = :cPostal, localidad = :localidad where id = :idUsuario";
+
+        $result = $this->conexion->prepare($consulta);
+        $result->bindParam(':nombre', $nombre);
+        $result->bindParam(':apellidos', $apellidos);
+        $result->bindParam(':email', $email);
+        $result->bindParam(':fNacimiento', $fNacimiento);
+        $result->bindParam(':direccion', $direccion);
+        $result->bindParam(':cPostal', $cPostal);
+        $result->bindParam(':localidad', $localidad);
+        $result->bindParam(':idUsuario', $idUsuario);
+        $result->execute();
+
+        return $result;
+    }
+
+    /*
         · Este método nos sirve para insertar un nuevo mensaje del usuario a un curso.
     */
     function insertarMensajeUsuario($idUsuario, $idCurso, $mensaje)

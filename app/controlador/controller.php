@@ -324,6 +324,7 @@ class Controller
     public function cCerrarSesion()
     {
         session_unset();
+        header('refresh:3;url=index.php?ctl=inicio');
         if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
             $menu = 'menuLogin.php';
         } else {
@@ -335,11 +336,79 @@ class Controller
     public function cPerfil()
     {
         if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
+            try {
+                $infoUsuario = array(
+                    'resultado' => array(),
+                    'cursos' => array(),
+                    'mensajes' => array()
+                );
+
+                $u = new Usuarios();
+                $nombre = $_SESSION['nombreUsuario'];
+                $password =  strtolower($_SESSION['nombreUsuario']); //TODO Cambiar cuando el password sea el email
+                $infoUsuario['resultado'] = $u->loginUsuario($nombre, $password);
+
+                $_SESSION['nivel'] = $infoUsuario['resultado']['nivel'];
+                $_SESSION['idUsuario'] = $infoUsuario['resultado']['id'];
+                $_SESSION['nombreUsuario'] = $infoUsuario['resultado']['nombre'];
+                $_SESSION['apellidosUsuario'] = $infoUsuario['resultado']['apellidos'];
+                $_SESSION['emailUsuario'] = $infoUsuario['resultado']['email'];
+                $_SESSION['direccionUsuario'] = $infoUsuario['resultado']['direccion'];
+                $_SESSION['cpostalUsuario'] = $infoUsuario['resultado']['cPostal'];
+                $_SESSION['localidadUsuario'] = $infoUsuario['resultado']['localidad'];
+                $_SESSION['fnacimientoUsuario'] = $infoUsuario['resultado']['fNacimiento'];
+                $_SESSION['fPerfil'] = $infoUsuario['resultado']['fPerfil'];
+                $idUsuario = $_SESSION['idUsuario'];
+                $infoUsuario['cursos'] = $u->getCursosUsuario($idUsuario);
+                $_SESSION['cursos'] = $infoUsuario['cursos'];
+                $infoUsuario['mensajes'] = $u->getMensajesUsuario($idUsuario);
+                $_SESSION['mensajes'] = $infoUsuario['mensajes'];
+
+
+                if (isset($_POST['actualizarDatos'])) {
+                    //TODO Falta validar los datos
+                    $nombre = $_REQUEST['nombre'] ? recoge('nombre') : $_SESSION['nombreUsuario'];
+                    $apellidos =  $_REQUEST['apellidos'] ? recoge('apellidos') : $_SESSION['apellidosUsuario'];
+                    $email =  $_REQUEST['email'] ? recoge('nombre') : $_SESSION['emailUsuario'];
+                    $fNacimiento =  $_REQUEST['fNacimiento'] ? recoge('fNacimiento') : $_SESSION['fnacimientoUsuario'];
+                    $direccion =  $_REQUEST['direccion'] ? recoge('nombre') : $_SESSION['direccionUsuario'];
+                    $cPostal =  $_REQUEST['cPostal'] ? recoge('nombre') : $_SESSION['cpostalUsuario'];
+                    $localidad =  $_REQUEST['localidad'] ? recoge('nombre') : $_SESSION['localidadUsuario'];
+                    if ($u->actualizarDatos($_SESSION['idUsuario'], $nombre, $apellidos, $email, $fNacimiento, $direccion, $cPostal, $localidad)) {
+                        header('Location: index.php?ctl=datosActualizados');
+                    } else {
+                        $_SESSION['errores'] = "Checkbox";
+                    }
+                }
+            } catch (Exception $e) {
+                error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
+                header('Location: index.php?ctl=error');
+            } catch (Error $e) {
+                error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
+                header('Location: index.php?ctl=error');
+            }
+            if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
+                $menu = 'menuLogin.php';
+                require __DIR__ . '/../templates/perfil.php';
+            }
+        } else {
+            $menu = 'menu.php';
+            require __DIR__ . '/../templates/perfilUsuarioNoregistrado.php';
+        }
+    }
+
+
+    // Muestra el contenido de /templates/datosActualizados.php
+    public function cDatosActualizados()
+    {
+        header('refresh:3;url=index.php?ctl=perfil');
+
+        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
             $menu = 'menuLogin.php';
         } else {
             $menu = 'menu.php';
         }
-        require __DIR__ . '/../templates/perfil.php';
+        require __DIR__ . '/../templates/datosActualizados.php';
     }
 
     // Muestra el contenido de /templates/politicaPrivacidad.php
