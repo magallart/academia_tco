@@ -475,13 +475,10 @@ if ($finalCursoUsuario) {
             </div>
         </div>
         <div class="row">
-            <div class="col">
-                <form name="formEnviarMensaje" action="" method="POST" enctype="multipart/form-data">
-                    <textarea rows="5" placeholder="Escribe tu mensaje (máximo 255 caracteres)..." name="nuevoMensaje"></textarea>
-                    <input type="checkbox" name="aceptacionPoliticas" id="checkPoliticas">
-                    <label>He leído y acepto las <a href="index.php?ctl=politicaPrivacidad" target="_blank">Políticas de Privacidad</a>.</label>
-                    <input type="submit" value="Enviar mensaje" name="enviarMensaje" class="boton" />
-                </form>
+            <div class="col">             
+                <?php 
+                    mensajeUsuarioCurso($_SESSION['emailUsuario'], $_SESSION['mensajesCursoJavascript'], 'email');                    
+                ?>
             </div>
         </div>
     </div>
