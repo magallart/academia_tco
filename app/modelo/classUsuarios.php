@@ -153,4 +153,44 @@ class Usuarios extends Modelo
 
         return $result;
     }
+
+    /*
+        · Este método nos sirve para borrar los datos del usuario de la tabla Usuarios.
+    */
+    public function borrarUsuario($id)
+    {
+        $consulta = "delete from usuarios where id = :idUsuario";
+        $result = $this->conexion->prepare($consulta);
+        $result->bindParam(':idUsuario', $id);
+        $result->execute();
+
+        return $result;
+    }
+
+/*
+        · Este método nos sirve para borrar los cursos a los que está inscrito un usuario.
+    */
+    public function borrarCursosUsuario($id)
+    {
+        $consulta = "delete from curso_usuario where id_usuario = :idUsuario";
+        $result = $this->conexion->prepare($consulta);
+        $result->bindParam(':idUsuario', $id);
+        $result->execute();
+
+        return $result;
+    }
+
+    /*
+        · Este método nos sirve para borrar todos los mensajes que ha escrito un usuario.
+    */
+    public function borrarMensajesUsuario($id)
+    {
+        $consulta = "delete from mensajes where id_usuario = :idUsuario";
+        $result = $this->conexion->prepare($consulta);
+        $result->bindParam(':idUsuario', $id);
+        $result->execute();
+
+        return $result;
+    }
+
 }

@@ -377,8 +377,18 @@ class Controller
                     if ($u->actualizarDatos($_SESSION['idUsuario'], $nombre, $apellidos, $email, $fNacimiento, $direccion, $cPostal, $localidad)) {
                         header('Location: index.php?ctl=datosActualizados');
                     } else {
-                        $_SESSION['errores'] = "Checkbox";
+                        $_SESSION['errores'] = "No se ha podido actualizar los datos.";
                     }
+                }
+
+                if (isset($_POST['borrarUsuario'])) {      
+                    $u->borrarMensajesUsuario($_SESSION['idUsuario']);             
+                    $u->borrarCursosUsuario($_SESSION['idUsuario']);                    
+                    $u->borrarUsuario($_SESSION['idUsuario']);
+                    session_unset();
+                    header('Location: index.php?ctl=inicio');
+                } else {
+                    $_SESSION['errores'] = "No se ha podido actualizar los datos.";
                 }
             } catch (Exception $e) {
                 error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
