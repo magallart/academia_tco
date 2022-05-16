@@ -158,9 +158,21 @@ section.courses {
   font-style: italic;
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1200px) {
   .courses .course {
     height: 650px;
+    position: relative;
+  }
+
+  .courses .course a {
+    position: absolute;
+    bottom: 20px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .courses .course {
+    height: 690px;
     position: relative;
   }
 

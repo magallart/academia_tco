@@ -17,7 +17,7 @@
                     más demandadas en el mercado laboral hoy en día.
                 </p>
                 <div class="text-md-start text-sm-center">
-                    <a class="boton" href="#">Ver cursos ahora <ion-icon name="arrow-forward-circle-outline"></ion-icon></a>
+                    <a class="boton" href="index.php?ctl=cursos">Ver cursos ahora <ion-icon name="arrow-forward-circle-outline"></ion-icon></a>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12">

@@ -33,7 +33,7 @@
             </div>
         </div>
         <div class="row py-3">
-            <div class="col col-lg-3 col-md-6 col-sm-12 pb-md-5 mt-5">
+            <div class="col-12 col-lg-3 col-md-6 col-sm-12 pb-md-5 mt-5">
                 <div class="course text-white">
                     <img src="../img/logo-js.jpg" alt="Logo JavaScript">
                     <h3>JavaScript</h3>
@@ -41,7 +41,7 @@
                     <a class="boton-blanco" href="index.php?ctl=cursoJavascript" alt="Enlace a curso de JavaScript">Ir al curso <ion-icon name="arrow-forward-circle-outline"></ion-icon></a>
                 </div>
             </div>
-            <div class="col col-lg-3 col-md-6 col-sm-12 pb-md-5 mt-5">
+            <div class="col-12 col-lg-3 col-md-6 col-sm-12 pb-md-5 mt-5">
                 <div class="course text-white">
                     <img src="../img/logo-angular.jpg" alt="Logo Angular">
                     <h3>Angular</h3>
@@ -50,7 +50,7 @@
                 </div>
 
             </div>
-            <div class="col col-lg-3 col-md-6 col-sm-12 pb-md-5 mt-5"">
+            <div class="col-12 col-lg-3 col-md-6 col-sm-12 pb-md-5 mt-5"">
                 <div class=" course text-white">
                 <img src="../img/logo-react.jpg" alt="Logo React">
                 <h3>React</h3>
@@ -59,7 +59,7 @@
             </div>
 
         </div>
-        <div class="col col-lg-3 col-md-6 col-sm-12 pb-md-5 mt-5"">
+        <div class="col-12 col-lg-3 col-md-6 col-sm-12 pb-md-5 mt-5"">
                 <div class=" course text-white">
             <img src="../img/logo-git.jpg" alt="Logo JavaScript">
             <h3>Git</h3>
@@ -69,40 +69,40 @@
 
     </div>   
     
-    <div class="container"> <!-- TODO Mirar responsive de los cursos-->
+    <div class="container">
         <div class="row py-3">
-            <div class="col col-lg-3 col-md-6 col-sm-12 pb-md-5 mt-5">
+            <div class="col-12 col-lg-3 col-md-6 col-sm-12 pb-md-5 mt-5">
                 <div class="course text-white">
                     <img src="../img/logo-vue.jpg" alt="Logo Vue">
                     <h3>Vue</h3>
                     <p>Vue.js es un framework de JavaScript de código abierto para la construcción de interfaces de usuario y aplicaciones de una sola página. Está dentro de los 3 frameworks de JavaScript más usados en la actualidad por muchas empresas.</p>
-                    <p class="cursoProximamente">Próximamente...</p>
+                    <a class="boton-blanco" href="#" alt="Enlace a curso de JavaScript">Proximamente</a>
                 </div>
             </div>
-            <div class="col col-lg-3 col-md-6 col-sm-12 pb-md-5 mt-5">
+            <div class="col-12 col-lg-3 col-md-6 col-sm-12 pb-md-5 mt-5">
                 <div class="course text-white">
                     <img src="../img/logo-node.jpg" alt="Logo NodeJs">
                     <h3>NodeJs</h3>
                     <p>Node.js es un entorno en tiempo de ejecución multiplataforma, de código abierto, para la capa del servidor basado en el lenguaje de programación JavaScript. Gracias a Node, JavaScript también es un lenguaje de backend.</p>
-                    <p class="cursoProximamente">Próximamente...</p>
+                    <a class="boton-blanco" href="#" alt="Enlace a curso de JavaScript">Proximamente</a>
                 </div>
 
             </div>
-            <div class="col col-lg-3 col-md-6 col-sm-12 pb-md-5 mt-5"">
+            <div class="col-12 col-lg-3 col-md-6 col-sm-12 pb-md-5 mt-5"">
                 <div class=" course text-white">
                 <img src="../img/logo-bootstrap5.jpg" alt="Logo Bootstrap 5">
                 <h3>Bootstrap 5</h3>
                 <p>Bootstrap 5 es una herramienta que proporciona plantillas para CSS y HTML que facilitan la colocación y el diseño de la página, las fuentes, los botones y los elementos de navegación. Fundamental saber utilizar Bootstrap 5 si quieres hacer webs responsive.</p>
-                <p class="cursoProximamente">Próximamente...</p>
+                <a class="boton-blanco" href="#" alt="Enlace a curso de JavaScript">Proximamente</a>
             </div>
 
         </div>
-        <div class="col col-lg-3 col-md-6 col-sm-12 pb-md-5 mt-5"">
+        <div class="col-12 col-lg-3 col-md-6 col-sm-12 pb-md-5 mt-5"">
                 <div class=" course text-white">
             <img src="../img/logo-html5css3.jpg" alt="Logo HTML5 y CSS3">
             <h3>HTML5 y CSS3</h3>
             <p>HTML5 y CSS3 están directamente relacionados a la estructúra y aspecto visual de las paginas web de internet, con los cuales interactuamos a travéz de los navegadores. Son los pilares básicos del desarrollo web que todo el mundo debe conocer.</p>
-            <p class="cursoProximamente">Próximamente...</p>
+            <a class="boton-blanco" href="#" alt="Enlace a curso de JavaScript">Proximamente</a>
         </div>
 
     </div> 
