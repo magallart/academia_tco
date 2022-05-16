@@ -4,19 +4,18 @@
     · Contenido de la página de Cursos. 
     · Lo guardamos en el buffer y se carga en la variable $contenido para mostrarla en /templates/layout
 -->
-<header class="interior">
-    <div class="container col-xxl-8 py-5">
-        <div class="row middle g-5 py-5">
-            <div class="col-lg-6">
+<header>
+    <div class="container col-xxl-8">
+        <div class="row middle g-5">
+            <div class="col-lg-6 col-md-6 col-sm-12 text-md-start text-sm-center">
                 <h1 class="title-header">
-                    Cursos ATCO
+                Cursos ATCO
                 </h1>
                 <p>
-                    Disfruta de forma gratuita de todos los cursos de desarrollo web que ofrecemos en la academia. Actualmente disponemos de 4 cursos, pero visítanos regularmente porque tenemos preparados muchos más.
+                Disfruta de forma gratuita de todos los cursos de desarrollo web que ofrecemos en la academia. Actualmente disponemos de 4 cursos, pero visítanos regularmente porque tenemos preparados muchos más.
                 </p>
             </div>
-            <div class="col-lg-6 col-sm-8 text-center">
-                <!--  TODO Cambiar imagen -->
+            <div class="col-lg-6 col-md-6 col-sm-12">
                 <img src="../img/inicio-header.png" class="d-block mx-lg-auto img-fluid" alt="Chica sonriendo con un laptop en la mano" width="700" height="500" loading="lazy" />
             </div>
         </div>

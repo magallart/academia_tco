@@ -4,16 +4,15 @@
     · Contenido de la página del curso JavaScript para usuarios no registrados. 
     · Lo guardamos en el buffer y se carga en la variable $contenido para mostrarla en /templates/layout
 -->
-
 <header>
     <div class="container col-xxl-8">
         <div class="row middle g-5">
             <div class="col-lg-6 col-md-6 col-sm-12 text-md-start text-sm-center">
                 <h1 class="title-header">
-                    Curso JavaScript
+                Curso JavaScript
                 </h1>
                 <p>
-                    Este curso completo de JavaScript empieza desde un nivel básico pasando por las principales características y funcionalidades de uno de los lenguajes más demandados hoy en día como es JavaScript. Al finalizar este curso tendrás los conocimientos necesarios para utilizar JavaScript a nivel profesional. ¿Empezamos?
+                Este curso completo de JavaScript empieza desde un nivel básico pasando por las principales características y funcionalidades de uno de los lenguajes más demandados hoy en día como es JavaScript. Al finalizar este curso tendrás los conocimientos necesarios para utilizar JavaScript a nivel profesional. ¿Empezamos?
                 </p>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12">
@@ -22,6 +21,7 @@
         </div>
     </div>
 </header>
+
 
 <section class="py-5">
     <div class="container curso-tabs">

@@ -52,20 +52,9 @@ ul {
 }
 
 header {
-  margin-top: 100px;
+  margin-top: 80px;
   background-color: var(--color3);
-}
-
-@media (min-width: 1900px) {
-  header {
-    height: 650px;
-  }
-}
-
-@media (max-width: 1899px) {
-  header {
-    height: calc(100% - 150px);
-  }
+  height: calc(100% - 150px);
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
