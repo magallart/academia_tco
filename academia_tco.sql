@@ -141,7 +141,7 @@ CREATE TABLE `cursos` (
 
 INSERT INTO `cursos` (`id`, `nombre`, `temas`, `profesor`, `fCurso`) VALUES
 (0, 'JavaScript', 17, 8, 'logo-js.jpg'),
-(1, 'Angular', 35, 9, 'logo-angular.jpg'),
+(1, 'Angular', 32, 9, 'logo-angular.jpg'),
 (2, 'React', 35, 9, 'logo-react.jpg'),
 (3, 'Git', 35, 10, 'logo-git.jpg');
 
