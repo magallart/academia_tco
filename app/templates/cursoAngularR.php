@@ -140,6 +140,25 @@ foreach ($_SESSION['cursos'] as $curso) {
 
 
 $idCursoArrayCursosUsuario = array_search('Angular', array_column($_SESSION['cursos'], 'nombre'));
+
+function buscarValorEnArrayMultidimensional($name, $array, $campo) {
+    foreach ($array as $key => $val) {
+        if ($val[$campo] === $name) {
+            return $key;
+        }
+    }
+    return null;
+ }
+ 
+if(!buscarValorEnArrayMultidimensional('Git', $_SESSION['cursos'], 'nombre')) {
+    $cursoAputadoUsuario = false;
+} else {
+    $cursoAputadoUsuario = true;
+}
+ echo "id: " . $cursoAputadoUsuario;
+ echo "<br>";
+
+
 $temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
 echo "idCursoArrayCursosUsuario: " . $idCursoArrayCursosUsuario;
 echo "<br>";

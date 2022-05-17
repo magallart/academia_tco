@@ -138,12 +138,32 @@ foreach ($_SESSION['cursos'] as $curso) {
 
 
 $idCursoArrayCursosUsuario = array_search('Git', array_column($_SESSION['cursos'], 'nombre'));
+
+function buscarValorEnArrayMultidimensional($name, $array, $campo) {
+    foreach ($array as $key => $val) {
+        if ($val[$campo] === $name) {
+            return $key;
+        }
+    }
+    return null;
+ }
+ 
+if(!buscarValorEnArrayMultidimensional('Git', $_SESSION['cursos'], 'nombre')) {
+    $cursoAputadoUsuario = false;
+} else {
+    $cursoAputadoUsuario = true;
+}
+ echo "id: " . $cursoAputadoUsuario;
+ echo "<br>";
+
+
 $temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
 echo "idCursoArrayCursosUsuario: " . $idCursoArrayCursosUsuario;
 echo "<br>";
 echo "idCurso: " . $_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'];
 echo "<br>";
 echo "temas terminados:" . $temasTerminados;
+
 
 
 $u = new Usuarios();
@@ -157,22 +177,29 @@ if ($_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'] = 0 || $_SESSION['curs
 
 if (!$finalCursoUsuario && $temasTerminados > 0) {
     echo "<div class='estadoCurso'>";
-    echo "<a class='boton' href='index.php?ctl=cursoAngular#tema" . $temasTerminados . "'>Seguir con el curso <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
+    echo "<a class='boton' href='index.php?ctl=cursoGit#tema" . $temasTerminados . "'>Seguir con el curso <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
     echo "</div>";
 }
 
 if ($finalCursoUsuario) {
     echo "<div class='estadoCurso'>";
-    echo "<p>¡Enhorabuena! Has completado todos los temas del curso de Angular, ¿quieres hacer otro curso?.</p>";
+    echo "<p>¡Enhorabuena! Has completado todos los temas del curso de Git, ¿quieres hacer otro curso?.</p>";
     echo "<a class='boton' href='index.php?ctl=cursos'>Ver todos los cursos <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
     echo "</div>";
 }
 
-if ($temasTerminados === 0) {
-    echo '<form name="formEmpezarCurso" action="" method="POST" enctype="multipart/form-data">';
+if (!$cursoAputadoUsuario) {
+    echo '<form name="formEmpezarcurso" action="" method="POST" enctype="multipart/form-data">';
     echo '<input type="submit" value="Empezar curso" name="empezarCurso" class="boton" />';
     echo '</form>';
 }
+
+if ($cursoAputadoUsuario && $temasTerminados == 0) {
+    echo "<div class='estadoCurso'>";
+    echo "<a class='boton' href='index.php?ctl=cursoGit#tema1'>Seguir con el curso <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
+    echo "</div>";
+}
+
 
 ?>
 

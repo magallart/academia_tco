@@ -139,6 +139,25 @@ foreach ($_SESSION['cursos'] as $curso) {
 
 
 $idCursoArrayCursosUsuario = array_search('JavaScript', array_column($_SESSION['cursos'], 'nombre'));
+
+function buscarValorEnArrayMultidimensional($name, $array, $campo) {
+    foreach ($array as $key => $val) {
+        if ($val[$campo] === $name) {
+            return $key;
+        }
+    }
+    return null;
+ }
+ 
+if(!buscarValorEnArrayMultidimensional('Git', $_SESSION['cursos'], 'nombre')) {
+    $cursoAputadoUsuario = false;
+} else {
+    $cursoAputadoUsuario = true;
+}
+ echo "id: " . $cursoAputadoUsuario;
+ echo "<br>";
+
+
 $temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
 echo "idCursoArrayCursosUsuario: " . $idCursoArrayCursosUsuario;
 echo "<br>";
@@ -158,13 +177,13 @@ if($_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'] = 0 || $_SESSION['curso
 
 if (!$finalCursoUsuario && $temasTerminados > 0) {
     echo "<div class='estadoCurso'>";
-    echo "<a class='boton' href='index.php?ctl=cursoAngular#tema" . $temasTerminados . "'>Seguir con el curso <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
+    echo "<a class='boton' href='index.php?ctl=cursoJavaScript#tema" . $temasTerminados . "'>Seguir con el curso <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
     echo "</div>";
 }
 
 if ($finalCursoUsuario) {
     echo "<div class='estadoCurso'>";
-    echo "<p>¡Enhorabuena! Has completado todos los temas del curso de Angular, ¿quieres hacer otro curso?.</p>";
+    echo "<p>¡Enhorabuena! Has completado todos los temas del curso de JavaScript, ¿quieres hacer otro curso?.</p>";
     echo "<a class='boton' href='index.php?ctl=cursos'>Ver todos los cursos <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
     echo "</div>";
 }
@@ -175,6 +194,11 @@ if ($temasTerminados === 0) {
     echo '</form>';
 }
 
+if ($cursoAputadoUsuario && $temasTerminados == 0) {
+    echo "<div class='estadoCurso'>";
+    echo "<a class='boton' href='index.php?ctl=cursoJavaScript#tema1'>Seguir con el curso <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
+    echo "</div>";
+}
 ?>
 
 <section>

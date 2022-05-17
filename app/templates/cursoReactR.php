@@ -150,9 +150,9 @@ function buscarValorEnArrayMultidimensional($name, $array, $campo) {
  }
  
 if(!buscarValorEnArrayMultidimensional('React', $_SESSION['cursos'], 'nombre')) {
-    $id = "NULO";
+    $cursoAputadoUsuario = false;
 }
- echo "id: " . $id;
+ echo "id: " . $cursoAputadoUsuario;
  echo "<br>";
 
 
@@ -176,21 +176,27 @@ if ($_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'] = 0 || $_SESSION['curs
 
 if (!$finalCursoUsuario && $temasTerminados > 0) {
     echo "<div class='estadoCurso'>";
-    echo "<a class='boton' href='index.php?ctl=cursoAngular#tema" . $temasTerminados . "'>Seguir con el curso <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
+    echo "<a class='boton' href='index.php?ctl=cursoReact#tema" . $temasTerminados . "'>Seguir con el curso <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
     echo "</div>";
 }
 
 if ($finalCursoUsuario) {
     echo "<div class='estadoCurso'>";
-    echo "<p>¡Enhorabuena! Has completado todos los temas del curso de Angular, ¿quieres hacer otro curso?.</p>";
+    echo "<p>¡Enhorabuena! Has completado todos los temas del curso de React, ¿quieres hacer otro curso?.</p>";
     echo "<a class='boton' href='index.php?ctl=cursos'>Ver todos los cursos <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
     echo "</div>";
 }
 
-if ($temasTerminados === 0) {
+if (!$cursoAputadoUsuario) {
     echo '<form name="formEmpezarcurso" action="" method="POST" enctype="multipart/form-data">';
     echo '<input type="submit" value="Empezar curso" name="empezarCurso" class="boton" />';
     echo '</form>';
+}
+
+if ($cursoAputadoUsuario && $temasTerminados == 0) {
+    echo "<div class='estadoCurso'>";
+    echo "<a class='boton' href='index.php?ctl=cursoReact#tema1'>Seguir con el curso <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
+    echo "</div>";
 }
 
 
