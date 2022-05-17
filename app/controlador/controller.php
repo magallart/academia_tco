@@ -82,6 +82,11 @@ class Controller
                 $u->terminarCurso($_SESSION['idUsuario'], 0);
                 header('Location: index.php?ctl=cursoJavascript#cursoTop');
             }
+
+            if (isset($_POST['empezarCurso'])) {
+                $u->empezarCurso($_SESSION['idUsuario'], 0, 0, 0, 0);
+                header('Location: index.php?ctl=perfil');
+            }
         } catch (Exception $e) {
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
             header('Location: index.php?ctl=error');
@@ -109,7 +114,7 @@ class Controller
             $u = new Usuarios();
             $_SESSION['cursos'] = $u->getCursosUsuario($_SESSION['idUsuario']);
             $c = new Cursos();
-            $idCurso = 1;
+            $idCurso = 0;
             $infoCurso['mensajesCursoAngular'] = $c->getMensajesCurso($idCurso);
             $_SESSION['mensajesCursoAngular'] = $infoCurso['mensajesCursoAngular'];
 
@@ -136,7 +141,13 @@ class Controller
             }
 
             if (isset($_POST['finalizarCurso'])) {
-                $u->terminarCurso($_SESSION['idUsuario'], 0);  //TODO comprobar que funciona
+                $u->sumarTema($_SESSION['idUsuario'], 0);
+                $u->terminarCurso($_SESSION['idUsuario'], 0);
+                header('Location: index.php?ctl=cursoAngular#cursoTop');
+            }
+
+            if (isset($_POST['empezarCurso'])) {
+                $u->empezarCurso($_SESSION['idUsuario'], 1, 0, 0, 0);
                 header('Location: index.php?ctl=perfil');
             }
         } catch (Exception $e) {
@@ -163,14 +174,44 @@ class Controller
             $infoCurso = array(
                 'mensajesCursoReact' => array()
             );
-
+            $u = new Usuarios();
+            $_SESSION['cursos'] = $u->getCursosUsuario($_SESSION['idUsuario']);
             $c = new Cursos();
-            $idCurso = 1;
+            $idCurso = 0;
             $infoCurso['mensajesCursoReact'] = $c->getMensajesCurso($idCurso);
             $_SESSION['mensajesCursoReact'] = $infoCurso['mensajesCursoReact'];
 
             if (isset($_POST['enviarMensaje'])) {
-                $_SESSION["mensajeUsuario"] = recoge('nuevoMensaje');  // TODO Añadir función en classCursos.php para añadir el mensaje y el usuario a la base de datos
+                $u = new Usuarios();
+                $mensajeUsuario = recoge('nuevoMensaje');  //TODO Falta validar el mensaje
+                if (isset($_POST['aceptacionPoliticas'])) {
+                    //Un usuario sólo puede enviar un mensaje por curso. Si no encuentra el email en el array de mensajes es porque el usuario no ha enviado un mensaje
+                    if (array_search($_SESSION['emailUsuario'], array_column($_SESSION['mensajesCursoReact'], 'email')) == true) {
+                        $_SESSION['errores'] = "Ya has enviado un mensaje para este curso.";
+                    } else {
+                        $u->insertarMensajeUsuario($_SESSION['idUsuario'], 0, $mensajeUsuario);
+                        header("Refresh:0");
+                    }
+                } else {
+                    $_SESSION['errores'] = "Checkbox";
+                }
+            }
+
+            if (isset($_POST['sumarTema'])) {
+                $temasTerminadosUsuario = $_SESSION['cursos'][0]['temasTerminados'];
+                $u->sumarTema($_SESSION['idUsuario'], 0);
+                header('Location: index.php?ctl=cursoReact#tema' . $temasTerminadosUsuario + 1);
+            }
+
+            if (isset($_POST['finalizarCurso'])) {
+                $u->sumarTema($_SESSION['idUsuario'], 0);
+                $u->terminarCurso($_SESSION['idUsuario'], 0);
+                header('Location: index.php?ctl=cursoReact#cursoTop');
+            }
+
+            if (isset($_POST['empezarCurso'])) {
+                $u->empezarCurso($_SESSION['idUsuario'], 2, 0, 0, 0);
+                header('Location: index.php?ctl=perfil');
             }
         } catch (Exception $e) {
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
@@ -196,14 +237,44 @@ class Controller
             $infoCurso = array(
                 'mensajesCursoGit' => array()
             );
-
+            $u = new Usuarios();
+            $_SESSION['cursos'] = $u->getCursosUsuario($_SESSION['idUsuario']);
             $c = new Cursos();
-            $idCurso = 2;
+            $idCurso = 0;
             $infoCurso['mensajesCursoGit'] = $c->getMensajesCurso($idCurso);
             $_SESSION['mensajesCursoGit'] = $infoCurso['mensajesCursoGit'];
 
             if (isset($_POST['enviarMensaje'])) {
-                $_SESSION["mensajeUsuario"] = recoge('nuevoMensaje');  // TODO Añadir función en classCursos.php para añadir el mensaje y el usuario a la base de datos
+                $u = new Usuarios();
+                $mensajeUsuario = recoge('nuevoMensaje');  //TODO Falta validar el mensaje
+                if (isset($_POST['aceptacionPoliticas'])) {
+                    //Un usuario sólo puede enviar un mensaje por curso. Si no encuentra el email en el array de mensajes es porque el usuario no ha enviado un mensaje
+                    if (array_search($_SESSION['emailUsuario'], array_column($_SESSION['mensajesCursoGit'], 'email')) == true) {
+                        $_SESSION['errores'] = "Ya has enviado un mensaje para este curso.";
+                    } else {
+                        $u->insertarMensajeUsuario($_SESSION['idUsuario'], 0, $mensajeUsuario);
+                        header("Refresh:0");
+                    }
+                } else {
+                    $_SESSION['errores'] = "Checkbox";
+                }
+            }
+
+            if (isset($_POST['sumarTema'])) {
+                $temasTerminadosUsuario = $_SESSION['cursos'][0]['temasTerminados'];
+                $u->sumarTema($_SESSION['idUsuario'], 0);
+                header('Location: index.php?ctl=cursoGit#tema' . $temasTerminadosUsuario + 1);
+            }
+
+            if (isset($_POST['finalizarCurso'])) {
+                $u->sumarTema($_SESSION['idUsuario'], 0);
+                $u->terminarCurso($_SESSION['idUsuario'], 0);
+                header('Location: index.php?ctl=cursoGit#cursoTop');
+            }
+
+            if (isset($_POST['empezarCurso'])) {
+                $u->empezarCurso($_SESSION['idUsuario'], 3, 0, 0, 0);
+                header('Location: index.php?ctl=perfil');
             }
         } catch (Exception $e) {
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
@@ -381,9 +452,9 @@ class Controller
                     }
                 }
 
-                if (isset($_POST['borrarUsuario'])) {      
-                    $u->borrarMensajesUsuario($_SESSION['idUsuario']);             
-                    $u->borrarCursosUsuario($_SESSION['idUsuario']);                    
+                if (isset($_POST['borrarUsuario'])) {
+                    $u->borrarMensajesUsuario($_SESSION['idUsuario']);
+                    $u->borrarCursosUsuario($_SESSION['idUsuario']);
                     $u->borrarUsuario($_SESSION['idUsuario']);
                     session_unset();
                     header('Location: index.php?ctl=inicio');

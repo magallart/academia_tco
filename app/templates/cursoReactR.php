@@ -138,15 +138,41 @@ foreach ($_SESSION['cursos'] as $curso) {
 
 
 $idCursoArrayCursosUsuario = array_search('React', array_column($_SESSION['cursos'], 'nombre'));
+
+$name = "React";
+function buscarValorEnArrayMultidimensional($name, $array, $campo) {
+    foreach ($array as $key => $val) {
+        if ($val[$campo] === $name) {
+            return $key;
+        }
+    }
+    return null;
+ }
+ 
+if(!buscarValorEnArrayMultidimensional('React', $_SESSION['cursos'], 'nombre')) {
+    $id = "NULO";
+}
+ echo "id: " . $id;
+ echo "<br>";
+
+
 $temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
-echo "idCurso: " . $idCursoArrayCursosUsuario;
+echo "idCursoArrayCursosUsuario: " . $idCursoArrayCursosUsuario;
+echo "<br>";
+echo "idCurso: " . $_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'];
 echo "<br>";
 echo "temas terminados:" . $temasTerminados;
 
 
+
 $u = new Usuarios();
-$finalCursoUsuario = $u->estadoCursoUsuario($_SESSION['idUsuario'], 0);
-$temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
+$finalCursoUsuario = $u->estadoCursoUsuario($_SESSION['idUsuario'], $_SESSION['cursos'][$idCursoArrayCursosUsuario]['id']);
+
+if ($_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'] = 0 || $_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'] > 0) {
+    $temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
+} else {
+    $temasTerminados = 0;
+}
 
 if (!$finalCursoUsuario && $temasTerminados > 0) {
     echo "<div class='estadoCurso'>";
@@ -160,6 +186,13 @@ if ($finalCursoUsuario) {
     echo "<a class='boton' href='index.php?ctl=cursos'>Ver todos los cursos <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
     echo "</div>";
 }
+
+if ($temasTerminados === 0) {
+    echo '<form name="formEmpezarcurso" action="" method="POST" enctype="multipart/form-data">';
+    echo '<input type="submit" value="Empezar curso" name="empezarCurso" class="boton" />';
+    echo '</form>';
+}
+
 
 ?>
 
@@ -261,7 +294,7 @@ if ($finalCursoUsuario) {
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="tema6">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
-                                Tema 6: React.memo, mejorar el rendimiento y hacer deploy 
+                                Tema 6: React.memo, mejorar el rendimiento y hacer deploy
                             </button>
                         </h2>
                         <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="tema6" data-bs-parent="#temasCurso">
@@ -345,7 +378,7 @@ if ($finalCursoUsuario) {
                             </div>
                             <?php
                             botonesAcordeon(10, $temasTerminados, $finalCursoUsuario);
-                            
+
                             ?>
                         </div>
                     </div>
@@ -353,7 +386,7 @@ if ($finalCursoUsuario) {
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="tema9">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
-                            Tema 11: CSS en JS y Styled Components 
+                            Tema 11: CSS en JS y Styled Components
                         </button>
                     </h2>
                     <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="tema9" data-bs-parent="#temasCurso">

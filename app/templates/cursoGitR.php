@@ -139,14 +139,21 @@ foreach ($_SESSION['cursos'] as $curso) {
 
 $idCursoArrayCursosUsuario = array_search('Git', array_column($_SESSION['cursos'], 'nombre'));
 $temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
-echo "idCurso: " . $idCursoArrayCursosUsuario;
+echo "idCursoArrayCursosUsuario: " . $idCursoArrayCursosUsuario;
+echo "<br>";
+echo "idCurso: " . $_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'];
 echo "<br>";
 echo "temas terminados:" . $temasTerminados;
 
 
 $u = new Usuarios();
-$finalCursoUsuario = $u->estadoCursoUsuario($_SESSION['idUsuario'], 0);
-$temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
+$finalCursoUsuario = $u->estadoCursoUsuario($_SESSION['idUsuario'], $_SESSION['cursos'][$idCursoArrayCursosUsuario]['id']);
+
+if ($_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'] = 0 || $_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'] > 0) {
+    $temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
+} else {
+    $temasTerminados = 0;
+}
 
 if (!$finalCursoUsuario && $temasTerminados > 0) {
     echo "<div class='estadoCurso'>";
@@ -159,6 +166,12 @@ if ($finalCursoUsuario) {
     echo "<p>¡Enhorabuena! Has completado todos los temas del curso de Angular, ¿quieres hacer otro curso?.</p>";
     echo "<a class='boton' href='index.php?ctl=cursos'>Ver todos los cursos <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
     echo "</div>";
+}
+
+if ($temasTerminados === 0) {
+    echo '<form name="formEmpezarCurso" action="" method="POST" enctype="multipart/form-data">';
+    echo '<input type="submit" value="Empezar curso" name="empezarCurso" class="boton" />';
+    echo '</form>';
 }
 
 ?>

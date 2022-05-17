@@ -122,6 +122,24 @@ class Usuarios extends Modelo
     /*
         · Este método finaliza un curso.
     */
+    function empezarCurso($idUsuario, $idCurso, $temasTerminados, $finalizado, $valoracion)
+    {
+        $consulta = "insert into curso_usuario (id_usuario, id_curso, temasTerminados, finalizado, valoracion) values (?, ?, ?, ?, ?)";
+
+        $result = $this->conexion->prepare($consulta);
+        $result->bindParam(1, $idUsuario);
+        $result->bindParam(2, $idCurso);
+        $result->bindParam(3, $temasTerminados);
+        $result->bindParam(4, $finalizado);
+        $result->bindParam(5, $valoracion);
+        $result->execute();
+
+        return $result;
+    }
+
+    /*
+        · Este método finaliza un curso.
+    */
     function terminarCurso($idUsuario, $idCurso)
     {
         $consulta = "update curso_usuario set finalizado = 1 where id_usuario = :idUsuario AND id_curso = :idCurso";
