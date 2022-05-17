@@ -115,54 +115,237 @@
             <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </section>
 
+<?php
+$temasTerminados = 0;
+$nombreCurso = $_GET['ctl'];
+foreach ($_SESSION['cursos'] as $curso) {
+    if ($curso['nombre'] == 'JavaScript' && $nombreCurso == 'cursoJavascript') {
+        $idCursoPagina = 0;
+    }
+
+    if ($curso['nombre'] == 'Angular' && $nombreCurso == 'cursoAngular') {
+        $idCursoPagina = 1;
+    }
+
+    if ($curso['nombre'] == 'React' && $nombreCurso == 'cursoReact') {
+        $idCursoPagina = 2;
+    }
+
+    if ($curso['nombre'] == 'Git' && $nombreCurso == 'cursoGit') {
+        $idCursoPagina = 3;
+    }
+}
+
+
+$idCursoArrayCursosUsuario = array_search('Git', array_column($_SESSION['cursos'], 'nombre'));
+$temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
+echo "idCurso: " . $idCursoArrayCursosUsuario;
+echo "<br>";
+echo "temas terminados:" . $temasTerminados;
+
+
+$u = new Usuarios();
+$finalCursoUsuario = $u->estadoCursoUsuario($_SESSION['idUsuario'], 0);
+$temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
+
+if (!$finalCursoUsuario && $temasTerminados > 0) {
+    echo "<div class='estadoCurso'>";
+    echo "<a class='boton' href='index.php?ctl=cursoAngular#tema" . $temasTerminados . "'>Seguir con el curso <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
+    echo "</div>";
+}
+
+if ($finalCursoUsuario) {
+    echo "<div class='estadoCurso'>";
+    echo "<p>¡Enhorabuena! Has completado todos los temas del curso de Angular, ¿quieres hacer otro curso?.</p>";
+    echo "<a class='boton' href='index.php?ctl=cursos'>Ver todos los cursos <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
+    echo "</div>";
+}
+
+?>
+
 <section>
     <div class="container acordeon">
         <div class="row my-5">
             <div class="col">
-                <div class="accordion" id="accordionExample">
+                <div class="accordion" id="temasCurso">
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Tema 1: Introducción a JavaScript
+                        <h2 class="accordion-header" id="tema1">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                Tema 1: Introducción a Git
                             </button>
                         </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="tema1" data-bs-parent="#temasCurso">
                             <div class="accordion-body">
-                                <p>Comenzamos el Curso JavaScript 2022 aprendiendo a utilizar la etiqueta script JavaScript (y a diferir su carga con el atributo defer) en tus proyectos frontend. No te pierdas este vídeo donde aprenderemos como enlazar un archivo JavaScript</p>
+                                <p>Comenzamos un nuevo curso donde aprenderemos el uso de esta imprescindible herramienta para todo programador.</p>
                                 <div class="video-container">
-                                    <iframe src="https://www.youtube.com/embed/VwEChGsBD78" title="YouTube video player" class="youtube-iframe"></iframe>
+                                    <iframe src="https://www.youtube.com/embed/ANF1X42_ae4" title="Curso Git: Tema 1" class="youtube-iframe"></iframe>
                                 </div>
+                                <?php
+                                botonesAcordeon(1, $temasTerminados, $finalCursoUsuario);
+                                ?>
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Tema 2: ¿Qué es JavaScript?
+                        <h2 class="accordion-header" id="tema2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                Tema 2: Creando repositorio
                             </button>
                         </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="tema2" data-bs-parent="#temasCurso">
                             <div class="accordion-body">
-                                <p>El hoisting JavaScript es uno de los conceptos principales que debes entender. También llamado alzado JavaScript, eleva la declaración de variables y las funciones declaradas al inicio del programa.</p>
+                                <p>En este vídeo vemos cómo agregar un repositorio de un proyecto y cómo agregar archivos al mismo.</p>
                                 <div class="video-container">
-                                    <iframe src="https://www.youtube.com/embed/sv4-Lq495Qc" title="YouTube video player" class="youtube-iframe"></iframe>
+                                    <iframe src="https://www.youtube.com/embed/ANF1X42_ae4" title="Curso Git: Tema 2" class="youtube-iframe"></iframe>
                                 </div>
+                                <?php
+                                botonesAcordeon(2, $temasTerminados, $finalCursoUsuario);
+                                ?>
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Tema 3: Variables
+                        <h2 class="accordion-header" id="tema3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                Tema 3: Subiendo a GitHub
                             </button>
                         </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                        <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="tema3" data-bs-parent="#temasCurso">
                             <div class="accordion-body">
-                                <p>Aprende las principales diferencias entre var vs let a la hora de declarar variables JavaScript. Por ejemplo, las variables declaradas con var tienen ámbito de función mientras que las variables let JavaScript tienen ámbito de bloque. También se comportan diferente a la hora de ser alzadas.</p>
+                                <p>En este vídeo vemos algunos comandos más de Git y vemos cómo subir el proyecto a GitHub.</p>
                                 <div class="video-container">
-                                    <iframe src="https://www.youtube.com/embed/iIkeGM1I-cM" title="YouTube video player" class="youtube-iframe"></iframe>
+                                    <iframe src="https://www.youtube.com/embed/0UlqvTJzOL4" title="Curso Git: Tema 3" class="youtube-iframe"></iframe>
                                 </div>
+                                <?php
+                                botonesAcordeon(3, $temasTerminados, $finalCursoUsuario);
+                                ?>
                             </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="tema4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                Tema 4: Clonación y tags
+                            </button>
+                        </h2>
+                        <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="tema4" data-bs-parent="#temasCurso">
+                            <div class="accordion-body">
+                                <p>En este vídeo vemos cómo crear tags, como subirlas a GitHub y también cómo clonar nuestros repositorios en local.</p>
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/axXlYdyDD3I" title="Curso Git: Tema 4" class="youtube-iframe"></iframe>
+                                </div>
+                                <?php
+                                botonesAcordeon(4, $temasTerminados, $finalCursoUsuario);
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="tema5">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                                Tema 5: Ramas o Branches
+                            </button>
+                        </h2>
+                        <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="tema5" data-bs-parent="#temasCurso">
+                            <div class="accordion-body">
+                                <p>En este vídeo comenzamos a ver una de las características más potentes de Git: las ramas o branches.</p>
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/q9LJIHDgJtE" title="Curso Git: Tema 5" class="youtube-iframe"></iframe>
+                                </div>
+                                <?php
+                                botonesAcordeon(5, $temasTerminados, $finalCursoUsuario);
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="tema6">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                                Tema 6: Visual Studio Code con Git I
+                            </button>
+                        </h2>
+                        <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="tema6" data-bs-parent="#temasCurso">
+                            <div class="accordion-body">
+                                <p>En este vídeo utilizamos Visual Studio Code con Git donde vemos todas las ayudas que nos ofrece este magnífico editor gratuito a la hora de trabajar con Git.</p>
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/w2o_rH4b5tA" title="Curso Git: Tema X" class="youtube-iframe"></iframe>
+                                </div>
+                                <?php
+                                botonesAcordeon(6, $temasTerminados, $finalCursoUsuario);
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="tema7">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                                Tema 7: Visual Studio Code con Git II
+                            </button>
+                        </h2>
+                        <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="tema7" data-bs-parent="#temasCurso">
+                            <div class="accordion-body">
+                                <p>En este vídeo vemos algunas de las herramientas de Visual Studio Code para trabajar con ramas.</p>
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/EKCRjnvron4" title="Curso Git: Tema 7" class="youtube-iframe"></iframe>
+                                </div>
+                                <?php
+                                botonesAcordeon(7, $temasTerminados, $finalCursoUsuario);
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="tema8">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                            Tema 8: Visual Studio Code con GitHub I
+                        </button>
+                    </h2>
+                    <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="tema8" data-bs-parent="#temasCurso">
+                        <div class="accordion-body">
+                            <p>En este vídeo comenzamos a ver cómo subir un proyecto a GitHub desde Visual Studio Code.</p>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/ngow7sPfSDQ" title="Curso Git: Tema 8" class="youtube-iframe"></iframe>
+                            </div>
+                            <?php
+                            botonesAcordeon(8, $temasTerminados, $finalCursoUsuario);
+                            ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="tema9">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
+                            Tema 9: Visual Studio Code con GitHub II
+                        </button>
+                    </h2>
+                    <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="tema9" data-bs-parent="#temasCurso">
+                        <div class="accordion-body">
+                            <p>Vemos en este vídeo cómo crear ramas en GitHub, hacer merge y sincronizar con Visual Studio Code.</p>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/8V8xA_TRPXw" title="Curso Git: Tema 9" class="youtube-iframe"></iframe>
+                            </div>
+                            <?php
+                            botonesAcordeon(9, $temasTerminados, $finalCursoUsuario);
+                            ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="tema10">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
+                            Tema 10: Fork
+                        </button>
+                    </h2>
+                    <div id="collapse10" class="accordion-collapse collapse" aria-labelledby="tema10" data-bs-parent="#temasCurso">
+                        <div class="accordion-body">
+                            <p>En este vídeo vemos qué es y como hacer fork con repositorios en GitHub. Es una característica potente para crear proyectos nuevos a partir de otros y también para colaborar en equipo.</p>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/4YlHQAETkPs" title="Curso Git: Tema 10" class="youtube-iframe"></iframe>
+                            </div>
+                            <?php
+                            finalizarCurso(10, $temasTerminados, $finalCursoUsuario);
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -178,7 +361,7 @@
                 <h2>Mensajes de los alumnos</h2>
                 <div class="mensajes-usuarios">
                     <?php
-                    foreach ($_SESSION['mensajesCursoJavascript'] as $mensajes) {
+                    foreach ($_SESSION['mensajesCursoGit'] as $mensajes) {
                         echo "<div class='mensajeCurso'>";
                         echo "<span class='infoUsuario'>";
                         echo "<img src='../img" . $mensajes["fPerfil"] . "' />";

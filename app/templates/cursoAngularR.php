@@ -116,10 +116,40 @@
             <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </section>
 
+
 <?php
+$temasTerminados = 0;
+$nombreCurso = $_GET['ctl'];
+foreach ($_SESSION['cursos'] as $curso) {
+    if ($curso['nombre'] == 'JavaScript' && $nombreCurso == 'cursoJavascript') {
+        $idCursoPagina = 0;
+    }
+
+    if ($curso['nombre'] == 'Angular' && $nombreCurso == 'cursoAngular') {
+        $idCursoPagina = 1;
+    }
+
+    if ($curso['nombre'] == 'React' && $nombreCurso == 'cursoReact') {
+        $idCursoPagina = 2;
+    }
+
+    if ($curso['nombre'] == 'Git' && $nombreCurso == 'cursoGit') {
+        $idCursoPagina = 3;
+    }
+}
+
+
+$idCursoArrayCursosUsuario = array_search('Angular', array_column($_SESSION['cursos'], 'nombre'));
+$temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
+echo "idCurso: " . $idCursoArrayCursosUsuario;
+echo "<br>";
+echo "temas terminados:" . $temasTerminados;
+
+
 $u = new Usuarios();
 $finalCursoUsuario = $u->estadoCursoUsuario($_SESSION['idUsuario'], 0);
-$temasTerminados = $_SESSION['cursos'][0]['temasTerminados'];
+$temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
+
 if (!$finalCursoUsuario && $temasTerminados > 0) {
     echo "<div class='estadoCurso'>";
     echo "<a class='boton' href='index.php?ctl=cursoAngular#tema" . $temasTerminados . "'>Seguir con el curso <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
@@ -205,7 +235,7 @@ if ($finalCursoUsuario) {
                             <div class="accordion-body">
                                 <p>En este vídeo seguimos profundizando en la estructura de una App Angular y vemos el flujo de ejecución.</p>
                                 <div class="video-container">
-                                    <iframe src="https://www.youtube.com/embed/uFA09pl_f4s" title="Curso Angular: Tema X" class="youtube-iframe"></iframe>
+                                    <iframe src="https://www.youtube.com/embed/uFA09pl_f4s" title="Curso Angular: Tema 4" class="youtube-iframe"></iframe>
                                 </div>
                                 <?php
                                 botonesAcordeon(4, $temasTerminados, $finalCursoUsuario);

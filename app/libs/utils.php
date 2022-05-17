@@ -382,3 +382,31 @@ function mensajeUsuarioCurso($email, $mensajesCurso, $campoArrayMensajesCurso,)
         echo '</form>';
     }
 }
+
+
+/*
+        · Este método nos sirve para conseguir la id del curso al que está aputado un usuario.
+        · Los alumnos pueden no estar apuntados a todos los cursos y en el array salen por orden.
+    */
+function getIdCursoUsuarioPaginaActual($arrayCursos)
+    {
+        $nombreCurso = $_GET['ctl'];
+        foreach ($arrayCursos as $mensajes) {
+            if ($mensajes['nombre'] == 'JavaScript' && $nombreCurso == 'cursoJavascript') {
+                $idCursoPagina = 0;
+            }
+
+            if ($mensajes['nombre'] == 'Angular' && $nombreCurso == 'cursoAngular') {
+                $idCursoPagina = 1;
+            }
+
+            if ($mensajes['nombre'] == 'React' && $nombreCurso == 'cursoReact') {
+                $idCursoPagina = 2;
+            }
+
+            if ($mensajes['nombre'] == 'Git' && $nombreCurso == 'cursoGit') {
+                $idCursoPagina = 3;
+            }
+        }
+        return $idCursoPagina;
+    }

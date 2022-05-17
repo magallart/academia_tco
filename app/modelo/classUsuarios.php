@@ -191,6 +191,6 @@ class Usuarios extends Modelo
         $result->execute();
 
         return $result;
-    }
+    }     
 
 }

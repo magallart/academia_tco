@@ -117,18 +117,47 @@
 </section>
 
 <?php
+$temasTerminados = 0;
+$nombreCurso = $_GET['ctl'];
+foreach ($_SESSION['cursos'] as $curso) {
+    if ($curso['nombre'] == 'JavaScript' && $nombreCurso == 'cursoJavascript') {
+        $idCursoPagina = 0;
+    }
+
+    if ($curso['nombre'] == 'Angular' && $nombreCurso == 'cursoAngular') {
+        $idCursoPagina = 1;
+    }
+
+    if ($curso['nombre'] == 'React' && $nombreCurso == 'cursoReact') {
+        $idCursoPagina = 2;
+    }
+
+    if ($curso['nombre'] == 'Git' && $nombreCurso == 'cursoGit') {
+        $idCursoPagina = 3;
+    }
+}
+
+
+$idCursoArrayCursosUsuario = array_search('JavaScript', array_column($_SESSION['cursos'], 'nombre'));
+$temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
+echo "idCurso: " . $idCursoArrayCursosUsuario;
+echo "<br>";
+echo "temas terminados:" . $temasTerminados;
+
+
 $u = new Usuarios();
 $finalCursoUsuario = $u->estadoCursoUsuario($_SESSION['idUsuario'], 0);
-$temasTerminados = $_SESSION['cursos'][0]['temasTerminados'];
+$temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
+
 if (!$finalCursoUsuario && $temasTerminados > 0) {
     echo "<div class='estadoCurso'>";
-    echo "<a class='boton' href='index.php?ctl=cursoJavascript#tema" . $temasTerminados . "'>Seguir con el curso <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
+    echo "<a class='boton' href='index.php?ctl=cursoAngular#tema" . $temasTerminados . "'>Seguir con el curso <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
     echo "</div>";
 }
 
 if ($finalCursoUsuario) {
     echo "<div class='estadoCurso'>";
-    echo "<p>¡Enhorabuena! Has completado todos los temas del curso de JavaScript, ¿quieres hacer otro curso?.</p>";
+    echo "<p>¡Enhorabuena! Has completado todos los temas del curso de Angular, ¿quieres hacer otro curso?.</p>";
     echo "<a class='boton' href='index.php?ctl=cursos'>Ver todos los cursos <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
     echo "</div>";
 }
@@ -148,7 +177,7 @@ if ($finalCursoUsuario) {
                         </h2>
                         <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="tema1" data-bs-parent="#temasCurso">
                             <div class="accordion-body">
-                                <p>Comenzamos el Curso JavaScript 2022 aprendiendo a utilizar la etiqueta script JavaScript (y a diferir su carga con el atributo defer) en tus proyectos frontend. No te pierdas este vídeo donde aprenderemos como enlazar un archivo JavaScript</p>
+                                <p>Comenzamos el Curso JavaScript 2022 aprendiendo a utilizar la etiqueta script JavaScript (y a diferir su carga con el atributo defer) en tus proyectos frontend. No te pierdas este vídeo donde aprenderemos como enlazar un archivo JavaScript.</p>
                                 <div class="video-container">
                                     <iframe src="https://www.youtube.com/embed/VwEChGsBD78" title="Curso JavaScript: Tema 1" class="youtube-iframe"></iframe>
                                 </div>
@@ -204,7 +233,7 @@ if ($finalCursoUsuario) {
                             <div class="accordion-body">
                                 <p>Aprende la diferencia entre var, let y const JavaScript. Con const puedes declarar variables JavaScript que mantienen una asociación constante. Usar const no crea variables inmutables, como comprobarás durante la lección.</p>
                                 <div class="video-container">
-                                    <iframe src="https://www.youtube.com/embed/ESOAa3SX2yg" title="Curso JavaScript: Tema X" class="youtube-iframe"></iframe>
+                                    <iframe src="https://www.youtube.com/embed/ESOAa3SX2yg" title="Curso JavaScript: Tema 4" class="youtube-iframe"></iframe>
                                 </div>
                                 <?php
                                 botonesAcordeon(4, $temasTerminados, $finalCursoUsuario);

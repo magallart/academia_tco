@@ -115,54 +115,256 @@
             <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </section>
 
+<?php
+$temasTerminados = 0;
+$nombreCurso = $_GET['ctl'];
+foreach ($_SESSION['cursos'] as $curso) {
+    if ($curso['nombre'] == 'JavaScript' && $nombreCurso == 'cursoJavascript') {
+        $idCursoPagina = 0;
+    }
+
+    if ($curso['nombre'] == 'Angular' && $nombreCurso == 'cursoAngular') {
+        $idCursoPagina = 1;
+    }
+
+    if ($curso['nombre'] == 'React' && $nombreCurso == 'cursoReact') {
+        $idCursoPagina = 2;
+    }
+
+    if ($curso['nombre'] == 'Git' && $nombreCurso == 'cursoGit') {
+        $idCursoPagina = 3;
+    }
+}
+
+
+$idCursoArrayCursosUsuario = array_search('React', array_column($_SESSION['cursos'], 'nombre'));
+$temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
+echo "idCurso: " . $idCursoArrayCursosUsuario;
+echo "<br>";
+echo "temas terminados:" . $temasTerminados;
+
+
+$u = new Usuarios();
+$finalCursoUsuario = $u->estadoCursoUsuario($_SESSION['idUsuario'], 0);
+$temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
+
+if (!$finalCursoUsuario && $temasTerminados > 0) {
+    echo "<div class='estadoCurso'>";
+    echo "<a class='boton' href='index.php?ctl=cursoAngular#tema" . $temasTerminados . "'>Seguir con el curso <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
+    echo "</div>";
+}
+
+if ($finalCursoUsuario) {
+    echo "<div class='estadoCurso'>";
+    echo "<p>¡Enhorabuena! Has completado todos los temas del curso de Angular, ¿quieres hacer otro curso?.</p>";
+    echo "<a class='boton' href='index.php?ctl=cursos'>Ver todos los cursos <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
+    echo "</div>";
+}
+
+?>
+
 <section>
     <div class="container acordeon">
         <div class="row my-5">
             <div class="col">
-                <div class="accordion" id="accordionExample">
+                <div class="accordion" id="temasCurso">
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Tema 1: Introducción a JavaScript
+                        <h2 class="accordion-header" id="tema1">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                Tema 1: Componentes, State, JSX
                             </button>
                         </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="tema1" data-bs-parent="#temasCurso">
                             <div class="accordion-body">
-                                <p>Comenzamos el Curso JavaScript 2022 aprendiendo a utilizar la etiqueta script JavaScript (y a diferir su carga con el atributo defer) en tus proyectos frontend. No te pierdas este vídeo donde aprenderemos como enlazar un archivo JavaScript</p>
+                                <p>¿Qué es React? ¿Por qué deberías aprenderlo? ¿Por qué lo necesitamos? ¿Qué es JSX 🤔? Props y State. Eventos. Renderizado condicional y useState.</p>
                                 <div class="video-container">
-                                    <iframe src="https://www.youtube.com/embed/VwEChGsBD78" title="YouTube video player" class="youtube-iframe"></iframe>
+                                    <iframe src="https://www.youtube.com/embed/T_j60n1zgu0" title="Curso React: Tema 1" class="youtube-iframe"></iframe>
                                 </div>
+                                <?php
+                                botonesAcordeon(1, $temasTerminados, $finalCursoUsuario);
+                                ?>
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Tema 2: ¿Qué es JavaScript?
+                        <h2 class="accordion-header" id="tema2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                Tema 2: Crea una app con React
                             </button>
                         </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="tema2" data-bs-parent="#temasCurso">
                             <div class="accordion-body">
-                                <p>El hoisting JavaScript es uno de los conceptos principales que debes entender. También llamado alzado JavaScript, eleva la declaración de variables y las funciones declaradas al inicio del programa.</p>
+                                <p>Ahora que ya sabemos qué es React ⚛️, vamos a crear una pequeña aplicación desde cero para poner en práctica lo que sabemos, hacer un fetching de datos, tener un entorno de desarrollo y añadirle rutas.</p>
                                 <div class="video-container">
-                                    <iframe src="https://www.youtube.com/embed/sv4-Lq495Qc" title="YouTube video player" class="youtube-iframe"></iframe>
+                                    <iframe src="https://www.youtube.com/embed/QBLbXgeXMU8" title="Curso React: Tema 2" class="youtube-iframe"></iframe>
                                 </div>
+                                <?php
+                                botonesAcordeon(2, $temasTerminados, $finalCursoUsuario);
+                                ?>
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Tema 3: Variables
+                        <h2 class="accordion-header" id="tema3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                Tema 3: Creando Custom Hooks y usando Context
                             </button>
                         </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                        <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="tema3" data-bs-parent="#temasCurso">
                             <div class="accordion-body">
-                                <p>Aprende las principales diferencias entre var vs let a la hora de declarar variables JavaScript. Por ejemplo, las variables declaradas con var tienen ámbito de función mientras que las variables let JavaScript tienen ámbito de bloque. También se comportan diferente a la hora de ser alzadas.</p>
+                                <p>En la clase de hoy veremos más hooks, cómo crear nuestros propios hooks (Custom Hooks) y cómo podemos usar el contexto para crear una especie de estado global.</p>
                                 <div class="video-container">
-                                    <iframe src="https://www.youtube.com/embed/iIkeGM1I-cM" title="YouTube video player" class="youtube-iframe"></iframe>
+                                    <iframe src="https://www.youtube.com/embed/2qgs7buSnHQ" title="Curso React: Tema 3" class="youtube-iframe"></iframe>
                                 </div>
+                                <?php
+                                botonesAcordeon(3, $temasTerminados, $finalCursoUsuario);
+                                ?>
                             </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="tema4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                Tema 4: Lazy Load, Suspense y paginación con React
+                            </button>
+                        </h2>
+                        <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="tema4" data-bs-parent="#temasCurso">
+                            <div class="accordion-body">
+                                <p>Aprende a usar React.Lazy, el componente de Suspense y cómo hacer paginación fácilmente con React.</p>
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/VcxXipZg1-0" title="Curso React: Tema 4" class="youtube-iframe"></iframe>
+                                </div>
+                                <?php
+                                botonesAcordeon(4, $temasTerminados, $finalCursoUsuario);
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="tema5">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                                Tema 5: CSS Grid, Infinite Scroll y Tests en nuestra app de React
+                            </button>
+                        </h2>
+                        <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="tema5" data-bs-parent="#temasCurso">
+                            <div class="accordion-body">
+                                <p>Vamos a seguir con nuestra aplicación de Gifs en React para pasar a usar CSS Grid en nuestras búsquedas. Además, vamos a hacer que nuestra app tenga infinite scroll usando React y le añadiremos algunos tests para ver cómo funcionan.</p>
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/oCHdFiCgOSE" title="Curso React: Tema 5" class="youtube-iframe"></iframe>
+                                </div>
+                                <?php
+                                botonesAcordeon(5, $temasTerminados, $finalCursoUsuario);
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="tema6">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                                Tema 6: React.memo, mejorar el rendimiento y hacer deploy 
+                            </button>
+                        </h2>
+                        <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="tema6" data-bs-parent="#temasCurso">
+                            <div class="accordion-body">
+                                <p>Vamos a optimizar nuestra aplicación para evitar re-renders innecesarios gracias al uso del profiler de React y a deployar nuestra app con Vercel.</p>
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/Wo7_OVtu1ls" title="Curso React: Tema X" class="youtube-iframe"></iframe>
+                                </div>
+                                <?php
+                                botonesAcordeon(6, $temasTerminados, $finalCursoUsuario);
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="tema7">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                                Tema 7: SEO con React y Deploy integrado con GitHub
+                            </button>
+                        </h2>
+                        <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="tema7" data-bs-parent="#temasCurso">
+                            <div class="accordion-body">
+                                <p>Hoy veremos cómo añadir SEO a una aplicación generada con create-react-app.</p>
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/b-pwpHaYOTI" title="Curso React: Tema 7" class="youtube-iframe"></iframe>
+                                </div>
+                                <?php
+                                botonesAcordeon(7, $temasTerminados, $finalCursoUsuario);
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="tema8">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                            Tema 8: useReducer y tests de hooks
+                        </button>
+                    </h2>
+                    <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="tema8" data-bs-parent="#temasCurso">
+                        <div class="accordion-body">
+                            <p>En este vídeo comenzamos a ver cómo subir un proyecto a GitHub desde Visual Studio Code.</p>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/Wjy_nlYXTik" title="Curso React: Tema 8" class="youtube-iframe"></iframe>
+                            </div>
+                            <?php
+                            botonesAcordeon(8, $temasTerminados, $finalCursoUsuario);
+                            ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="tema9">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
+                            Tema 9: Login y Sesión de Usuarios
+                        </button>
+                    </h2>
+                    <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="tema9" data-bs-parent="#temasCurso">
+                        <div class="accordion-body">
+                            <p>Aprendermos a hacer que tu frontend con React pueda autentificar a un usuario con un backend que usa JWT. Además usamos hooks, hablamos de buenas prácticas y hacemos pantallas de carga</p>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/VT5S9Y49SYs" title="Curso React: Tema 9" class="youtube-iframe"></iframe>
+                            </div>
+                            <?php
+                            botonesAcordeon(9, $temasTerminados, $finalCursoUsuario);
+                            ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="tema10">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
+                            Tema 10: Registro de usuario, React.createPortal y gestión de favoritos
+                        </button>
+                    </h2>
+                    <div id="collapse10" class="accordion-collapse collapse" aria-labelledby="tema10" data-bs-parent="#temasCurso">
+                        <div class="accordion-body">
+                            <p>En esta clase vamos a ver cómo podemos registrar usuarios utilizando nuestra API de Deno. Para crear el formulario vamos a usar Formik. Además le daremos un estilo visual mejor y, para ello, vamos a aprender a usar el método createPortal, para renderizar componentes en cualquier parte </p>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/dtbI6gDnTFU" title="Curso React: Tema 10" class="youtube-iframe"></iframe>
+                            </div>
+                            <?php
+                            botonesAcordeon(10, $temasTerminados, $finalCursoUsuario);
+                            
+                            ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="tema9">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
+                            Tema 11: CSS en JS y Styled Components 
+                        </button>
+                    </h2>
+                    <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="tema9" data-bs-parent="#temasCurso">
+                        <div class="accordion-body">
+                            <p>Aprende a usar Emotion con React. Aprende a cómo usar CSS en JS con React y cómo usar Styled Components.</p>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/DjVGdUM1dHQ" title="Curso React: Tema 9" class="youtube-iframe"></iframe>
+                            </div>
+                            <?php
+                            finalizarCurso(11, $temasTerminados, $finalCursoUsuario);
+                            ?>
                         </div>
                     </div>
                 </div>
