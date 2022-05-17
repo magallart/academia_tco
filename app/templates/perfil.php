@@ -111,7 +111,7 @@
                             break;
                         case 3:
                             echo "<div class='linkCurso'>";
-                            echo "<a href='index.php?ctl=cursoGit' alt='Enlace a curso de Git'><img src='../../img/logo-js.jpg' alt='Logo Git'></a>";
+                            echo "<a href='index.php?ctl=cursoGit' alt='Enlace a curso de Git'><img src='../../img/logo-git.jpg' alt='Logo Git'></a>";
                             echo "</div>";
                             break;
                     }
