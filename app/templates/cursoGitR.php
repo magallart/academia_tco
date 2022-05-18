@@ -139,23 +139,13 @@ foreach ($_SESSION['cursos'] as $curso) {
 
 $idCursoArrayCursosUsuario = array_search('Git', array_column($_SESSION['cursos'], 'nombre'));
 
-function buscarValorEnArrayMultidimensional($name, $array, $campo) {
-    foreach ($array as $key => $val) {
-        if ($val[$campo] === $name) {
-            return $key;
-        }
-    }
-    return null;
- }
- 
 if(!buscarValorEnArrayMultidimensional('Git', $_SESSION['cursos'], 'nombre')) {
     $cursoAputadoUsuario = false;
+    echo "No apuntado<br>";
 } else {
     $cursoAputadoUsuario = true;
+    echo "Apuntado<br>";
 }
- echo "id: " . $cursoAputadoUsuario;
- echo "<br>";
-
 
 $temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
 echo "idCursoArrayCursosUsuario: " . $idCursoArrayCursosUsuario;
@@ -183,7 +173,7 @@ if (!$finalCursoUsuario && $temasTerminados > 0) {
 
 if ($finalCursoUsuario) {
     echo "<div class='estadoCurso'>";
-    echo "<p>¡Enhorabuena! Has completado todos los temas del curso de Git, ¿quieres hacer otro curso?.</p>";
+    echo "<p>¡Enhorabuena! Has completado todos los temas del curso de React, ¿quieres hacer otro curso?.</p>";
     echo "<a class='boton' href='index.php?ctl=cursos'>Ver todos los cursos <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
     echo "</div>";
 }

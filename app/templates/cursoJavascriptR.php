@@ -140,22 +140,13 @@ foreach ($_SESSION['cursos'] as $curso) {
 
 $idCursoArrayCursosUsuario = array_search('JavaScript', array_column($_SESSION['cursos'], 'nombre'));
 
-function buscarValorEnArrayMultidimensional($name, $array, $campo) {
-    foreach ($array as $key => $val) {
-        if ($val[$campo] === $name) {
-            return $key;
-        }
-    }
-    return null;
- }
- 
-if(!buscarValorEnArrayMultidimensional('Git', $_SESSION['cursos'], 'nombre')) {
+if (!buscarValorEnArrayMultidimensional('JavaScript', $_SESSION['cursos'], 'nombre')) {
     $cursoAputadoUsuario = false;
+    echo "No apuntado<br>";
 } else {
     $cursoAputadoUsuario = true;
+    echo "Apuntado <br>";
 }
- echo "id: " . $cursoAputadoUsuario;
- echo "<br>";
 
 
 $temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
@@ -166,10 +157,11 @@ echo "<br>";
 echo "temas terminados:" . $temasTerminados;
 
 
+
 $u = new Usuarios();
 $finalCursoUsuario = $u->estadoCursoUsuario($_SESSION['idUsuario'], $_SESSION['cursos'][$idCursoArrayCursosUsuario]['id']);
 
-if($_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'] = 0 || $_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'] > 0){
+if ($_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'] = 0 || $_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'] > 0) {
     $temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
 } else {
     $temasTerminados = 0;
@@ -177,7 +169,7 @@ if($_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'] = 0 || $_SESSION['curso
 
 if (!$finalCursoUsuario && $temasTerminados > 0) {
     echo "<div class='estadoCurso'>";
-    echo "<a class='boton' href='index.php?ctl=cursoJavaScript#tema" . $temasTerminados . "'>Seguir con el curso <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
+    echo "<a class='boton' href='index.php?ctl=cursoJavascript#tema" . $temasTerminados . "'>Seguir con el curso <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
     echo "</div>";
 }
 
@@ -188,17 +180,18 @@ if ($finalCursoUsuario) {
     echo "</div>";
 }
 
-if ($temasTerminados === 0) {
-    echo '<form name="formEmpezarCurso" action="" method="POST" enctype="multipart/form-data">';
+if (!$cursoAputadoUsuario) {
+    echo '<form name="formEmpezarcurso" action="" method="POST" enctype="multipart/form-data">';
     echo '<input type="submit" value="Empezar curso" name="empezarCurso" class="boton" />';
     echo '</form>';
 }
 
 if ($cursoAputadoUsuario && $temasTerminados == 0) {
     echo "<div class='estadoCurso'>";
-    echo "<a class='boton' href='index.php?ctl=cursoJavaScript#tema1'>Seguir con el curso <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
+    echo "<a class='boton' href='index.php?ctl=cursoJavascript#tema1'>Seguir con el curso <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
     echo "</div>";
 }
+
 ?>
 
 <section>

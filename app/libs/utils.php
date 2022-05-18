@@ -410,3 +410,19 @@ function getIdCursoUsuarioPaginaActual($arrayCursos)
         }
         return $idCursoPagina;
     }
+
+
+    /*
+        · Este método nos sirve para conseguir la id del curso al que está aputado un usuario.
+        · Los alumnos pueden no estar apuntados a todos los cursos y en el array salen por orden.
+    */
+    
+    function buscarValorEnArrayMultidimensional($name, $array, $campo)
+{
+    foreach ($array as $key => $val) {
+        if ($val[$campo] === $name) {
+            return true;
+        }
+    }
+    return false;
+}

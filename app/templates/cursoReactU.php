@@ -50,11 +50,9 @@
 
                 <div class="tab-content" id="tabContent">
                     <div class="tab-pane fade show active" id="descripcion" role="tabpanel" aria-labelledby="descripcion-tab">
-                        <p>En este curso el alumno aprenderá a dominar JavaScript, convirtiéndose en un experto desarrollador front-end gracias al conocimiento adquirido sobre uno de los lenguajes más demandados del mercado.</p>
-
-                        <p>JavaScript es el lenguaje de programación de la web por excelencia en la parte cliente. Es el único que puede ejecutarse en todos los navegadores sin necesidad de cargar plugins adicionales. Nos permite crear páginas dinámicas, dotando a nuestro sitio web de efectos y funcionalidades que extienden las posibilidades que nos ofrece HTML5.</p>
-
-                        <p>Cualquier diseñador web, tenga o no experiencia previa en programación, puede aprender a utilizarlo sin dificultad. Las posibilidades que ofrece con los nuevos estándares HTML5/CSS3 o las aplicaciones web interactivas basadas en AJAX son enormes.</p>
+                        <p>React es el framework más utilizado hoy en día. Se basa en el lenguaje JavaScript y goza de una alta popularidad entre los desarrolladores por todo lo que es capaz de hacer este framework. Tiene una curva de aprendizaje muy rápida, por lo que será fácil introducir conceptos de React si tienes una base sólida de JavaScript.</p>
+                        <p>Al terminar este curso tendrás los conocimientos necesarios para sacarle partido a este fantástico framework y poder hacer cursos más avanzados donde aprender más funcionalidades.</p>
+                        <p>Es de vital importancia tener conocimientos avanzados de JavaScript para realizar este curso de una forma adecuada.</p>
                     </div>
                     <div class="tab-pane fade" id="docente" role="tabpanel" aria-labelledby="docente-tab">
                         <p>Contenido Docente</p>
@@ -91,12 +89,12 @@
                     <li>
                         <ion-icon name="attach-outline"></ion-icon>
                         <p>Temas</p>
-                        <p>17 temas</p>
+                        <p>11 temas</p>
                     </li>
                     <li>
                         <ion-icon name="finger-print-outline"></ion-icon>
                         <p>Inscritos</p>
-                        <p>34 alumnos</p>
+                        <p>87 alumnos</p>
                     </li>
                     <li>
                         <ion-icon name="hourglass-outline"></ion-icon>

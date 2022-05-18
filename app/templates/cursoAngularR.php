@@ -141,23 +141,14 @@ foreach ($_SESSION['cursos'] as $curso) {
 
 $idCursoArrayCursosUsuario = array_search('Angular', array_column($_SESSION['cursos'], 'nombre'));
 
-function buscarValorEnArrayMultidimensional($name, $array, $campo) {
-    foreach ($array as $key => $val) {
-        if ($val[$campo] === $name) {
-            return $key;
-        }
-    }
-    return null;
- }
  
 if(!buscarValorEnArrayMultidimensional('Git', $_SESSION['cursos'], 'nombre')) {
     $cursoAputadoUsuario = false;
+    echo "No apuntado<br>";
 } else {
     $cursoAputadoUsuario = true;
+    echo "Apuntado<br>";
 }
- echo "id: " . $cursoAputadoUsuario;
- echo "<br>";
-
 
 $temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
 echo "idCursoArrayCursosUsuario: " . $idCursoArrayCursosUsuario;
@@ -189,10 +180,16 @@ if ($finalCursoUsuario) {
     echo "</div>";
 }
 
-if ($temasTerminados === 0) {
-    echo '<form name="formEmpezarCurso" action="" method="POST" enctype="multipart/form-data">';
+if (!$cursoAputadoUsuario) {
+    echo '<form name="formEmpezarcurso" action="" method="POST" enctype="multipart/form-data">';
     echo '<input type="submit" value="Empezar curso" name="empezarCurso" class="boton" />';
     echo '</form>';
+}
+
+if ($cursoAputadoUsuario && $temasTerminados == 0) {
+    echo "<div class='estadoCurso'>";
+    echo "<a class='boton' href='index.php?ctl=cursoAngular#tema1'>Seguir con el curso <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
+    echo "</div>";
 }
 
 ?>

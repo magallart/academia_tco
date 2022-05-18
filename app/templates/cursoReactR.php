@@ -47,9 +47,9 @@
 
                 <div class="tab-content" id="tabContent">
                     <div class="tab-pane fade show active text-start" id="descripcion" role="tabpanel" aria-labelledby="descripcion-tab">
-                        <p>En este curso el alumno aprenderá a dominar JavaScript, convirtiéndose en un experto desarrollador front-end gracias al conocimiento adquirido sobre uno de los lenguajes más demandados del mercado.</p>
-
-                        <p>JavaScript es el lenguaje de programación de la web por excelencia en la parte cliente. Es el único que puede ejecutarse en todos los navegadores sin necesidad de cargar plugins adicionales. Nos permite crear páginas dinámicas, dotando a nuestro sitio web de efectos y funcionalidades que extienden las posibilidades que nos ofrece HTML5.</p>
+                        <p>React es el framework más utilizado hoy en día. Se basa en el lenguaje JavaScript y goza de una alta popularidad entre los desarrolladores por todo lo que es capaz de hacer este framework. Tiene una curva de aprendizaje muy rápida, por lo que será fácil introducir conceptos de React si tienes una base sólida de JavaScript.</p>
+                        <p>Al terminar este curso tendrás los conocimientos necesarios para sacarle partido a este fantástico framework y poder hacer cursos más avanzados donde aprender más funcionalidades.</p>
+                        <p>Es de vital importancia tener conocimientos avanzados de JavaScript para realizar este curso de una forma adecuada.</p>
                     </div>
                     <div class="tab-pane fade text-start" id="docente" role="tabpanel" aria-labelledby="docente-tab">
                         <p>Contenido Docente</p>
@@ -79,12 +79,12 @@
                     <li>
                         <ion-icon name="attach-outline"></ion-icon>
                         <p>Temas</p>
-                        <p>17 temas</p>
+                        <p>11 temas</p>
                     </li>
                     <li>
                         <ion-icon name="finger-print-outline"></ion-icon>
                         <p>Inscritos</p>
-                        <p>34 alumnos</p>
+                        <p>87 alumnos</p>
                     </li>
                     <li>
                         <ion-icon name="chatbubble-outline"></ion-icon>
@@ -139,21 +139,13 @@ foreach ($_SESSION['cursos'] as $curso) {
 
 $idCursoArrayCursosUsuario = array_search('React', array_column($_SESSION['cursos'], 'nombre'));
 
-$name = "React";
-function buscarValorEnArrayMultidimensional($name, $array, $campo) {
-    foreach ($array as $key => $val) {
-        if ($val[$campo] === $name) {
-            return $key;
-        }
-    }
-    return null;
- }
- 
-if(!buscarValorEnArrayMultidimensional('React', $_SESSION['cursos'], 'nombre')) {
+if (!buscarValorEnArrayMultidimensional('React', $_SESSION['cursos'], 'nombre')) {
     $cursoAputadoUsuario = false;
+    echo "No apuntado<br>";
+} else {
+    $cursoAputadoUsuario = true;
+    echo "Apuntado<br>";
 }
- echo "id: " . $cursoAputadoUsuario;
- echo "<br>";
 
 
 $temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
@@ -198,7 +190,6 @@ if ($cursoAputadoUsuario && $temasTerminados == 0) {
     echo "<a class='boton' href='index.php?ctl=cursoReact#tema1'>Seguir con el curso <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
     echo "</div>";
 }
-
 
 ?>
 
