@@ -17,9 +17,6 @@
                 <p>
                 Accede a tu cuenta de usuario registrado para poder disfrutar de todo el contenido de la academia. Te esperan más de 25 cursos de desarrollo web preparados por profesionales cualificados.
                 </p>
-                <div class="text-md-start text-sm-center">
-                    <a class="boton" href="index.php?ctl=cursos">Ver cursos ahora <ion-icon name="arrow-forward-circle-outline"></ion-icon></a>
-                </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <img src="../img/login-header.png" class="d-block mx-lg-auto img-fluid" alt="Hombre con laptop riendo" width="700" height="500" loading="lazy" />
@@ -33,9 +30,9 @@
     <div class="row login">
         <div class="col-7 login-left">
             <h2>Identifícate</h2>
-            <h3>Introduce tu usuario y contraseña.</h3>
             <hr>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic laudantium nihil esse placeat, dolorem in eum omnis veniam quis ullam porro, molestiae neque beatae. Error sit repellendus distinctio autem molestias!</p>
+            <p>Accede ahora a nuestra academia online para desarrolladores. Podrás aprender todo lo que necesitas para ser un desarrollador web gracias a nuestros cursos gratuitos.</p>
+            <p>¿No tienes cuenta? <a href="index.php?ctl=registro" alt="Enlace a página de registro" class="text-white fw-bold">Regístrate gratis aquí</a></p>            
         </div>
         <div class="col-5 login-right">
             <form name="formLogin" action="index.php?ctl=iniciarSesion" method="POST" enctype="multipart/form-data">
