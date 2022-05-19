@@ -49,7 +49,10 @@ class Controller
                 'mensajesCursoJavascript' => array()
             );
             $u = new Usuarios();
-            $_SESSION['cursos'] = $u->getCursosUsuario($_SESSION['idUsuario']);
+            if (isset($_SESSION['nivel']) > 0){
+                $_SESSION['cursos'] = $u->getCursosUsuario($_SESSION['idUsuario']);
+            }
+            
             $c = new Cursos();
             $idCurso = 0;
             $infoCurso['mensajesCursoJavascript'] = $c->getMensajesCurso($idCurso);
@@ -112,7 +115,9 @@ class Controller
                 'mensajesCursoAngular' => array()
             );
             $u = new Usuarios();
-            $_SESSION['cursos'] = $u->getCursosUsuario($_SESSION['idUsuario']);
+            if (isset($_SESSION['nivel']) > 0){
+                $_SESSION['cursos'] = $u->getCursosUsuario($_SESSION['idUsuario']);
+            }
             $c = new Cursos();
             $idCurso = 0;
             $infoCurso['mensajesCursoAngular'] = $c->getMensajesCurso($idCurso);
@@ -175,7 +180,9 @@ class Controller
                 'mensajesCursoReact' => array()
             );
             $u = new Usuarios();
-            $_SESSION['cursos'] = $u->getCursosUsuario($_SESSION['idUsuario']);
+            if (isset($_SESSION['nivel']) > 0){
+                $_SESSION['cursos'] = $u->getCursosUsuario($_SESSION['idUsuario']);
+            }
             $c = new Cursos();
             $idCurso = 0;
             $infoCurso['mensajesCursoReact'] = $c->getMensajesCurso($idCurso);
@@ -238,7 +245,9 @@ class Controller
                 'mensajesCursoGit' => array()
             );
             $u = new Usuarios();
-            $_SESSION['cursos'] = $u->getCursosUsuario($_SESSION['idUsuario']);
+            if (isset($_SESSION['nivel']) > 0){
+                $_SESSION['cursos'] = $u->getCursosUsuario($_SESSION['idUsuario']);
+            }
             $c = new Cursos();
             $idCurso = 0;
             $infoCurso['mensajesCursoGit'] = $c->getMensajesCurso($idCurso);

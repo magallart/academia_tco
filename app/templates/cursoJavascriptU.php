@@ -5,7 +5,7 @@
     · Lo guardamos en el buffer y se carga en la variable $contenido para mostrarla en /templates/layout
 -->
 <header>
-    <div class="container col-xxl-8">
+    <div class="container col-xxl-8 pt-lg-5">
         <div class="row middle g-5">
             <div class="col-lg-6 col-md-6 col-sm-12 text-md-start text-sm-center">
                 <h1 class="title-header">
@@ -23,7 +23,7 @@
 </header>
 
 
-<section class="py-5">
+<section class="pt-5" id="cursoTop">
     <div class="container curso-tabs">
         <div class="row">
             <div class="col-lg-8 text-md-center text-sm-center">
@@ -52,7 +52,8 @@
                         <p>JavaScript es el lenguaje de programación de la web por excelencia en la parte cliente. Es el único que puede ejecutarse en todos los navegadores sin necesidad de cargar plugins adicionales. Nos permite crear páginas dinámicas, dotando a nuestro sitio web de efectos y funcionalidades que extienden las posibilidades que nos ofrece HTML5.</p>
                     </div>
                     <div class="tab-pane fade text-start" id="docente" role="tabpanel" aria-labelledby="docente-tab">
-                        <p>Contenido Docente</p>
+                        <p>El docente que está a cargo del curso de JavaScript en ATCO es Marcos Alfonso. Licenciado en Ingeniería informática por la UCO cuenta con más de 15 años de experiencia como desarrollador web y docente. Su experiencia profesional en el sector privado es muy amplia y ha desarrollado proyectos muy importantes.</p>
+                        <p>Debido a su extensa experiencia como docente y desarrollador, conoce a la perfección el lenguaje y sabe comunicar los conocimientos necesarios para que los alumnos de la academia consigan realizar el curso.</p>
                     </div>
 
                     <div class="tab-pane fade text-start" id="requisitos" role="tabpanel" aria-labelledby="requisitos-tab">

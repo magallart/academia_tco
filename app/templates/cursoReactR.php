@@ -6,7 +6,7 @@
 -->
 
 <header>
-    <div class="container col-xxl-8">
+    <div class="container col-xxl-8 pt-lg-5">
         <div class="row middle g-5">
             <div class="col-lg-6 col-md-6 col-sm-12 text-md-start text-sm-center">
                 <h1 class="title-header">
@@ -48,11 +48,13 @@
                 <div class="tab-content" id="tabContent">
                     <div class="tab-pane fade show active text-start" id="descripcion" role="tabpanel" aria-labelledby="descripcion-tab">
                         <p>React es el framework más utilizado hoy en día. Se basa en el lenguaje JavaScript y goza de una alta popularidad entre los desarrolladores por todo lo que es capaz de hacer este framework. Tiene una curva de aprendizaje muy rápida, por lo que será fácil introducir conceptos de React si tienes una base sólida de JavaScript.</p>
+
                         <p>Al terminar este curso tendrás los conocimientos necesarios para sacarle partido a este fantástico framework y poder hacer cursos más avanzados donde aprender más funcionalidades.</p>
-                        <p>Es de vital importancia tener conocimientos avanzados de JavaScript para realizar este curso de una forma adecuada.</p>
                     </div>
                     <div class="tab-pane fade text-start" id="docente" role="tabpanel" aria-labelledby="docente-tab">
-                        <p>Contenido Docente</p>
+                        <p>La persona a cargo del curso de React en ATCO es Luis Benavent. Cuenta con una amplia trayectoria como desarrollador web en el sector privado y desde hace algunos años condujo todo su conocimiento como docente.</p>
+
+                        <p>Posee un nivel altísimo en muchos campos, pero se espacializó en React, el cual domina perfectamente. En estos 11 temas aprenderás a manejar los apartados más importantes de React, harás aplicaciones de ejemplo y terminarás con un proyecto personal a tu elección. Sin duda, este curso es perfecto si necesitas aprender React de manera profesional con un experto.</p>
                     </div>
 
                     <div class="tab-pane fade text-start" id="requisitos" role="tabpanel" aria-labelledby="requisitos-tab">
@@ -105,7 +107,7 @@
                     <li>
                         <ion-icon name="cloud-upload-outline"></ion-icon>
                         <p>Actualización</p>
-                        <p>24/04/2022</p>
+                        <p>03/05/2022</p>
                     </li>
                 </ul>
             </div>
@@ -139,21 +141,21 @@ foreach ($_SESSION['cursos'] as $curso) {
 
 $idCursoArrayCursosUsuario = array_search('React', array_column($_SESSION['cursos'], 'nombre'));
 
- 
-if(!buscarValorEnArrayMultidimensional('React', $_SESSION['cursos'], 'nombre')) {
+
+if (!buscarValorEnArrayMultidimensional('React', $_SESSION['cursos'], 'nombre')) {
     $cursoAputadoUsuario = false;
 } else {
     $cursoAputadoUsuario = true;
 }
 
-if($cursoAputadoUsuario) {
+if ($cursoAputadoUsuario) {
     $temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
 }
 
 $u = new Usuarios();
 $finalCursoUsuario = $u->estadoCursoUsuario($_SESSION['idUsuario'], $_SESSION['cursos'][$idCursoArrayCursosUsuario]['id']);
 
-if($_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'] == 0 || $_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'] > 0){
+if ($_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'] == 0 || $_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'] > 0) {
     $temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
 } else {
     $temasTerminados = 0;
@@ -429,12 +431,6 @@ if (!$finalCursoUsuario && $cursoAputadoUsuario && $temasTerminados === 0) {
         </div>
     </div>
 </section>
-
-<?php
-if (isset($_SESSION['errores'])) {  //TODO Borrar después de tests
-    print_r($_SESSION['errores']);
-}
-?>
 
 <?php $contenido = ob_get_clean() ?>
 <?php include 'layout.php' ?>

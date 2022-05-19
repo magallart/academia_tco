@@ -6,7 +6,7 @@
 -->
 
 <header>
-    <div class="container col-xxl-8">
+    <div class="container col-xxl-8 pt-lg-5">
         <div class="row middle g-5">
             <div class="col-lg-6 col-md-6 col-sm-12 text-md-start text-sm-center">
                 <h1 class="title-header">
@@ -140,21 +140,21 @@ foreach ($_SESSION['cursos'] as $curso) {
 
 $idCursoArrayCursosUsuario = array_search('JavaScript', array_column($_SESSION['cursos'], 'nombre'));
 
- 
-if(!buscarValorEnArrayMultidimensional('JavaScript', $_SESSION['cursos'], 'nombre')) {
+
+if (!buscarValorEnArrayMultidimensional('JavaScript', $_SESSION['cursos'], 'nombre')) {
     $cursoAputadoUsuario = false;
 } else {
     $cursoAputadoUsuario = true;
 }
 
-if($cursoAputadoUsuario) {
+if ($cursoAputadoUsuario) {
     $temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
 }
 
 $u = new Usuarios();
 $finalCursoUsuario = $u->estadoCursoUsuario($_SESSION['idUsuario'], $_SESSION['cursos'][$idCursoArrayCursosUsuario]['id']);
 
-if($_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'] == 0 || $_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'] > 0){
+if ($_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'] == 0 || $_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'] > 0) {
     $temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
 } else {
     $temasTerminados = 0;
@@ -457,7 +457,7 @@ if (!$finalCursoUsuario && $cursoAputadoUsuario && $temasTerminados === 0) {
                             <div class="video-container">
                                 <iframe src="https://www.youtube.com/embed/4hrQtbaHVCQ" title="Curso JavaScript: Tema 15" class="youtube-iframe"></iframe>
                             </div>
-                            <?php                            
+                            <?php
                             botonesAcordeon(15, $temasTerminados, $finalCursoUsuario);
                             ?>
                         </div>
@@ -527,20 +527,14 @@ if (!$finalCursoUsuario && $cursoAputadoUsuario && $temasTerminados === 0) {
             </div>
         </div>
         <div class="row">
-            <div class="col">             
-                <?php 
-                    mensajeUsuarioCurso($_SESSION['emailUsuario'], $_SESSION['mensajesCursoJavascript'], 'email');                    
+            <div class="col">
+                <?php
+                mensajeUsuarioCurso($_SESSION['emailUsuario'], $_SESSION['mensajesCursoJavascript'], 'email');
                 ?>
             </div>
         </div>
     </div>
 </section>
-
-<?php
-if (isset($_SESSION['errores'])) {  //TODO Borrar después de tests
-    print_r($_SESSION['errores']);
-}
-?>
 
 <?php $contenido = ob_get_clean() ?>
 <?php include 'layout.php' ?>

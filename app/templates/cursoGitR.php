@@ -6,7 +6,7 @@
 -->
 
 <header>
-    <div class="container col-xxl-8">
+    <div class="container col-xxl-8 pt-lg-5">
         <div class="row middle g-5">
             <div class="col-lg-6 col-md-6 col-sm-12 text-md-start text-sm-center">
                 <h1 class="title-header">
@@ -47,29 +47,25 @@
 
                 <div class="tab-content" id="tabContent">
                     <div class="tab-pane fade show active text-start" id="descripcion" role="tabpanel" aria-labelledby="descripcion-tab">
-                        <p>En este curso el alumno aprenderá a dominar JavaScript, convirtiéndose en un experto desarrollador front-end gracias al conocimiento adquirido sobre uno de los lenguajes más demandados del mercado.</p>
+                        <p>En este curso el alumno aprenderás a trabajar con repositorios de versiones Git, con GitHub y GitLab. Desde la consola y con aplicaciones gráficas. Existen muchas aplicaciones que quizás conozcas como GitHub, GitLab o Bitbucket. Todas ellas se basan en Git, así que si sabes Git, sabes manejar cualquier aplicación gráfica moderna.</p>
 
-                        <p>JavaScript es el lenguaje de programación de la web por excelencia en la parte cliente. Es el único que puede ejecutarse en todos los navegadores sin necesidad de cargar plugins adicionales. Nos permite crear páginas dinámicas, dotando a nuestro sitio web de efectos y funcionalidades que extienden las posibilidades que nos ofrece HTML5.</p>
+                        <p>Git, junto a todas las aplicaciones gráficas,se ha convertido en una herramienta indispensable para todo desarrollador y empresa profesinal. Al terminar este curso serás capaz de manejar repositorios de forma totalmente profesional y tendrás los conocimientos necesarios para realizar cualquier acción en Git desde consola o aplicación gráfica.</p>
                     </div>
                     <div class="tab-pane fade text-start" id="docente" role="tabpanel" aria-labelledby="docente-tab">
-                        <p>Contenido Docente</p>
+                        <p>La docente a cargo del curso de Git es nuestro más reciente fichaje: Marta Buenafuente. Es toda una experta en Git, herramienta que lleva usando desde hace muchos años en el sector privado.</p>
+
+                        <p>Marta te contará todos los secretos de Git y te acompañará en el camino durante todos los temas para hacerte el camino más fácil. Estamos convencidos de que sabrás sacarle todo el juego a Git después de realizar el curso con Marta.</p>
                     </div>
 
                     <div class="tab-pane fade text-start" id="requisitos" role="tabpanel" aria-labelledby="requisitos-tab">
-                        <p>El curso parte desde cero pero son necesarios conocimientos básicos de programación, da igual el lenguaje que sepas.</p>
+                        <p>Git se utiliza como control de versiones para código, por lo que se entiende que el usuario que se apunta a este curso tiene cocimientos en programación.</p>
 
-                        <p>Es necesario dominar los lenguajes de HTML5 y CSS3 para un adecuado aprovechamiento del curso.</p>
+                        <p>Es aconsejable tener unos conocimientos básicos de la consola de Windows o Linux.</p>
 
-                        <p>Para realizar el curso te aconsejamos utilizar el programa Visual Studio Code que es totalmente gratuito.</p>
+                        <p>Para realizar el curso te aconsejamos utilizar el programa Visual Studio Code que es totalmente gratuito. A lo largo del curso utilizaremos diversos programas como GitHub o Bitbucket.</p>
                     </div>
                     <div class="tab-pane fade text-start" id="salidas" role="tabpanel" aria-labelledby="salidas-tab">
-                        <p>Realiza esta formación y te prepararemos para trabajar, tanto por cuenta ajena como propia, como profesional en las siguientes áreas:</p>
-                        <ul>
-                            <li>Desarrollador front-end.</li>
-                            <li>Desarrollador Web.</li>
-                            <li>Programador de aplicaciones web Javascript.</li>
-                            <li>Visual designer.</li>
-                        </ul>
+                        <p>Este curso no tiene salida profesional específica, en cambio, es necesario para cualquier trabajo como desarrollador ya que en todas las empresas se utilizan aplicaciones de control de versiones basadas en Git.</p>
                     </div>
                 </div>
             </div>
@@ -79,12 +75,12 @@
                     <li>
                         <ion-icon name="attach-outline"></ion-icon>
                         <p>Temas</p>
-                        <p>17 temas</p>
+                        <p>10 temas</p>
                     </li>
                     <li>
                         <ion-icon name="finger-print-outline"></ion-icon>
                         <p>Inscritos</p>
-                        <p>34 alumnos</p>
+                        <p>98 alumnos</p>
                     </li>
                     <li>
                         <ion-icon name="chatbubble-outline"></ion-icon>
@@ -105,7 +101,7 @@
                     <li>
                         <ion-icon name="cloud-upload-outline"></ion-icon>
                         <p>Actualización</p>
-                        <p>24/04/2022</p>
+                        <p>12/03/2022</p>
                     </li>
                 </ul>
             </div>
@@ -139,21 +135,21 @@ foreach ($_SESSION['cursos'] as $curso) {
 
 $idCursoArrayCursosUsuario = array_search('Git', array_column($_SESSION['cursos'], 'nombre'));
 
- 
-if(!buscarValorEnArrayMultidimensional('Git', $_SESSION['cursos'], 'nombre')) {
+
+if (!buscarValorEnArrayMultidimensional('Git', $_SESSION['cursos'], 'nombre')) {
     $cursoAputadoUsuario = false;
 } else {
     $cursoAputadoUsuario = true;
 }
 
-if($cursoAputadoUsuario) {
+if ($cursoAputadoUsuario) {
     $temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
 }
 
 $u = new Usuarios();
 $finalCursoUsuario = $u->estadoCursoUsuario($_SESSION['idUsuario'], $_SESSION['cursos'][$idCursoArrayCursosUsuario]['id']);
 
-if($_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'] == 0 || $_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'] > 0){
+if ($_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'] == 0 || $_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'] > 0) {
     $temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
 } else {
     $temasTerminados = 0;
@@ -410,12 +406,6 @@ if (!$finalCursoUsuario && $cursoAputadoUsuario && $temasTerminados === 0) {
         </div>
     </div>
 </section>
-
-<?php
-if (isset($_SESSION['errores'])) {  //TODO Borrar después de tests
-    print_r($_SESSION['errores']);
-}
-?>
 
 <?php $contenido = ob_get_clean() ?>
 <?php include 'layout.php' ?>
