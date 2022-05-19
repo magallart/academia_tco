@@ -139,7 +139,8 @@ foreach ($_SESSION['cursos'] as $curso) {
 
 $idCursoArrayCursosUsuario = array_search('React', array_column($_SESSION['cursos'], 'nombre'));
 
-if (!buscarValorEnArrayMultidimensional('React', $_SESSION['cursos'], 'nombre')) {
+ 
+if(!buscarValorEnArrayMultidimensional('React', $_SESSION['cursos'], 'nombre')) {
     $cursoAputadoUsuario = false;
     echo "No apuntado<br>";
 } else {
@@ -147,20 +148,14 @@ if (!buscarValorEnArrayMultidimensional('React', $_SESSION['cursos'], 'nombre'))
     echo "Apuntado<br>";
 }
 
-
-$temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
-echo "idCursoArrayCursosUsuario: " . $idCursoArrayCursosUsuario;
-echo "<br>";
-echo "idCurso: " . $_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'];
-echo "<br>";
-echo "temas terminados:" . $temasTerminados;
-
-
+if($cursoAputadoUsuario) {
+    $temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
+}
 
 $u = new Usuarios();
 $finalCursoUsuario = $u->estadoCursoUsuario($_SESSION['idUsuario'], $_SESSION['cursos'][$idCursoArrayCursosUsuario]['id']);
 
-if ($_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'] = 0 || $_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'] > 0) {
+if($_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'] == 0 || $_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'] > 0){
     $temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
 } else {
     $temasTerminados = 0;
@@ -185,7 +180,7 @@ if (!$cursoAputadoUsuario) {
     echo '</form>';
 }
 
-if ($cursoAputadoUsuario && $temasTerminados == 0) {
+if (!$finalCursoUsuario && $cursoAputadoUsuario && $temasTerminados === 0) {
     echo "<div class='estadoCurso'>";
     echo "<a class='boton' href='index.php?ctl=cursoReact#tema1'>Seguir con el curso <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
     echo "</div>";
