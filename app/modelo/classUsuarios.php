@@ -155,18 +155,26 @@ class Usuarios extends Modelo
         · Le pasamos por parámetros los valores recogidos desde el formulario en /templates/registrarse.php
         · Llegamos aquí desde la acción registro() en el controlador.
     */
-    public function registrarUsuario($user, $pass, $email, $fPerfil)
+    public function registrarUsuario($nombre, $apellidos, $password, $email, $fNacimiento, $direccion, $cPostal, $localidad)
     {
-        $fPerfilRuta = $user . "\\" . $fPerfil;
+        $fPerfilRuta = 'usuarioSinFotoPrueba.jpeg';
+        $verificado = "1";
         $nivel = "1";
 
-        $consulta = "insert into usuarios (user, pass, nivel, email, fPerfil) values (?, ?, ?, ?, ?)";
+        $consulta = "insert into usuarios (nombre, apellidos, email, password, direccion, cPostal, localidad, fNacimiento, fPerfil, nivel, verificado) values (?, ?, ?, ?, ?)";
         $result = $this->conexion->prepare($consulta);
-        $result->bindParam(1, $user);
-        $result->bindParam(2, $pass);
-        $result->bindParam(3, $nivel);
-        $result->bindParam(4, $email);
-        $result->bindParam(5, $fPerfilRuta);
+        $result->bindParam(1, $nombre);
+        $result->bindParam(2, $apellidos);
+        $result->bindParam(3, $email);
+        $result->bindParam(4, $password);
+        $result->bindParam(5, $direccion);
+        $result->bindParam(6, $cPostal);
+        $result->bindParam(7, $localidad);
+        $result->bindParam(8, $fNacimiento);
+        $result->bindParam(9, $fPerfilRuta);
+        $result->bindParam(10, $nivel);
+        $result->bindParam(11, $verificado);
+
         $result->execute();
 
         return $result;

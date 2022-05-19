@@ -1,12 +1,5 @@
-header img.fotoPerfilUsuario {
-  /* TODO Añadir alguna animación o efecto */
-  height: 250px;
-  width: auto;
-  border-radius: 100%;
-}
-
 .registro {
-  width: 80%;
+  width: 50%;
   margin: 0 auto;
 }
 
@@ -65,7 +58,7 @@ form[name="formRegistro"] .form-check {
 
 form[name="formRegistro"] input[type="checkbox"] {
   position: relative;
-  top: -3px;
+  top: 2px;
 }
 
 .formulario-rgpd {

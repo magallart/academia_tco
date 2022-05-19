@@ -45,6 +45,21 @@
                     </div>
                 </div>
 
+                <div class="row">                    
+                    <div class="col-lg-6">
+                        <div class="form-outline">
+                            <label for="apellidos">Contraseña</label>
+                            <input type="text" name="password" placeholder="" />
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-outline">
+                            <label for="apellidos">Repite la Contraseña</label>
+                            <input type="text" name="password2" placeholder="" />
+                        </div>
+                    </div>
+                </div>
+
                 <div class="row">
                     <div class="col-lg-7">
                         <div class="form-outline">
