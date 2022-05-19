@@ -12,7 +12,7 @@
                     Academia Tus Cursos Online
                 </h1>
                 <p>
-                    Más de 450 alumnos han realizado alguno de nuestros cursos y muchos de ellos han podido encontrar trabajo como desarrolladores web, ¿quieres saber cómo lo han hecho? Sigue leyendo y descubre qué nos hace especiales.
+                    Más de 450 alumnos han realizado alguno de nuestros cursos y muchos de ellos han podido encontrar trabajo como desarrolladores web.
                 </p>
                 <p>¿Te animas a realizar un curso con nosotros y aprender las últimas tecnologías del sector?</p>
                 <div class="text-md-start text-sm-center">
