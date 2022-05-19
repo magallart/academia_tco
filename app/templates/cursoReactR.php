@@ -142,10 +142,8 @@ $idCursoArrayCursosUsuario = array_search('React', array_column($_SESSION['curso
  
 if(!buscarValorEnArrayMultidimensional('React', $_SESSION['cursos'], 'nombre')) {
     $cursoAputadoUsuario = false;
-    echo "No apuntado<br>";
 } else {
     $cursoAputadoUsuario = true;
-    echo "Apuntado<br>";
 }
 
 if($cursoAputadoUsuario) {

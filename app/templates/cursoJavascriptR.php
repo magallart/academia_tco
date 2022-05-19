@@ -143,10 +143,8 @@ $idCursoArrayCursosUsuario = array_search('JavaScript', array_column($_SESSION['
  
 if(!buscarValorEnArrayMultidimensional('JavaScript', $_SESSION['cursos'], 'nombre')) {
     $cursoAputadoUsuario = false;
-    echo "No apuntado<br>";
 } else {
     $cursoAputadoUsuario = true;
-    echo "Apuntado<br>";
 }
 
 if($cursoAputadoUsuario) {

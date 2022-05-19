@@ -142,10 +142,8 @@ $idCursoArrayCursosUsuario = array_search('Git', array_column($_SESSION['cursos'
  
 if(!buscarValorEnArrayMultidimensional('Git', $_SESSION['cursos'], 'nombre')) {
     $cursoAputadoUsuario = false;
-    echo "No apuntado<br>";
 } else {
     $cursoAputadoUsuario = true;
-    echo "Apuntado<br>";
 }
 
 if($cursoAputadoUsuario) {

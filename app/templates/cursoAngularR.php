@@ -143,10 +143,8 @@ $idCursoArrayCursosUsuario = array_search('Angular', array_column($_SESSION['cur
  
 if(!buscarValorEnArrayMultidimensional('Angular', $_SESSION['cursos'], 'nombre')) {
     $cursoAputadoUsuario = false;
-    echo "No apuntado<br>";
 } else {
     $cursoAputadoUsuario = true;
-    echo "Apuntado<br>";
 }
 
 if($cursoAputadoUsuario) {
