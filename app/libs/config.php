@@ -12,7 +12,6 @@
 
         static public $menu = __DIR__ . '/../templates/menu.php';
 
-        static public $directorioFotosAlumnos = '/img/alumnos/';
         static public $directorioFotosUsuarios = '/img/usuarios/';
 
     }

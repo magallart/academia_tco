@@ -1,11 +1,11 @@
 <?php
 /*
-        · Esta función se encarga de validar los datos recogidos en el formulario de /templates/insetarAlumno.php
+        · Esta función se encarga de validar los datos recogidos en el formulario de /templates/registro.php
         · Dentro de esta función hacemos llamadas a otras funciones.
         · Si todos los campos se han validado correctamente: error = FALSE
     */
 
-function validarDatos($nombre, $nia, $email, $direccion, $cPostal, $localidad, $fNacimiento, $fPerfil)
+function cValidarDatos($nombre, $apellidos, $email, $fNacimiento, $direccion, $cPostal, $localidad)
 {
     $error = FALSE;
 
@@ -13,13 +13,13 @@ function validarDatos($nombre, $nia, $email, $direccion, $cPostal, $localidad, $
         $error = TRUE;
     }
 
-    if (!cNumero($nia, "nia", 8, 1, "")) {
+    if (!cTexto($apellidos, "apellidos", 150, 1, " ", "i")) {
         $error = TRUE;
     }
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $error = TRUE;
-        $_SESSION['errores']['email'] = "El email introducido no es válido.";
+        $_SESSION['erroresRegistro']['email'] = "El email introducido no es válido.";
     }
 
     if (!cDireccion($direccion, "direccion", 150, 1, " ", "i")) {
@@ -38,7 +38,28 @@ function validarDatos($nombre, $nia, $email, $direccion, $cPostal, $localidad, $
         $error = TRUE;
     }
 
-    if (!cSubirImagenPerfilAlumno('fPerfil', $nombre, $nia)) {
+    if ($error) {
+        return FALSE;
+    } else {
+        return TRUE;
+    }
+}
+
+/*
+        · Esta función se encarga de validar la contraseña del usuario en el formulario de /templates/registro.php
+        · Dentro de esta función hacemos llamadas a otras funciones.
+        · Si todos los campos se han validado correctamente: error = FALSE
+    */
+
+function cValidarPassword($password, $password2)
+{
+    $error = FALSE;
+
+    if (!cPassword($password, "password", 50, 1, "")) {
+        $error = TRUE;
+    }
+
+    if (!cPassword($password2, "password2", 50, 1, "")) {
         $error = TRUE;
     }
 
@@ -50,38 +71,52 @@ function validarDatos($nombre, $nia, $email, $direccion, $cPostal, $localidad, $
 }
 
 /*
-        · Esta función se encarga de validar los datos recogidos en el formulario de /templates/registrarse.php
-        · Dentro de esta función hacemos llamadas a otras funciones.
-        · Si todos los campos se han validado correctamente: error = FALSE
+        ·Esta función sube la imagen del usuario a la carpeta /img/usuarios/nombreUser
     */
-
-function validarDatosRegistro($user, $pass, $email, $fPerfil)
+function cValidarImagenPerfil(string $nombre, string $apellidos, string $campo)
 {
-    $error = FALSE;
+    $extensionesValidas = ["image/jpeg", "image/jpg", "image/png", "image/gif"];
 
-    if (!cTexto($user, "user", 150, 1, " ", "i")) {
-        $error = TRUE;
-    }
+    $directorioTemp = $_FILES[$campo]['tmp_name'];
+    $extension = $_FILES[$campo]['type'];
 
-    if (!cPassword($pass, "password", 50, 1, "")) {
-        $error = TRUE;
-    }
+    //No se pueden guardar nombres de fotos con espacios, por tanto cambiamos los espacios por _  
+    $nombreUsuario = strtolower(str_replace(" ", "_", sinTildes($nombre)));
+    $apellidosUsuario = strtolower(str_replace(" ", "_", sinTildes($apellidos)));
+    $nombreFoto = $nombreUsuario . "_" . $apellidosUsuario;
 
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $error = TRUE;
-        $_SESSION['errores']['email'] = "El email introducido no es válido.";
-    }
+    $nombrePartes = explode(".", $$_FILES[$campo]['name']);
+    //Necesitamos la extensión de la foto que ha subido el alumno, por eso nos quedamos con el segundo item del array que es la extensión
+    $extensionImagen = $nombrePartes[1];
 
-    if (!cSubirImagenPerfilUsuario($user, "fPerfil")) {
-        $error = TRUE;
-    }
 
-    if ($error) {
-        return FALSE;
-    } else {
-        return TRUE;
+
+    if ($_FILES[$campo]['error'] == 0 && $_FILES[$campo]['size'] > 0) {
+        /* El alumno ha subido una foto y hay que analizarla */
+        $nombreRutaFotoBBDD = $nombreFoto . $extensionImagen;
+
+        // Comprobamos la extensión del archivo dentro de la lista que hemos definido al principio
+        if (!in_array($extension, $extensionesValidas)) {
+            $_SESSION['erroresRegistro'][$campo] = "La extensión del archivo no es válida.";
+            return FALSE;
+        }
+
+        $rutaUsuario = dirname(dirname(__DIR__)) . "\img\usuarios\\" . $nombreRutaFotoBBDD;
+
+
+        if (move_uploaded_file($directorioTemp, $rutaUsuario)) {
+            // En este caso devolvemos sólo el nombre del fichero sin la ruta
+            return TRUE;
+        } else {
+            $_SESSION['erroresRegistro'][$campo] = "Error: No se ha podido subir la imagen.";
+            return FALSE;
+        }
     }
 }
+
+
+
+
 
 
 function recoge($var)
@@ -147,7 +182,7 @@ function cTexto(string $text, string $campo, int $max = 150, int $min = 1, strin
     if ((preg_match("/[A-Za-zÑñ$espacios]{" . $min . "," . $max . "}$/u$case", sinTildes($text)))) {
         return TRUE;
     } else {
-        $_SESSION['errores'][$campo] = "El campo $campo no es válido.";
+        $_SESSION['erroresRegistro'][$campo] = "El campo $campo no es válido.";
         return FALSE;
     }
 }
@@ -157,7 +192,7 @@ function cPassword(string $text, string $campo, int $max = 150, int $min = 1, st
     if ((preg_match("/[A-Za-zÑñ0-9*_-$espacios]{" . $min . "," . $max . "}$/u$case", sinTildes($text)))) {
         return TRUE;
     } else {
-        $_SESSION['errores'][$campo] = "El campo $campo no es válido.";
+        $_SESSION['erroresRegistro'][$campo] = "El campo $campo no es válido.";
         return FALSE;
     }
 }
@@ -167,7 +202,7 @@ function cNumero(string $text, string $campo, int $max = 8, int $min = 1, string
     if ((preg_match("/[0-9$espacios]{" . $min . "," . $max . "}$/u", $text))) {
         return TRUE;
     } else {
-        $_SESSION['errores'][$campo] = "El campo $campo no es válido.";
+        $_SESSION['erroresRegistro'][$campo] = "El campo $campo no es válido.";
         return FALSE;
     }
 }
@@ -177,7 +212,7 @@ function cDireccion(string $text, string $campo, int $max = 150, int $min = 1, s
     if ((preg_match("/[A-Za-zÑñ0-9-,$espacios]{" . $min . "," . $max . "}$/u$case", sinTildes($text)))) {
         return TRUE;
     } else {
-        $_SESSION['errores'][$campo] = "La dirección no es válida.";
+        $_SESSION['erroresRegistro'][$campo] = "La dirección no es válida.";
         return FALSE;
     }
 }
@@ -194,7 +229,7 @@ function cFecha(string $text, string $campo, string $formato = "0")
                     $_SESSION['fechaBD'] = $arrayFecha[2] . "/" . $arrayFecha[1] . "/" . $arrayFecha[0];
                     return TRUE;
                 } else {
-                    $_SESSION['errores']['fNacimiento'] = "Fecha incorrecta";
+                    $_SESSION['erroresRegistro'][$campo] = "Fecha incorrecta";
                     return FALSE;
                 }
                 break;
@@ -204,7 +239,7 @@ function cFecha(string $text, string $campo, string $formato = "0")
                     $_SESSION['fechaBD'] = $arrayFecha[2] . "/" . $arrayFecha[1] . "/" . $arrayFecha[0];
                     return TRUE;
                 } else {
-                    $_SESSION['errores']['fNacimiento'] = "Fecha incorrecta";
+                    $_SESSION['erroresRegistro'][$campo] = "Fecha incorrecta";
                     return FALSE;
                 }
                 break;
@@ -214,116 +249,18 @@ function cFecha(string $text, string $campo, string $formato = "0")
                     $_SESSION['fechaBD'] = $arrayFecha[2] . "/" . $arrayFecha[1] . "/" . $arrayFecha[0];
                     return TRUE;
                 } else {
-                    $_SESSION['errores']['fNacimiento'] = "Fecha incorrecta";
+                    $_SESSION['erroresRegistro'][$campo] = "Fecha incorrecta";
                     return FALSE;
                 }
                 break;
 
             default:
-                $_SESSION['errores']['fNacimiento'] = "Fecha no válida.";
+                $_SESSION['erroresRegistro'][$campo] = "Fecha no válida.";
                 return FALSE;
         }
     } else {
-        $_SESSION['errores']['fNacimiento'] = "Faltan datos en la fecha.";
+        $_SESSION['erroresRegistro'][$campo] = "Faltan datos en la fecha.";
         return FALSE;
-    }
-}
-
-/*
-        ·Esta función sube la imagen del alumno a la carpeta /img/alumnos/NIAdelALUMNO.
-    */
-function cSubirImagenPerfilAlumno(string $campo, string $alumno, string $nia)
-{
-
-    $extensionesValidas = ["image/jpeg", "image/jpg", "image/png", "image/gif"];
-
-    $directorioTemp = $_FILES[$campo]['tmp_name'];
-    $extension = $_FILES[$campo]['type'];
-
-    //No se pueden guardar nombres de fotos con espacios, por tanto cambiamos los espacios por _  
-    $nombreFotoSinEspacios = reemplazarEnFiles("fPerfil", "name", " ", "_");
-    $nombreFotoSinEspacios = strtolower($nombreFotoSinEspacios);
-
-
-    if ($_FILES[$campo]['error'] == 0 && $_FILES[$campo]['size'] > 0) {
-        /* El alumno ha subido una foto y hay que analizarla */
-        $nombrePartes = explode(".", $nombreFotoSinEspacios);
-        //Necesitamos la extensión de la foto que ha subido el alumno, por eso nos quedamos con el segundo item del array que es la extensión
-        $extensionImagen = $nombrePartes[1];
-
-        // Comprobamos la extensión del archivo dentro de la lista que hemos definido al principio
-        if (!in_array($extension, $extensionesValidas)) {
-            $_SESSION['errores']['fPerfil'] = "La extensión del archivo no es válida.";
-            return FALSE;
-        }
-
-        $rutaAlumno = dirname(dirname(__DIR__)) . "\img\alumnos\\" . $nia . '\\' . $nombreFotoSinEspacios;
-
-        $directorioAlumno = dirname(dirname(__DIR__)) . "\img\alumnos\\" . $nia . '\\';
-
-        if (!file_exists($directorioAlumno)) {
-            mkdir($directorioAlumno, 0777, true);
-        } else {
-            $_SESSION['errores']['directorioAlumno'] = "No se ha podido crear el directorio porque ya existe.";
-            return FALSE;
-        }
-
-        if (move_uploaded_file($directorioTemp, $rutaAlumno)) {
-            // En este caso devolvemos sólo el nombre del fichero sin la ruta
-            return TRUE;
-        } else {
-            $_SESSION['errores']['fPerfil'] = "Error: No se ha podido subir la imagen.";
-            return FALSE;
-        }
-    }
-}
-
-/*
-        ·Esta función sube la imagen del usuario a la carpeta /img/usuarios/nombreUser
-    */
-function cSubirImagenPerfilUsuario(string $user, string $campo)
-{
-
-    $extensionesValidas = ["image/jpeg", "image/jpg", "image/png", "image/gif"];
-
-    $directorioTemp = $_FILES[$campo]['tmp_name'];
-    $extension = $_FILES[$campo]['type'];
-
-    //No se pueden guardar nombres de fotos con espacios, por tanto cambiamos los espacios por _  
-    $nombreFotoSinEspacios = reemplazarEnFiles("fPerfil", "name", " ", "_");
-    $nombreFotoSinEspacios = strtolower($nombreFotoSinEspacios);
-
-
-    if ($_FILES[$campo]['error'] == 0 && $_FILES[$campo]['size'] > 0) {
-        /* El alumno ha subido una foto y hay que analizarla */
-        $nombrePartes = explode(".", $nombreFotoSinEspacios);
-        //Necesitamos la extensión de la foto que ha subido el alumno, por eso nos quedamos con el segundo item del array que es la extensión
-        $extensionImagen = $nombrePartes[1];
-
-        // Comprobamos la extensión del archivo dentro de la lista que hemos definido al principio
-        if (!in_array($extension, $extensionesValidas)) {
-            $_SESSION['errores'][$campo] = "La extensión del archivo no es válida.";
-            return FALSE;
-        }
-
-        $rutaUsuario = dirname(dirname(__DIR__)) . "\img\usuarios\\" . $user . '\\' . $nombreFotoSinEspacios;
-
-        $directorioUsuario = dirname(dirname(__DIR__)) . "\img\usuarios\\" . $user . '\\';
-
-        if (!file_exists($directorioUsuario)) {
-            mkdir($directorioUsuario, 0777, true);
-        } else {
-            $_SESSION['errores']['directorioUsuario'] = "No se ha podido crear el directorio porque ya existe.";
-            return FALSE;
-        }
-
-        if (move_uploaded_file($directorioTemp, $rutaUsuario)) {
-            // En este caso devolvemos sólo el nombre del fichero sin la ruta
-            return TRUE;
-        } else {
-            $_SESSION['errores'][$campo] = "Error: No se ha podido subir la imagen.";
-            return FALSE;
-        }
     }
 }
 
@@ -389,35 +326,35 @@ function mensajeUsuarioCurso($email, $mensajesCurso, $campoArrayMensajesCurso,)
         · Los alumnos pueden no estar apuntados a todos los cursos y en el array salen por orden.
     */
 function getIdCursoUsuarioPaginaActual($arrayCursos)
-    {
-        $nombreCurso = $_GET['ctl'];
-        foreach ($arrayCursos as $mensajes) {
-            if ($mensajes['nombre'] == 'JavaScript' && $nombreCurso == 'cursoJavascript') {
-                $idCursoPagina = 0;
-            }
-
-            if ($mensajes['nombre'] == 'Angular' && $nombreCurso == 'cursoAngular') {
-                $idCursoPagina = 1;
-            }
-
-            if ($mensajes['nombre'] == 'React' && $nombreCurso == 'cursoReact') {
-                $idCursoPagina = 2;
-            }
-
-            if ($mensajes['nombre'] == 'Git' && $nombreCurso == 'cursoGit') {
-                $idCursoPagina = 3;
-            }
+{
+    $nombreCurso = $_GET['ctl'];
+    foreach ($arrayCursos as $mensajes) {
+        if ($mensajes['nombre'] == 'JavaScript' && $nombreCurso == 'cursoJavascript') {
+            $idCursoPagina = 0;
         }
-        return $idCursoPagina;
+
+        if ($mensajes['nombre'] == 'Angular' && $nombreCurso == 'cursoAngular') {
+            $idCursoPagina = 1;
+        }
+
+        if ($mensajes['nombre'] == 'React' && $nombreCurso == 'cursoReact') {
+            $idCursoPagina = 2;
+        }
+
+        if ($mensajes['nombre'] == 'Git' && $nombreCurso == 'cursoGit') {
+            $idCursoPagina = 3;
+        }
     }
+    return $idCursoPagina;
+}
 
 
-    /*
+/*
         · Este método nos sirve para conseguir la id del curso al que está aputado un usuario.
         · Los alumnos pueden no estar apuntados a todos los cursos y en el array salen por orden.
     */
-    
-    function buscarValorEnArrayMultidimensional($name, $array, $campo)
+
+function buscarValorEnArrayMultidimensional($name, $array, $campo)
 {
     foreach ($array as $key => $val) {
         if ($val[$campo] === $name) {

@@ -49,10 +49,10 @@ class Controller
                 'mensajesCursoJavascript' => array()
             );
             $u = new Usuarios();
-            if (isset($_SESSION['nivel']) > 0){
+            if (isset($_SESSION['nivel']) > 0) {
                 $_SESSION['cursos'] = $u->getCursosUsuario($_SESSION['idUsuario']);
             }
-            
+
             $c = new Cursos();
             $idCurso = 0;
             $infoCurso['mensajesCursoJavascript'] = $c->getMensajesCurso($idCurso);
@@ -115,7 +115,7 @@ class Controller
                 'mensajesCursoAngular' => array()
             );
             $u = new Usuarios();
-            if (isset($_SESSION['nivel']) > 0){
+            if (isset($_SESSION['nivel']) > 0) {
                 $_SESSION['cursos'] = $u->getCursosUsuario($_SESSION['idUsuario']);
             }
             $c = new Cursos();
@@ -180,7 +180,7 @@ class Controller
                 'mensajesCursoReact' => array()
             );
             $u = new Usuarios();
-            if (isset($_SESSION['nivel']) > 0){
+            if (isset($_SESSION['nivel']) > 0) {
                 $_SESSION['cursos'] = $u->getCursosUsuario($_SESSION['idUsuario']);
             }
             $c = new Cursos();
@@ -245,7 +245,7 @@ class Controller
                 'mensajesCursoGit' => array()
             );
             $u = new Usuarios();
-            if (isset($_SESSION['nivel']) > 0){
+            if (isset($_SESSION['nivel']) > 0) {
                 $_SESSION['cursos'] = $u->getCursosUsuario($_SESSION['idUsuario']);
             }
             $c = new Cursos();
@@ -381,22 +381,41 @@ class Controller
     // Muestra el contenido de /templates/registro.php
     public function cRegistro()
     {
-        try {            
-            if (isset($_POST['registrarCuenta'])) {  //TODO realizar función de registrar
-                $nombre = recoge('nombre'); 
-                $apellidos = recoge('apellidos'); 
-                $password = recoge('password'); 
-                $password2 = recoge('password2'); 
-                $email = recoge('email'); 
-                $fNacimiento = recoge('fNacimiento'); 
-                $direccion = recoge('direccion'); 
-                $cPostal = recoge('cPostal'); 
-                $localidad = recoge('localidad'); 
-                $u = new Usuarios();
-                $u->registrarUsuario($nombre, $apellidos, $password, $email, $fNacimiento, $direccion, $cPostal, $localidad);
-                header('Location: index.php?ctl=iniciarSesion');
+        try {
+            if (isset($_POST['registrarCuenta'])) { 
+                $nombre = recoge('nombre');
+                $apellidos = recoge('apellidos');
+                $password = recoge('password');
+                $password2 = recoge('password2');
+                $email = recoge('email');
+                $fNacimiento = recoge('fNacimiento');
+                $direccion = recoge('direccion');
+                $cPostal = recoge('cPostal');
+                $localidad = recoge('localidad');
+                $fPerfil = $_FILES['fPerfil']['name'];
+                $fPerfilCampo = "fPerfil";
+
+                if (cValidarDatos($nombre, $apellidos, $email, $fNacimiento, $direccion, $cPostal, $localidad)) {
+                    if (cValidarPassword($password, $password2)) {
+                        if (cValidarImagenPerfil($nombre, $apellidos, $fPerfilCampo)) {
+                            $extension = $_FILES[$fPerfil]['type'];
+                            $nombreUsuario = strtolower(str_replace(" ", "_", sinTildes($nombre)));
+                            $apellidosUsuario = strtolower(str_replace(" ", "_", sinTildes($apellidos)));
+                            $nombreFoto = $nombreUsuario . $apellidosUsuario;
+                            $fPerfilRuta = $nombreFoto . $extension;
+                            $fNacimiento = $_SESSION['fechaBD'];
+                            $u = new Usuarios();
+                            $u->registrarUsuario($nombre, $apellidos, $password, $email, $fNacimiento, $direccion, $cPostal, $localidad, $fPerfilRuta);
+                            header('Location: index.php?ctl=iniciarSesion');
+                        }
+                    }
+                }
             } else {
-                $_SESSION['errores']['login'] = "No se ha podido enviar un email a esa dirección.";
+                if(isset($_SESSION['erroresRegistro'])) {
+                    foreach ($_SESSION['erroresRegistro'] as $error) {
+                        echo "<p>$error</p>";
+                    }
+                }                
             }
         } catch (Exception $e) {
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
@@ -418,7 +437,7 @@ class Controller
     public function cRecuperarPassword()
     {
         try {
-            
+
             if (isset($_POST['iniciarSesion'])) {
 
                 $email = recoge('email');  //TODO Realizar funcionalidad de recuperar contraseña

@@ -155,13 +155,12 @@ class Usuarios extends Modelo
         · Le pasamos por parámetros los valores recogidos desde el formulario en /templates/registrarse.php
         · Llegamos aquí desde la acción registro() en el controlador.
     */
-    public function registrarUsuario($nombre, $apellidos, $password, $email, $fNacimiento, $direccion, $cPostal, $localidad)
+    public function registrarUsuario($nombre, $apellidos, $password, $email, $fNacimiento, $direccion, $cPostal, $localidad, $fPerfilRuta)
     {
-        $fPerfilRuta = 'usuarioSinFotoPrueba.jpeg';
         $verificado = "1";
         $nivel = "1";
 
-        $consulta = "insert into usuarios (nombre, apellidos, email, password, direccion, cPostal, localidad, fNacimiento, fPerfil, nivel, verificado) values (?, ?, ?, ?, ?)";
+        $consulta = "insert into usuarios (nombre, apellidos, email, password, direccion, cPostal, localidad, fNacimiento, fPerfil, nivel, verificado) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $result = $this->conexion->prepare($consulta);
         $result->bindParam(1, $nombre);
         $result->bindParam(2, $apellidos);

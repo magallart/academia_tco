@@ -125,5 +125,17 @@
     </div>
 </div>
 
+<?php 
+
+if (isset($_SESSION['errores'])) {
+    echo "<div class='errores'>";
+    foreach ($_SESSION['errores'] as $error) {
+        echo "<p>$error</p>";
+    }
+    echo "</div>";
+}
+unset($_SESSION['errores']);
+?>
+
 <?php $contenido = ob_get_clean() ?>
 <?php include 'layout.php' ?>
