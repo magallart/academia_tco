@@ -37,7 +37,7 @@
         <div class="col-5 login-right">
             <form name="formLogin" action="index.php?ctl=iniciarSesion" method="POST" enctype="multipart/form-data">
 
-                <input type="text" name="usuario" placeholder="Usuario" />
+                <input type="email" name="email" placeholder="Email" />
                 <input type="text" name="password" placeholder="Contraseña" />
 
                 <input type="submit" value="Inciar Sesión" name="iniciarSesion" class="boton" />

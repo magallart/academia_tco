@@ -356,9 +356,9 @@ class Controller
             $u = new Usuarios();
             if (isset($_POST['iniciarSesion'])) {
 
-                $nombre = recoge('usuario');
+                $email = recoge('email');
                 $password = recoge('password');
-                $infoUsuario['resultado'] = $u->loginUsuario($nombre, $password);
+                $infoUsuario['resultado'] = $u->loginUsuario($email, $password);
 
                 if ($infoUsuario['resultado']) {
                     $_SESSION['nivel'] = $infoUsuario['resultado']['nivel'];
@@ -517,9 +517,9 @@ class Controller
                 );
 
                 $u = new Usuarios();
-                $nombre = $_SESSION['nombre'];
-                $password =  strtolower($_SESSION['nombreUsuario']); //TODO Cambiar cuando el password sea el email
-                $infoUsuario['resultado'] = $u->loginUsuario($nombre, $password);
+                $email = $_SESSION['emailUsuario'];
+                $password = $u->getPassword($_SESSION['idUsuario']);
+                $infoUsuario['resultado'] = $u->loginUsuario($email, $password);
 
                 $_SESSION['nivel'] = $infoUsuario['resultado']['nivel'];
                 $_SESSION['idUsuario'] = $infoUsuario['resultado']['id'];

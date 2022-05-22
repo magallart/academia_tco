@@ -10,12 +10,12 @@ class Usuarios extends Modelo
         · Si son correctos lo comprobamos con rowCount. Si hay 1 fila es que existe y guardamos los datos en un array.
         · Si la combinación de user + password no existe devolvemos FALSE.
     */
-    function loginUsuario($usuario, $password)
+    function loginUsuario($email, $password)
     {
-        $consulta = "select * from usuarios where nombre=:usuario and password=:clave";
+        $consulta = "select * from usuarios where email=:correo and password=:clave";
 
         $result = $this->conexion->prepare($consulta);
-        $result->bindParam(':usuario', $usuario);
+        $result->bindParam(':correo', $email);
         $result->bindParam(':clave', $password);
         $result->execute();
         $filasConsulta = $result->rowCount();
@@ -24,6 +24,27 @@ class Usuarios extends Modelo
             return FALSE;
         } else {
             return $result->fetch(PDO::FETCH_ASSOC);
+        }
+    }
+
+     /*
+        · Este método nos sirve para comprobar si los valores que ha introducido el usuario en el formulario de login de /templates/iniciarSesion.php son correctos.
+        · Si son correctos lo comprobamos con rowCount. Si hay 1 fila es que existe y guardamos los datos en un array.
+        · Si la combinación de user + password no existe devolvemos FALSE.
+    */
+    function getPassword($id)
+    {
+        $consulta = "select password from usuarios where id=:id";
+
+        $result = $this->conexion->prepare($consulta);
+        $result->bindParam(':id', $id);
+        $result->execute();
+        $filasConsulta = $result->rowCount();
+
+        if (!$filasConsulta) {
+            return FALSE;
+        } else {
+            return $result->fetchColumn();
         }
     }
 
