@@ -160,7 +160,7 @@ if ($_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'] == 0 || $_SESSION['cur
     $temasTerminados = 0;
 }
 
-if (!$finalCursoUsuario && $temasTerminados > 0) {
+if (!$finalCursoUsuario && $cursoAputadoUsuario && $temasTerminados > 0) {
     echo "<div class='estadoCurso'>";
     echo "<a class='boton' href='index.php?ctl=cursoJavascript#tema" . $temasTerminados . "'>Seguir con el curso <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
     echo "</div>";
@@ -174,7 +174,7 @@ if ($finalCursoUsuario) {
 }
 
 if (!$cursoAputadoUsuario) {
-    echo '<form name="formEmpezarcurso" action="" method="POST" enctype="multipart/form-data">';
+    echo '<form name="formEmpezarCurso" action="" method="POST" enctype="multipart/form-data">';
     echo '<input type="submit" value="Empezar curso" name="empezarCurso" class="boton" />';
     echo '</form>';
 }
