@@ -88,11 +88,11 @@
                 <div class="card mb-3 mx-md-auto text-md-start text-sm-center">
                     <div class="row g-0">
                         <div class="col-md-4 col-sm-4 col-4">
-                            <img src="../../img/marisa-lopez.jpg" class="img-fluid rounded-start" alt="...">
+                            <img src="../../img/usuarios/marisa-lopez-nieto.jpg" class="img-fluid rounded-start" alt="...">
                         </div>
                         <div class="col-md-8 col-sm-8 col-8">
                             <div class="card-body">
-                                <h3>Marissa López</h3>
+                                <h3>Marisa López</h3>
                                 <h4>Ceo y fundadora</h4>
                                 <div class="separador"></div>
                                 <p>Tuvo la idea de ATCO en su mente antes que nadie. Nuestra visionaria y guía en la oscuridad. Nadie es capaz de pararla cuando se propone algo.</p>
@@ -111,7 +111,7 @@
                 <div class="card mb-3 mx-md-auto text-md-start text-sm-center">
                     <div class="row g-0">
                         <div class="col-md-4 col-sm-4 col-4">
-                            <img src="../../img/susana-fonseca.jpg" class="img-fluid rounded-start" alt="...">
+                            <img src="../../img/usuarios/susana-fonseca-albert.jpg" class="img-fluid rounded-start" alt="...">
                         </div>
                         <div class="col-md-8 col-sm-8 col-8">
                             <div class="card-body">
@@ -136,7 +136,7 @@
                 <div class="card mb-3 mx-md-auto text-md-start text-sm-center">
                     <div class="row g-0">
                         <div class="col-md-4 col-sm-4 col-4">
-                            <img src="../../img/pedro-helenos.jpg" class="img-fluid rounded-start" alt="...">
+                            <img src="../../img/usuarios/pedro-helenos-pons.jpg" class="img-fluid rounded-start" alt="...">
                         </div>
                         <div class="col-md-8 col-sm-8 col-8">
                             <div class="card-body">
@@ -159,7 +159,7 @@
                 <div class="card mb-3 mx-md-auto text-md-start text-sm-center">
                     <div class="row g-0">
                         <div class="col-md-4 col-sm-4 col-4">
-                            <img src="../../img/marcos-alfonso.jpg" class="img-fluid rounded-start" alt="...">
+                            <img src="../../img/usuarios/marcos-alfonso.jpg" class="img-fluid rounded-start" alt="...">
                         </div>
                         <div class="col-md-8 col-sm-8 col-8">
                             <div class="card-body">
@@ -184,7 +184,7 @@
                 <div class="card mb-3 mx-md-auto text-md-start text-sm-center">
                     <div class="row g-0">
                         <div class="col-md-4 col-sm-4 col-4">
-                            <img src="../../img/luis-benavent.jpg" class="img-fluid rounded-start" alt="...">
+                            <img src="../../img/usuarios/luis-benavent.jpg" class="img-fluid rounded-start" alt="...">
                         </div>
                         <div class="col-md-8 col-sm-8 col-8">
                             <div class="card-body">
@@ -207,7 +207,7 @@
                 <div class="card mb-3 mx-md-auto text-md-start text-sm-center">
                     <div class="row g-0">
                         <div class="col-md-4 col-sm-4 col-4">
-                            <img src="../../img/marta-buenafuente.jpg" class="img-fluid rounded-start" alt="...">
+                            <img src="../../img/usuarios/marta-buenafuente.jpg" class="img-fluid rounded-start" alt="...">
                         </div>
                         <div class="col-md-8 col-sm-8 col-8">
                             <div class="card-body">

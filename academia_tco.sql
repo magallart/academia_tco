@@ -58,9 +58,12 @@ INSERT INTO `usuarios` (`id`, `nombre`, `apellidos`, `email`, `password`, `direc
 (5, 'Adam', 'Montoro Torre', 'adam@gmail.com', 'adam', 'Mestre Palau 90-3', 46930, 'Valencia', '2003-12-02', '/usuarios/adam_montoro_torre.jpg', 1, 1),
 (6, 'Eulalia', 'Vilchez Saenz', 'eulalia@gmail.com', 'eulalia', 'Mayor 11-3', 46920, 'Valencia', '2000-04-17', '/usuarios/eulalia_vilchez_saenz.jpg', 2, 1),
 (7, 'Fernando', 'Benavides Carrera', 'fernando@gmail.com', 'fernando', 'Doctor Enrique López 7-8', 46018, 'Valencia', '1985-01-25', '/usuarios/fernando_benavides_carrera.jpg', 1, 1),
-(8, 'Marcos', 'Alfonso Márquez', 'marcos@gmail.com', 'marcos', 'Forata 12-18', 46017, 'Valencia', '1983-02-22', 'marcos-alfonso.jpg', 2, 1),
-(9, 'Luis', 'Benavent Solís', 'luis@gmail.com', 'luis', 'Antonio Sacramento 2-14', 46013, 'Valencia', '1991-12-08', 'luis-benavent.jpg', 2, 1),
-(10, 'Marta', 'Buenafuente Sal', 'marta@gmail.com', 'marta', 'Maderas 45-2', 46922, 'Valencia', '1996-09-01', 'marta-buenafuente.jpg', 2, 1);
+(8, 'Marcos', 'Alfonso Márquez', 'marcos@gmail.com', 'marcos', 'Forata 12-18', 46017, 'Valencia', '1983-02-22', '/usuarios/marcos-alfonso.jpg', 2, 1),
+(9, 'Luis', 'Benavent Solís', 'luis@gmail.com', 'luis', 'Antonio Sacramento 2-14', 46013, 'Valencia', '1991-12-08', '/usuarios/luis-benavent.jpg', 2, 1),
+(10, 'Marta', 'Buenafuente Sal', 'marta@gmail.com', 'marta', 'Maderas 45-2', 46922, 'Valencia', '1996-09-01', '/usuarios/marta-buenafuente.jpg', 2, 1),
+(11, 'Marisa', 'López Nieto', 'marisa@gmail.com', 'marisa', 'Av. de la Llum, 35-14', 46950, 'Valencia', '1996-09-01', '/usuarios/marisa-lopez-nieto.jpg', 2, 1),
+(12, 'Susana', 'Fonseca Albert', 'marta@gmail.com', 'susana', 'Carlos Ruano Llopis 12-2', 46035, 'Valencia', '1996-09-01', '/usuarios/susana-fonseca-albert.jpg', 2, 1),
+(13, 'Pedro', 'Helenos Pons', 'pedro@gmail.com', 'pedro', 'del Serpis 69-7', 46022, 'Valencia', '1996-09-01', '/usuarios/pedro-helenos-pons.jpg', 2, 1),;
 
 -- --------------------------------------------------------
 
