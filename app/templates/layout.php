@@ -59,9 +59,7 @@
 				<div class="row">
 					<div class="col col-lg-5 col-md-12 col-sm-12 me-2 text-lg-start text-md-center text-sm-center pb-lg-0 pb-md-5 pb-sm-5">
 						<img src="../img/logo2-atco-blanco.png" alt="Logo blanco ATCO">
-						<p class="pt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, recusandae cupiditate itaque veniam, vero
-							accusantium dolores vitae eum incidunt consequatur exercitationem sequi, nisi quibusdam beatae aliquid?
-							Aliquam aperiam illo voluptates?</p>
+						<p class="pt-3">Desde ATCO hemos ayudado a más de 450 alumnos a lo largo de nuestros 10 años de recorrido. Cursos actualizados, docentes comprometidos con los alumnos y una comunidad donde encontrarás toda la ayuda necesaria. Todos nuestros cursos son gratuitos, prúebalo tú mismo.</p>
 					</div>
 					<div class="col col-lg-3 col-md-6 col-sm-6 px-lg-5 ">
 						<h4>Explora</h4>

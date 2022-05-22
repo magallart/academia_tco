@@ -447,7 +447,7 @@ class Controller
                             echo "<p>$error</p>";
                         }
                     }
-                } 
+                }
             }
         } catch (Exception $e) {
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
@@ -575,7 +575,11 @@ class Controller
                 require __DIR__ . '/../templates/perfil.php';
             }
         } else {
-            $menu = 'menu.php';
+            if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
+                $menu = 'menuLogin.php';
+            } else {
+                $menu = 'menu.php';
+            }
             require __DIR__ . '/../templates/perfilUsuarioNoregistrado.php';
         }
     }

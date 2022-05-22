@@ -49,10 +49,6 @@
                         <li class="nav-item">
                             <a href="index.php?ctl=perfil" class="nav-link">Ver Perfil</a>
                         </li>
-                        
-                        <li class="nav-item">
-                            <a href="index.php?ctl=misCursos" class="nav-link">Mis cursos</a>
-                        </li>
 
                         <li class="nav-item">
                             <a href="index.php?ctl=cerrarSesion" class="nav-link">Cerrar sesión</a>
