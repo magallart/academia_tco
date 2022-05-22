@@ -319,11 +319,11 @@ class Controller
         try {
             if (isset($_POST['registrarCuenta'])) {
                 $nombre = recoge('nombre');
-                $apellidos = recoge('apellidos');
-                $fPerfil = $_FILES['fPerfil']['name'];
-                $fPerfilCampo = "fPerfil";
+                $asunto = recoge('asunto');
+                $email = recoge('email');
+                $mensaje = recoge('mensaje');
 
-                if (cValidarImagenPerfil($nombre, $apellidos, $fPerfilCampo)) {
+                if (cValidarContacto($nombre, $asunto, $email, $mensaje)) {  //TODO realizar funcionalidad de enviar el email con PHPmailer
                     header('Location: index.php?ctl=iniciarSesion');
                 }
             }

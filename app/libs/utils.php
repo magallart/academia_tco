@@ -112,10 +112,38 @@ function cValidarImagenPerfil(string $nombre, string $apellidos, string $campo)
     }
 }
 
+/*
+        ·Esta función valida los datos del formulario de contacto
+    */
 
+function cValidarContacto($nombre, $asunto, $email, $mensaje)
+{
+    $error = FALSE;
 
+    if (!cTexto($nombre, "nombre", 150, 1, " ", "i")) {
+        $error = TRUE;
+    }
 
+    if (!cTexto($asunto, "apellidos", 150, 1, " ", "i")) {
+        $error = TRUE;
+    }
 
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $error = TRUE;
+        $_SESSION['erroresRegistro']['email'] = "El email introducido no es válido.";
+    }
+
+    if (!cTexto($mensaje, "apellidos", 150, 1, " ", "i")) {
+        $error = TRUE;
+    }
+    
+
+    if ($error) {
+        return FALSE;
+    } else {
+        return TRUE;
+    }
+}
 
 function recoge($var)
 {

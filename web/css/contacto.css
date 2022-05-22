@@ -1,0 +1,90 @@
+.contacto {
+}
+
+.contacto h2 {
+  padding-bottom: 30px;
+}
+
+.contacto label {
+  font-size: 1.2rem;
+  font-weight: 600 !important;
+  line-height: 1.2rem;
+  font-family: var(--font-3);
+}
+
+form[name="formContacto"] input[type="text"] {
+  display: block;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+form[name="formContacto"] textarea {
+  display: block;
+  padding: 10px;
+  width: 100%;
+  resize: none;
+  margin-bottom: 30px;
+}
+
+form[name="formContacto"] input[type="submit"] {
+  width: 100%;
+  display: inline-block;
+  margin-top: 20px;
+  color: white;
+}
+
+form[name="formContacto"] input::placeholder {
+  color: #000;
+}
+
+form[name="formContacto"] input[type="submit"]:hover {
+  color: var(--color1);
+}
+
+form[name="formContacto"] label {
+  display: block;
+  padding-bottom: 15px;
+  font-weight: 600;
+}
+
+form[name="formContacto"] input[type="checkbox"] {
+  position: relative;
+  top: 2px;
+}
+
+.formulario-rgpd {
+  font-size: 0.9rem;
+}
+
+.formulario-rgpd .negrita {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.contacto-opciones {
+  background-color: var(--color1);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contacto-opciones-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+.contacto-opciones-div h2 {
+  font-size: 1.7rem;
+  font-family: var(--font-1);
+  font-weight: 600;
+}
+
+.contacto-opciones-div ion-icon {
+  font-size: 40px;
+  padding-bottom: 20px;
+}
