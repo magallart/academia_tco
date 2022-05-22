@@ -4,7 +4,7 @@
     · Contenido de la página de Cerrar Sesión. 
     · Lo guardamos en el buffer y se carga en la variable $contenido para mostrarla en /templates/layout
 -->
-<div class="container datos-actualizados">  <!-- TODO Revisar diseño página -->
+<div class="container datos-actualizados">
     <div class="row">
         <div class="col text-center">
             <h1>Sesión cerrada correctamente</h1>

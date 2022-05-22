@@ -17,8 +17,7 @@
                 </p>
             </div>
             <div class="col-lg-6 col-sm-8 text-center">
-                <!--  TODO Controlar la imagen en responsive / Cambiar imagen -->
-                <img src="../img/inicio-header.png" class="d-block mx-lg-auto img-fluid" alt="Chica sonriendo con un laptop en la mano" width="700" height="500" loading="lazy" />
+                 <img src="../img/inicio-header.png" class="d-block mx-lg-auto img-fluid" alt="Chica sonriendo con un laptop en la mano" width="700" height="500" loading="lazy" />
             </div>
         </div>
     </div>

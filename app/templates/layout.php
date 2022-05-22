@@ -28,7 +28,7 @@
 		?>
 
 
-		<?php // TODO Eliminar el print_r $_SESSION		
+		<?php // TODO Eliminar el print_r
 			 echo "<div class='pruebaSesion'>";
 			 echo "||||||||||| SESSION |||||||||||";
 			 echo "<pre>";
