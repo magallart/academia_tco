@@ -85,7 +85,7 @@ function cValidarImagenPerfil(string $nombre, string $apellidos, string $campo)
     $apellidosUsuario = strtolower(str_replace(" ", "_", sinTildes($apellidos)));
     $nombreFoto = $nombreUsuario . "_" . $apellidosUsuario;
 
-    $nombrePartes = explode(".", $$_FILES[$campo]['name']);
+    $nombrePartes = explode(".", $_FILES[$campo]['name']);
     //Necesitamos la extensión de la foto que ha subido el alumno, por eso nos quedamos con el segundo item del array que es la extensión
     $extensionImagen = $nombrePartes[1];
 
@@ -93,7 +93,7 @@ function cValidarImagenPerfil(string $nombre, string $apellidos, string $campo)
 
     if ($_FILES[$campo]['error'] == 0 && $_FILES[$campo]['size'] > 0) {
         /* El alumno ha subido una foto y hay que analizarla */
-        $nombreRutaFotoBBDD = $nombreFoto . $extensionImagen;
+        $nombreRutaFotoBBDD = $nombreFoto . "." . $extensionImagen;
 
         // Comprobamos la extensión del archivo dentro de la lista que hemos definido al principio
         if (!in_array($extension, $extensionesValidas)) {
@@ -103,9 +103,7 @@ function cValidarImagenPerfil(string $nombre, string $apellidos, string $campo)
 
         $rutaUsuario = dirname(dirname(__DIR__)) . "\img\usuarios\\" . $nombreRutaFotoBBDD;
 
-
         if (move_uploaded_file($directorioTemp, $rutaUsuario)) {
-            // En este caso devolvemos sólo el nombre del fichero sin la ruta
             return TRUE;
         } else {
             $_SESSION['erroresRegistro'][$campo] = "Error: No se ha podido subir la imagen.";

@@ -316,6 +316,25 @@ class Controller
     // Muestra el contenido de /templates/contacto.php
     public function cContacto()
     {
+        try {
+            if (isset($_POST['registrarCuenta'])) {
+                $nombre = recoge('nombre');
+                $apellidos = recoge('apellidos');
+                $fPerfil = $_FILES['fPerfil']['name'];
+                $fPerfilCampo = "fPerfil";
+
+                if (cValidarImagenPerfil($nombre, $apellidos, $fPerfilCampo)) {
+                    header('Location: index.php?ctl=iniciarSesion');
+                }
+            }
+        } catch (Exception $e) {
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
+            header('Location: index.php?ctl=error');
+        } catch (Error $e) {
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
+            header('Location: index.php?ctl=error');
+        }
+
         if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
             $menu = 'menuLogin.php';
         } else {
@@ -382,7 +401,7 @@ class Controller
     public function cRegistro()
     {
         try {
-            if (isset($_POST['registrarCuenta'])) { 
+            if (isset($_POST['registrarCuenta'])) {
                 $nombre = recoge('nombre');
                 $apellidos = recoge('apellidos');
                 $password = recoge('password');
@@ -398,24 +417,37 @@ class Controller
                 if (cValidarDatos($nombre, $apellidos, $email, $fNacimiento, $direccion, $cPostal, $localidad)) {
                     if (cValidarPassword($password, $password2)) {
                         if (cValidarImagenPerfil($nombre, $apellidos, $fPerfilCampo)) {
-                            $extension = $_FILES[$fPerfil]['type'];
                             $nombreUsuario = strtolower(str_replace(" ", "_", sinTildes($nombre)));
                             $apellidosUsuario = strtolower(str_replace(" ", "_", sinTildes($apellidos)));
-                            $nombreFoto = $nombreUsuario . $apellidosUsuario;
-                            $fPerfilRuta = $nombreFoto . $extension;
+                            $nombreFoto = $nombreUsuario . "_" . $apellidosUsuario;
+                            $nombrePartes = explode(".", $_FILES['fPerfil']['name']);
+                            $extensionImagen = $nombrePartes[1];
+                            $fPerfilRuta = $nombreFoto . "." . $extensionImagen;
                             $fNacimiento = $_SESSION['fechaBD'];
                             $u = new Usuarios();
                             $u->registrarUsuario($nombre, $apellidos, $password, $email, $fNacimiento, $direccion, $cPostal, $localidad, $fPerfilRuta);
                             header('Location: index.php?ctl=iniciarSesion');
+                        } else {
+                            if (isset($_SESSION['erroresRegistro'])) {
+                                foreach ($_SESSION['erroresRegistro'] as $error) {
+                                    echo "<p>$error</p>";
+                                }
+                            }
+                        }
+                    } else {
+                        if (isset($_SESSION['erroresRegistro'])) {
+                            foreach ($_SESSION['erroresRegistro'] as $error) {
+                                echo "<p>$error</p>";
+                            }
                         }
                     }
-                }
-            } else {
-                if(isset($_SESSION['erroresRegistro'])) {
-                    foreach ($_SESSION['erroresRegistro'] as $error) {
-                        echo "<p>$error</p>";
+                } else {
+                    if (isset($_SESSION['erroresRegistro'])) {
+                        foreach ($_SESSION['erroresRegistro'] as $error) {
+                            echo "<p>$error</p>";
+                        }
                     }
-                }                
+                } 
             }
         } catch (Exception $e) {
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
@@ -485,7 +517,7 @@ class Controller
                 );
 
                 $u = new Usuarios();
-                $nombre = $_SESSION['nombreUsuario'];
+                $nombre = $_SESSION['nombre'];
                 $password =  strtolower($_SESSION['nombreUsuario']); //TODO Cambiar cuando el password sea el email
                 $infoUsuario['resultado'] = $u->loginUsuario($nombre, $password);
 
