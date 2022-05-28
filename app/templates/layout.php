@@ -29,24 +29,24 @@
 
 
 		<?php // TODO Eliminar el print_r
-			 echo "<div class='pruebaSesion'>";
-			 echo "||||||||||| SESSION |||||||||||";
-			 echo "<pre>";
-			 print_r($_SESSION);
-			 echo "</pre>";
-			 echo "</div>";
-			 echo "<div class='pruebaSesion'>";
-			 echo "||||||||||| POST |||||||||||";
-			 echo "<pre>";
-			 print_r($_POST);
-			 echo "</pre>";
-			 echo "</div>";
-			 echo "<div class='pruebaSesion'>";
-			 echo "||||||||||| FILES |||||||||||";
-			 echo "<pre>";
-			 print_r($_FILES);
-			 echo "</pre>";
-			 echo "</div>";
+		// echo "<div class='pruebaSesion'>";
+		// echo "||||||||||| SESSION |||||||||||";
+		// echo "<pre>";
+		// print_r($_SESSION);
+		// echo "</pre>";
+		// echo "</div>";
+		// echo "<div class='pruebaSesion'>";
+		// echo "||||||||||| POST |||||||||||";
+		// echo "<pre>";
+		// print_r($_POST);
+		// echo "</pre>";
+		// echo "</div>";
+		// echo "<div class='pruebaSesion'>";
+		// echo "||||||||||| FILES |||||||||||";
+		// echo "<pre>";
+		// print_r($_FILES);
+		// echo "</pre>";
+		// echo "</div>";
 		?>
 
 
@@ -86,7 +86,9 @@
 					</div>
 				</div>
 				<div class="row pt-5">
-					<div class="col-lg-6 col-md-12 col-sm-12 text-lg-start text-md-center text-sm-center pt-md-3 mt-sm-2"><p>2022 - Derechos reservados. Academia ATCO.</p> </div>
+					<div class="col-lg-6 col-md-12 col-sm-12 text-lg-start text-md-center text-sm-center pt-md-3 mt-sm-2">
+						<p>2022 - Derechos reservados. Academia ATCO.</p>
+					</div>
 					<div class="col-lg-6 col-md-12 col-sm-12 text-lg-end text-md-center text-sm-center pt-md-3 mt-sm-2">
 						<ul class="legal">
 							<li><a href="index.php?ctl=politicaPrivacidad">Política de privacidad</a></li>

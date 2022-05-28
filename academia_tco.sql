@@ -41,7 +41,6 @@ CREATE TABLE `usuarios` (
   `fNacimiento` date NOT NULL,
   `fPerfil` varchar(255) NOT NULL,
   `nivel` int(11) NOT NULL,
-  `verificado` int(1) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -49,35 +48,21 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nombre`, `apellidos`, `email`, `password`, `direccion`, `cPostal`, `localidad`, `fNacimiento`, `fPerfil`, `nivel`, `verificado` ) VALUES
-(0, 'Nuria', 'Ramírez Pons', 'nuria@gmail.com', 'nuria', 'Montesa 28-3', 46020, 'Valencia', '1999-05-28', '/usuarios/nuria_ramirez_pons.jpg', 1, 1),
-(1, 'José', 'Álvarez Pelayo', 'jose@gmail.com', 'jose' , 'Príncipe Velasco 28-3', 46120, 'Valencia', '1993-03-14', '/usuarios/jose_alvarez_pelayo.jpg', 1, 1),
-(2, 'Alfonso', 'Ruiz Mendez', 'alfonso@gmail.com', 'alfonso', 'Bolivia 12-1', 46018, 'Valencia', '1991-03-12', '/usuarios/alfonso_ruiz_mendez.jpg', 1, 1),
-(3, 'Marta', 'Fonseca Yuste', 'marta@gmail.com', 'marta', 'Picapedreros 89-19', 46019, 'Valencia', '1999-05-14', '/usuarios/marta_fonseca_yuste.jpg', 1, 1),
-(4, 'Liliana', 'Vergara Alarcon', 'liliana@gmail.com', 'liliana', 'Misionero Vicente Caña 1-25', 46950, 'Valencia', '2008-08-29', '/usuarios/liliana_vergara_alarcon.jpg', 1, 1),
-(5, 'Adam', 'Montoro Torre', 'adam@gmail.com', 'adam', 'Mestre Palau 90-3', 46930, 'Valencia', '2003-12-02', '/usuarios/adam_montoro_torre.jpg', 1, 1),
-(6, 'Eulalia', 'Vilchez Saenz', 'eulalia@gmail.com', 'eulalia', 'Mayor 11-3', 46920, 'Valencia', '2000-04-17', '/usuarios/eulalia_vilchez_saenz.jpg', 2, 1),
-(7, 'Fernando', 'Benavides Carrera', 'fernando@gmail.com', 'fernando', 'Doctor Enrique López 7-8', 46018, 'Valencia', '1985-01-25', '/usuarios/fernando_benavides_carrera.jpg', 1, 1),
-(8, 'Marcos', 'Alfonso Márquez', 'marcos@gmail.com', 'marcos', 'Forata 12-18', 46017, 'Valencia', '1983-02-22', '/usuarios/marcos-alfonso.jpg', 2, 1),
-(9, 'Luis', 'Benavent Solís', 'luis@gmail.com', 'luis', 'Antonio Sacramento 2-14', 46013, 'Valencia', '1991-12-08', '/usuarios/luis-benavent.jpg', 2, 1),
-(10, 'Marta', 'Buenafuente Sal', 'marta@gmail.com', 'marta', 'Maderas 45-2', 46922, 'Valencia', '1996-09-01', '/usuarios/marta-buenafuente.jpg', 2, 1),
-(11, 'Marisa', 'López Nieto', 'marisa@gmail.com', 'marisa', 'Av. de la Llum, 35-14', 46950, 'Valencia', '1996-09-01', '/usuarios/marisa-lopez-nieto.jpg', 2, 1),
-(12, 'Susana', 'Fonseca Albert', 'marta@gmail.com', 'susana', 'Carlos Ruano Llopis 12-2', 46035, 'Valencia', '1996-09-01', '/usuarios/susana-fonseca-albert.jpg', 2, 1),
-(13, 'Pedro', 'Helenos Pons', 'pedro@gmail.com', 'pedro', 'del Serpis 69-7', 46022, 'Valencia', '1996-09-01', '/usuarios/pedro-helenos-pons.jpg', 2, 1),;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `tokens`
---
-
-CREATE TABLE `tokens` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_usuario` int(11) NOT NULL,
-  `token` varchar(255) NOT NULL,
-  `tiempo_creacion` timestamp NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO `usuarios` (`id`, `nombre`, `apellidos`, `email`, `password`, `direccion`, `cPostal`, `localidad`, `fNacimiento`, `fPerfil`, `nivel` ) VALUES
+(0, 'Nuria', 'Ramírez Pons', 'nuria@gmail.com', 'nuria', 'Montesa 28-3', 46020, 'Valencia', '1999-05-28', '/usuarios/nuria_ramirez_pons.jpg', 1),
+(1, 'José', 'Álvarez Pelayo', 'jose@gmail.com', 'jose' , 'Príncipe Velasco 28-3', 46120, 'Valencia', '1993-03-14', '/usuarios/jose_alvarez_pelayo.jpg', 1),
+(2, 'Alfonso', 'Ruiz Mendez', 'alfonso@gmail.com', 'alfonso', 'Bolivia 12-1', 46018, 'Valencia', '1991-03-12', '/usuarios/alfonso_ruiz_mendez.jpg', 1),
+(3, 'Marta', 'Fonseca Yuste', 'marta@gmail.com', 'marta', 'Picapedreros 89-19', 46019, 'Valencia', '1999-05-14', '/usuarios/marta_fonseca_yuste.jpg', 1),
+(4, 'Liliana', 'Vergara Alarcon', 'liliana@gmail.com', 'liliana', 'Misionero Vicente Caña 1-25', 46950, 'Valencia', '2008-08-29', '/usuarios/liliana_vergara_alarcon.jpg', 1),
+(5, 'Adam', 'Montoro Torre', 'adam@gmail.com', 'adam', 'Mestre Palau 90-3', 46930, 'Valencia', '2003-12-02', '/usuarios/adam_montoro_torre.jpg', 1),
+(6, 'Eulalia', 'Vilchez Saenz', 'eulalia@gmail.com', 'eulalia', 'Mayor 11-3', 46920, 'Valencia', '2000-04-17', '/usuarios/eulalia_vilchez_saenz.jpg', 2),
+(7, 'Fernando', 'Benavides Carrera', 'fernando@gmail.com', 'fernando', 'Doctor Enrique López 7-8', 46018, 'Valencia', '1985-01-25', '/usuarios/fernando_benavides_carrera.jpg', 1),
+(8, 'Marcos', 'Alfonso Márquez', 'marcos@gmail.com', 'marcos', 'Forata 12-18', 46017, 'Valencia', '1983-02-22', '/usuarios/marcos-alfonso.jpg', 2),
+(9, 'Luis', 'Benavent Solís', 'luis@gmail.com', 'luis', 'Antonio Sacramento 2-14', 46013, 'Valencia', '1991-12-08', '/usuarios/luis-benavent.jpg', 2),
+(10, 'Marta', 'Buenafuente Sal', 'marta@gmail.com', 'marta', 'Maderas 45-2', 46922, 'Valencia', '1996-09-01', '/usuarios/marta-buenafuente.jpg', 2),
+(11, 'Marisa', 'López Nieto', 'marisa@gmail.com', 'marisa', 'Av. de la Llum, 35-14', 46950, 'Valencia', '1996-09-01', '/usuarios/marisa-lopez-nieto.jpg', 2),
+(12, 'Susana', 'Fonseca Albert', 'marta@gmail.com', 'susana', 'Carlos Ruano Llopis 12-2', 46035, 'Valencia', '1996-09-01', '/usuarios/susana-fonseca-albert.jpg', 2),
+(13, 'Pedro', 'Helenos Pons', 'pedro@gmail.com', 'pedro', 'del Serpis 69-7', 46022, 'Valencia', '1996-09-01', '/usuarios/pedro-helenos-pons.jpg', 2);
 
 
 -- --------------------------------------------------------
@@ -160,7 +145,6 @@ CREATE TABLE `curso_usuario` (
   `id_curso` int(11) NOT NULL, 
   `temasTerminados` int(1) NOT NULL, 
   `finalizado` int(1) NOT NULL,
-  `valoracion` float NOT NULL,
   PRIMARY KEY (`id_curso`, `id_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -168,41 +152,56 @@ CREATE TABLE `curso_usuario` (
 -- Volcado de datos para la tabla `curso_usuario`
 --
 
-INSERT INTO `curso_usuario` (`id_usuario`, `id_curso`, `temasTerminados`, `finalizado`, `valoracion`) VALUES
-(0, 0, 5, 0, 9),
-(0, 1, 4, 0, 10),
-(1, 0, 0, 0, 9),
-(1, 2, 12, 1, 10),
-(2, 0, 10, 0, 9),
-(2, 1, 8, 0, 8),
-(2, 2, 14, 0, 9),
-(2, 3, 9, 0, 7),
-(3, 0, 15, 0, 9),
-(3, 1, 7, 0, 8),
-(3, 3, 15, 0, 10),
-(4, 0, 8, 0, 9),
-(4, 1, 10, 0, 8),
-(4, 2, 8, 0, 9),
-(4, 3, 4, 0, 7),
-(5, 0, 15, 0, 9),
-(5, 1, 12, 0, 8),
-(5, 3, 18, 0, 10),
-(7, 0, 5, 0, 9),
-(7, 1, 8, 0, 8),
-(7, 2, 9, 0, 9),
-(7, 3, 14, 0, 7);
+INSERT INTO `curso_usuario` (`id_usuario`, `id_curso`, `temasTerminados`, `finalizado`) VALUES
+(0, 0, 5, 0),
+(0, 1, 4, 0),
+(1, 0, 0, 0),
+(1, 2, 12, 1),
+(2, 0, 10, 0),
+(2, 1, 8, 0),
+(2, 2, 14, 0),
+(2, 3, 9, 0),
+(3, 0, 15, 0),
+(3, 1, 7, 0),
+(3, 3, 15, 0),
+(4, 0, 8, 0),
+(4, 1, 10, 0),
+(4, 2, 8, 0),
+(4, 3, 4, 0),
+(5, 0, 15, 0),
+(5, 1, 12, 0),
+(5, 3, 18, 0),
+(7, 0, 5, 0),
+(7, 1, 8, 0),
+(7, 2, 9, 0),
+(7, 3, 14, 0);
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `newsletter`
+--
+
+CREATE TABLE `newsletter` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `cursos`
+--
+
+INSERT INTO `newsletter` (`id`, `nombre`, `email`) VALUES
+(0, 'Roberto Faisán', 'robertof@gmail.com'),
+(1, 'Clara López', 'clopez@gmail.com'),
+(2, 'Nuno Susac', 'nusac@gmail.cok'),
+(3, 'Esteban Luz', 'eluz@gmail.com');
 
 --
 -- Índices para tablas volcadas
 --
-
---
--- Indices de la tabla `tokens`
---
-ALTER TABLE `tokens`
-  ADD CONSTRAINT fk_tokens_id_usuario FOREIGN KEY(id_usuario) REFERENCES usuarios(id);
-  
 
 --
 -- Indices de la tabla `cursos`
