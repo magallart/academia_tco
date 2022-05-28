@@ -226,9 +226,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 text-center">
-                    <form name="newsletterForm" action="index.php?ctl=newsletter" method="POST" enctype="multipart/form-data">
-                        <!-- TODO añadir el controlador newsletter -->
-                        <input type="email" placeholder="Escribe tu email">
+                    <form name="newsletterForm" action="index.php?ctl=inicio" method="POST" enctype="multipart/form-data">
+                        <input type="text" name="nombre" placeholder="Nombre completo">
+                        <input type="email" name="email" placeholder="Escribe tu email">
                         <input type="submit" value="Suscribirme" name="newsletter">
                     </form>
                 </div>

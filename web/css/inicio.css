@@ -203,11 +203,18 @@ section.newsletter {
   margin-bottom: 0;
 }
 
-section.newsletter input[type="email"] {
-  width: 50%;
+section.newsletter input[type="text"], section.newsletter input[type="email"] {
   padding: 15px;
   border-radius: 5px;
   border: 1px solid var(--color1);
+}
+
+section.newsletter input[type="text"]{
+  width: 25%;
+}
+
+section.newsletter input[type="email"] {
+  width: 45%;
 }
 
 section.newsletter input[type="submit"] {

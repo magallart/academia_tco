@@ -130,14 +130,14 @@
 
 <?php
 
-if (isset($_SESSION['errores'])) {
+if (isset($_SESSION['erroresValidacion'])) {
     echo "<div class='errores'>";
-    foreach ($_SESSION['errores'] as $error) {
+    foreach ($_SESSION['erroresValidacion'] as $error) {
         echo "<p>$error</p>";
     }
     echo "</div>";
 }
-unset($_SESSION['errores']);
+unset($_SESSION['erroresValidacion']);
 ?>
 
 <?php $contenido = ob_get_clean() ?>

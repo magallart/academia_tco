@@ -11,6 +11,27 @@ class Controller
     // Muestra el contenido de /templates/inicio.php
     public function cInicio()
     {
+        try {
+            if (isset($_POST['newsletter'])) {
+                $nombre = recoge('nombre');
+                $email = recoge('email');
+
+                if (cValidarNewsletter($nombre, $email)) {
+                    $n = new Newsletter();
+                    $n->newNewsletter($nombre, $email);
+                    header('Location: index.php?ctl=newsletter');
+                } else {
+                    header('Location: index.php?ctl=error');
+                }
+            }
+        } catch (Exception $e) {
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logException.txt");
+            header('Location: index.php?ctl=error');
+        } catch (Error $e) {
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
+            header('Location: index.php?ctl=error');
+        }
+
         if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
             $menu = 'menuLogin.php';
         } else {
@@ -28,6 +49,18 @@ class Controller
             $menu = 'menu.php';
         }
         require __DIR__ . '/../templates/academia.php';
+    }
+
+    // Muestra el contenido de /templates/cursos.php
+    public function cNewsletter()
+    {
+        header('refresh:3;url=index.php?ctl=inicio');
+        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
+            $menu = 'menuLogin.php';
+        } else {
+            $menu = 'menu.php';
+        }
+        require __DIR__ . '/../templates/newsletter.php';
     }
 
     // Muestra el contenido de /templates/cursos.php
@@ -64,13 +97,13 @@ class Controller
                 if (isset($_POST['aceptacionPoliticas'])) {
                     //Un usuario sólo puede enviar un mensaje por curso. Si no encuentra el email en el array de mensajes es porque el usuario no ha enviado un mensaje
                     if (array_search($_SESSION['emailUsuario'], array_column($_SESSION['mensajesCursoJavascript'], 'email')) == true) {
-                        $_SESSION['errores'] = "Ya has enviado un mensaje para este curso.";
+                        $_SESSION['erroresValidacion'] = "Ya has enviado un mensaje para este curso.";
                     } else {
                         $u->insertarMensajeUsuario($_SESSION['idUsuario'], 0, $mensajeUsuario);
                         header("Refresh:0");
                     }
                 } else {
-                    $_SESSION['errores'] = "Checkbox";
+                    $_SESSION['erroresValidacion'] = "Checkbox";
                 }
             }
 
@@ -91,7 +124,7 @@ class Controller
                 header('Location: index.php?ctl=perfil');
             }
         } catch (Exception $e) {
-            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logException.txt");
             header('Location: index.php?ctl=error');
         } catch (Error $e) {
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
@@ -129,13 +162,13 @@ class Controller
                 if (isset($_POST['aceptacionPoliticas'])) {
                     //Un usuario sólo puede enviar un mensaje por curso. Si no encuentra el email en el array de mensajes es porque el usuario no ha enviado un mensaje
                     if (array_search($_SESSION['emailUsuario'], array_column($_SESSION['mensajesCursoAngular'], 'email')) == true) {
-                        $_SESSION['errores'] = "Ya has enviado un mensaje para este curso.";
+                        $_SESSION['erroresValidacion'] = "Ya has enviado un mensaje para este curso.";
                     } else {
                         $u->insertarMensajeUsuario($_SESSION['idUsuario'], 0, $mensajeUsuario);
                         header("Refresh:0");
                     }
                 } else {
-                    $_SESSION['errores'] = "Checkbox";
+                    $_SESSION['erroresValidacion'] = "Checkbox";
                 }
             }
 
@@ -156,7 +189,7 @@ class Controller
                 header('Location: index.php?ctl=perfil');
             }
         } catch (Exception $e) {
-            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logException.txt");
             header('Location: index.php?ctl=error');
         } catch (Error $e) {
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
@@ -194,13 +227,13 @@ class Controller
                 if (isset($_POST['aceptacionPoliticas'])) {
                     //Un usuario sólo puede enviar un mensaje por curso. Si no encuentra el email en el array de mensajes es porque el usuario no ha enviado un mensaje
                     if (array_search($_SESSION['emailUsuario'], array_column($_SESSION['mensajesCursoReact'], 'email')) == true) {
-                        $_SESSION['errores'] = "Ya has enviado un mensaje para este curso.";
+                        $_SESSION['erroresValidacion'] = "Ya has enviado un mensaje para este curso.";
                     } else {
                         $u->insertarMensajeUsuario($_SESSION['idUsuario'], 0, $mensajeUsuario);
                         header("Refresh:0");
                     }
                 } else {
-                    $_SESSION['errores'] = "Checkbox";
+                    $_SESSION['erroresValidacion'] = "Checkbox";
                 }
             }
 
@@ -221,7 +254,7 @@ class Controller
                 header('Location: index.php?ctl=perfil');
             }
         } catch (Exception $e) {
-            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logException.txt");
             header('Location: index.php?ctl=error');
         } catch (Error $e) {
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
@@ -259,13 +292,13 @@ class Controller
                 if (isset($_POST['aceptacionPoliticas'])) {
                     //Un usuario sólo puede enviar un mensaje por curso. Si no encuentra el email en el array de mensajes es porque el usuario no ha enviado un mensaje
                     if (array_search($_SESSION['emailUsuario'], array_column($_SESSION['mensajesCursoGit'], 'email')) == true) {
-                        $_SESSION['errores'] = "Ya has enviado un mensaje para este curso.";
+                        $_SESSION['erroresValidacion'] = "Ya has enviado un mensaje para este curso.";
                     } else {
                         $u->insertarMensajeUsuario($_SESSION['idUsuario'], 0, $mensajeUsuario);
                         header("Refresh:0");
                     }
                 } else {
-                    $_SESSION['errores'] = "Checkbox";
+                    $_SESSION['erroresValidacion'] = "Checkbox";
                 }
             }
 
@@ -286,7 +319,7 @@ class Controller
                 header('Location: index.php?ctl=perfil');
             }
         } catch (Exception $e) {
-            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logException.txt");
             header('Location: index.php?ctl=error');
         } catch (Error $e) {
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
@@ -328,7 +361,7 @@ class Controller
                 }
             }
         } catch (Exception $e) {
-            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logException.txt");
             header('Location: index.php?ctl=error');
         } catch (Error $e) {
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
@@ -378,11 +411,11 @@ class Controller
                     $_SESSION['mensajes'] = $infoUsuario['mensajes'];
                     header('Location: index.php?ctl=perfil');
                 } else {
-                    $_SESSION['errores']['login'] = "No se ha podido conectar.";
+                    $_SESSION['erroresValidacion']['login'] = "No se ha podido conectar.";
                 }
             }
         } catch (Exception $e) {
-            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logException.txt");
             header('Location: index.php?ctl=error');
         } catch (Error $e) {
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
@@ -428,29 +461,29 @@ class Controller
                             $u->registrarUsuario($nombre, $apellidos, $password, $email, $fNacimiento, $direccion, $cPostal, $localidad, $fPerfilRuta);
                             header('Location: index.php?ctl=iniciarSesion');
                         } else {
-                            if (isset($_SESSION['erroresRegistro'])) {
-                                foreach ($_SESSION['erroresRegistro'] as $error) {
+                            if (isset($_SESSION['erroresValidacion'])) {
+                                foreach ($_SESSION['erroresValidacion'] as $error) {
                                     echo "<p>$error</p>";
                                 }
                             }
                         }
                     } else {
-                        if (isset($_SESSION['erroresRegistro'])) {
-                            foreach ($_SESSION['erroresRegistro'] as $error) {
+                        if (isset($_SESSION['erroresValidacion'])) {
+                            foreach ($_SESSION['erroresValidacion'] as $error) {
                                 echo "<p>$error</p>";
                             }
                         }
                     }
                 } else {
-                    if (isset($_SESSION['erroresRegistro'])) {
-                        foreach ($_SESSION['erroresRegistro'] as $error) {
+                    if (isset($_SESSION['erroresValidacion'])) {
+                        foreach ($_SESSION['erroresValidacion'] as $error) {
                             echo "<p>$error</p>";
                         }
                     }
                 }
             }
         } catch (Exception $e) {
-            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logException.txt");
             header('Location: index.php?ctl=error');
         } catch (Error $e) {
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
@@ -475,10 +508,10 @@ class Controller
                 $email = recoge('email');  //TODO Realizar funcionalidad de recuperar contraseña
                 header('Location: index.php?ctl=iniciarSesion');
             } else {
-                $_SESSION['errores']['login'] = "No se ha podido enviar un email a esa dirección.";
+                $_SESSION['erroresValidacion']['login'] = "No se ha podido enviar un email a esa dirección.";
             }
         } catch (Exception $e) {
-            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logException.txt");
             header('Location: index.php?ctl=error');
         } catch (Error $e) {
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
@@ -550,7 +583,7 @@ class Controller
                     if ($u->actualizarDatos($_SESSION['idUsuario'], $nombre, $apellidos, $email, $fNacimiento, $direccion, $cPostal, $localidad)) {
                         header('Location: index.php?ctl=datosActualizados');
                     } else {
-                        $_SESSION['errores'] = "No se ha podido actualizar los datos.";
+                        $_SESSION['erroresValidacion'] = "No se ha podido actualizar los datos.";
                     }
                 }
 
@@ -561,10 +594,10 @@ class Controller
                     session_unset();
                     header('Location: index.php?ctl=inicio');
                 } else {
-                    $_SESSION['errores'] = "No se ha podido actualizar los datos.";
+                    $_SESSION['erroresValidacion'] = "No se ha podido actualizar los datos.";
                 }
             } catch (Exception $e) {
-                error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
+                error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logException.txt");
                 header('Location: index.php?ctl=error');
             } catch (Error $e) {
                 error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");

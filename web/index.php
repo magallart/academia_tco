@@ -6,6 +6,7 @@
     require_once __DIR__ . '/../app/libs/utils.php';
     require_once __DIR__ . '/../app/modelo/classModelo.php';
     require_once __DIR__ . '/../app/modelo/classUsuarios.php';
+    require_once __DIR__ . '/../app/modelo/classNewsletter.php';
     require_once __DIR__ . '/../app/modelo/classCursos.php';
     require_once __DIR__ . '/../app/controlador/Controller.php';
 
@@ -18,6 +19,7 @@
     // Array de mapeo donde se contemplan todas las posibles acciones
     $map = array(
         'inicio' => array('controller' =>'Controller', 'action' =>'cInicio'),
+        'newsletter' => array('controller' =>'Controller', 'action' =>'cNewsletter'),
         'academia' => array('controller' =>'Controller', 'action' =>'cAcademia'),
         'cursos' => array('controller' =>'Controller', 'action' =>'cCursos'),
         'cursoJavascript' => array('controller' =>'Controller', 'action' =>'cCursoJavascript'),

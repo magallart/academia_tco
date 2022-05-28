@@ -19,7 +19,7 @@ function cValidarDatos($nombre, $apellidos, $email, $fNacimiento, $direccion, $c
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $error = TRUE;
-        $_SESSION['erroresRegistro']['email'] = "El email introducido no es válido.";
+        $_SESSION['erroresValidacion']['email'] = "El email introducido no es válido.";
     }
 
     if (!cDireccion($direccion, "direccion", 150, 1, " ", "i")) {
@@ -97,7 +97,7 @@ function cValidarImagenPerfil(string $nombre, string $apellidos, string $campo)
 
         // Comprobamos la extensión del archivo dentro de la lista que hemos definido al principio
         if (!in_array($extension, $extensionesValidas)) {
-            $_SESSION['erroresRegistro'][$campo] = "La extensión del archivo no es válida.";
+            $_SESSION['erroresValidacion'][$campo] = "La extensión del archivo no es válida.";
             return FALSE;
         }
 
@@ -106,7 +106,7 @@ function cValidarImagenPerfil(string $nombre, string $apellidos, string $campo)
         if (move_uploaded_file($directorioTemp, $rutaUsuario)) {
             return TRUE;
         } else {
-            $_SESSION['erroresRegistro'][$campo] = "Error: No se ha podido subir la imagen.";
+            $_SESSION['erroresValidacion'][$campo] = "Error: No se ha podido subir la imagen.";
             return FALSE;
         }
     }
@@ -130,7 +130,7 @@ function cValidarContacto($nombre, $asunto, $email, $mensaje)
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $error = TRUE;
-        $_SESSION['erroresRegistro']['email'] = "El email introducido no es válido.";
+        $_SESSION['erroresValidacion']['email'] = "El email introducido no es válido.";
     }
 
     if (!cTexto($mensaje, "apellidos", 150, 1, " ", "i")) {
@@ -144,6 +144,31 @@ function cValidarContacto($nombre, $asunto, $email, $mensaje)
         return TRUE;
     }
 }
+
+/*
+        ·Esta función valida los datos del formulario de Newsletter
+    */
+
+    function cValidarNewsletter($nombre, $email)
+    {
+        $error = FALSE;
+    
+        if (!cTexto($nombre, "nombre", 150, 1, " ", "i")) {
+            $error = TRUE;
+        }
+    
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $error = TRUE;
+            $_SESSION['erroresValidacion']['email'] = "El email introducido no es válido.";
+        }
+        
+    
+        if ($error) {
+            return FALSE;
+        } else {
+            return TRUE;
+        }
+    }
 
 function recoge($var)
 {
@@ -208,7 +233,7 @@ function cTexto(string $text, string $campo, int $max = 150, int $min = 1, strin
     if ((preg_match("/[A-Za-zÑñ$espacios]{" . $min . "," . $max . "}$/u$case", sinTildes($text)))) {
         return TRUE;
     } else {
-        $_SESSION['erroresRegistro'][$campo] = "El campo $campo no es válido.";
+        $_SESSION['erroresValidacion'][$campo] = "El campo $campo no es válido.";
         return FALSE;
     }
 }
@@ -218,7 +243,7 @@ function cPassword(string $text, string $campo, int $max = 150, int $min = 1, st
     if ((preg_match("/[A-Za-zÑñ0-9*_-$espacios]{" . $min . "," . $max . "}$/u$case", sinTildes($text)))) {
         return TRUE;
     } else {
-        $_SESSION['erroresRegistro'][$campo] = "El campo $campo no es válido.";
+        $_SESSION['erroresValidacion'][$campo] = "El campo $campo no es válido.";
         return FALSE;
     }
 }
@@ -228,7 +253,7 @@ function cNumero(string $text, string $campo, int $max = 8, int $min = 1, string
     if ((preg_match("/[0-9$espacios]{" . $min . "," . $max . "}$/u", $text))) {
         return TRUE;
     } else {
-        $_SESSION['erroresRegistro'][$campo] = "El campo $campo no es válido.";
+        $_SESSION['erroresValidacion'][$campo] = "El campo $campo no es válido.";
         return FALSE;
     }
 }
@@ -238,7 +263,7 @@ function cDireccion(string $text, string $campo, int $max = 150, int $min = 1, s
     if ((preg_match("/[A-Za-zÑñ0-9-,$espacios]{" . $min . "," . $max . "}$/u$case", sinTildes($text)))) {
         return TRUE;
     } else {
-        $_SESSION['erroresRegistro'][$campo] = "La dirección no es válida.";
+        $_SESSION['erroresValidacion'][$campo] = "La dirección no es válida.";
         return FALSE;
     }
 }
@@ -255,7 +280,7 @@ function cFecha(string $text, string $campo, string $formato = "0")
                     $_SESSION['fechaBD'] = $arrayFecha[2] . "/" . $arrayFecha[1] . "/" . $arrayFecha[0];
                     return TRUE;
                 } else {
-                    $_SESSION['erroresRegistro'][$campo] = "Fecha incorrecta";
+                    $_SESSION['erroresValidacion'][$campo] = "Fecha incorrecta";
                     return FALSE;
                 }
                 break;
@@ -265,7 +290,7 @@ function cFecha(string $text, string $campo, string $formato = "0")
                     $_SESSION['fechaBD'] = $arrayFecha[2] . "/" . $arrayFecha[1] . "/" . $arrayFecha[0];
                     return TRUE;
                 } else {
-                    $_SESSION['erroresRegistro'][$campo] = "Fecha incorrecta";
+                    $_SESSION['erroresValidacion'][$campo] = "Fecha incorrecta";
                     return FALSE;
                 }
                 break;
@@ -275,17 +300,17 @@ function cFecha(string $text, string $campo, string $formato = "0")
                     $_SESSION['fechaBD'] = $arrayFecha[2] . "/" . $arrayFecha[1] . "/" . $arrayFecha[0];
                     return TRUE;
                 } else {
-                    $_SESSION['erroresRegistro'][$campo] = "Fecha incorrecta";
+                    $_SESSION['erroresValidacion'][$campo] = "Fecha incorrecta";
                     return FALSE;
                 }
                 break;
 
             default:
-                $_SESSION['erroresRegistro'][$campo] = "Fecha no válida.";
+                $_SESSION['erroresValidacion'][$campo] = "Fecha no válida.";
                 return FALSE;
         }
     } else {
-        $_SESSION['erroresRegistro'][$campo] = "Faltan datos en la fecha.";
+        $_SESSION['erroresValidacion'][$campo] = "Faltan datos en la fecha.";
         return FALSE;
     }
 }

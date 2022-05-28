@@ -51,16 +51,16 @@
 
 <?php
 
-// Foreach que muestra los errrores al macenados en $_SESSION['errores'] guardados cuando se han validado los campos del formulario
+// Foreach que muestra los errrores al macenados en $_SESSION['erroresValidacion'] guardados cuando se han validado los campos del formulario
 
-if (isset($_SESSION['errores'])) {
+if (isset($_SESSION['erroresValidacion'])) {
     echo "<div class='errores'>";
-    foreach ($_SESSION['errores'] as $error) {
+    foreach ($_SESSION['erroresValidacion'] as $error) {
         echo "<p>$error</p>";
     }
     echo "</div>";
 }
-unset($_SESSION['errores']);
+unset($_SESSION['erroresValidacion']);
 ?>
 
 <?php $contenido = ob_get_clean() ?>
