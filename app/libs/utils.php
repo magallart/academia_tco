@@ -414,3 +414,25 @@ function buscarValorEnArrayMultidimensional($name, $array, $campo)
     }
     return false;
 }
+
+
+/*
+        · Este método nos sirve para conseguir la id del curso al que está aputado un usuario.
+        · Los alumnos pueden no estar apuntados a todos los cursos y en el array salen por orden.
+    */
+
+    function menuWeb($nivel)
+    {
+        if ($nivel== 1) {
+            $menu = 'menuLogin.php';
+            return $menu;
+        } 
+
+        if ($nivel == 2) {
+            $menu = 'menuAdmin.php';
+            return $menu;
+        } 
+    }
+
+
+

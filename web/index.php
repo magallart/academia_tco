@@ -26,7 +26,6 @@
         'cursoAngular' => array('controller' =>'Controller', 'action' =>'cCursoAngular'),
         'cursoReact' => array('controller' =>'Controller', 'action' =>'cCursoReact'),
         'cursoGit' => array('controller' =>'Controller', 'action' =>'cCursoGit'),
-        'misCursos' => array('controller' =>'Controller', 'action' =>'cMisCursos'),
         'contacto' => array('controller' =>'Controller', 'action' =>'cContacto'),
         'iniciarSesion' => array('controller' =>'Controller', 'action' =>'cIniciarSesion'),
         'registro' => array('controller' =>'Controller', 'action' =>'cRegistro'),
@@ -38,6 +37,7 @@
         'politicaCookies' => array('controller' =>'Controller', 'action' =>'cPoliticaCookies'),
         'avisosLegales' => array('controller' =>'Controller', 'action' =>'cAvisosLegales'),
         '404' => array('controller' =>'Controller', 'action' =>'c404'),
+        'panelAdministracion' => array('controller' =>'Controller', 'action' =>'cPanelAdministracion'),
     );
 
     /*

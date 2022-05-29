@@ -32,8 +32,8 @@ class Controller
             header('Location: index.php?ctl=error');
         }
 
-        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
-            $menu = 'menuLogin.php';
+        if (isset($_SESSION['nivel'])) {
+            $menu = menuWeb($_SESSION['nivel']);
         } else {
             $menu = 'menu.php';
         }
@@ -55,8 +55,8 @@ class Controller
     public function cNewsletter()
     {
         header('refresh:3;url=index.php?ctl=inicio');
-        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
-            $menu = 'menuLogin.php';
+        if (isset($_SESSION['nivel'])) {
+            $menu = menuWeb($_SESSION['nivel']);
         } else {
             $menu = 'menu.php';
         }
@@ -66,8 +66,8 @@ class Controller
     // Muestra el contenido de /templates/cursos.php
     public function cCursos()
     {
-        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
-            $menu = 'menuLogin.php';
+        if (isset($_SESSION['nivel'])) {
+            $menu = menuWeb($_SESSION['nivel']);
         } else {
             $menu = 'menu.php';
         }
@@ -130,8 +130,8 @@ class Controller
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
             header('Location: index.php?ctl=error');
         } {
-            if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
-                $menu = 'menuLogin.php';
+            if (isset($_SESSION['nivel'])) {
+                $menu = menuWeb($_SESSION['nivel']);
                 require __DIR__ . '/../templates/cursoJavascriptR.php';
             } else {
                 $menu = 'menu.php';
@@ -195,13 +195,13 @@ class Controller
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
             header('Location: index.php?ctl=error');
         } {
-            if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
-                $menu = 'menuLogin.php';
+            if (isset($_SESSION['nivel'])){
+                $menu = menuWeb ($_SESSION['nivel']);
                 require __DIR__ . '/../templates/cursoAngularR.php';
-            } else {
-                $menu = 'menu.php';
-                require __DIR__ . '/../templates/cursoAngularU.php';
-            }
+            }  else {
+                $menu = 'menu.php';   
+                require __DIR__ . '/../templates/cursoAngularU.php';  
+            } 
         }
     }
 
@@ -260,13 +260,13 @@ class Controller
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
             header('Location: index.php?ctl=error');
         } {
-            if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
-                $menu = 'menuLogin.php';
+            if (isset($_SESSION['nivel'])){
+                $menu = menuWeb ($_SESSION['nivel']);
                 require __DIR__ . '/../templates/cursoReactR.php';
-            } else {
-                $menu = 'menu.php';
+            }  else {
+                $menu = 'menu.php';   
                 require __DIR__ . '/../templates/cursoReactU.php';
-            }
+            } 
         }
     }
 
@@ -325,25 +325,14 @@ class Controller
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
             header('Location: index.php?ctl=error');
         } {
-            if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
-                $menu = 'menuLogin.php';
+            if (isset($_SESSION['nivel'])){
+                $menu = menuWeb ($_SESSION['nivel']);
                 require __DIR__ . '/../templates/cursoGitR.php';
-            } else {
-                $menu = 'menu.php';
+            }  else {
+                $menu = 'menu.php';   
                 require __DIR__ . '/../templates/cursoGitU.php';
-            }
+            } 
         }
-    }
-
-    // Muestra el contenido de /templates/misCursos.php
-    public function cMisCursos()
-    {
-        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
-            $menu = 'menuLogin.php';
-        } else {
-            $menu = 'menu.php';
-        }
-        require __DIR__ . '/../templates/misCursos.php';
     }
 
     // Muestra el contenido de /templates/contacto.php
@@ -368,8 +357,8 @@ class Controller
             header('Location: index.php?ctl=error');
         }
 
-        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
-            $menu = 'menuLogin.php';
+        if (isset($_SESSION['nivel'])) {
+            $menu = menuWeb($_SESSION['nivel']);
         } else {
             $menu = 'menu.php';
         }
@@ -422,8 +411,8 @@ class Controller
             header('Location: index.php?ctl=error');
         }
 
-        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
-            $menu = 'menuLogin.php';
+        if (isset($_SESSION['nivel'])) {
+            $menu = menuWeb($_SESSION['nivel']);
         } else {
             $menu = 'menu.php';
         }
@@ -490,8 +479,8 @@ class Controller
             header('Location: index.php?ctl=error');
         }
 
-        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
-            $menu = 'menuLogin.php';
+        if (isset($_SESSION['nivel'])) {
+            $menu = menuWeb($_SESSION['nivel']);
         } else {
             $menu = 'menu.php';
         }
@@ -518,8 +507,8 @@ class Controller
             header('Location: index.php?ctl=error');
         }
 
-        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
-            $menu = 'menuLogin.php';
+        if (isset($_SESSION['nivel'])) {
+            $menu = menuWeb($_SESSION['nivel']);
         } else {
             $menu = 'menu.php';
         }
@@ -531,8 +520,8 @@ class Controller
     {
         session_unset();
         header('refresh:3;url=index.php?ctl=inicio');
-        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
-            $menu = 'menuLogin.php';
+        if (isset($_SESSION['nivel'])) {
+            $menu = menuWeb($_SESSION['nivel']);
         } else {
             $menu = 'menu.php';
         }
@@ -608,8 +597,8 @@ class Controller
                 require __DIR__ . '/../templates/perfil.php';
             }
         } else {
-            if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
-                $menu = 'menuLogin.php';
+            if (isset($_SESSION['nivel'])) {
+                $menu = menuWeb($_SESSION['nivel']);
             } else {
                 $menu = 'menu.php';
             }
@@ -623,8 +612,8 @@ class Controller
     {
         header('refresh:3;url=index.php?ctl=perfil');
 
-        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
-            $menu = 'menuLogin.php';
+        if (isset($_SESSION['nivel'])) {
+            $menu = menuWeb($_SESSION['nivel']);
         } else {
             $menu = 'menu.php';
         }
@@ -634,8 +623,8 @@ class Controller
     // Muestra el contenido de /templates/politicaPrivacidad.php
     public function cPoliticaPrivacidad()
     {
-        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
-            $menu = 'menuLogin.php';
+        if (isset($_SESSION['nivel'])) {
+            $menu = menuWeb($_SESSION['nivel']);
         } else {
             $menu = 'menu.php';
         }
@@ -645,8 +634,8 @@ class Controller
     // Muestra el contenido de /templates/politicaCookies.php
     public function cPoliticaCookies()
     {
-        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
-            $menu = 'menuLogin.php';
+        if (isset($_SESSION['nivel'])) {
+            $menu = menuWeb($_SESSION['nivel']);
         } else {
             $menu = 'menu.php';
         }
@@ -656,8 +645,8 @@ class Controller
     // Muestra el contenido de /templates/avisosLegales.php
     public function cAvisosLegales()
     {
-        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
-            $menu = 'menuLogin.php';
+        if (isset($_SESSION['nivel'])) {
+            $menu = menuWeb($_SESSION['nivel']);
         } else {
             $menu = 'menu.php';
         }
@@ -667,11 +656,22 @@ class Controller
     // Muestra el contenido de /templates/404.php
     public function c404()
     {
-        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
-            $menu = 'menuLogin.php';
+        if (isset($_SESSION['nivel'])) {
+            $menu = menuWeb($_SESSION['nivel']);
         } else {
             $menu = 'menu.php';
         }
         require __DIR__ . '/../templates/404.php';
+    }
+
+    // Muestra el contenido de /templates/404.php
+    public function cPanelAdministracion()
+    {
+        if (isset($_SESSION['nivel'])) {
+            $menu = menuWeb($_SESSION['nivel']);
+        } else {
+            $menu = 'menu.php';
+        }
+        require __DIR__ . '/../templates/panelAdministracion.php';
     }
 }
