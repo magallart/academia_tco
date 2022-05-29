@@ -118,74 +118,73 @@
 </section>
 
 <?php
-$temasTerminados = 0;
-$nombreCurso = $_GET['ctl'];
-foreach ($_SESSION['cursos'] as $curso) {
-    if ($curso['nombre'] == 'JavaScript' && $nombreCurso == 'cursoJavascript') {
-        $idCursoPagina = 0;
-    }
-
-    if ($curso['nombre'] == 'Angular' && $nombreCurso == 'cursoAngular') {
-        $idCursoPagina = 1;
-    }
-
-    if ($curso['nombre'] == 'React' && $nombreCurso == 'cursoReact') {
-        $idCursoPagina = 2;
-    }
-
-    if ($curso['nombre'] == 'Git' && $nombreCurso == 'cursoGit') {
-        $idCursoPagina = 3;
-    }
-}
-
-
-$idCursoArrayCursosUsuario = array_search('React', array_column($_SESSION['cursos'], 'nombre'));
-
-
-if (!buscarValorEnArrayMultidimensional('React', $_SESSION['cursos'], 'nombre')) {
-    $cursoAputadoUsuario = false;
-} else {
-    $cursoAputadoUsuario = true;
-}
-
-if ($cursoAputadoUsuario) {
-    $temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
-}
-
-$u = new Usuarios();
-$finalCursoUsuario = $u->estadoCursoUsuario($_SESSION['idUsuario'], $_SESSION['cursos'][$idCursoArrayCursosUsuario]['id']);
-
-if ($_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'] == 0 || $_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'] > 0) {
-    $temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
-} else {
+if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
     $temasTerminados = 0;
-}
+    $nombreCurso = $_GET['ctl'];
+    foreach ($_SESSION['cursos'] as $curso) {
+        if ($curso['nombre'] == 'JavaScript' && $nombreCurso == 'cursoJavascript') {
+            $idCursoPagina = 0;
+        }
 
-if (!$finalCursoUsuario && $cursoAputadoUsuario &&  $temasTerminados > 0) {
-    echo "<div class='estadoCurso'>";
-    echo "<a class='boton' href='index.php?ctl=cursoReact#tema" . $temasTerminados . "'>Seguir con el curso <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
-    echo "</div>";
-}
+        if ($curso['nombre'] == 'Angular' && $nombreCurso == 'cursoAngular') {
+            $idCursoPagina = 1;
+        }
 
-if ($finalCursoUsuario) {
-    echo "<div class='estadoCurso'>";
-    echo "<p>¡Enhorabuena! Has completado todos los temas del curso de React, ¿quieres hacer otro curso?.</p>";
-    echo "<a class='boton' href='index.php?ctl=cursos'>Ver todos los cursos <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
-    echo "</div>";
-}
+        if ($curso['nombre'] == 'React' && $nombreCurso == 'cursoReact') {
+            $idCursoPagina = 2;
+        }
 
-if (!$cursoAputadoUsuario) {
-    echo '<form name="formEmpezarCurso" action="" method="POST" enctype="multipart/form-data">';
-    echo '<input type="submit" value="Empezar curso" name="empezarCurso" class="boton" />';
-    echo '</form>';
-}
+        if ($curso['nombre'] == 'Git' && $nombreCurso == 'cursoGit') {
+            $idCursoPagina = 3;
+        }
+    }
 
-if (!$finalCursoUsuario && $cursoAputadoUsuario && $temasTerminados === 0) {
-    echo "<div class='estadoCurso'>";
-    echo "<a class='boton' href='index.php?ctl=cursoReact#tema1'>Seguir con el curso <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
-    echo "</div>";
-}
+    $idCursoArrayCursosUsuario = array_search('React', array_column($_SESSION['cursos'], 'nombre'));
 
+    if (!buscarValorEnArrayMultidimensional('React', $_SESSION['cursos'], 'nombre')) {
+        $cursoAputadoUsuario = false;
+    } else {
+        $cursoAputadoUsuario = true;
+    }
+
+    if ($cursoAputadoUsuario) {
+        $temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
+    }
+
+    $u = new Usuarios();
+    $finalCursoUsuario = $u->estadoCursoUsuario($_SESSION['idUsuario'], $_SESSION['cursos'][$idCursoArrayCursosUsuario]['id']);
+
+    if ($_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'] == 0 || $_SESSION['cursos'][$idCursoArrayCursosUsuario]['id'] > 0) {
+        $temasTerminados = $_SESSION['cursos'][$idCursoArrayCursosUsuario]['temasTerminados'];
+    } else {
+        $temasTerminados = 0;
+    }
+
+    if (!$finalCursoUsuario && $cursoAputadoUsuario &&  $temasTerminados > 0) {
+        echo "<div class='estadoCurso'>";
+        echo "<a class='boton' href='index.php?ctl=cursoReact#tema" . $temasTerminados . "'>Seguir con el curso <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
+        echo "</div>";
+    }
+
+    if ($finalCursoUsuario) {
+        echo "<div class='estadoCurso'>";
+        echo "<p>¡Enhorabuena! Has completado todos los temas del curso de React, ¿quieres hacer otro curso?.</p>";
+        echo "<a class='boton' href='index.php?ctl=cursos'>Ver todos los cursos <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
+        echo "</div>";
+    }
+
+    if (!$cursoAputadoUsuario) {
+        echo '<form name="formEmpezarCurso" action="" method="POST" enctype="multipart/form-data">';
+        echo '<input type="submit" value="Empezar curso" name="empezarCurso" class="boton" />';
+        echo '</form>';
+    }
+
+    if (!$finalCursoUsuario && $cursoAputadoUsuario && $temasTerminados === 0) {
+        echo "<div class='estadoCurso'>";
+        echo "<a class='boton' href='index.php?ctl=cursoReact#tema1'>Seguir con el curso <ion-icon name='arrow-forward-circle-outline'></ion-icon></a>";
+        echo "</div>";
+    }
+}
 ?>
 
 <section>
@@ -421,12 +420,11 @@ if (!$finalCursoUsuario && $cursoAputadoUsuario && $temasTerminados === 0) {
         </div>
         <div class="row">
             <div class="col">
-                <form name="formEnviarMensaje" action="" method="POST" enctype="multipart/form-data">
-                    <textarea rows="5" placeholder="Escribe tu mensaje (máximo 255 caracteres)..." name="nuevoMensaje"></textarea>
-                    <input type="checkbox" name="aceptacionPoliticas" id="checkPoliticas">
-                    <label>He leído y acepto las <a href="index.php?ctl=politicaPrivacidad" target="_blank">Políticas de Privacidad</a>.</label>
-                    <input type="submit" value="Enviar mensaje" name="enviarMensaje" class="boton" />
-                </form>
+                <?php
+                if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
+                    mensajeUsuarioCurso($_SESSION['emailUsuario'], $_SESSION['mensajesCursoReact'], 'email');
+                }                
+                ?>
             </div>
         </div>
     </div>

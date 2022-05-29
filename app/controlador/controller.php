@@ -559,7 +559,6 @@ class Controller
                 $infoUsuario['mensajes'] = $u->getMensajesUsuario($idUsuario);
                 $_SESSION['mensajes'] = $infoUsuario['mensajes'];
 
-
                 if (isset($_POST['actualizarDatos'])) {
                     //TODO Falta validar los datos
                     $nombre = $_REQUEST['nombre'] ? recoge('nombre') : $_SESSION['nombreUsuario'];
@@ -592,16 +591,24 @@ class Controller
                 error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
                 header('Location: index.php?ctl=error');
             }
+            
             if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
                 $menu = 'menuLogin.php';
                 require __DIR__ . '/../templates/perfil.php';
             }
-        } else {
+        } 
+        
+        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 2){
             if (isset($_SESSION['nivel'])) {
                 $menu = menuWeb($_SESSION['nivel']);
             } else {
                 $menu = 'menu.php';
             }
+            require __DIR__ . '/../templates/perfilAdmin.php';
+        }
+
+        if (!isset($_SESSION['nivel'])){
+            $menu = 'menu.php';
             require __DIR__ . '/../templates/perfilUsuarioNoregistrado.php';
         }
     }

@@ -29,12 +29,12 @@
 
 
 		<?php // TODO Eliminar el print_r
-		// echo "<div class='pruebaSesion'>";
-		// echo "||||||||||| SESSION |||||||||||";
-		// echo "<pre>";
-		// print_r($_SESSION);
-		// echo "</pre>";
-		// echo "</div>";
+		 echo "<div class='pruebaSesion'>";
+		 echo "||||||||||| SESSION |||||||||||";
+		 echo "<pre>";
+		 print_r($_SESSION);
+		 echo "</pre>";
+		 echo "</div>";
 		// echo "<div class='pruebaSesion'>";
 		// echo "||||||||||| POST |||||||||||";
 		// echo "<pre>";
