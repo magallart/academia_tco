@@ -88,7 +88,7 @@
                 <div class="card mb-3 mx-md-auto text-md-start text-sm-center">
                     <div class="row g-0">
                         <div class="col-md-4 col-sm-4 col-4">
-                            <img src="../../img/usuarios/marisa-lopez-nieto.jpg" class="img-fluid rounded-start" alt="...">
+                            <img src="../../img/usuarios/marisa-lopez-nieto2.jpg" class="img-fluid rounded-start" alt="...">
                         </div>
                         <div class="col-md-8 col-sm-8 col-8">
                             <div class="card-body">
@@ -111,7 +111,7 @@
                 <div class="card mb-3 mx-md-auto text-md-start text-sm-center">
                     <div class="row g-0">
                         <div class="col-md-4 col-sm-4 col-4">
-                            <img src="../../img/usuarios/susana-fonseca-albert.jpg" class="img-fluid rounded-start" alt="...">
+                            <img src="../../img/usuarios/susana-fonseca-albert2.jpg" class="img-fluid rounded-start" alt="...">
                         </div>
                         <div class="col-md-8 col-sm-8 col-8">
                             <div class="card-body">
@@ -136,7 +136,7 @@
                 <div class="card mb-3 mx-md-auto text-md-start text-sm-center">
                     <div class="row g-0">
                         <div class="col-md-4 col-sm-4 col-4">
-                            <img src="../../img/usuarios/pedro-helenos-pons.jpg" class="img-fluid rounded-start" alt="...">
+                            <img src="../../img/usuarios/pedro-helenos-pons2.jpg" class="img-fluid rounded-start" alt="...">
                         </div>
                         <div class="col-md-8 col-sm-8 col-8">
                             <div class="card-body">
@@ -159,7 +159,7 @@
                 <div class="card mb-3 mx-md-auto text-md-start text-sm-center">
                     <div class="row g-0">
                         <div class="col-md-4 col-sm-4 col-4">
-                            <img src="../../img/usuarios/marcos-alfonso.jpg" class="img-fluid rounded-start" alt="...">
+                            <img src="../../img/usuarios/marcos-alfonso2.jpg" class="img-fluid rounded-start" alt="...">
                         </div>
                         <div class="col-md-8 col-sm-8 col-8">
                             <div class="card-body">
@@ -184,7 +184,7 @@
                 <div class="card mb-3 mx-md-auto text-md-start text-sm-center">
                     <div class="row g-0">
                         <div class="col-md-4 col-sm-4 col-4">
-                            <img src="../../img/usuarios/luis-benavent.jpg" class="img-fluid rounded-start" alt="...">
+                            <img src="../../img/usuarios/luis-benavent2.jpg" class="img-fluid rounded-start" alt="...">
                         </div>
                         <div class="col-md-8 col-sm-8 col-8">
                             <div class="card-body">
@@ -207,7 +207,7 @@
                 <div class="card mb-3 mx-md-auto text-md-start text-sm-center">
                     <div class="row g-0">
                         <div class="col-md-4 col-sm-4 col-4">
-                            <img src="../../img/usuarios/marta-buenafuente.jpg" class="img-fluid rounded-start" alt="...">
+                            <img src="../../img/usuarios/marta-buenafuente2.jpg" class="img-fluid rounded-start" alt="...">
                         </div>
                         <div class="col-md-8 col-sm-8 col-8">
                             <div class="card-body">
