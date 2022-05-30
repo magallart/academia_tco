@@ -14,6 +14,7 @@
 .panel-administracion table.alumnosATCO {
   table-layout: fixed;
   width: 100%;
+  margin-bottom: 50px;
 }
 
 .panel-administracion .alumnosATCO td {
@@ -41,12 +42,27 @@
 }
 
 .panel-administracion .alumnosATCO td.nombreAlumno {
-  width: 35%;
+  width: 30%;
   padding-left: 10px;
 }
 
+.panel-administracion .alumnosATCO td.direccionAlumno {
+  width: 30%;
+  padding-left: 10px;
+}
+
+.panel-administracion .alumnosATCO td.localidadAlumno {
+  width: 10%;
+  text-align: center;
+}
+
+.panel-administracion .alumnosATCO td.cPostalAlumno {
+  width: 10%;
+  text-align: center;
+}
+
 .panel-administracion .alumnosATCO td.emailAlumno {
-  width: 27%;
+  width: 25%;
   padding-left: 10px;
 }
 
@@ -56,7 +72,108 @@
   color: var(--color1);
 }
 
-.panel-administracion .alumnosATCO ion-icon  {
-    font-size: 1.7rem;
-    color: var(--color1);
+.panel-administracion .alumnosATCO ion-icon {
+  font-size: 1.7rem;
+  color: var(--color1);
+  pointer-events: none;
+}
+
+@media (max-width: 991px) {
+  .panel-administracion .alumnosATCO td.direccionAlumno, .panel-administracion .alumnosATCO td.cPostalAlumno {
+    display: none;
   }
+}
+
+@media (max-width: 767px) {
+  .panel-administracion .alumnosATCO img {
+    width: 30px;
+  }
+
+  .panel-administracion .alumnosATCO td.localidadAlumno {
+    display: none;
+  }
+}
+
+/* Tabla mensajes */
+.panel-administracion table.mensajesATCO {
+  table-layout: fixed;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.panel-administracion .mensajesATCO td {
+  height: 60px;
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+}
+
+.panel-administracion .mensajesATCO tr:nth-child(even) {
+  background-color: rgb(238, 237, 237);
+}
+
+.panel-administracion .mensajesATCO td.idMensaje {
+  width: 5%;
+  text-align: center;
+}
+
+.panel-administracion .mensajesATCO td.alumnoMensaje {
+  width: 5%;
+  text-align: center;
+}
+
+.panel-administracion .mensajesATCO td.alumnoMensaje img {
+  width: 50px;
+}
+
+.panel-administracion .mensajesATCO td.cursoMensaje {
+  width: 5%;
+  text-align: center;
+}
+
+.panel-administracion .mensajesATCO td.cursoMensaje img {
+  width: 50px;
+}
+
+.panel-administracion .mensajesATCO td.nombreMensaje {
+  width: 15%;
+  padding: 10px;
+}
+
+.panel-administracion .mensajesATCO td.mensajeMensaje {
+  width: 40%;
+  padding: 0 10px;
+  line-height: 1.4rem;
+}
+
+.panel-administracion .mensajesATCO td.borrarMensajeAlumno {
+  width: 5%;
+  text-align: center;
+  color: var(--color1);
+  position: relative;
+}
+
+.panel-administracion .mensajesATCO ion-icon {
+  font-size: 1.7rem;
+  color: var(--color1);
+  pointer-events: none;
+}
+
+@media (max-width: 991px) {
+  .panel-administracion .mensajesATCO td.direccionAlumno, .panel-administracion .mensajesATCO td.cPostalAlumno {
+    display: none;
+  }
+
+  .panel-administracion .mensajesATCO td.alumnoMensaje img, .panel-administracion .mensajesATCO td.cursoMensaje img{
+    width: 35px;
+  }
+}
+
+@media (max-width: 767px) {
+  .panel-administracion .mensajesATCO td.alumnoMensaje img, .panel-administracion .mensajesATCO td.cursoMensaje img {    
+    width: 30px;
+  }
+
+  .panel-administracion .mensajesATCO td.nombreMensaje {
+    display: none;
+  }
+}

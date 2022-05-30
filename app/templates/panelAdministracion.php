@@ -96,15 +96,15 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-6 col-md-12 col-sm-12">
+            <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="">
                     <h2>Usuarios</h2>
                     <?php
-                    $_SESION['alumnos'] = $a->mostrarAlumnos();
+                    $_SESSION['alumnos'] = $a->mostrarAlumnos();
 
                     echo "<table border='1' class='alumnosATCO'>";
 
-                    foreach($_SESION['alumnos'] as $alumno) {
+                    foreach($_SESSION['alumnos'] as $alumno) {
                         echo "<tr>";
                         echo "<td class='idAlumno'>";
                         echo $alumno['id'];
@@ -118,6 +118,15 @@
                         echo "<td  class='emailAlumno'>";
                         echo $alumno['email'];
                         echo "</td>";
+                        echo "<td  class='direccionAlumno'>";
+                        echo $alumno['direccion'];
+                        echo "</td>";
+                        echo "<td  class='localidadAlumno'>";
+                        echo $alumno['localidad'];
+                        echo "</td>";
+                        echo "<td  class='cPostalAlumno'>";
+                        echo $alumno['cPostal'];
+                        echo "</td>";
                         echo "<td  class='verAlumno'>";
                         echo "<a href='index.php?ctl=perfilAlumno&id=". $alumno['id'] ."'><ion-icon name='chevron-forward-circle'></ion-icon></a>";
                         echo "</td>";
@@ -127,9 +136,59 @@
                     ?>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-12 col-sm-12">
-                <div class="estadisticas">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="">
                     <h2>Mensajes</h2>
+                    <?php
+                    $_SESION['mensajesAlumnos'] = $a->mostrarMensajes();
+
+                    echo "<table border='1' class='mensajesATCO'>";
+
+                    foreach($_SESION['mensajesAlumnos'] as $mensaje) {
+                        echo "<tr>";
+                        echo "<td class='idMensaje'>";
+                        echo $mensaje['id'];
+                        echo "</td>";
+                        echo "<td class='alumnoMensaje'>";
+                        echo "<img src='/img" . $mensaje['fPerfil'] . "' loading='lazy'>";
+                        echo "</td>";
+                        echo "<td class='cursoMensaje'>";
+                        switch ($mensaje["id_curso"]) {
+                            case 0:
+                                echo "<span class='tituloCurso'>";
+                                echo "<img src='../../img/logo-js-png.png' alt='Logo JavaScript'>";
+                                echo "</span>";
+                                break;
+                            case 1:
+                                echo "<span class='tituloCurso'>";
+                                echo "<img src='../../img/logo-angular-png.png' alt='Logo Angular'>";
+                                echo "</span>";
+                                break;
+                            case 2:
+                                echo "<span class='tituloCurso'>";
+                                echo "<img src='../../img/logo-react-png.png' alt='Logo React'>";
+                                echo "</span>";
+                                break;
+                            case 3:
+                                echo "<span class='tituloCurso'>";
+                                echo "<img src='../../img/logo-git-png.png' alt='Logo Git'>";
+                                echo "</span>";
+                                break;
+                        }
+                        echo "</td>";
+                        echo "<td class='nombreMensaje'>";
+                        echo $mensaje['nombre'] . " " . $mensaje['apellidos'];
+                        echo "</td>";
+                        echo "<td class='mensajeMensaje'>";
+                        echo $mensaje['mensaje'];
+                        echo "</td>";
+                        echo "<td class='borrarMensajeAlumno'>";
+                        echo "<a href='index.php?ctl=perfilAlumno&id=". $mensaje['id'] ."' alt='Eliminar mensaje'><ion-icon name='trash-outline'></ion-icon></a>";
+                        echo "</td>";
+                        echo "</tr>";
+                    }
+                    echo "</table>";
+                    ?>
                 </div>
             </div>
         </div>

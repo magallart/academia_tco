@@ -80,6 +80,16 @@ class Admin extends Modelo
         return $result->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    /*
+        · Este método ejecuta un select de todos los mensajes enviados por alumnos y se guarda el resultado en un array.
+    */
+    public function mostrarMensajes() {
+        $consulta = "select usuarios.nombre, usuarios.apellidos, usuarios.email, usuarios.fPerfil, mensajes.id, mensajes.id_curso, mensajes.mensaje from `usuarios` inner join `mensajes` on usuarios.id = mensajes.id_usuario";
+        
+        $result = $this->conexion->query($consulta);
+        return $result->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 }
 
 
