@@ -1,7 +1,9 @@
 header img.fotoPerfilUsuario {
-  height: 250px;
-  width: auto;
-  border-radius: 100%;
+  height: auto;
+  width: 250px;
+  border-radius: 250px;
+  margin-top: -10px;
+  margin-bottom: 20px;
 }
 
 .perfil h2 {
