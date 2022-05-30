@@ -90,6 +90,18 @@ class Admin extends Modelo
         return $result->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    /*
+        · Este método borra un mensaje de la tabla mensajes
+    */
+    public function borrarMensaje($id) {
+        $consulta = "delete from mensajes where id = :idMensaje";
+        $result = $this->conexion->prepare($consulta);
+        $result->bindParam(':idMensaje', $id);
+        $result->execute();
+
+        return $result;
+    }
+
 }
 
 

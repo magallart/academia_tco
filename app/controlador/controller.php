@@ -776,6 +776,11 @@ class Controller
             $a = new Admin();
             $_SESSION['alumnos'] = $a->mostrarAlumnos();
             $_SESSION['mensajesAlumnos'] = $a->mostrarMensajes();
+
+            if (isset($_POST['borrarMensaje'])) {
+                $idMensaje = recoge('idMensaje');
+                $a->borrarMensaje($idMensaje);
+            }
         } catch (Exception $e) {
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logException.txt");
             header('Location: index.php?ctl=error');

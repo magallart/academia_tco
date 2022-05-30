@@ -158,6 +158,11 @@
   pointer-events: none;
 }
 
+.panel-administracion .mensajesATCO button[type="submit"]{
+  border: none;
+  background-color: transparent;
+}
+
 @media (max-width: 991px) {
   .panel-administracion .mensajesATCO td.direccionAlumno, .panel-administracion .mensajesATCO td.cPostalAlumno {
     display: none;

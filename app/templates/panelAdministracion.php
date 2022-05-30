@@ -76,7 +76,7 @@
                 <div class="estadisticas">
                     <h2>Usuarios newsletter</h2>
                     <div class="datos-administracion">
-                    <?php
+                        <?php
                         $usuariosNewsletter = $a->usuariosNewsletter();
                         echo $usuariosNewsletter;
                         ?>
@@ -87,7 +87,7 @@
                 <div class="estadisticas">
                     <h2>Mensajes usuarios</h2>
                     <div class="datos-administracion">
-                    <?php
+                        <?php
                         $mensajesTotales = $a->mensajesTotales();
                         echo $mensajesTotales;
                         ?>
@@ -104,7 +104,7 @@
 
                     echo "<table border='1' class='alumnosATCO'>";
 
-                    foreach($_SESSION['alumnos'] as $alumno) {
+                    foreach ($_SESSION['alumnos'] as $alumno) {
                         echo "<tr>";
                         echo "<td class='idAlumno'>";
                         echo $alumno['id'];
@@ -128,7 +128,7 @@
                         echo $alumno['cPostal'];
                         echo "</td>";
                         echo "<td  class='verAlumno'>";
-                        echo "<a href='index.php?ctl=perfilAlumno&id=". $alumno['id'] ."'><ion-icon name='chevron-forward-circle'></ion-icon></a>";
+                        echo "<a href='index.php?ctl=perfilAlumno&id=" . $alumno['id'] . "'><ion-icon name='chevron-forward-circle'></ion-icon></a>";
                         echo "</td>";
                         echo "</tr>";
                     }
@@ -144,7 +144,7 @@
 
                     echo "<table border='1' class='mensajesATCO'>";
 
-                    foreach($_SESION['mensajesAlumnos'] as $mensaje) {
+                    foreach ($_SESION['mensajesAlumnos'] as $mensaje) {
                         echo "<tr>";
                         echo "<td class='idMensaje'>";
                         echo $mensaje['id'];
@@ -183,7 +183,11 @@
                         echo $mensaje['mensaje'];
                         echo "</td>";
                         echo "<td class='borrarMensajeAlumno'>";
-                        echo "<a href='index.php?ctl=perfilAlumno&id=". $mensaje['id'] ."' alt='Eliminar mensaje'><ion-icon name='trash-outline'></ion-icon></a>";
+                         echo "<form name='formContacto' action='index.php?ctl=panelAdministracion' method='POST' enctype='multipart/form-data'>";
+                        echo "<input type='hidden' name='idMensaje' value='" . $mensaje['id'] . "' />"; //TODO Siempre borra el último mensaje
+                        echo "<button type='submit' value='Borrar' name='borrarMensaje' >";
+                        echo "<ion-icon name='trash-outline'></ion-icon>";
+                        echo "</button>";
                         echo "</td>";
                         echo "</tr>";
                     }
