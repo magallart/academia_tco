@@ -28,18 +28,24 @@
     <div class="row">
         <div class="col-lg-6 col-md-12 p-5">
             <h2>Datos de la cuenta</h2>
-            <form name="formPerfil" action="index.php?ctl=perfil" method="POST" enctype="multipart/form-data">
+            <?php 
+            if (isset($_GET['id'])) {
+                $idPerfilAlumno = recoge('id');
+            }
+            
+            echo "<form name='formPerfil' action='index.php?ctl=perfilAlumno&id=" . $idPerfilAlumno ."' method='POST' enctype='multipart/form-data'>";
+            ?>
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="form-outline">
                             <label for="nombre">Nombre</label>
-                            <input type="text" name="nombre" placeholder="<?php echo $_SESSION['perfilAlumno']['nombreUsuario'] ?>" />
+                            <input type="text" name="nombreAlumno" placeholder="<?php echo $_SESSION['perfilAlumno']['nombreUsuario'] ?>" />
                         </div>
                     </div>
                     <div class="col-lg-8">
                         <div class="form-outline">
                             <label for="apellidos">Apellidos</label>
-                            <input type="text" name="apellidos" placeholder="<?php echo $_SESSION['perfilAlumno']['apellidosUsuario'] ?>" />
+                            <input type="text" name="apellidosAlumno" placeholder="<?php echo $_SESSION['perfilAlumno']['apellidosUsuario'] ?>" />
                         </div>
                     </div>
                 </div>
@@ -48,13 +54,13 @@
                     <div class="col-lg-7">
                         <div class="form-outline">
                             <label for="email">Email</label>
-                            <input type="text" name="email" placeholder="<?php echo $_SESSION['perfilAlumno']['emailUsuario'] ?>" />
+                            <input type="text" name="emailAlumno" placeholder="<?php echo $_SESSION['perfilAlumno']['emailUsuario'] ?>" />
                         </div>
                     </div>
                     <div class="col-lg-5">
                         <div class="form-outline">
                             <label for="fNacimiento">Fecha nacimiento</label>
-                            <input type="text" name="fNacimiento" placeholder="<?php echo $_SESSION['perfilAlumno']['fnacimientoUsuario'] ?>" />
+                            <input type="text" name="fNacimientoAlumno" placeholder="<?php echo $_SESSION['perfilAlumno']['fnacimientoUsuario'] ?>" />
                         </div>
                     </div>
                 </div>
@@ -63,7 +69,7 @@
                     <div class="col">
                         <div class="form-outline">
                             <label for="direccion">Dirección</label>
-                            <input type="text" name="direccion" placeholder="<?php echo $_SESSION['perfilAlumno']['direccionUsuario'] ?>" />
+                            <input type="text" name="direccionAlumno" placeholder="<?php echo $_SESSION['perfilAlumno']['direccionUsuario'] ?>" />
                         </div>
                     </div>
                 </div>
@@ -72,13 +78,13 @@
                     <div class="col-lg-4">
                         <div class="form-outline">
                             <label for="cPostal">Código Postal</label>
-                            <input type="text" name="cPostal" placeholder="<?php echo $_SESSION['perfilAlumno']['cpostalUsuario'] ?>" />
+                            <input type="text" name="cPostalAlumno" placeholder="<?php echo $_SESSION['perfilAlumno']['cpostalUsuario'] ?>" />
                         </div>
                     </div>
                     <div class="col-lg-8">
                         <div class="form-outline">
                             <label for="localidad">Localidad</label>
-                            <input type="text" name="localidad" placeholder="<?php echo $_SESSION['perfilAlumno']['localidadUsuario'] ?>" />
+                            <input type="text" name="localidadAlumno" placeholder="<?php echo $_SESSION['perfilAlumno']['localidadUsuario'] ?>" />
                         </div>
                     </div>
                 </div>

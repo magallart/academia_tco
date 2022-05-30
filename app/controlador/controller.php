@@ -519,7 +519,7 @@ class Controller
     public function cCerrarSesion()
     {
         session_unset();
-        header('refresh:3;url=index.php?ctl=inicio');
+        header('refresh:3;url=index.php?ctl=iniciarSesion');
         if (isset($_SESSION['nivel'])) {
             $menu = menuWeb($_SESSION['nivel']);
         } else {
@@ -563,11 +563,11 @@ class Controller
                     //TODO Falta validar los datos
                     $nombre = $_REQUEST['nombre'] ? recoge('nombre') : $_SESSION['nombreUsuario'];
                     $apellidos =  $_REQUEST['apellidos'] ? recoge('apellidos') : $_SESSION['apellidosUsuario'];
-                    $email =  $_REQUEST['email'] ? recoge('nombre') : $_SESSION['emailUsuario'];
+                    $email =  $_REQUEST['email'] ? recoge('email') : $_SESSION['emailUsuario'];
                     $fNacimiento =  $_REQUEST['fNacimiento'] ? recoge('fNacimiento') : $_SESSION['fnacimientoUsuario'];
-                    $direccion =  $_REQUEST['direccion'] ? recoge('nombre') : $_SESSION['direccionUsuario'];
-                    $cPostal =  $_REQUEST['cPostal'] ? recoge('nombre') : $_SESSION['cpostalUsuario'];
-                    $localidad =  $_REQUEST['localidad'] ? recoge('nombre') : $_SESSION['localidadUsuario'];
+                    $direccion =  $_REQUEST['direccion'] ? recoge('direccion') : $_SESSION['direccionUsuario'];
+                    $cPostal =  $_REQUEST['cPostal'] ? recoge('cPostal') : $_SESSION['cpostalUsuario'];
+                    $localidad =  $_REQUEST['localidad'] ? recoge('localidad') : $_SESSION['localidadUsuario'];
                     if ($u->actualizarDatos($_SESSION['idUsuario'], $nombre, $apellidos, $email, $fNacimiento, $direccion, $cPostal, $localidad)) {
                         header('Location: index.php?ctl=datosActualizados');
                     } else {
@@ -650,14 +650,14 @@ class Controller
 
                 if (isset($_POST['actualizarDatos'])) {
                     //TODO Falta validar los datos
-                    $nombre = $_REQUEST['nombre'] ? recoge('nombre') : $_SESSION['nombreUsuario'];
-                    $apellidos =  $_REQUEST['apellidos'] ? recoge('apellidos') : $_SESSION['apellidosUsuario'];
-                    $email =  $_REQUEST['email'] ? recoge('nombre') : $_SESSION['emailUsuario'];
-                    $fNacimiento =  $_REQUEST['fNacimiento'] ? recoge('fNacimiento') : $_SESSION['fnacimientoUsuario'];
-                    $direccion =  $_REQUEST['direccion'] ? recoge('nombre') : $_SESSION['direccionUsuario'];
-                    $cPostal =  $_REQUEST['cPostal'] ? recoge('nombre') : $_SESSION['cpostalUsuario'];
-                    $localidad =  $_REQUEST['localidad'] ? recoge('nombre') : $_SESSION['localidadUsuario'];
-                    if ($u->actualizarDatos($_SESSION['idUsuario'], $nombre, $apellidos, $email, $fNacimiento, $direccion, $cPostal, $localidad)) {
+                    $nombre = $_REQUEST['nombreAlumno'] ? recoge('nombreAlumno') : $_SESSION['perfilAlumno']['nombreUsuario'];
+                    $apellidos =  $_REQUEST['apellidosAlumno'] ? recoge('apellidosAlumno') : $infoAlumno['resultado']['apellidos'];
+                    $email =  $_REQUEST['emailAlumno'] ? recoge('emailAlumno') : $_SESSION['perfilAlumno']['emailUsuario'];
+                    $fNacimiento =  $_REQUEST['fNacimientoAlumno'] ? recoge('fNacimientoAlumno') : $_SESSION['perfilAlumno']['fnacimientoUsuario'];
+                    $direccion =  $_REQUEST['direccionAlumno'] ? recoge('direccionAlumno') : $_SESSION['perfilAlumno']['direccionUsuario'];
+                    $cPostal =  $_REQUEST['cPostalAlumno'] ? recoge('cPostalAlumno') : $_SESSION['perfilAlumno']['cpostalUsuario'];
+                    $localidad =  $_REQUEST['localidadAlumno'] ? recoge('localidadAlumno') : $_SESSION['perfilAlumno']['localidadUsuario'];
+                    if ($u->actualizarDatos($_SESSION['perfilAlumno']['idUsuario'], $nombre, $apellidos, $email, $fNacimiento, $direccion, $cPostal, $localidad)) {
                         header('Location: index.php?ctl=datosActualizados');
                     } else {
                         $_SESSION['erroresValidacion'] = "No se ha podido actualizar los datos.";
@@ -665,11 +665,11 @@ class Controller
                 }
 
                 if (isset($_POST['borrarUsuario'])) {
-                    $u->borrarMensajesUsuario($_SESSION['idUsuario']);
-                    $u->borrarCursosUsuario($_SESSION['idUsuario']);
-                    $u->borrarUsuario($_SESSION['idUsuario']);
+                    $u->borrarMensajesUsuario($_SESSION['perfilAlumno']['idUsuario']);
+                    $u->borrarCursosUsuario($_SESSION['perfilAlumno']['idUsuario']);
+                    $u->borrarUsuario($_SESSION['perfilAlumno']['idUsuario']);
                     session_unset();
-                    header('Location: index.php?ctl=inicio');
+                    header('Location: index.php?ctl=panelAdministracion');
                 } else {
                     $_SESSION['erroresValidacion'] = "No se ha podido actualizar los datos.";
                 }
