@@ -1,6 +1,3 @@
-.panel-administracion {
-}
-
 .panel-administracion .estadisticas {
   background-color: var(--color1);
   text-align: center;
@@ -41,7 +38,6 @@
 
 .panel-administracion .alumnosATCO img {
   width: 50px;
-  loading: lazy;
 }
 
 .panel-administracion .alumnosATCO td.nombreAlumno {
@@ -62,4 +58,5 @@
 
 .panel-administracion .alumnosATCO ion-icon  {
     font-size: 1.7rem;
+    color: var(--color1);
   }

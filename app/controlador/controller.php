@@ -697,7 +697,9 @@ class Controller
     // Muestra el contenido de /templates/datosActualizados.php
     public function cDatosActualizados()
     {
-        header('refresh:3;url=index.php?ctl=perfil');
+        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
+            header('refresh:3;url=index.php?ctl=perfil');
+        }        
 
         if (isset($_SESSION['nivel'])) {
             $menu = menuWeb($_SESSION['nivel']);
@@ -705,6 +707,22 @@ class Controller
             $menu = 'menu.php';
         }
         require __DIR__ . '/../templates/datosActualizados.php';
+    }
+
+    // Muestra el contenido de /templates/datosActualizados.php
+    public function cDatosActualizadosAdmin()
+    {
+        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 2) {
+            header('refresh:3;url=index.php?ctl=panelAdministracion');
+        }
+        
+
+        if (isset($_SESSION['nivel'])) {
+            $menu = menuWeb($_SESSION['nivel']);
+        } else {
+            $menu = 'menu.php';
+        }
+        require __DIR__ . '/../templates/datosActualizadosAdmin.php';
     }
 
     // Muestra el contenido de /templates/politicaPrivacidad.php
