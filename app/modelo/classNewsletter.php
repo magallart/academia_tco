@@ -21,3 +21,4 @@ class Newsletter extends Modelo
     }
 
 }
+?>

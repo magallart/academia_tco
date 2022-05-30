@@ -679,6 +679,6 @@ class Controller
         } else {
             $menu = 'menu.php';
         }
-        require __DIR__ . '/../templates/panelAdministracion.php';
+        require __DIR__ . '/../templates/panelAdministracion.php'; //TODO cambiar acceso y solo permitir nivel 2
     }
 }

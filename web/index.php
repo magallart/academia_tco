@@ -5,9 +5,10 @@
     require_once __DIR__ . '/../app/libs/config.php';
     require_once __DIR__ . '/../app/libs/utils.php';
     require_once __DIR__ . '/../app/modelo/classModelo.php';
-    require_once __DIR__ . '/../app/modelo/classUsuarios.php';
+    require_once __DIR__ . '/../app/modelo/classAdmin.php';
+    require_once __DIR__ . '/../app/modelo/classCursos.php';   
     require_once __DIR__ . '/../app/modelo/classNewsletter.php';
-    require_once __DIR__ . '/../app/modelo/classCursos.php';
+    require_once __DIR__ . '/../app/modelo/classUsuarios.php';  
     require_once __DIR__ . '/../app/controlador/Controller.php';
 
     /*

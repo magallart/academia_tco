@@ -1,0 +1,16 @@
+.panel-administracion {
+
+}
+
+.panel-administracion .estadisticas{
+    background-color: var(--color1);
+    text-align: center;
+    color: #fff;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+.panel-administracion .estadisticas .datos-administracion { 
+    font-size: 3rem;
+    font-weight: bold;
+}
