@@ -11,7 +11,7 @@
             <p>Tu sesión de usuario se ha cerrado y ahora estás viendo esta página como visitante.</p>
             <p>Se te redirigirá a la página de inicio en 3 segundos, en caso de no suceder, pincha en el botón.</p>
             <div class="text-center">
-                <a class="boton" href="index.php?ctl=inicio">Ir a inicio <ion-icon name="arrow-forward-circle-outline"></ion-icon></a>
+                <a class="boton" href="index.php?ctl=iniciarSesion">Inicio sesión <ion-icon name="arrow-forward-circle-outline"></ion-icon></a>
             </div>
         </div>
     </div>
