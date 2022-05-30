@@ -39,6 +39,7 @@
         'avisosLegales' => array('controller' =>'Controller', 'action' =>'cAvisosLegales'),
         '404' => array('controller' =>'Controller', 'action' =>'c404'),
         'panelAdministracion' => array('controller' =>'Controller', 'action' =>'cPanelAdministracion'),
+        'perfilAlumno' => array('controller' =>'Controller', 'action' =>'cPerfilAlumno'),
     );
 
     /*

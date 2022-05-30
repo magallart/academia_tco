@@ -27,7 +27,7 @@ class Usuarios extends Modelo
         }
     }
 
-     /*
+    /*
         · Este método nos sirve para comprobar si los valores que ha introducido el usuario en el formulario de login de /templates/iniciarSesion.php son correctos.
         · Si son correctos lo comprobamos con rowCount. Si hay 1 fila es que existe y guardamos los datos en un array.
         · Si la combinación de user + password no existe devolvemos FALSE.
@@ -35,6 +35,27 @@ class Usuarios extends Modelo
     function getPassword($id)
     {
         $consulta = "select password from usuarios where id=:id";
+
+        $result = $this->conexion->prepare($consulta);
+        $result->bindParam(':id', $id);
+        $result->execute();
+        $filasConsulta = $result->rowCount();
+
+        if (!$filasConsulta) {
+            return FALSE;
+        } else {
+            return $result->fetchColumn();
+        }
+    }
+
+    /*
+        · Este método nos sirve para conseguir el email de un usuario pasando una ID.
+        · Se utiliza en el controlador cPerfilAlumno
+        · Si la combinación de user + password no existe devolvemos FALSE.
+    */
+    function getEmail($id)
+    {
+        $consulta = "select email from usuarios where id=:id";
 
         $result = $this->conexion->prepare($consulta);
         $result->bindParam(':id', $id);
@@ -213,7 +234,7 @@ class Usuarios extends Modelo
         return $result;
     }
 
-/*
+    /*
         · Este método nos sirve para borrar los cursos a los que está inscrito un usuario.
     */
     public function borrarCursosUsuario($id)
@@ -237,6 +258,5 @@ class Usuarios extends Modelo
         $result->execute();
 
         return $result;
-    }     
-
+    }
 }

@@ -26,65 +26,109 @@
 <section class="panel-administracion">
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="estadisticas">
                     <h2>Cursos totales</h2>
                     <div class="datos-administracion">
-                        4
+                        <?php
+                        $cursosTotales = $a->cursosTotales();
+                        echo $cursosTotales;
+                        ?>
                     </div>
                 </div>
             </div>
-            <div class="col">
-            <div class="estadisticas">
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="estadisticas">
                     <h2>Alumnos totales</h2>
                     <div class="datos-administracion">
-                        23
+                        <?php
+                        $alumnosTotales = $a->alumnosTotales();
+                        echo $alumnosTotales;
+                        ?>
                     </div>
                 </div>
             </div>
-            <div class="col">
-            <div class="estadisticas">
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="estadisticas">
                     <h2>Cursos finalizados</h2>
                     <div class="datos-administracion">
-                        55
+                        <?php
+                        $cursosFinalizados = $a->cursosFinalizados();
+                        echo $cursosFinalizados;
+                        ?>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col">
+            <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="estadisticas">
                     <h2>Temas terminados</h2>
                     <div class="datos-administracion">
-                        120
+                        <?php
+                        $temasFinalizados = $a->temasFinalizados();
+                        echo $temasFinalizados;
+                        ?>
                     </div>
                 </div>
             </div>
-            <div class="col">
-            <div class="estadisticas">
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="estadisticas">
                     <h2>Usuarios newsletter</h2>
                     <div class="datos-administracion">
-                        13
+                    <?php
+                        $usuariosNewsletter = $a->usuariosNewsletter();
+                        echo $usuariosNewsletter;
+                        ?>
                     </div>
                 </div>
             </div>
-            <div class="col">
-            <div class="estadisticas">
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="estadisticas">
                     <h2>Mensajes usuarios</h2>
                     <div class="datos-administracion">
-                        991
+                    <?php
+                        $mensajesTotales = $a->mensajesTotales();
+                        echo $mensajesTotales;
+                        ?>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col">
-                <div class="estadisticas">
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="">
                     <h2>Usuarios</h2>
+                    <?php
+                    $_SESION['alumnos'] = $a->mostrarAlumnos();
+
+                    echo "<table border='1' class='alumnosATCO'>";
+
+                    foreach($_SESION['alumnos'] as $alumno) {
+                        echo "<tr>";
+                        echo "<td class='idAlumno'>";
+                        echo $alumno['id'];
+                        echo "</td>";
+                        echo "<td class='fotoAlumno'>";
+                        echo "<img src='/img" . $alumno['fPerfil'] . "' loading='lazy'>";
+                        echo "</td>";
+                        echo "<td class='nombreAlumno'>";
+                        echo $alumno['nombre'] . " " . $alumno['apellidos'];
+                        echo "</td>";
+                        echo "<td  class='emailAlumno'>";
+                        echo $alumno['email'];
+                        echo "</td>";
+                        echo "<td  class='verAlumno'>";
+                        echo "<a href='index.php?ctl=perfilAlumno&id=". $alumno['id'] ."'><ion-icon name='chevron-forward-circle'></ion-icon></a>";
+                        echo "</td>";
+                        echo "</tr>";
+                    }
+                    echo "</table>";
+                    ?>
                 </div>
             </div>
-            <div class="col">
-            <div class="estadisticas">
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="estadisticas">
                     <h2>Mensajes</h2>
                 </div>
             </div>

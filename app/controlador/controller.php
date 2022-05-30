@@ -195,13 +195,13 @@ class Controller
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
             header('Location: index.php?ctl=error');
         } {
-            if (isset($_SESSION['nivel'])){
-                $menu = menuWeb ($_SESSION['nivel']);
+            if (isset($_SESSION['nivel'])) {
+                $menu = menuWeb($_SESSION['nivel']);
                 require __DIR__ . '/../templates/cursoAngularR.php';
-            }  else {
-                $menu = 'menu.php';   
-                require __DIR__ . '/../templates/cursoAngularU.php';  
-            } 
+            } else {
+                $menu = 'menu.php';
+                require __DIR__ . '/../templates/cursoAngularU.php';
+            }
         }
     }
 
@@ -260,13 +260,13 @@ class Controller
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
             header('Location: index.php?ctl=error');
         } {
-            if (isset($_SESSION['nivel'])){
-                $menu = menuWeb ($_SESSION['nivel']);
+            if (isset($_SESSION['nivel'])) {
+                $menu = menuWeb($_SESSION['nivel']);
                 require __DIR__ . '/../templates/cursoReactR.php';
-            }  else {
-                $menu = 'menu.php';   
+            } else {
+                $menu = 'menu.php';
                 require __DIR__ . '/../templates/cursoReactU.php';
-            } 
+            }
         }
     }
 
@@ -325,13 +325,13 @@ class Controller
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
             header('Location: index.php?ctl=error');
         } {
-            if (isset($_SESSION['nivel'])){
-                $menu = menuWeb ($_SESSION['nivel']);
+            if (isset($_SESSION['nivel'])) {
+                $menu = menuWeb($_SESSION['nivel']);
                 require __DIR__ . '/../templates/cursoGitR.php';
-            }  else {
-                $menu = 'menu.php';   
+            } else {
+                $menu = 'menu.php';
                 require __DIR__ . '/../templates/cursoGitU.php';
-            } 
+            }
         }
     }
 
@@ -591,14 +591,14 @@ class Controller
                 error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
                 header('Location: index.php?ctl=error');
             }
-            
+
             if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 1) {
                 $menu = 'menuLogin.php';
                 require __DIR__ . '/../templates/perfil.php';
             }
-        } 
-        
-        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 2){
+        }
+
+        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 2) {
             if (isset($_SESSION['nivel'])) {
                 $menu = menuWeb($_SESSION['nivel']);
             } else {
@@ -607,7 +607,87 @@ class Controller
             require __DIR__ . '/../templates/perfilAdmin.php';
         }
 
-        if (!isset($_SESSION['nivel'])){
+        if (!isset($_SESSION['nivel'])) {
+            $menu = 'menu.php';
+            require __DIR__ . '/../templates/perfilUsuarioNoregistrado.php';
+        }
+    }
+
+    public function cPerfilAlumno()
+    {
+        if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 2) {
+            try {
+                $infoAlumno = array(
+                    'resultado' => array(),
+                    'cursos' => array(),
+                    'mensajes' => array()
+                );
+
+                if (isset($_GET['id'])) {
+                    $idPerfilAlumno = recoge('id');
+                }
+
+                $u = new Usuarios();
+                $emailAlumno = $u->getEmail($idPerfilAlumno);
+                $passwordAlumno = $u->getPassword($idPerfilAlumno);
+                $infoAlumno['resultado'] = $u->loginUsuario($emailAlumno, $passwordAlumno);
+
+                $_SESSION['perfilAlumno']['nivel'] = $infoAlumno['resultado']['nivel'];
+                $_SESSION['perfilAlumno']['idUsuario'] = $infoAlumno['resultado']['id'];
+                $_SESSION['perfilAlumno']['nombreUsuario'] = $infoAlumno['resultado']['nombre'];
+                $_SESSION['perfilAlumno']['apellidosUsuario'] = $infoAlumno['resultado']['apellidos'];
+                $_SESSION['perfilAlumno']['emailUsuario'] = $infoAlumno['resultado']['email'];
+                $_SESSION['perfilAlumno']['direccionUsuario'] = $infoAlumno['resultado']['direccion'];
+                $_SESSION['perfilAlumno']['cpostalUsuario'] = $infoAlumno['resultado']['cPostal'];
+                $_SESSION['perfilAlumno']['localidadUsuario'] = $infoAlumno['resultado']['localidad'];
+                $_SESSION['perfilAlumno']['fnacimientoUsuario'] = $infoAlumno['resultado']['fNacimiento'];
+                $_SESSION['perfilAlumno']['fPerfil'] = $infoAlumno['resultado']['fPerfil'];
+                //$idUsuario = $_SESSION['idUsuario'];
+                $infoAlumno['cursos'] = $u->getCursosUsuario($idPerfilAlumno);
+                $_SESSION['perfilAlumno']['cursos'] = $infoAlumno['cursos'];
+                $infoAlumno['mensajes'] = $u->getMensajesUsuario($idPerfilAlumno);
+                $_SESSION['perfilAlumno']['mensajes'] = $infoAlumno['mensajes'];
+
+                if (isset($_POST['actualizarDatos'])) {
+                    //TODO Falta validar los datos
+                    $nombre = $_REQUEST['nombre'] ? recoge('nombre') : $_SESSION['nombreUsuario'];
+                    $apellidos =  $_REQUEST['apellidos'] ? recoge('apellidos') : $_SESSION['apellidosUsuario'];
+                    $email =  $_REQUEST['email'] ? recoge('nombre') : $_SESSION['emailUsuario'];
+                    $fNacimiento =  $_REQUEST['fNacimiento'] ? recoge('fNacimiento') : $_SESSION['fnacimientoUsuario'];
+                    $direccion =  $_REQUEST['direccion'] ? recoge('nombre') : $_SESSION['direccionUsuario'];
+                    $cPostal =  $_REQUEST['cPostal'] ? recoge('nombre') : $_SESSION['cpostalUsuario'];
+                    $localidad =  $_REQUEST['localidad'] ? recoge('nombre') : $_SESSION['localidadUsuario'];
+                    if ($u->actualizarDatos($_SESSION['idUsuario'], $nombre, $apellidos, $email, $fNacimiento, $direccion, $cPostal, $localidad)) {
+                        header('Location: index.php?ctl=datosActualizados');
+                    } else {
+                        $_SESSION['erroresValidacion'] = "No se ha podido actualizar los datos.";
+                    }
+                }
+
+                if (isset($_POST['borrarUsuario'])) {
+                    $u->borrarMensajesUsuario($_SESSION['idUsuario']);
+                    $u->borrarCursosUsuario($_SESSION['idUsuario']);
+                    $u->borrarUsuario($_SESSION['idUsuario']);
+                    session_unset();
+                    header('Location: index.php?ctl=inicio');
+                } else {
+                    $_SESSION['erroresValidacion'] = "No se ha podido actualizar los datos.";
+                }
+            } catch (Exception $e) {
+                error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logException.txt");
+                header('Location: index.php?ctl=error');
+            } catch (Error $e) {
+                error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
+                header('Location: index.php?ctl=error');
+            }
+
+            if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 2) {
+                $menu = 'menuAdmin.php';
+                require __DIR__ . '/../templates/perfilAlumno.php';
+            }
+        }
+
+        if (!isset($_SESSION['nivel'])) {
             $menu = 'menu.php';
             require __DIR__ . '/../templates/perfilUsuarioNoregistrado.php';
         }
@@ -674,6 +754,16 @@ class Controller
     // Muestra el contenido de /templates/404.php
     public function cPanelAdministracion()
     {
+        try {
+            $a = new Admin();
+            $_SESSION['alumnos'] = $a->mostrarAlumnos();
+        } catch (Exception $e) {
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logException.txt");
+            header('Location: index.php?ctl=error');
+        } catch (Error $e) {
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
+            header('Location: index.php?ctl=error');
+        }
         if (isset($_SESSION['nivel'])) {
             $menu = menuWeb($_SESSION['nivel']);
         } else {

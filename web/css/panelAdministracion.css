@@ -1,16 +1,65 @@
 .panel-administracion {
-
 }
 
-.panel-administracion .estadisticas{
-    background-color: var(--color1);
-    text-align: center;
-    color: #fff;
-    margin-bottom: 30px;
-    padding: 20px;
+.panel-administracion .estadisticas {
+  background-color: var(--color1);
+  text-align: center;
+  color: #fff;
+  margin-bottom: 30px;
+  padding: 20px;
 }
 
-.panel-administracion .estadisticas .datos-administracion { 
-    font-size: 3rem;
-    font-weight: bold;
+.panel-administracion .estadisticas .datos-administracion {
+  font-size: 3rem;
+  font-weight: bold;
 }
+
+.panel-administracion table.alumnosATCO {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.panel-administracion .alumnosATCO td {
+  height: 60px;
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+}
+
+.panel-administracion .alumnosATCO tr:nth-child(even) {
+  background-color: rgb(238, 237, 237);
+}
+
+.panel-administracion .alumnosATCO td.idAlumno {
+  width: 5%;
+  text-align: center;
+}
+
+.panel-administracion .alumnosATCO td.fotoAlumno {
+  width: 8%;
+  text-align: center;
+}
+
+.panel-administracion .alumnosATCO img {
+  width: 50px;
+  loading: lazy;
+}
+
+.panel-administracion .alumnosATCO td.nombreAlumno {
+  width: 35%;
+  padding-left: 10px;
+}
+
+.panel-administracion .alumnosATCO td.emailAlumno {
+  width: 27%;
+  padding-left: 10px;
+}
+
+.panel-administracion .alumnosATCO td.verAlumno {
+  width: 5%;
+  text-align: center;
+  color: var(--color1);
+}
+
+.panel-administracion .alumnosATCO ion-icon  {
+    font-size: 1.7rem;
+  }

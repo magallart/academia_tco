@@ -104,7 +104,8 @@
                 </div>
             </div>
 
-            <h2>Botón panel de administración</h2>
+            <h2>Acceder al panel de administración</h2>
+            <a class="boton" href="index.php?ctl=panelAdministracion">Ir ahora <ion-icon name="arrow-forward-circle-outline"></ion-icon></a>
         </div>
     </div>
 </div>
