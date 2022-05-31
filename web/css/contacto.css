@@ -2,6 +2,10 @@
   padding-bottom: 30px;
 }
 
+section.academia.contacto1 .bg-image {
+  background-image: url("../../img/contacto.jpg");
+}
+
 .contacto label {
   font-size: 1.2rem;
   font-weight: 600 !important;

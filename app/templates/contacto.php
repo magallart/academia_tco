@@ -22,7 +22,7 @@
     </div>
 </header>
 
-<section class="academia academia1">
+<section class="academia contacto1">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-12 col-sm-12 bg-image order-lg-1 order-md-1 order-sm-1 img-shadow"></div>
