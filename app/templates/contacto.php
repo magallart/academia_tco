@@ -25,7 +25,7 @@
 <section class="academia academia1">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 col-md-12 col-sm-12 bg-image order-lg-1 order-md-1 order-sm-1"></div>
+            <div class="col-lg-6 col-md-12 col-sm-12 bg-image order-lg-1 order-md-1 order-sm-1 img-shadow"></div>
             <div class="col-lg-6 col-md-12 col-sm-12 p-5 text-information order-lg-2 order-md-2 order-sm-2 text-lg-start text-md-center text-sm-center">
                 <h2 class="ms-lg-0 mx-md-auto mx-sm-auto">Estamos a tu lado en todo momento</h2>
                 <p>Sabemos lo duro que es ser un alumno y sentirse desamparado, por eso en ATCO tenemos claro que el contacto entre la academia y nuestros alumnos es fundamental. Ponemos a tu servicio diversos método de contacto para que elijas el que prefieras.</p>
@@ -98,7 +98,7 @@
                 </div>
 
             </div>
-            <div class="col-lg-4 col-md-12 col-sm-12 col-12 contacto-opciones offset-lg-1">
+            <div class="col-lg-4 col-md-12 col-sm-12 col-12 contacto-opciones offset-lg-1 img-shadow">
                 <div class="contacto-opciones-div">
                     <ion-icon name="call-outline"></ion-icon>
                     <h2>Contacta</h2>

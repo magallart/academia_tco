@@ -27,7 +27,7 @@
 
 
 <div class="container interior my-5">
-    <div class="row login">
+    <div class="row login img-shadow">
         <div class="col-7 login-left">
             <h2>Identifícate</h2>
             <hr>

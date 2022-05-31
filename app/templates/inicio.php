@@ -45,14 +45,14 @@
     <div class="container">
         <div class="row">
             <div class="col col-lg-6 col-md-12 col-sm-12 text-center pb-md-5 order-sm-1 mt-sm-3">
-                <div class="card-color">
+                <div class="card-color img-shadow">
                     <ion-icon name="desktop-outline"></ion-icon>
                     <h3>Temarios actualizados</h3>
                     <p>Desde ATCO te ofrecemos cursos actuales con tecnologías que se usan en el mercado laboral. Nuestros docentes se encargan de actualizar sus cursos periódicamente.</p>
                 </div>
             </div>
             <div class="col col-lg-6 col-md-12 col-sm-12 text-center order-sm-2 mt-sm-3">
-                <div class="card-white">
+                <div class="card-white img-shadow">
                     <ion-icon name="timer-outline"></ion-icon>
                     <h3>Marcas tu ritmo</h3>
                     <p>Sin exámenes. Sin plazos. Sin presiones. Nosotros te facilitamos el material didáctico y tú eliges cómo y cuando aprender. En ATCO no recibirás presiones de los docentes o plazos.</p>
@@ -62,7 +62,7 @@
 
         <div class="row pt-lg-1 pt-md-5">
             <div class="col col-lg-6 col-md-12 col-sm-12 text-center order-lg-1 order-md-2 order-sm-4 mt-sm-3">
-                <div class="card-white">
+                <div class="card-white img-shadow">
                     <ion-icon name="checkmark-done-outline"></ion-icon>
                     <h3>Método que funciona</h3>
                     <p>Seguro que has leído esto en muchos sitios, aunque en ATCO te lo dicen nuestros alumnos satisfechos con nuestros cursos que han podido impulsar su carrera como desarrolladores.</p>
@@ -70,8 +70,7 @@
                 </div>
             </div>
             <div class="col col-lg-6 col-md-12 col-sm-12 text-center pb-md-5 order-lg-2 order-md-1 order-sm-3 mt-sm-3">
-                <div class="card-color">
-
+                <div class="card-color img-shadow">
                     <ion-icon name="chatbubbles-outline"></ion-icon>
                     <h3>Atención personalizada</h3>
                     <p>Queremos que formes parte de la familia ATCO y no estés sólo en ningún momento, por ello estaremos a tu lado motivándote y resolviendo cualquier tipo de duda que puedas tener.</p>

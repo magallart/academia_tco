@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12">
-                <img src="../img/inicio-header.png" class="d-block mx-lg-auto img-fluid" alt="Chica sonriendo con un laptop en la mano" width="700" height="500" loading="lazy" />
+                <img src="../img/academia-header.png" class="d-block mx-lg-auto img-fluid" alt="Chica sonriendo con un laptop en la mano" width="700" height="500" loading="lazy" />
             </div>
         </div>
     </div>
@@ -29,7 +29,7 @@
 <section class="academia academia1">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 col-md-12 col-sm-12 bg-image order-lg-1 order-md-1 order-sm-1"></div>
+            <div class="col-lg-6 col-md-12 col-sm-12 bg-image order-lg-1 order-md-1 order-sm-1 img-shadow"></div>
             <div class="col-lg-6 col-md-12 col-sm-12 p-5 text-information order-lg-2 order-md-2 order-sm-2 text-lg-start text-md-center text-sm-center">
                 <h2 class="ms-lg-0 mx-md-auto mx-sm-auto">Especialistas en formación online sobre desarrollo web</h2>
                 <p>El proyecto de la Academia Tus Cursos Online (ATCO) empezó hace 10 años y desde entonces más de 450 alumnos han hecho cursos en nuestra plataforma online con un alto grado de satisfacción.</p>
@@ -57,7 +57,7 @@
 <section class="academia academia3">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 col-md-12 col-sm-12 bg-image order-lg-1 order-md-1 order-sm-1"></div>
+            <div class="col-lg-6 col-md-12 col-sm-12 bg-image order-lg-1 order-md-1 order-sm-1 img-shadow"></div>
             <div class="col-lg-6 col-md-12 col-sm-12 p-5 text-information order-lg-2 text-lg-start text-md-center text-sm-center order-md-2 order-sm-2">
                 <h2 class="ms-lg-0 mx-md-auto mx-sm-auto">Formarás parte de nuestra gran familia</h2>
                 <p>En la sección anterior te hablamos acerca de nuestra cercanía, ¿recuerdas? Pues bien, los alumnos que deciden confiar en nuestro método para realizar nuestros cursos forman parte de nuestra gran familia. Estaremos a tu lado a lo largo de todo el camino para que no te sientas solo, para darte ánimos, ayudarte cuando tropieces y felicitarte cuando lo consigas.</p>
@@ -85,7 +85,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-12 col-sm-12 cardEquipo">
-                <div class="card mb-3 mx-md-auto text-md-start text-sm-center">
+                <div class="card mb-3 mx-md-auto text-md-start text-sm-center img-shadow">
                     <div class="row g-0">
                         <div class="col-md-4 col-sm-4 col-4">
                             <img src="../../img/usuarios/marisa-lopez-nieto2.jpg" class="img-fluid rounded-start" alt="...">
@@ -108,7 +108,7 @@
             </div>
 
             <div class="col-lg-6 col-md-12 col-sm-12 cardEquipo">
-                <div class="card mb-3 mx-md-auto text-md-start text-sm-center">
+                <div class="card mb-3 mx-md-auto text-md-start text-sm-center img-shadow">
                     <div class="row g-0">
                         <div class="col-md-4 col-sm-4 col-4">
                             <img src="../../img/usuarios/susana-fonseca-albert2.jpg" class="img-fluid rounded-start" alt="...">
@@ -133,7 +133,7 @@
 
         <div class="row">
             <div class="col-lg-6 col-md-12 col-sm-12 cardEquipo">
-                <div class="card mb-3 mx-md-auto text-md-start text-sm-center">
+                <div class="card mb-3 mx-md-auto text-md-start text-sm-center img-shadow">
                     <div class="row g-0">
                         <div class="col-md-4 col-sm-4 col-4">
                             <img src="../../img/usuarios/pedro-helenos-pons2.jpg" class="img-fluid rounded-start" alt="...">
@@ -156,7 +156,7 @@
             </div>
 
             <div class="col-lg-6 col-md-12 col-sm-12 cardEquipo">
-                <div class="card mb-3 mx-md-auto text-md-start text-sm-center">
+                <div class="card mb-3 mx-md-auto text-md-start text-sm-center img-shadow">
                     <div class="row g-0">
                         <div class="col-md-4 col-sm-4 col-4">
                             <img src="../../img/usuarios/marcos-alfonso2.jpg" class="img-fluid rounded-start" alt="...">
@@ -181,7 +181,7 @@
 
         <div class="row">
             <div class="col-lg-6 col-md-12 col-sm-12 cardEquipo">
-                <div class="card mb-3 mx-md-auto text-md-start text-sm-center">
+                <div class="card mb-3 mx-md-auto text-md-start text-sm-center img-shadow">
                     <div class="row g-0">
                         <div class="col-md-4 col-sm-4 col-4">
                             <img src="../../img/usuarios/luis-benavent2.jpg" class="img-fluid rounded-start" alt="...">
@@ -204,7 +204,7 @@
             </div>
 
             <div class="col-lg-6 col-md-12 col-sm-12 cardEquipo">
-                <div class="card mb-3 mx-md-auto text-md-start text-sm-center">
+                <div class="card mb-3 mx-md-auto text-md-start text-sm-center img-shadow">
                     <div class="row g-0">
                         <div class="col-md-4 col-sm-4 col-4">
                             <img src="../../img/usuarios/marta-buenafuente2.jpg" class="img-fluid rounded-start" alt="...">
