@@ -27,7 +27,7 @@
 
 
 <div class="container interior my-5">
-    <div class="row login">
+    <div class="row login img-shadow">
         <div class="col-7 login-left">
             <h2>Recupera tu contraseña</h2>
             <hr>
@@ -44,20 +44,6 @@
 
     </div>
 </div>
-
-<?php
-
-// Foreach que muestra los errrores al macenados en $_SESSION['erroresValidacion'] guardados cuando se han validado los campos del formulario
-
-if (isset($_SESSION['erroresValidacion'])) {
-    echo "<div class='errores'>";
-    foreach ($_SESSION['erroresValidacion'] as $error) {
-        echo "<p>$error</p>";
-    }
-    echo "</div>";
-}
-unset($_SESSION['erroresValidacion']);
-?>
 
 <?php $contenido = ob_get_clean() ?>
 <?php include 'layout.php' ?>
