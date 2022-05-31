@@ -39,8 +39,13 @@
 
                 <input type="email" name="email" placeholder="Email" />
                 <input type="text" name="password" placeholder="Contraseña" />
-
-                <input type="submit" value="Inciar Sesión" name="iniciarSesion" class="boton" />
+                <div class="checkboxPoliticas">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        Acepto las <a href="index.php?ctl=politicaPrivacidad" alt="Enlace a página de Políticas de Privacidad" target="blank" class="link">Políticas de privacidad</a>.
+                    </label>
+                </div>
+                <input type="submit" value="Inciar Sesión" disabled name="iniciarSesion" id="submit" class="boton" />
             </form>
 
             <a href="index.php?ctl=recuperarPassword" alt="Enlace a la página de recuperación de contraseña" class="lost-password">¿Has olvidado tu contraseña?</a>

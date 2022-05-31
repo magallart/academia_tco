@@ -12,10 +12,10 @@
         <div class="row middle g-5">
             <div class="col-lg-6 col-md-6 col-sm-12 text-md-start text-sm-center">
                 <h1 class="title-header">
-                Recuperación de contraseña
+                    Recuperación de contraseña
                 </h1>
                 <p>
-                ¿Has olvidado tu contraseña? ¿No consigues entrar en la academia con tu contraseña habitual? Cámbiala fácilmente, tan sólo sigue los pasos del formulario.
+                    ¿Has olvidado tu contraseña? ¿No consigues entrar en la academia con tu contraseña habitual? Cámbiala fácilmente, tan sólo sigue los pasos del formulario.
                 </p>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12">
@@ -31,14 +31,22 @@
         <div class="col-7 login-left">
             <h2>Recupera tu contraseña</h2>
             <hr>
-            <p>Introduce tu dirección de email y te haremos llegar un enlace para recuperar tu contraseña.</p>    
+            <p>Introduce tu dirección de email y te haremos llegar un enlace para recuperar tu contraseña.</p>
         </div>
-        <div class="col-5 login-right"> <!-- TODO Realizar funcionalidad -->
+        <div class="col-5 login-right">
+            <!-- TODO Realizar funcionalidad -->
             <form name="formRecuperarPassword" action="index.php?ctl=recuperarPassword" method="POST" enctype="multipart/form-data">
 
                 <input type="email" name="email" placeholder="Tu email" />
 
-                <input type="submit" value="Recuperar contraseña" name="recuperarPassword" class="boton" />
+                <div class="checkboxPoliticas">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        Acepto las <a href="index.php?ctl=politicaPrivacidad" alt="Enlace a página de Políticas de Privacidad" target="blank" class="link">Políticas de privacidad</a>.
+                    </label>
+                </div>
+
+                <input type="submit" value="Recuperar contraseña" disabled name="recuperarPassword" class="boton" id="submit"/>
             </form>
         </div>
 

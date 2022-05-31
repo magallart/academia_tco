@@ -117,7 +117,7 @@
                             </div>
                         </div>
 
-                        <input type="submit" value="Registrar Ahora" name="registrarCuenta" class="boton" />
+                        <input type="submit" value="Registrar Ahora" disabled name="registrarCuenta" class="boton" id="submit" />
                 </form>
                 <p class="formulario-rgpd mt-5">
                     <span class="negrita">Responsable</span>: Miguel Ángel Gallart Aleixandre. <span class="negrita">Fin del tratamiento</span>: Añadir sus datos personales a nuestra base de datos como usuario registrado en ATCO. <span class="negrita">Legitimación</span>: Consentimiento del interesado. <span class="negrita">Destinatarios</span>: Entidades necesarias para la prestación del servicio exclusivamente. <span class="negrita">Derechos</span>: Acceso, rectificación o supresión, limitación del tratamiento, oposición al tratamiento y portabilidad. <span class="negrita">Información adicional</span>: Puede consultar información adicional y detallada sobre Protección de Datos en nuestra Política de privacidad.

@@ -11,6 +11,7 @@
 @import url("menu.css");
 @import url("panelAdministracion.css");
 @import url("perfil.css");
+@import url("recuperarPassword.css");
 @import url("registro.css");
 
 
@@ -156,3 +157,4 @@ section {
   border-top:1px solid #000;
   border-bottom:1px solid #000;
 }
+
