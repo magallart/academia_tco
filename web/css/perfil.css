@@ -1,3 +1,7 @@
+header.header-perfil {
+  margin-top: 110px !important;
+}
+
 header img.fotoPerfilUsuario {
   height: auto;
   width: 250px;

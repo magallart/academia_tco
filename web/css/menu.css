@@ -15,6 +15,10 @@ nav ul li a {
   font-size: 1.2rem;
 }
 
+nav ul.menu-principal>li>a, nav ul.menu-principal-login>li>a {
+  color:#000 !important;
+}
+
 nav ul.menu-principal > li  > a {
   font-size: 1.2rem;
   color:#000 !important;

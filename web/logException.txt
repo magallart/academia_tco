@@ -1,2 +1,0 @@
-SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nivel' in 'where clause'0.34231300 1653938109
-SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nivel' in 'where clause'0.12222700 1653938113
