@@ -61,6 +61,10 @@ header {
   height: calc(100% - 150px);
 }
 
+header img.img-fluid {
+  max-width: 70%;
+}
+
 
 @media (max-width: 991px) {
   header {

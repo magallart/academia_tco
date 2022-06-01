@@ -14,7 +14,6 @@
                 <p>
                     Más de 450 alumnos han realizado alguno de nuestros cursos y muchos de ellos han podido encontrar trabajo como desarrolladores web.
                 </p>
-                <p>¿Te animas a realizar un curso con nosotros y aprender las últimas tecnologías del sector?</p>
                 <div class="text-md-start text-sm-center">
                     <a class="boton" href="#">Ver cursos ahora <ion-icon name="arrow-forward-circle-outline"></ion-icon></a>
                 </div>
