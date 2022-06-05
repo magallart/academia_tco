@@ -54,8 +54,8 @@
     </div>
 </div>
 
-<?php
 
+<?php
 // Foreach que muestra los errrores al macenados en $_SESSION['erroresValidacion'] guardados cuando se han validado los campos del formulario
 
 if (isset($_SESSION['erroresValidacion'])) {

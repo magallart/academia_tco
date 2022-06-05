@@ -28,35 +28,6 @@
 		include $menu;
 		?>
 
-
-		<?php // TODO Eliminar el print_r
-		//  echo "<div class='pruebaSesion'>";
-		//  echo "||||||||||| SESSION |||||||||||";
-		//  echo "<pre>";
-		//  print_r($_SESSION);
-		//  echo "</pre>";
-		//  echo "</div>";
-		//  echo "<div class='pruebaSesion'>";
-		//  echo "||||||||||| REQUEST |||||||||||";
-		//  echo "<pre>";
-		//  print_r($_REQUEST);
-		//  echo "</pre>";
-		//  echo "</div>";
-		//  echo "<div class='pruebaSesion'>";
-		//  echo "||||||||||| POST |||||||||||";
-		//  echo "<pre>";
-		//  print_r($_POST);
-		//  echo "</pre>";
-		//  echo "</div>";
-		// echo "<div class='pruebaSesion'>";
-		// echo "||||||||||| FILES |||||||||||";
-		// echo "<pre>";
-		// print_r($_FILES);
-		// echo "</pre>";
-		// echo "</div>";
-		?>
-
-
 		<div id="contenido">
 			<?php echo $contenido; ?>
 		</div>
