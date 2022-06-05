@@ -444,7 +444,7 @@ class Controller
                             $nombreFoto = $nombreUsuario . "_" . $apellidosUsuario;
                             $nombrePartes = explode(".", $_FILES['fPerfil']['name']);
                             $extensionImagen = $nombrePartes[1];
-                            $fPerfilRuta = $nombreFoto . "." . $extensionImagen;
+                            $fPerfilRuta = "/usuarios/" . $nombreFoto . "." . $extensionImagen;
                             $fNacimiento = $_SESSION['fechaBD'];
                             $u = new Usuarios();
                             $u->registrarUsuario($nombre, $apellidos, $password, $email, $fNacimiento, $direccion, $cPostal, $localidad, $fPerfilRuta);

@@ -199,10 +199,9 @@ class Usuarios extends Modelo
     */
     public function registrarUsuario($nombre, $apellidos, $password, $email, $fNacimiento, $direccion, $cPostal, $localidad, $fPerfilRuta)
     {
-        $verificado = "1";
         $nivel = "1";
 
-        $consulta = "insert into usuarios (nombre, apellidos, email, password, direccion, cPostal, localidad, fNacimiento, fPerfil, nivel, verificado) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $consulta = "insert into usuarios (nombre, apellidos, email, password, direccion, cPostal, localidad, fNacimiento, fPerfil, nivel) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $result = $this->conexion->prepare($consulta);
         $result->bindParam(1, $nombre);
         $result->bindParam(2, $apellidos);
@@ -214,7 +213,6 @@ class Usuarios extends Modelo
         $result->bindParam(8, $fNacimiento);
         $result->bindParam(9, $fPerfilRuta);
         $result->bindParam(10, $nivel);
-        $result->bindParam(11, $verificado);
 
         $result->execute();
 
