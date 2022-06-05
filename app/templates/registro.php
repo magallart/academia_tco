@@ -131,7 +131,7 @@
 <?php
 
 if (isset($_SESSION['erroresValidacion'])) {
-    echo "<div class='errores'>";
+    echo "<div class='errores registroErrores'>";
     foreach ($_SESSION['erroresValidacion'] as $error) {
         echo "<p>$error</p>";
     }

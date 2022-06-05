@@ -146,3 +146,7 @@ section {
   font-weight: bold;
   color: red;
 }
+
+.errores.registroErrores {
+  margin-top: -100px;
+}
