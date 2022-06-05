@@ -120,25 +120,25 @@
         <div class="row">
             <div class="col col-lg-3 col-md-6 pb-md-5">
                 <div class="circle-card">
-                    <span class="numbers">120</span>
+                    <span class="numbers" id="numbersAlumnos"></span>
                     <span class="words">Alumnos actuales</span>
                 </div>
             </div>
             <div class="col col-lg-3 col-md-6 pb-md-5">
                 <div class="circle-card">
-                    <span class="numbers">23</span>
+                    <span class="numbers" id="numbersCursos"></span>
                     <span class="words">Cursos<br> Online</span>
                 </div>
             </div>
             <div class="col col-lg-3 col-md-6">
                 <div class="circle-card">
-                    <span class="numbers">480</span>
+                    <span class="numbers" id="numbersTotales"></span>
                     <span class="words">Alumnos totales</span>
                 </div>
             </div>
             <div class="col col-lg-3 col-md-6">
                 <div class="circle-card">
-                    <span class="numbers">100%</span>
+                    <span class="numbers" id="numbersSatisfaccion">%</span>
                     <span class="words">Grado de satisfacción</span>
                 </div>
             </div>
