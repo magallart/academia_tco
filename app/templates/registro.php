@@ -14,9 +14,6 @@
                 <p>
                     ¿Todavía no tienes una cuenta en ATCO? Regístrate ahora totalmente gratis y disfruta de todos los cursos de la plataforma que tenemos para ti. Tan sólo tienes que rellenar el formulario y confirmar el email que te mandaremos. En menos de 3 minutos podrás empezar los cursos, ¿a qué esperas?
                 </p>
-                <div class="text-md-start text-sm-center">
-                    <a class="boton" href="index.php?ctl=cursos">Ver cursos ahora <ion-icon name="arrow-forward-circle-outline"></ion-icon></a>
-                </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <img src="../img/registro-header.png" class="d-block mx-lg-auto img-fluid" alt="Hombre con laptop riendo" width="700" height="500" loading="lazy" />
